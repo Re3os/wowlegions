@@ -1,0 +1,16 @@
+/* set sprite image */
+.media-content .film-strip-wrapper .ajax-frame .paging-arrow,
+.media-content .view-link,
+#film-strip .track:hover,
+#film-strip .track .thumb,
+#film-strip .track .thumb .thumb-bot,
+.media-content .film-strip-thumb-frame,
+.media-content .filter-dropdown .keyword-filter .checkbox,
+.media-content .currently-viewing .clear-filters,
+.media-content .currently-viewing .clear-filters span,
+.media-content .thumb-frame,
+#media-index .media-index-section .gallery-title .view-all .arrow,
+#media-index .media-index-section .gallery-title .gallery-icon { background-image:url(../../images/media/sprite.gif) }
+
+/* comments */
+#media-comments { height:187px }

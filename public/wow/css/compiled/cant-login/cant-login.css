@@ -1,0 +1,654 @@
+/**
+ * @fileOverview	BAM global style variables
+ */
+.login-support {
+  max-width: 720px;
+  margin: 0 auto 115px;
+}
+.introduction {
+  margin: 0 0 16px 0;
+}
+.note a:hover,
+.note a:focus,
+.note a:active {
+  color: #ffffff;
+}
+.hide-element {
+  display: none;
+}
+.icon-32 {
+  background: url("/account/static/local-common/images/icons/sprite.2kx0b.png") repeat scroll 0 0 transparent;
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.icon-32-label {
+  display: inline-block;
+  line-height: 32px;
+  vertical-align: middle;
+}
+.form-titles {
+  float: left;
+  margin: 0 0 2em;
+  overflow: hidden;
+  width: 100%;
+}
+.form-titles li {
+  padding: 0 0 8px;
+}
+.form-titles li.open {
+  background-color: #e0dfdd;
+  border-radius: 4px;
+}
+.form-titles .closed {
+  background-position: -160px -160px;
+}
+.form-titles .open {
+  background-position: -160px -192px;
+}
+.form-titles .closed-faded {
+  background-position: -224px -160px;
+}
+.form-titles .form-anchor:focus .closed,
+.form-titles .form-anchor:active .closed {
+  background-position: -192px -160px;
+}
+.form-titles .form-anchor:focus .open,
+.form-titles .form-anchor:active .open {
+  background-position: -192px -192px;
+}
+.form-titles .form-anchor:hover .open {
+  background-position: -192px -192px;
+}
+.form-titles .faded {
+  color: #8d8d8d;
+}
+.form-titles .faded:hover,
+.form-titles .faded:focus,
+.form-titles .faded:active {
+  color: #014663;
+}
+.form-titles .form-name {
+  font-size: 20px;
+}
+.form-titles .sub-form {
+  padding: 10px 20px 0 36px;
+  font-size: 14px;
+}
+.form-titles .sub-form p {
+  font-size: 14px;
+}
+.form-titles .sub-form p.small-subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+.form-titles fieldset.ui-controls {
+  margin-left: 0;
+}
+.form-title .icon-32 {
+  text-indent: 0;
+}
+.form-row .sqa-question label {
+  width: auto;
+}
+.form-row .sqa-question .static strong {
+  display: block;
+}
+.form-row .sqa-question .alternative-pv-method a {
+  font-size: 12px;
+  line-height: 16px;
+}
+.form-row .sqa-question .alternative-pv-method a span {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.form-row .sqa-question .alternative-pv-method a span.icon-16 {
+  top: -2px;
+}
+.form-row .code-input-wrapper {
+  padding: 18px 0;
+}
+.form-row .code-input-wrapper input {
+  width: 170px;
+  min-width: 170px;
+}
+.form-row .code-input-wrapper span {
+  font-size: 12px;
+  padding: 0 12px;
+}
+.form-row .code-input-wrapper span.throttle-error {
+  color: #730202;
+}
+.form-row .email-display {
+  font-size: 16px;
+  line-height: 32px;
+}
+.form-row .form-left .label-full {
+  font-weight: bold;
+}
+.form-row .form-left .form-right {
+  font-weight: normal;
+}
+.form-row .label-full .side-note {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 12px;
+  padding-right: 38px;
+}
+.form-row label.centered-full-row {
+  text-align: center;
+}
+.form-right span.password-reset-desc {
+  font-weight: normal;
+  display: block;
+  padding-bottom: 5px;
+  width: 420px;
+}
+.signs-list {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.signs-list .signs {
+  list-style: disc outside none;
+  margin: 0 0 4px 6px;
+}
+.merge-list {
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.merge-list .signs {
+  list-style: disc outside none;
+  margin: 0 0 4px 6px;
+}
+.merge-list li {
+  list-style: disc outside none;
+  margin: 0 0 4px 6px;
+  font-size: 14px;
+}
+#hidden-file-upload {
+  display: none;
+}
+.govermnment-id {
+  margin-top: .5em;
+  padding-left: 0;
+  color: #0072a3;
+}
+.govermnment-id:hover {
+  color: #014663;
+}
+.retrieve-kr {
+  float: left;
+}
+.section-radio {
+  background: none repeat scroll 0 0 #e0dfdd;
+  margin-bottom: 1.5em;
+  padding: 15px;
+  display: block;
+  float: left;
+  width: 520px;
+}
+.section-radio .retrieve-choice {
+  width: 180px;
+  float: left;
+  padding: 15px 5px;
+  border-radius: 4px;
+  text-align: left;
+}
+.section-radio .retrieve-choice:hover {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+.section-radio .retrieve-choice input {
+  background: none;
+  border: none;
+  color: #5a5a5a;
+  font-size: 0.53846154px;
+  height: auto;
+  outline: none;
+  padding: 2px 7px;
+  min-width: 20px;
+  width: 20px;
+  position: relative;
+  top: 2px;
+}
+.section-radio .retrieve-choice span {
+  font-weight: bold;
+}
+.section-radio hr {
+  margin: 1em 0;
+}
+.section-radio .desc {
+  float: left;
+  padding: 2px 10px;
+  width: 310px;
+  font-weight: normal;
+}
+.confirm-notice {
+  list-style-image: url("/account/static/images/icons/warning-background.43hMV.png");
+}
+.confirm-notice li {
+  line-height: 20px;
+  margin-top: 5px;
+}
+.confirm-notice li span {
+  position: relative;
+  font-size: 13px;
+  top: -8px;
+}
+.password-reset-captcha {
+  padding-left: 41%;
+  padding-right: 20%;
+  font-weight: normal;
+  display: block;
+  padding-bottom: 5px;
+  width: 520px;
+  font-size: 12px;
+}
+.ipin-pop-box {
+  background: url("/account/static/images/locale/ko-kr/logo-ipin.1K3YX.gif") no-repeat scroll 0 0 transparent;
+  cursor: pointer;
+  display: block;
+  height: 99px;
+  left: 50%;
+  margin: 50px 0 50px -179px;
+  position: relative;
+  width: 358px;
+}
+.ipin-desc {
+  text-align: center;
+}
+.next-step-notice {
+  text-align: center;
+  font: 14px/24px "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+  padding: 12px 0;
+}
+#id-upload-holder {
+  display: inline-block;
+  width: 240px;
+  height: 152px;
+  overflow: hidden;
+  background: url("/account/static/images/services/file-upload.0Fv2F.png") no-repeat 0 0;
+  cursor: pointer;
+}
+#id-upload-holder .upload-btn-area {
+  position: absolute;
+  width: 240px;
+  height: 152px;
+}
+#id-upload-holder .upload-btn-area .format {
+  position: absolute;
+  width: 240px;
+  font-size: 16px;
+  text-align: center;
+  top: 80px;
+}
+#id-upload-holder .upload-btn-area .format span {
+  font-size: 13px;
+  display: block;
+  text-transform: uppercase;
+}
+#id-upload-holder:hover .upload-btn-area .format {
+  color: #fff;
+}
+#id-upload-holder input {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  height: 84px;
+  cursor: pointer;
+}
+#upload-component {
+  position: relative;
+  max-width: 500px;
+  display: inline-block;
+  margin-top: 15px;
+}
+#file-message {
+  width: 220px;
+  padding: 0 10px;
+  display: inline-block;
+}
+#file-message.file-error {
+  color: #730202;
+}
+#preview-img {
+  height: 152px;
+  text-align: center;
+}
+#remove-auth-form .ui-controls {
+  margin-top: 24px;
+}
+.password-reset-instruction {
+  font-weight: normal;
+  font: 14px/26px "Lucida Sans Unicode", "Lucida Grande", "Arial", sans-serif;
+  display: block;
+}
+#newPassword-note .note {
+  padding-left: 25px;
+}
+.locked-tip {
+  font-size: 100%;
+  font: 12px/1.25 "Trebuchet MS", Arial, sans-serif;
+  letter-spacing: 0;
+}
+.bnet-icon-128-ok-circle {
+  background-position: -1152px -1664px;
+}
+.bnet-icon-128-green {
+  background-image: url("../../../images/toolkit/themes/bnet/icons/sprite-128-green.4PLdB.png");
+  background-size: inherit;
+}
+[class^="bnet-icon-128"],
+[class*=" bnet-icon-128"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+  line-height: 16px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  -webkit-transition: opacity, 0.2s;
+  transition: opacity 0.2s;
+}
+body .logo {
+  margin-top: 20px;
+}
+.cant-login-options {
+  margin: 0;
+}
+.cant-login-options li {
+  display: block;
+  float: left;
+  list-style-type: none;
+  margin: 0 0 0 10px;
+  padding-left: 0;
+}
+.cant-login-options li.option-forgot-password {
+  margin-left: 0;
+}
+.cant-login-options li a {
+  background-color: rgba(0, 174, 255, 0.3);
+  border: 1px solid rgba(0, 174, 255, 0.5);
+  border-radius: 2px;
+  display: block;
+  width: 170px;
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+}
+.cant-login-options li a span {
+  display: block;
+  text-align: center;
+  /*word-break: keep-all;*/
+}
+.cant-login-options li a span.icon {
+  background: url("/account/static/images/account-recovery/cant-login-icons.37LEc.png") no-repeat 0 0;
+  width: 160px;
+  height: 115px;
+  margin: 10px auto 0;
+}
+.cant-login-options li a span.icon.forgot-password {
+  background-position: -480px -120px;
+}
+.cant-login-options li a span.icon.account-locked {
+  background-position: 0 -120px;
+}
+.cant-login-options li a span.icon.remove-auth {
+  background-position: -160px -120px;
+}
+.cant-login-options li a span.icon.forgot-account {
+  background-position: -320px -120px;
+}
+.cant-login-options li a span.option {
+  padding: 0 10px;
+  color: white;
+}
+.cant-login-options li a:hover {
+  background-color: rgba(0, 174, 255, 0.7);
+}
+.cant-login-options li a:hover span.icon.forgot-password {
+  background-position: -480px 0;
+}
+.cant-login-options li a:hover span.icon.account-locked {
+  background-position: 0 0;
+}
+.cant-login-options li a:hover span.icon.remove-auth {
+  background-position: -160px 0;
+}
+.cant-login-options li a:hover span.icon.forgot-account {
+  background-position: -320px 0;
+}
+.sms-required {
+  width: 65%;
+  margin: 24px auto;
+}
+.support-contact-cs {
+  margin: 48px auto 24px auto;
+}
+.submit-row {
+  margin-top: 1.5em;
+}
+.alt-name-recover {
+  margin-top: -2em;
+}
+.alternative-option-divider {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 23px 0 17px 0;
+}
+.alternative-option-divider span {
+  position: relative;
+  display: inline-block;
+}
+.alternative-option-divider span:before,
+.alternative-option-divider span:after {
+  width: 500px;
+  content: "";
+  height: 1px;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 50%;
+}
+.alternative-option-divider span:before {
+  right: 100%;
+  margin-right: 20px;
+}
+.alternative-option-divider span:after {
+  left: 100%;
+  margin-left: 20px;
+}
+.password-guide {
+  padding: 15px;
+}
+.password-guide ul {
+  list-style-type: none;
+}
+.password-guide li {
+  padding: 0;
+  margin-bottom: 10px;
+}
+.password-guide li i {
+  display: none;
+}
+.password-guide li i.icon-minus {
+  display: inline-block;
+}
+.password-guide li span {
+  display: inline-block;
+  width: 90%;
+}
+.password-guide li.pass {
+  color: #00a83c;
+}
+.password-guide li.pass .icon-ok {
+  display: inline-block;
+}
+.password-guide li.pass .icon-remove,
+.password-guide li.pass .icon-minus {
+  display: none;
+}
+.password-guide li.fail {
+  color: #cd0606;
+}
+.password-guide li.fail .icon-ok,
+.password-guide li.fail .icon-minus {
+  display: none;
+}
+.password-guide li.fail .icon-remove {
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  body {
+    min-width: 480px;
+    background-attachment: fixed;
+    background-position: -200px center;
+  }
+  body:before {
+    content: '';
+    background: inherit;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 44px;
+    top: 0;
+  }
+  body .logo {
+    transform: scale(0.85);
+  }
+  h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  h2.email {
+    color: white;
+    opacity: .75;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-bottom: 20px;
+    line-height: 21px;
+  }
+  #nav-client-header .nav-mobile-menu-title {
+    font-size: 15px;
+    text-transform: none;
+  }
+  .login-support {
+    max-width: 100%;
+    margin: 0 20px;
+  }
+  .login-support .cant-login-options li {
+    display: block;
+    margin: 15px auto;
+    width: 50%;
+  }
+  .login-support .cant-login-options li a {
+    width: 90%;
+    height: 155px;
+    margin: 0 auto;
+  }
+  .login-support .cant-login-options li a span {
+    margin-top: 0;
+  }
+  .login-support .cant-login-options li a span.icon {
+    margin: 0 auto;
+    height: 110px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    min-width: 320px;
+  }
+  #content .account-wrapper {
+    min-width: 280px;
+    margin: 0 20px 60px 20px;
+    width: auto;
+  }
+  .login-support {
+    min-width: 280px;
+    max-width: 100%;
+    margin: 0 20px;
+  }
+  .login-support .cant-login-options {
+    position: relative;
+  }
+  .login-support .cant-login-options li {
+    display: block;
+    float: none;
+    margin: 0;
+    width: 100%;
+  }
+  .login-support .cant-login-options li a {
+    border: 0;
+    border-top: 1px solid rgba(0, 174, 255, 0.5);
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 70px;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .login-support .cant-login-options li a span {
+    display: inline-block;
+  }
+  .login-support .cant-login-options li a span.icon {
+    background-size: 426px 160px;
+    width: 95px;
+    height: 80px;
+    margin: 0;
+    transform: scale(0.6);
+    position: absolute;
+    left: -15px;
+  }
+  .login-support .cant-login-options li a span.icon.forgot-password {
+    background-position: -320px -80px;
+  }
+  .login-support .cant-login-options li a span.icon.account-locked {
+    background-position: 0 -80px;
+  }
+  .login-support .cant-login-options li a span.icon.remove-auth {
+    background-position: -108px -80px;
+  }
+  .login-support .cant-login-options li a span.icon.forgot-account {
+    background-position: -213px -80px;
+  }
+  .login-support .cant-login-options li a span.option {
+    padding-top: 15px;
+    text-align: left;
+    vertical-align: top;
+    white-space: normal;
+    margin-left: 65px;
+  }
+  .login-support .cant-login-options li:hover span.icon.forgot-password {
+    background-position: -320px 0;
+  }
+  .login-support .cant-login-options li:hover span.icon.account-locked {
+    background-position: 0 0;
+  }
+  .login-support .cant-login-options li:hover span.icon.remove-auth {
+    background-position: -108px 0;
+  }
+  .login-support .cant-login-options li:hover span.icon.forgot-account {
+    background-position: -213px 0;
+  }
+  .login-support .cant-login-options li.option-forgot-account a {
+    border-bottom: 1px solid rgba(0, 174, 255, 0.5);
+  }
+}

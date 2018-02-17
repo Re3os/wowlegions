@@ -1,0 +1,4 @@
+parsererror { position:absolute; }
+html { min-width: 1006px; }
+body { background: #070604 url("../images/layout/bg/Legion/body-bg-baked.jpg") 50% 45px no-repeat; -webkit-background-size: auto; color: #efc9a0; font: normal 12px/1.5 Arial, Verdana, sans-serif; }
+body.without-nav { background-image: url("../images/layout/bg/Legion/body-bg-baked-without-nav.jpg") }

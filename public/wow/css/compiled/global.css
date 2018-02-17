@@ -1,0 +1,318 @@
+/**
+ * @fileOverview    Global BAM styles (for Toolkit-based layouts)
+ */
+/**
+ * @fileOverview	BAM global style variables
+ */
+/**
+ * @fileOverview    Global layout styles (for Toolkit-based pages)
+ */
+html,
+body {
+  height: 100%;
+  background-color: transparent;
+}
+body {
+  background-image: url("/images/account/background/account-background-1920.jpg");
+  background-color: #0f2439;
+  min-width: 0;
+}
+body.transparent {
+  background-color: transparent;
+  background-image: none;
+}
+a.dropdown-toggle {
+  cursor: pointer;
+}
+.body-content {
+  background: none;
+  margin-top: 20px;
+}
+.logo {
+  margin: 35px auto 10px;
+}
+.grid-container {
+  padding: 10px;
+}
+.grid-container.wrapper {
+  position: relative;
+  min-height: 100%;
+}
+#nav-client-bar .grid-container {
+  padding: 0 20px;
+}
+.account-wrapper {
+  width: 500px;
+  margin: 0 auto 115px;
+}
+.btn-response {
+  display: block;
+  float: left;
+  width: 240px;
+}
+a.btn-response {
+  margin-right: 0;
+}
+.btn-primary.btn-response {
+  margin-right: 20px;
+}
+input,
+label.checkbox,
+button.btn,
+a.btn {
+  margin-bottom: 15px;
+}
+label.control-label {
+  display: none;
+}
+h1 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+h1.with-email {
+  margin-bottom: 5px;
+}
+h2 {
+  margin-bottom: 5px;
+}
+h2.email {
+  color: #86939d;
+}
+h3 {
+  font-size: 20px;
+}
+h5 {
+  font-size: 15px;
+}
+p {
+  margin-bottom: 10px;
+}
+p [class^="icon-"],
+p [class*=" icon-"] {
+  margin-top: 4px;
+}
+.text-highlight {
+  color: #75e900;
+  font-size: 20px;
+  font-style: normal;
+}
+.icon-center {
+  display: block;
+  margin: 0 auto;
+}
+.control-group {
+  margin-bottom: 5px;
+}
+.control-group.separated {
+  margin-top: 2em;
+}
+.captcha {
+  position: relative;
+  margin-bottom: 5px;
+}
+.captcha #captcha-anchor {
+  cursor: pointer;
+  display: block;
+}
+.captcha .icon-48-refresh {
+  position: absolute;
+  right: 10px;
+  top: 19px;
+}
+.captcha .captcha-image {
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  padding: 10px 0;
+  margin: 10px auto 0;
+  height: 70px;
+}
+.captcha .captcha-image img {
+  display: block;
+  margin: 0 auto;
+}
+#help-links {
+  list-style-type: none;
+  margin-left: 0;
+  text-align: left;
+}
+#help-links li {
+  padding-left: 0;
+  margin-bottom: 15px;
+}
+.alert {
+  margin-bottom: 20px;
+}
+.icon-128-orange {
+  background-image: url("/images/toolkit/themes/bnet/icons/sprite-128-orange.png");
+  background-size: inherit;
+}
+.icon-128-green {
+  background-image: url("/images/toolkit/themes/bnet/icons/sprite-128-green.png");
+  background-size: inherit;
+}
+/**
+ * @fileOverview    Global header styles (for Toolkit-based pages)
+ */
+.navbar-static .navbar.header,
+.navbar-fixed .navbar.header {
+  height: auto;
+  min-height: 80px;
+}
+.navbar-static .navbar.header .grid-container,
+.navbar-fixed .navbar.header .grid-container {
+  position: relative;
+}
+.navbar-static .navbar.header #service,
+.navbar-fixed .navbar.header #service {
+  font-size: 12px;
+  right: 40px;
+}
+.navbar-static #bam-navigation,
+.navbar-fixed #bam-navigation {
+  line-height: 20px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+}
+/**
+ * @fileOverview    Global footer styles: Many of these rules are to make Common's footer look
+ *                  better in Toolkit-based pages
+ */
+.footer {
+  margin-top: 75px;
+}
+.footer .lower-footer-wrapper {
+  position: absolute;
+  bottom: 35px;
+  width: 99%;
+}
+.footer #legal-kr {
+  display: none;
+}
+.footer.footer-cn {
+  margin-top: 100px;
+}
+.lower-footer #copyright {
+  padding: 0;
+  font-size: 13px;
+  color: #505359;
+  text-align: center;
+}
+.lower-footer #copyright span {
+  margin: 0 10px 0 0;
+}
+.lower-footer #copyright a {
+  margin: 0 10px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+}
+.lower-footer #copyright a:focus,
+.lower-footer #copyright a:hover {
+  color: #ffffff;
+}
+.lower-footer #legal {
+  display: none;
+}
+/**
+ * @fileOverview    Global responsive styles
+ */
+body {
+  background-image: url("/images/account/background/account-background-1920.jpg");
+}
+body .headless-account-landing {
+  padding: 0 20px;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+body .headless-account-landing .btn-response {
+  width: 48%;
+  margin-right: 0 !important;
+}
+body .headless-account-landing .btn-response#create {
+  float: left;
+}
+body .headless-account-landing .btn-response#skip {
+  float: right;
+}
+@media (max-width: 1280px) {
+  body {
+    background-image: url("/images/account/background/account-background-1280.jpg");
+  }
+}
+@media (max-width: 768px) {
+  .lower-footer #copyright span {
+    display: block;
+  }
+}
+@media (max-width: 640px) {
+  body {
+    background-image: url("/images/account/background/account-background-640-2x.jpg");
+    min-width: 320px;
+  }
+  body .logo {
+    margin-top: 5px;
+  }
+  body .account-wrapper {
+    width: 290px;
+  }
+  body .headless-account-landing img.murloc {
+    width: 55%;
+  }
+  h1 {
+    font-size: 25px;
+    margin-bottom: 15px;
+    line-height: 28px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  h3 {
+    font-size: 14px;
+  }
+  h5 {
+    margin-bottom: 5px;
+  }
+  .btn-response {
+    display: block;
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+  .control-group.separated {
+    margin-top: 1em;
+  }
+  .lower-footer #copyright {
+    font-size: 11px;
+  }
+  p {
+    line-height: 20px;
+  }
+}
+@media (max-width: 350px) {
+  body .headless-account-landing img.murloc {
+    width: 50%;
+  }
+  body .headless-account-landing .btn-response {
+    display: block;
+    width: 100%;
+    float: none;
+    margin: 0;
+  }
+  body .headless-account-landing .btn-response#create {
+    margin-bottom: 10px;
+  }
+}
+/**
+ * @fileOverview    Account mobile responsive grids.
+ */
+@media screen and (max-width: 481px) {
+  .grid-container .mobile-100 {
+    width: 100%;
+    margin-left: 0;
+  }
+}

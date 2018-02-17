@@ -1,0 +1,316 @@
+
+/* Form fields
+/*----------------------------------------------------------*/
+textarea {
+    width: auto;
+    height: auto;
+    color: #a9a8a8;
+    border: none;
+    resize: vertical !important;
+    padding: 8px;
+    font-size: 12px;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.30), 0 2px 0 #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #0A0A0A;
+    transition: all ease-in-out 300ms;
+    -o-transition: all ease-in-out 300ms;
+    -ms-transition: all ease-in-out 300ms;
+    -moz-transition: all ease-in-out 300ms;
+    -webkit-transition: all ease-in-out 300ms;
+}
+
+textarea:focus {
+    color: #fefefe;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+}
+
+select {
+    width: 80%;
+    color: #a9a8a8;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    padding: 10px 6px 6px 10px;
+    font-size: 12px;
+    text-align: left;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    text-indent: 0.01px;
+    font-weight: bold;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.30), 0 2px 0 #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    text-overflow: "";
+
+    appearance: none;         /* Removes Default style */
+    -o-appearance: none;      /* Removes Default Opera style */
+    -khtml-appearance: none;  /* Removes Default Firefox style */
+    -moz-appearance: none;    /* Removes Default Firefox style */
+    -webkit-appearance: none; /* Removes default Chrome and Safari style */
+
+    background-color: #0A0A0A;
+    background-image: url(../images/misc/select-arrow.png);
+    background-repeat: no-repeat;
+    background-position: 97% 16px;
+    transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -o-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -ms-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -moz-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -webkit-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+}
+
+/* Removes default arrow from IE */
+select::-ms-expand {
+    display: none;
+}
+
+select:focus {
+    color: #fefefe;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    background-position: 97% -14px;
+}
+
+select option,
+select optgroup {
+    text-transform: capitalize;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+    width: 80%;
+    height: auto;
+    color: #a9a8a8;
+    border: none;
+    margin: 5px;
+    padding: 9px 8px 7px 8px;
+    font-size: 12px;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.30), 0 2px 0 #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #0A0A0A;
+    transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -o-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -ms-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -moz-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    -webkit-transition: color ease-in-out 300ms, box-shadow ease-in-out 300ms;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus {
+    color: #fefefe;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+}
+
+/* Autofill style */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75), inset 0 0 0 100000px #0A0A0A;
+    -webkit-text-fill-color: #a9a8a8;
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.8), 0 0 3px 0 rgba(255, 213, 146, 0.8), 0 3px 0 0 rgba(0, 0, 0, 0.75), inset 0 0 0 100000px #0A0A0A;
+    -webkit-text-fill-color: #fefefe;
+}
+
+/* Nice table
+/*----------------------------------------------------------*/
+.nice_table tr:not(:first-child) td {
+    padding: 15px 0 0 0;
+}
+
+.nice_table tr:first-child td {
+    color: #a9a8a8;
+    font-size: 12px;
+    box-shadow: 0 1px 0 0 #000000, 0 2px 0 0 #282625;
+    -moz-box-shadow: 0 1px 0 0 #000000, 0 2px 0 0 #282625;
+    -webkit-box-shadow: 0 1px 0 0 #000000, 0 2px 0 0 #282625;
+    font-weight: bold;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.30), 0 2px 0 #000000;
+}
+
+.nice_table td {
+    vertical-align: middle;
+}
+
+/* FusionEditor
+/*----------------------------------------------------------*/
+.fusioneditor {
+    padding: 2px;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 0 rgba(255, 255, 255, 0.03);
+    -moz-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 0 rgba(255, 255, 255, 0.03);
+    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.24), 0 1px 0 rgba(255, 255, 255, 0.03);
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background-color: #0B0B0B;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.fusioneditor .fusioneditor_tools {
+    zoom: 1;
+    color: #3D4346;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.01), inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.01), inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+    -webkit-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.01), inset 0 -1px 0 rgba(255, 255, 255, 0.02);
+    line-height: 0;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: transparent;
+    background-image: url(../images/misc/bar-bg.jpg);
+    background-repeat: repeat;
+    background-position: top left;
+}
+
+.fusioneditor .fusioneditor_tools a {
+    zoom: 1;
+    border: none !important;
+    overflow: hidden;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background-color: #262521;
+    background-color: rgba(155, 150, 137, 0.08);
+    transition: all 0ms;
+    -o-transition: all 0ms;
+    -ms-transition: all 0ms;
+    -moz-transition: all 0ms;
+    -webkit-transition: all 0ms;
+}
+
+.fusioneditor .fusioneditor_tools a:hover {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), 0 1px 1px rgba(0, 0, 0, 0.3);
+    background-color: #161614;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fusioneditor .fusioneditor_tools a:active {
+    background-color: #161614;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.fusioneditor .fusioneditor_field {
+    color: #E5E4E4;
+    border: 0 !important;
+    margin: 5px;
+    resize: none;
+    cursor: text;
+    padding: 0;
+    font-size: 13px;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    background-color: transparent;
+}
+
+.fusioneditor .fusioneditor_field b {
+    font-weight: bold;
+}
+
+.fusioneditor .fusioneditor_toolbox {
+    border-top: #0B0B0B;
+    border-top: 2px rgba(0, 0, 0, 0.35) solid;
+}
+
+/* pop up "autocomplete" box on private messages -> compose
+/*----------------------------------------------------------*/
+#pm_username_autocomplete {
+    width: 100% !important;
+    color: #a9a8a8;
+    border: none !important;
+    font-size: 12px;
+    box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0 0 0 1px #000000, inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 3px 0 rgba(255, 255, 255, 0.35), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.30), 0 2px 0 #000000;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background-color: #131313 !important;
+}
+
+#pm_username_autocomplete a {
+    border: none !important;
+    box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(255, 213, 146, 0.4), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(255, 213, 146, 0.4), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: inset 0 0 8px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(255, 213, 146, 0.4), 0 3px 0 0 rgba(0, 0, 0, 0.75);
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+}
+
+/* Control panel
+/*----------------------------------------------------------*/
+#ucp_buttons {
+    width: 100%;
+    margin: -12px 0 0 0 !important;
+}
+
+#ucp_buttons a {
+    margin: 0 0 18px 18px !important;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* Armory
+/*----------------------------------------------------------*/
+.search_result_character .name {
+    margin: -3px 0 0 0 !important;
+}
+
+#armory_top h1 {
+    color: #6B6B6B;
+    margin: -5px 0 0 0 !important;
+}
+
+#armory_stats td {
+    font-size: 12px !important;
+}
+
+/* Character
+/*----------------------------------------------------------*/
+#avatar_page center {
+    color: #fff;
+}
