@@ -58,7 +58,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     Route::group(['middleware' => 'auth'], function() {
         Route::get('account/management', 'UserController@showProfile')->name('account');
-        Route::get('account/management/settings/change-email.html', 'UserController@changeEmail')->name('change-email');
+        Route::get('account/management/settings/change-email.html', 'UserController@changeEmail');
+        Route::post('account/management/settings/change-email.html', 'UserController@changeEmailActoin')->name('change-email');
         Route::get('account/management/settings/change-password.html', 'UserController@changePassword');
         Route::post('account/management/settings/change-password.html', 'UserController@changePasswordActoin')->name('change-password');
         Route::get('account/management/wallet.html', 'UserController@showWallet')->name('wallet');

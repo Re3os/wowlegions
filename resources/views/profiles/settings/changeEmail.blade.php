@@ -13,6 +13,25 @@
 <div id="layout-middle">
 <div class="wrapper">
 <div id="content">
+@if (session('error'))
+<div xmlns="http://www.w3.org/1999/xhtml" class="alert error closeable border-4 glow-shadow">
+    <div class="alert-inner">
+        <div class="alert-message">
+            <p class="title"><strong><a name="form-errors">Исправьте, пожалуйста, следующее.</a></strong></p>
+            <p>{{ session('error') }} </p>
+        </div>
+    </div>
+</div>
+@endif
+@if (session('success'))
+<div xmlns="http://www.w3.org/1999/xhtml" class="alert success closeable border-4 glow-shadow">
+    <div class="alert-inner">
+        <div class="alert-message">
+            <p class="title"><strong><a name="form-errors">{{ session('success') }}</a></strong></p>
+        </div>
+    </div>
+</div>
+@endif
 <div id="page-header">
 <span class="required-legend"><span class="form-required">*</span> <span class="subcategory">Необходимо указать</span></span>
 <h2 class="subcategory">Параметры</h2>
@@ -23,9 +42,9 @@
 <div class="column column-left">
 <div class="email-entry">
 <span class="clear"><!-- --></span>
-<form method="post" action="/account/management/settings/change-email.html" id="change-settings">
+<form method="post" action="{{ route('change-email') }}" id="change-settings">
 <div class="input-hidden">
-<input type="hidden" id="csrftoken" name="csrftoken" value="e6eb0239-cab8-43d7-85b1-2c6d88f69fe9" />
+{{ csrf_field() }}
 </div>
 <div class="input-row input-row-text">
 <span class="input-left">
@@ -38,7 +57,7 @@
 </span><!--
 --><span class="input-right">
 <span class="input-text input-text-small">
-<input type="email" name="newEmail" value="" id="newEmail" class="small border-5 glow-shadow-2" autocomplete="off" onpaste="return false;" maxlength="319" tabindex="1" required="required" placeholder="Укажите электронный адрес" />
+<input type="email" name="email" value="" id="newEmail" class="small border-5 glow-shadow-2" autocomplete="off" onpaste="return false;" maxlength="319" tabindex="1" required="required" placeholder="Укажите электронный адрес" />
 <span class="inline-message " id="newEmail-message"> </span>
 </span>
 </span>

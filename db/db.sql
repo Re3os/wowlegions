@@ -204,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `currency` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'USD',
-  `balance` float NOT NULL,
+  `balance` float NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   UNIQUE KEY `id_2` (`id`),

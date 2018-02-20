@@ -34,6 +34,30 @@ class UserController extends Controller
         ]);
     }
 
+    public function changeEmailActoin(Request $request){
+        if (!(\Hash::check($request->get('password'), \Auth::user()->password))) {
+            return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
+        }
+        if($request->get('email') != $request->get('newEmailVerify')){
+            return redirect()->back()->with("error","Mail does not match");
+        }
+
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $user = \Auth::user();
+
+        $account = Account::newEmail($user->email, $request->get('email'));
+
+        //Change Email
+        $user->email = $request->get('email');
+        $user->save();
+
+        return redirect()->back()->with("success","Email changed successfully!");
+
+    }
+
     public function changePassword() {
         return view('profiles.settings.changePassword', [
             'profileUser' => \Auth::user(),
@@ -48,6 +72,9 @@ class UserController extends Controller
         if(strcmp($request->get('oldPassword'), $request->get('newPassword')) == 0){
             return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
         }
+        if($request->get('newPassword') != $request->get('newPasswordVerify')){
+            return redirect()->back()->with("error","Passwords do not match");
+        }
 
         $validatedData = $request->validate([
             'oldPassword' => 'required',
@@ -55,7 +82,7 @@ class UserController extends Controller
         ]);
 
         //Change Password
-        $user = Auth::user();
+        $user = \Auth::user();
         $user->password = bcrypt($request->get('newPassword'));
         $user->save();
 
