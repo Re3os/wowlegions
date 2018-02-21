@@ -1,7 +1,7 @@
 @extends('layouts.forum')
 
 @section('sidebar')
-<div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="/" class="Breadcrumb-content">
+<div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="{{ route('forums') }}" class="Breadcrumb-content">
 <span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span> Форумы </a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
 <a href="{{ route('forum', [$topic->category->id])}}" class="Breadcrumb-content"> {{ $topic->category->name }} </a> </span>
@@ -103,7 +103,7 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
         </div>
     </div>
     @foreach ($replies as $reply)
-<div class="TopicPost TopicPost--blizzard" id="post-{{ $reply->id }}" data-topic-post="{'id':'{{ $reply->id }}','valueVoted':0,'rank':{'voteUp':0,'voteDown':0},'author':{'id':'{{ Auth::user()->id }}','name':'{{ Auth::user()->name }}'}}" data-topic="{'sticky':'false','featured':'false','locked':'false','frozen':'false','hidden':'false','pollId':'0'}">
+<div class="TopicPost TopicPost--blizzard" id="post-{{ $reply->id }}" data-topic-post="{'id':'{{ $reply->id }}','valueVoted':0,'rank':{'voteUp':0,'voteDown':0},'author':{'id':'{{ $reply->user->id }}','name':'{{ $reply->user->name }}'}}" data-topic="{'sticky':'false','featured':'false','locked':'false','frozen':'false','hidden':'false','pollId':'0'}">
 <span id="1"></span>
 <div class="TopicPost-content">
 <div class="TopicPost-authorIcon TopicPost-authorIcon--blizzard">

@@ -298,6 +298,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 <div role="main">
     @yield('content')
 </div>
+<footer class="Forums-footer"> Спасибо, что заглянули на <a href="{{ route('forums') }}">Форумы Blizzard</a> (0.0.1) · <a href="{{ route('forums') }}">Описание обновлений</a> </footer>
 @include('layouts.footer')
 
 <script type="text/javascript" src="{{ asset('js/vendor/tether/dist/js/tether.js') }}"></script>

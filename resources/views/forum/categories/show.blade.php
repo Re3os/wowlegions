@@ -1,7 +1,7 @@
 @extends('layouts.forum')
 
 @section('sidebar')
-<div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="/" class="Breadcrumb-content">
+<div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="{{ route('forums') }}" class="Breadcrumb-content">
 <span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span> Форумы </a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
 <a href="{{ route('forum', [$category->id])}}" class="Breadcrumb-content is-active"> {{ $category->name }} </a> </span>
@@ -12,11 +12,11 @@
 <section class="Forum" data-forum="{'id': '{{ $category->id }}'}">
         <header class="Forum-header">
             <div class="Container Container--content">
-                <form action="/search" class="Form Form--searchMobile" id="forum-search-form">
+                <form action="{{ route('forum.search') }}" class="Form Form--searchMobile" id="forum-search-form">
                     <div class="Form-group">
                         <div class="Input Input--iconPrefix Input--search">
                             <input name="q" placeholder="Поиск по" type="search" autocomplete="off" />
-                            <input type="hidden" name="forum" value="6" />
+                            <input type="hidden" name="forum" value="{{ $category->id }}" />
                             <i class="Icon Icon--prefix Icon--search"></i>
                             <div class="Input-border"></div>
                         </div>

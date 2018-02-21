@@ -24,21 +24,4 @@ class CategoryController extends Controller
         return view('forum.categories.show', compact('category', 'topics'));
     }
 
-    private function validateCategory()
-    {
-        $this->validate(request(), [
-            'name' => 'required|min:3|max:25',
-            'category_description' => 'nullable|max:145'
-        ]);
-    }
-
-    private function validateSubcategory()
-    {
-        $this->validate(request(), [
-            'name' => 'required|min:3|max:25',
-            'category_description' => 'nullable|max:145',
-            'parent_id' => 'integer',
-            'category_slug' => 'required|alpha_dash'
-        ]);
-    }
 }

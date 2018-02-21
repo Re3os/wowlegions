@@ -13,7 +13,7 @@ class DiscussionController extends Controller {
         $post = Blog::where('id', $id)->first();
         if($post){
             $comments = $post->comments;
-            $com = $comments->groupBy('parent_id')->sortBy('created_at');
+            $com = $comments->groupBy('parent_id')->sortByDesc('created_at');
         } else $com = false;
         return view('discussion.loadComments', ['com' => $com, 'count' => $comments->count()]);
     }

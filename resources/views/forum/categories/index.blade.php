@@ -20,7 +20,7 @@
 @foreach ($categories as $category)
 <div class="ForumCategory ">
         <header class="ForumCategory-header">
-            <h1 class="ForumCategory-heading">{{$category->name}}</h1>@if($category->id == 1)<button class="Community-button--search" id="toggle-search-field" data-trigger="toggle.search.field" type="button"><span class="Button-content"><i class="Icon"></i></span></button><form action="/search" class="Form Form--search" data-search-all="true" id="forum-search-form">
+            <h1 class="ForumCategory-heading">{{$category->name}}</h1>@if($category->id == 1)<button class="Community-button--search" id="toggle-search-field" data-trigger="toggle.search.field" type="button"><span class="Button-content"><i class="Icon"></i></span></button><form action="{{ route('forum.search') }}" class="Form Form--search" data-search-all="true" id="forum-search-form">
                     <div class="Form-group">
                         <div class="Input Input--iconPrefix Input--search">
                             <input name="q" placeholder="Поиск по всем форумам" type="search" autocomplete='off' />
