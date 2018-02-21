@@ -12,7 +12,9 @@
 <ul>
 <li>Legion 7.*</li>
 </ul>
-
+<blockquote>
+<p><strong>Note:</strong> The site is still under development.</p>
+</blockquote>
 ## Information
 
 <ul>
