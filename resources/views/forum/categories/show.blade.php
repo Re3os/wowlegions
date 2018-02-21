@@ -26,11 +26,11 @@
                     <a class="Game-logo" href="/"></a>
                     {{ $category->name }}<button class="Forum-button Forum-button--searchButton" id="toggle-search-field" data-trigger="toggle.search.field" type="button"><span class="Button-content"><i class="Icon"></i></span></button>				</h1>
                 <div class="Forum-controls">
-                    <form action="/search" class="Form" id="forum-search-form">
+                    <form action="{{ route('forum.search') }}" class="Form" id="forum-search-form">
                         <div class="Form-group">
                             <div class="Input Input--iconPrefix Input--search">
                                 <input name="q" placeholder="Поиск по" type="search" autocomplete="off" />
-                                <input type="hidden" name="forum" value="6" />
+                                <input type="hidden" name="forum" value="{{ $category->id }}" />
                                 <i class="Icon Icon--prefix Icon--search"></i>
                                 <div class="Input-border"></div>
                             </div>

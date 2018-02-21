@@ -52,7 +52,6 @@ class TopicsController extends Controller
         $max_page = 10;
         $results = $this->searchForum($q, $max_page);
         return view('forum.search', [
-            'include' => 'search.table',
             'result' => $results,
         ])->render();
     }

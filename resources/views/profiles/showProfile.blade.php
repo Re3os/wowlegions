@@ -36,20 +36,10 @@ Blizzard Mobile Authenticator — бесплатный способ защити
 <span class="edit">[<a href="{{ route('change-email') }}">Редактировать</a>]</span>
 </p>
 <h4 class="subcategory">Имя</h4>
-<p>name</p>
-<h4 class="subcategory">Страна проживания</h4>
-<p>
-Российская Федерация
-<span class="help-note" data-tooltip="От страны проживания зависит ряд параметров, в частности, какие товары вы можете приобрести. Чтобы изменить эти параметры, обратитесь в службу поддержки." data-tooltip-options='{"location": "mouse"}'><img height="16" width="16" src="//bneteu-a.akamaihd.net/account/static/images/icons/tooltip-help.0WRiu.gif" /></span>
-</p>
+<p>{{ $profileUser->name }}</p>
 </div>
 <h3 class="section-title">Защита записи</h3>
 <div class="lobby-box security-box">
-<!--h4 class="subcategory">SMS-уведомления</h4>
-<p class="has-authenticator-has-active">
-Включены
-<span class="edit">[<a href="/account/management/mobile-alert-dashboard.html">Настройка</a>]</span>
-</p-->
 <h4 class="subcategory">E-mail учетной записи</h4>
 <p class="has-authenticator-has-active">
 Проверен
