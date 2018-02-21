@@ -9,11 +9,11 @@
 
 ## Site installation
 
-<p align="center">
-To upload files to the server
-To configure the database connection in the file - .env
-To load the database dump of the site
-</p>
+<ul>
+<li>To upload files to the server</li>
+<li>To configure the database connection in the file - .env</li>
+<li>To load the database dump of the site</li>
+</ul>
 
 ## Contributing
 
