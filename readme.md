@@ -8,13 +8,17 @@
 <li>To load the database dump of the site</li>
 </ul>
 
-## Contributing
+## Server version
+<ul>
+<li>Legion 7.*</li>
+</ul>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Information
 
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+<ul>
+<li><a href="http://wowlegions.ru/ru" rel="nofollow">Demo site here</a>.</li>
+<li><a href="https://github.com/anonymous33rus/wowlegions/issues" rel="nofollow">Bugtracker</a>.</li>
+</ul>
 
 ## License
 
