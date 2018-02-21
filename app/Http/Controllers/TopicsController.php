@@ -49,7 +49,7 @@ class TopicsController extends Controller
 
     public function search(Request $request) {
         $q = $request->input('q');
-        $max_page = 1;
+        $max_page = 10;
         $results = $this->searchForum($q, $max_page);
         return view('forum.search', [
             'include' => 'search.table',
