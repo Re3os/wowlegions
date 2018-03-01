@@ -65,7 +65,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('account/management/wallet.html', 'UserController@showWallet')->name('wallet');
     Route::get('account/management/primary-address.html', 'UserController@showProfile')->name('primary-address');
 
-    Route::get('account/management/claim-code.html', 'UserController@showProfile')->name('claim-code');
+    Route::get('account/management/claim-code.html', 'UserController@claimCode')->name('claim-code');
     Route::get('account/management/get-a-game.html', 'UserController@showProfile')->name('get-a-game');
     Route::get('account/management/download/', 'UserController@showProfile')->name('download-game');
     Route::get('account/management/beta-profile.html', 'UserController@showProfile')->name('beta-profile');

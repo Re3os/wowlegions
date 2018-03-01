@@ -19,22 +19,13 @@ class DiscussionController extends Controller {
     }
 
     public function commentJson($id) {
-            if(request('replyCommentId')) {
-                Comment::create([
-                    'post_id' => $id,
-                    'user_id' => \Auth::user()->id,
-                    'blog_id' => $id,
-                    'text' => request('detail'),
-                    'parent_id'  => request('replyCommentId')
-                ]);
-            } else {
-                Comment::create([
-                    'post_id' => $id,
-                    'user_id' => \Auth::user()->id,
-                    'blog_id' => $id,
-                    'text' => request('detail')
-                ]);
-            }
+            Comment::create([
+                'post_id' => $id,
+                'user_id' => \Auth::user()->id,
+                'blog_id' => $id,
+                'text' => request('detail'),
+                'parent_id'  => request('replyCommentId')
+            ]);
 
             $result = array(
                 "commentId" => $id,

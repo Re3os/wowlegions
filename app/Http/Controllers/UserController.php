@@ -27,6 +27,13 @@ class UserController extends Controller
         ]);
     }
 
+    public function claimCode() {
+        return view('profiles.claimCode', [
+            'profileUser' => \Auth::user(),
+            'userGamrAccount' => Account::userGameAccount(),
+        ]);
+    }
+
     public function changeEmail() {
         return view('profiles.settings.changeEmail', [
             'profileUser' => \Auth::user(),
@@ -81,12 +88,13 @@ class UserController extends Controller
             'newPassword' => 'required|string|min:6',
         ]);
 
-        //Change Password
         $user = \Auth::user();
-        $user->password = bcrypt($request->get('newPassword'));
-        $user->save();
 
         $account = Account::newPassword($user->email, $request->get('newPassword'));
+
+        //Change Password
+        $user->password = bcrypt($request->get('newPassword'));
+        $user->save();
 
         return redirect()->back()->with("success","Password changed successfully !");
 
