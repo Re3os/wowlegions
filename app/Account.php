@@ -7,6 +7,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Account extends Authenticatable {
 
+    protected $connection = 'auth';
+
+    protected $table = 'account';
+
+    protected $fillable = [
+        'username', 'password', 'email', 'expansion'
+    ];
+
     use Notifiable;
 
     public static function createBattleNet($data) {
@@ -36,7 +44,4 @@ class Account extends Authenticatable {
         return \DB::connection('auth')->table('account')->where('email', '=', \Auth::user()->email)->get();
     }
 
-    public function isStuffMember() {
-        return \DB::connection('auth')->table('account_access')->whereId($this->id)->where('gmlevel', '>=', 3)->first() === null ? false : true;
-    }
 }

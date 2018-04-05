@@ -11,7 +11,7 @@ class Topic extends Model
 
     protected $connection = 'mysql';
 
-    protected $fillable = ['title', 'content', 'user_id', 'category_id'];
+    protected $fillable = ['title', 'content', 'user_id', 'category_id', 'closed', 'sticky'];
 
     public function category()
     {

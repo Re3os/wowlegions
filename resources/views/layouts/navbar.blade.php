@@ -56,7 +56,7 @@
                         <div id="username">
                             <div class="dropdown pull-right">
                                 <a class="nav-link username dropdown-toggle" data-toggle="dropdown" rel="navbar">
-                                    {{ Auth::user()->name }}                                        <b class="caret"></b>
+                                    {{ Auth::user()->name }}<b class="caret"></b>
                                 </a>
                                 <div class="dropdown-menu pull-right">
                                     <div class="arrow top"></div>
@@ -65,6 +65,7 @@
                                             <div class="nav-box selectable">
                                                     <div class="label">
                                                         <span class="battletag">{{ Auth::user()->name }}</span>
+                                                        <span class="code">#{{ Auth::user()->name_id }}</span>
                                                     </div>
                                                     <div class="email">{{ Auth::user()->email }}</div>
                                             </div>

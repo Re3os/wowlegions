@@ -11,7 +11,8 @@ class SidebarController extends Controller
 {
     public function SidebarStatus() {
         $status = Server::status();
-        return view('sidebar.status', ['server' => $status]);
+        $online = Server::playersOnline();
+        return view('sidebar.status', ['server' => $status, 'online' => $online]);
     }
 
     public function SidebarClient() {

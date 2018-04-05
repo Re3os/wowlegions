@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <title>{{ config('app.name', 'Форум World of Warcraft') }}</title>
+    <title>@yield('title') {{ config('app.name_forum', 'Форум World of Warcraft') }}</title>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://eu.battle.net/forums/ru/wow/" />
     <meta property="og:title" content="Форум World of Warcraft" />
@@ -298,7 +298,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 <div role="main">
     @yield('content')
 </div>
-<footer class="Forums-footer"> Спасибо, что заглянули на <a href="{{ route('forums') }}">Форумы WoWLegions</a> (0.0.1) · <a href="{{ route('forums') }}">Описание обновлений</a> </footer>
+<footer class="Forums-footer"> Спасибо, что заглянули на <a href="{{ route('forums') }}">Форумы WoWLegions</a> (0.0.3) · <a href="{{ route('forums') }}">Описание обновлений</a> </footer>
 @include('layouts.footer')
 
 <script type="text/javascript" src="{{ asset('js/vendor/tether/dist/js/tether.js') }}"></script>
@@ -307,7 +307,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 <script type="text/javascript" src="{{ asset('js/vendor/instanttouch.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/vendor/clipboard.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/vendor/d3/tooltips.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/main-7ba3dece36.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/main-5c4116b063.js') }}"></script>
 
 </body>
 </html>

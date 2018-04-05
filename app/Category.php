@@ -8,7 +8,7 @@ class Category extends Model
 {
     protected $connection = 'mysql';
 
-    protected $fillable = ['id', 'name', 'category_description', 'parent_id', 'category_slug', 'icons'];  
+    protected $fillable = ['id', 'name', 'category_description', 'parent_id', 'category_slug', 'icons'];
 
     public function forums()
     {

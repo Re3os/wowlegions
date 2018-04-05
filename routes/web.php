@@ -33,6 +33,8 @@ Route::get('/sidebar/client', 'SidebarController@SidebarClient')->name('client')
 Route::get('/sidebar/events', 'SidebarController@SidebarEvents')->name('events');
 Route::get('/sidebar/blizzard-posts', 'SidebarController@SidebarForum')->name('forum');
 
+Route::get('version', 'DiscussionController@version');
+
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function(){
     /// Auth route
     Auth::routes();
@@ -51,19 +53,27 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('forums/', 'CategoryController@index')->name('forums');
     Route::get('forums/{category}', 'CategoryController@show')->name('forum')->where('category', '[0-9]+');
     Route::get('forums/search', 'TopicsController@search')->name('forum.search');
+    Route::get('forums/{category}/topic/{topic}/undefined/frag', 'TopicsController@edit')->name('forum.edit-topic')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
     Route::post('forums/{category}/create', 'TopicsController@store')->name('forum.topic.store')->where('category', '[0-9]+');
     Route::get('forums/{category}/topic/{topic}', 'TopicsController@show')->name('forum.topic')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
     Route::post('forums/{category}/{topic}/create', 'TopicsController@store_reply')->name('forum.topic.reply.create')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
     Route::patch('forums/{category}/{topic}', 'TopicsController@update_reply')->name('forum.topic.reply.update')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
     Route::delete('forums/{category}/{topic}/{reply}', 'TopicsController@delete_reply')->name('forum.topic.reply.destroy')->where(['category' => '[0-9]+', 'topic' => '[0-9]+', 'reply' => '[0-9]+']);
 
+    /// Account route
     Route::get('account/management', 'UserController@showProfile')->name('account');
     Route::get('account/management/settings/change-email.html', 'UserController@changeEmail');
     Route::post('account/management/settings/change-email.html', 'UserController@changeEmailActoin')->name('change-email');
+
     Route::get('account/management/settings/change-password.html', 'UserController@changePassword');
     Route::post('account/management/settings/change-password.html', 'UserController@changePasswordActoin')->name('change-password');
+
+    Route::get('account/management/tag-name-change.html', 'UserController@tagNameChange');
+    Route::post('account/management/tag-name-change.html', 'UserController@tagNameChangeActoin')->name('tag-name-change');
+
     Route::get('account/management/wallet.html', 'UserController@showWallet')->name('wallet');
     Route::get('account/management/primary-address.html', 'UserController@showProfile')->name('primary-address');
+    Route::get('account/management/wow/dashboard.html', 'UserController@dashboard')->name('dashboard');
 
     Route::get('account/management/claim-code.html', 'UserController@claimCode')->name('claim-code');
     Route::get('account/management/get-a-game.html', 'UserController@showProfile')->name('get-a-game');
@@ -75,5 +85,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('account/management/gift-claim-history.html', 'UserController@showProfile')->name('gift-claim-history');
 
     Route::get('shop/checkout/add-balance', 'UserController@showProfile')->name('add-balance');
+
+    Route::get('community', 'CommunityController@index')->name('community');
 
 });

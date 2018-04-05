@@ -35,8 +35,9 @@ Blizzard Mobile Authenticator — бесплатный способ защити
 <p class="account-name">{{ $profileUser->email }}
 <span class="edit">[<a href="{{ route('change-email') }}">Редактировать</a>]</span>
 </p>
-<h4 class="subcategory">Имя</h4>
-<p>{{ $profileUser->name }}</p>
+<h4 class="subcategory help-link-right" data-tooltip="Это имя, под которым вас будут знать на " data-tooltip-options='{"location": "mouse"}'>Имя</h4>
+<p>{{ $profileUser->name }} <span class="edit">[<a href="{{ route('tag-name-change') }}" id="battletag-purchase">Платная смена имени</a>]</span>
+</p>
 </div>
 <h3 class="section-title">Защита записи</h3>
 <div class="lobby-box security-box">
@@ -59,7 +60,7 @@ Blizzard Mobile Authenticator — бесплатный способ защити
     </span>
     <span class="account-info">
     <span class="account-link">
-    <strong><a class="EU-WOW-legion-se" href="/account/management/wow/dashboard.html?accountName=WoW1&amp;region=EU"> World of Warcraft®: Legion™</a></strong>
+    <strong><a class="EU-WOW-legion-se" href="{{ route('dashboard') }}?accountName=WoW1&amp;region=EU"> World of Warcraft®: Legion™</a></strong>
     <span class="account-id">
     [WoW1]
     <span class="account-edition">Стандартная версия</span>

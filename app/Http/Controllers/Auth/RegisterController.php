@@ -29,13 +29,17 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
-        $account = Account::createBattleNet($data);
+        Account::createBattleNet($data);
 
-        return User::create([
+        $register = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'balance' => '0',
         ]);
+
+        User::createNameID($data['email'], $data['name']);
+
+        return $register;
     }
 }

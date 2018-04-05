@@ -7,15 +7,7 @@
     <meta name="description" content="Join thousands of mighty heroes in an online world of magic and limitless adventure. World of Warcraft is a role-playing game from Blizzard Entertainment for the PC and Mac.">
     <meta name="keywords" content="">
     <link rel="shortcut icon" href="{{ asset('wow/images/meta/favicon.ico') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/common-game-site.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/expansion-Legion.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/wow-legion.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/nav-client-desktop-legion.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/lightbox.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/build/cms.min.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/cms.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/sidebar.css') }}" />
-    <link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/locale/'.app()->getLocale().'.css') }}" />
+    @yield('css')
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script type="text/javascript" src="{{ asset('wow/js/third-party.js') }}"></script>
     <script type="text/javascript" src="{{ asset('wow/js/common-game-site.js') }}"></script>
@@ -70,7 +62,7 @@
             <ul class="menu" id="menu">
                 <li class="menu-home"><a href="{{ route('home') }}" class="menu-active"><span>@lang('site.home')</span></a></li>
                 <li class="menu-game"><a href="/game/"><span>@lang('site.game')</span></a></li>
-                <li class="menu-community"><a href="/community/"><span>@lang('site.community')</span></a></li>
+                <li class="menu-community"><a href="{{ route('community') }}"><span>@lang('site.community')</span></a></li>
                 <li class="menu-media"><a href="/media/"><span>@lang('site.media')</span></a></li>
                 <li class="menu-forums"><a href="{{ route('forums') }}"><span>@lang('site.forums')</span></a></li>
                 <li class="menu-services"><a href="{{ route('shop') }}"><span>@lang('site.shop')</span></a></li>

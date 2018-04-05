@@ -13,8 +13,46 @@ class UserController extends Controller
         $this->middleware('auth');
     }
 
+    public function tagNameChange() {
+        return view('profiles.settings.tagNameChange', [
+            'profileUser' => \Auth::user(),
+            'userGamrAccount' => Account::userGameAccount(),
+        ]);
+    }
+
+    public function tagNameChangeActoin(Request $request){
+        if (!(\Hash::check($request->get('password'), \Auth::user()->password))) {
+            return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
+        }
+        if($request->get('email') != $request->get('newEmailVerify')){
+            return redirect()->back()->with("error","Mail does not match");
+        }
+
+        $validatedData = $request->validate([
+            'email' => 'required|email',
+        ]);
+
+        $user = \Auth::user();
+
+        $account = Account::newEmail($user->email, $request->get('email'));
+
+        //Change Email
+        $user->email = $request->get('email');
+        $user->save();
+
+        return redirect()->back()->with("success","Email changed successfully!");
+
+    }
+
     public function showProfile() {
         return view('profiles.showProfile', [
+            'profileUser' => \Auth::user(),
+            'userGamrAccount' => Account::userGameAccount(),
+        ]);
+    }
+
+    public function dashboard() {
+        return view('profiles.wow.dashboard', [
             'profileUser' => \Auth::user(),
             'userGamrAccount' => Account::userGameAccount(),
         ]);

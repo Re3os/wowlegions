@@ -34,50 +34,14 @@ class Server
     }
 
     private static function getServerStatus() {
+        $realms = config('server.realms');
 
-        $realms = DB::connection('auth')->table('realmlist')->get();
-        $i = 0;
-        foreach($realms as $realm) {
-            $realm[$i]['status'] = @fsockopen($realm[$i]['address'], $realm[$i]['port'], $errNum, $errMsg, 1) === false ? 'up' : 'down';
-            switch($realm[$i]['icon'] ) {
-                default:
-                case 0:
-                case 4:
-                    $realm[$i]['type'] = 'PvE';
-                    break;
-                case 1:
-                    $realm[$i]['type'] = 'PvP';
-                    break;
-                case 6:
-                    $realm[$i]['type'] = 'RP';
-                    break;
-                case 8:
-                    $realm[$i]['type'] = 'RP PvP';
-                    break;
-            }
-            switch($realm[$i]['timezone']) {
-                default:
-                    $realm[$i]['language'] = 'Development';
-                    break;
-                case 8:
-                    $realm[$i]['language'] = 'English';
-                    break;
-                case 9:
-                    $realm[$i]['language'] = 'German';
-                    break;
-                case 10:
-                    $realm[$i]['language'] = 'Francais';
-                    break;
-                case 11:
-                    $realm[$i]['language'] = 'Espanol';
-                    break;
-                case 12:
-                    $realm[$i]['language'] = 'Русский';
-                    break;
-            }
-            $i++;
-        }
-        return $realm;
+        $result = @fsockopen($realms[0]['ip'], $realms[0]['port'], $errNum, $errMsg, 1) === false ? false : true;
+
+        return (object) array(
+        'status' => $result,
+        'name' => $realms[0]['name'],
+        );
     }
 
     private static function getOnlinePlayers()

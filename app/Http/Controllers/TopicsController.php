@@ -8,6 +8,11 @@ use App\{Topic, Category, Reply, User};
 class TopicsController extends Controller
 {
 
+    public function edit($category, Topic $topic)
+    {
+        return view('forum.topics.edit', compact('category', 'topic'));
+    }
+
     public function store(Category $category)
     {
         $this->validate(request(), [
@@ -41,7 +46,7 @@ class TopicsController extends Controller
 
     public function show($category, Topic $topic)
     {
-        $replies = $topic->replies()->simplePaginate(10);
+        $replies = $topic->replies()->paginate(18);
 
         return view('forum.categories.topic', compact('category', 'topic', 'replies'));
     }
@@ -93,7 +98,7 @@ class TopicsController extends Controller
         }
         $query = array_unique($query, SORT_STRING);
         $qQeury = implode(" ", $query);
-        $results = Topic::whereRaw("MATCH(title,content) AGAINST(? IN BOOLEAN MODE)", $qQeury)->paginate($count) ;
+        $results = Topic::whereRaw("MATCH(title,content) AGAINST(? IN BOOLEAN MODE)", $qQeury)->paginate($count);
         return $results;
     }
 }

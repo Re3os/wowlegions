@@ -1,5 +1,17 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/common-game-site.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/expansion-Legion.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/wow-legion.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/nav-client-desktop-legion.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/lightbox.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/build/cms.min.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/cms.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/sidebar.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/locale/'.app()->getLocale().'.css') }}" />
+@endsection
+
 @section('body')
 blog-article news
 @endsection

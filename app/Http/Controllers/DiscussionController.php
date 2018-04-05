@@ -9,6 +9,14 @@ use App\Blog;
 
 class DiscussionController extends Controller {
 
+    public function version() {
+        $result = array(
+            "version" => '26124',
+        );
+        //return response()->json($result);
+        echo 26124;
+    }
+
     public function loadComments($id) {
         $post = Blog::where('id', $id)->first();
         if($post){
