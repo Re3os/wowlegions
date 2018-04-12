@@ -87,9 +87,9 @@ body.preload .body-content {
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center bottom,center top,center -100px;
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
     background-clip:padding-box
 }
 

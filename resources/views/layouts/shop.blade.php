@@ -9,8 +9,8 @@
     <link rel="stylesheet" type="text/css" media="all" href="/wow/css/nav-client-desktop.css" />
     <!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" media="all" href="/wow/css/toolkit/freedomnet-web.min.css" /><!-- <![endif]-->
     <link rel="stylesheet" type="text/css" media="all" href="/wow/css/global.css" />
-        <link rel="stylesheet" type="text/css" media="all" href="/wow/css/browse.css?v58" />
-<link rel="stylesheet" type="text/css" media="all" href="/wow/css/shop/index.css?v58" />
+    @yield('css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="/wow/js/third-party/jquery-1.11.0.min.js"></script>
     <script src="/wow/js/core.min.js"></script>
 
@@ -43,7 +43,7 @@
         //]]>
     </script>
 </head>
-<body class="ru browse-template product-family-wow">
+<body class="ru @yield('style')">
 <script>
 //<![CDATA[
 (function() {
@@ -381,118 +381,7 @@ body.className = body.className + " js-enabled";
 </nav>
 </div>
 <div class="body-content">
-    <div class="grid-container browse game wow">
-        <div  class="logo-banner">
-            <img class="family-logo" src="/wow/images/logos/logo-family-wow.png" alt="" />
-        </div> 
-        <div class="browse-container">
-            <div class="browse-column sidebar">
-                <div class="sidebar-content">
-                    <h3 class="heading-6 filter-by-type">
-                        Фильтры                    </h3>
-                    <ul class="filter-list nav nav-list">
-                                                        <li>
-                                    <a href="/shop/?categories=mounts" class="checkbox-label">
-                                            <span class="input-checkbox "></span>
-                                            <span class="">
-                                                <span class="filter-text">
-                                                    mounts                                                </span>
-                                                <span class="count">
-                                                    (1)
-                                                </span>
-                                            </span>
-                                    </a>
-                                </li>
-                                                        <li>
-                                    <a href="/shop/?categories=pets" class="checkbox-label">
-                                            <span class="input-checkbox "></span>
-                                            <span class="">
-                                                <span class="filter-text">
-                                                    pets                                                </span>
-                                                <span class="count">
-                                                    (1)
-                                                </span>
-                                            </span>
-                                    </a>
-                                </li>
-                                                        <li>
-                                    <a href="/shop/?categories=items" class="checkbox-label">
-                                            <span class="input-checkbox "></span>
-                                            <span class="">
-                                                <span class="filter-text">
-                                                    items                                                </span>
-                                                <span class="count">
-                                                    (1)
-                                                </span>
-                                            </span>
-                                    </a>
-                                </li>
-                                            </ul>
-                </div>
-            </div>
-            <div class="browse-column main">
-                                                <h2 class="filter-title">Mounts</h2>
-                    <ul class="product-card-container thumbnails">
-                                                    <li>
-                                <a class="product-link" href="/shop/mount-celestial-steed" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Mount: Celestial Steed">
-                                    <div class="cover"></div>
-                                    <div class="thumbnail">
-                                        <img src="/wow/images/shop/mounts/celestial_steed_home.jpg" alt="Celestial Steed" />
-                                        <div class="product-card-info">
-                                            <h3 class="product-name">Celestial Steed</h3>
-                                            <p class="product-price ">
-                                                USD 25                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                    <li>
-                                <a class="product-link" href="/shop/mount-armored-bloodwing" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Mount: Armored Bloodwing">
-                                    <div class="cover"></div>
-                                    <div class="thumbnail">
-                                        <img src="/wow/images/shop/mounts/armored_bloodwind_home.jpg" alt="Armored Bloodwing" />
-                                        <div class="product-card-info">
-                                            <h3 class="product-name">Armored Bloodwing</h3>
-                                            <p class="product-price ">
-                                                USD 30                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                            </ul>
-                                                    <h2 class="filter-title">Items</h2>
-                    <ul class="product-card-container thumbnails">
-                                                    <li>
-                                <a class="product-link" href="/shop/item-shadowmourne" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Item: Shadowmourne">
-                                    <div class="cover"></div>
-                                    <div class="thumbnail">
-                                        <img src="/wow/images/shop/items/shadowmourne_home.jpg" alt="Shadowmourne" />
-                                        <div class="product-card-info">
-                                            <h3 class="product-name">Shadowmourne</h3>
-                                            <p class="product-price ">
-                                                USD 50                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                                    <li>
-                                <a class="product-link" href="/shop/item-dragonwrath-tarecgosas-rest" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Item: Dragonwrath, Tarecgosas Rest">
-                                    <div class="cover"></div>
-                                    <div class="thumbnail">
-                                        <img src="/wow/images/shop/items/dragonwrath_home.jpg" alt="Dragonwrath, Tarecgosas Rest" />
-                                        <div class="product-card-info">
-                                            <h3 class="product-name">Dragonwrath, Tarecgosas Rest</h3>
-                                            <p class="product-price ">
-                                                USD 50                                            </p>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                                            </ul>
-                                        </div>
-        </div>
-        <div class="grid-100 banner-spacer"></div>
-    </div>
+    @yield('content')
 </div>
     @include('layouts.footer')
     <script src="/wow/js/toolkit.js"></script>

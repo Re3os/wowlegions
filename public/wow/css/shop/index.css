@@ -24,7 +24,7 @@ body {
         background: none !important;
     }
     .navbar-static {
-        background: #281504 url("/wow/images/backgrounds/family-wow-background-1280..jpg") no-repeat center 0 !important;
+        background: #281504 url("/wow/images/backgrounds/family-wow-background-1280.jpg") no-repeat center 0 !important;
     }
 }
 @media (max-width: 1024px) {

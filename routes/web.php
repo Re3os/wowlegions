@@ -48,6 +48,12 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     //// Shop route
     Route::get('shop/', 'ShopController@index')->name('shop');
+    Route::get('shop/mount-{name}', 'ShopController@view')->name('shop.mount');
+    Route::get('shop/item-{name}', 'ShopController@view')->name('shop.item');
+    Route::get('shop/buy-{name}', 'ShopController@buy')->name('shop.buy');
+    Route::post('shop/complete-{name}', 'ShopController@store')->name('shop.complete');
+    Route::get('shop/complete-{name}', 'ShopController@buyComplete')->name('shop.buyComplete');
+    Route::get('shop/checkout/add-balance', 'UserController@showProfile')->name('add-balance');
 
     /// Forum route
     Route::get('forums/', 'CategoryController@index')->name('forums');
@@ -83,8 +89,6 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('account/management/orders.html', 'UserController@showProfile')->name('orders');
     Route::get('account/management/transaction-history.html', 'UserController@showProfile')->name('transaction-history');
     Route::get('account/management/gift-claim-history.html', 'UserController@showProfile')->name('gift-claim-history');
-
-    Route::get('shop/checkout/add-balance', 'UserController@showProfile')->name('add-balance');
 
     Route::get('community', 'CommunityController@index')->name('community');
 

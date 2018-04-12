@@ -87,9 +87,9 @@ body.preload .body-content {
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center bottom,center top,center -100px;
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
     background-clip:padding-box
 }
 
@@ -114,7 +114,7 @@ body.preload .body-content {
     position:absolute;
     top:0;
     right:0;
-    background:url(/images/product-card/sprite-badges.png) no-repeat 0 0;
+    background:url(/wow/images/product-card/sprite-badges.png) no-repeat 0 0;
     z-index:10
 }
 
@@ -208,7 +208,7 @@ body.preload .body-content {
 }
 
 .product-template .buybox .product-badge {
-    background-image:url(/images/product-card/sprite-badges.png);
+    background-image:url(/wow/images/product-card/sprite-badges.png);
     background-repeat:no-repeat;
     display:block;
     width:50px;
@@ -672,7 +672,7 @@ body.preload .body-content {
 
 .product-template .product-media .single-media .video-player .netease-video-disabled {
     opacity:.8;
-    background:#262626 url(/images/ui/play-big-hover.png) no-repeat center;
+    background:#262626 url(/wow/images/ui/play-big-hover.png) no-repeat center;
     height:100%;
     width:100%
 }
@@ -1106,19 +1106,19 @@ body.preload .body-content {
 }
 
 .product-template.js-enabled.video-enabled .single-media .video-thumbnail .img-overlay {
-    background-image:url(/images/ui/play-big.png)
+    background-image:url(/wow/images/ui/play-big.png)
 }
 
 .product-template.js-enabled.video-enabled .single-media .video-thumbnail .img-overlay:hover {
-    background-image:url(/images/ui/play-big-hover.png)
+    background-image:url(/wow/images/ui/play-big-hover.png)
 }
 
 .product-template.js-enabled.video-enabled .product-feature .product-feature-video .img-overlay {
-    background-image:url(/images/ui/play-small.png)
+    background-image:url(/wow/images/ui/play-small.png)
 }
 
 .product-template.js-enabled.video-enabled .product-feature .product-feature-video .img-overlay:hover {
-    background-image:url(/images/ui/play-small-hover.png)
+    background-image:url(/wow/images/ui/play-small-hover.png)
 }
 
 .product-template.app #topbutton {
@@ -1139,7 +1139,7 @@ body.preload .body-content {
     overflow:hidden;
     width:44px;
     height:44px;
-    background-image:url(/images/ui/top-button.png);
+    background-image:url(/wow/images/ui/top-button.png);
     background-repeat:no-repeat
 }
 

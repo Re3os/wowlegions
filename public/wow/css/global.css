@@ -87,9 +87,9 @@ body.preload .body-content {
     background-repeat:no-repeat;
     background-size:contain;
     background-position:center bottom,center top,center -100px;
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
-    background-image:url(/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);
+    background-image:url(/wow/images/toolkit/defaults/modals/modal-gradient.png),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);
     background-clip:padding-box
 }
 
@@ -122,7 +122,7 @@ body.preload .body-content {
 }
 
 [class^='icon-32-'],[class*=' icon-32-'] {
-    background-image:url(/images/toolkit/themes/bnet/icons/sprite-32-white.png);
+    background-image:url(/wow/images/toolkit/themes/bnet/icons/sprite-32-white.png);
     width:32px;
     height:32px
 }
@@ -324,7 +324,7 @@ body.preload .body-content {
     position:absolute;
     top:0;
     right:0;
-    background:url(/images/product-card/sprite-badges.png) no-repeat 0 0;
+    background:url(/wow/images/product-card/sprite-badges.png) no-repeat 0 0;
     z-index:10
 }
 

@@ -1477,7 +1477,7 @@ html:lang(zh-TW) q{quotes:"???" "???" "???" "???"}
 html:lang(zh) html,html:lang(ja) html,html:lang(zh) body,html:lang(ja) body{word-break:normal}
 html:lang(ko) html,html:lang(ko) body{word-break:keep-all}
 html:lang(ko) .word-break-all{word-break:break-all}
-.modal-background-properties{background-repeat:no-repeat;background-size:contain;background-position:center bottom,center top,center -100px;background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-clip:padding-box}
+.modal-background-properties{background-repeat:no-repeat;background-size:contain;background-position:center bottom,center top,center -100px;background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-clip:padding-box}
 @font-face{font-family:"Blizzard";font-style:normal;font-weight:300;src:local("Blizzard Light"),local("Blizzard-Light"),url("fonts/blizzard-light.3ARY7.woff") format("woff")}
 @font-face{font-family:"Blizzard";font-style:normal;font-weight:400;src:local("Blizzard"),local("Blizzard"),url("fonts/blizzard-regular.3GHNU.woff") format("woff")}
 @font-face{font-family:"Blizzard";font-style:italic;font-weight:400;src:local("Blizzard Italic"),local("Blizzard-Italic"),url("fonts/blizzard-regular-italic.1jLGm.woff") format("woff")}
@@ -1488,7 +1488,7 @@ html:lang(ko) .word-break-all{word-break:break-all}
 .accordion-heading .accordion-toggle{padding:5px 10px}
 .accordion-toggle{background:0;cursor:pointer;color:rgba(255,255,255,0.7)}
 .accordion-toggle:focus,.accordion-toggle:hover{color:#fff}
-.accordion-toggle:before{display:inline-block;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-32px -112px;content:"";margin-right:5px;margin-top:2px;width:16px;height:16px;line-height:16px;vertical-align:top}
+.accordion-toggle:before{display:inline-block;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-32px -112px;content:"";margin-right:5px;margin-top:2px;width:16px;height:16px;line-height:16px;vertical-align:top}
 .accordion-inner{padding:5px 10px;border-top:1px solid rgba(255,255,255,0.15)}
 .modal.agegate{width:358px;margin-left:-179px;height:216px;-webkit-transition:height,200ms;transition:height 200ms}
 .modal.agegate.agegate-failed{height:125px}
@@ -1513,7 +1513,7 @@ html:lang(ko) .word-break-all{word-break:break-all}
 .alert .close{position:relative;top:0;right:-34px}
 .alert-block{padding:20px 45px 20px 20px}
 .alert-icon{padding:20px 45px 20px 59px}
-.alert-icon:before{content:"";display:block;position:absolute;top:18px;left:20px;width:24px;height:24px;overflow:hidden;line-height:24px;vertical-align:top;text-indent:-9999px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-blue.png");background-repeat:no-repeat;background-position:-96px -360px}
+.alert-icon:before{content:"";display:block;position:absolute;top:18px;left:20px;width:24px;height:24px;overflow:hidden;line-height:24px;vertical-align:top;text-indent:-9999px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-blue.png");background-repeat:no-repeat;background-position:-96px -360px}
 .alert-block .close,.alert-icon .close{top:-10px;right:-34px}
 .alert-block h2,.alert-icon h2,.alert-block h3,.alert-icon h3,.alert-block h4,.alert-icon h4,.alert-block h5,.alert-icon h5,.alert-block h6,.alert-icon h6,.alert-block .heading-2,.alert-icon .heading-2,.alert-block .heading-3,.alert-icon .heading-3,.alert-block .heading-4,.alert-icon .heading-4,.alert-block .heading-5,.alert-icon .heading-5,.alert-block .heading-6,.alert-icon .heading-6{font-size:17px;line-height:20px;margin-bottom:10px;color:#fff}
 .alert-block p,.alert-icon p{margin-bottom:20px}
@@ -1525,13 +1525,13 @@ html:lang(ko) .word-break-all{word-break:break-all}
 .alert-block li p,.alert-icon li p{margin-bottom:10px}
 .alert+.heading-1,.alert-block+.heading-1,.alert-icon+.heading-1,.alert+.heading-2,.alert-block+.heading-2,.alert-icon+.heading-2,.alert+.heading-3,.alert-block+.heading-3,.alert-icon+.heading-3,.alert+.heading-4,.alert-block+.heading-4,.alert-icon+.heading-4,.alert+.heading-5+.heading-6,.alert-block+.heading-5+.heading-6,.alert-icon+.heading-5+.heading-6{margin-top:80px}
 .alert-success{background-color:#132a14;box-shadow:0 0 0 1px #24392a inset,0 5px 10px rgba(0,0,0,0.75)}
-.alert-icon.alert-success:before{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-green.png");background-position:-216px -120px}
+.alert-icon.alert-success:before{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-green.png");background-position:-216px -120px}
 .alert-warning{background-color:#5d3200;box-shadow:0 0 0 1px #834b00 inset,0 5px 10px rgba(0,0,0,0.75)}
-.alert-icon.alert-warning:before{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-orange.png");background-position:-192px -120px}
+.alert-icon.alert-warning:before{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-orange.png");background-position:-192px -120px}
 .alert-error{background-color:#360e10;box-shadow:0 0 0 1px #551e21 inset,0 5px 10px rgba(0,0,0,0.75)}
-.alert-icon.alert-error:before{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-red.png");background-position:-24px 0}
+.alert-icon.alert-error:before{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-red.png");background-position:-24px 0}
 .alert-info{background-color:#272e3b;box-shadow:0 0 0 1px #363d49 inset,0 5px 10px rgba(0,0,0,0.75)}
-.alert-icon.alert-info:before{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-blue.png");background-position:-96px -360px}
+.alert-icon.alert-info:before{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-blue.png");background-position:-96px -360px}
 html,body{background:#202020 no-repeat center top}
 body{background:#202020 no-repeat center top;color:rgba(255,255,255,0.7)}
 .body-content{background:#202020;padding-bottom:100px}
@@ -1604,31 +1604,31 @@ input::selection{background:#037db6}
 .btn-mini.active,.btn-mini:active{padding:2px 9px 0 11px}
 .btn-mini.disabled:active,.btn-mini[disabled]:active,.btn-mini.disabled.active,.btn-mini[disabled].active{padding:1px 10px!important}
 .btn-block+.btn-block{margin-top:10px}
-.btn [class^="icon-"],.btn [class*=" icon-"]{margin-top:2px;margin-left:-4px;margin-right:5px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");opacity:.8}
+.btn [class^="icon-"],.btn [class*=" icon-"]{margin-top:2px;margin-left:-4px;margin-right:5px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");opacity:.8}
 .btn:hover [class^="icon-"],.btn:focus [class^="icon-"],.btn:hover [class*=" icon-"],.btn:focus [class*=" icon-"]{opacity:1}
 .btn:active [class^="icon-"],.btn.active [class^="icon-"],.btn:active [class*=" icon-"],.btn.active [class*=" icon-"]{opacity:.8}
-.btn-inverse [class^="icon-"],.btn-inverse [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.btn-info [class^="icon-"],.btn-info [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.btn-success [class^="icon-"],.btn-success [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
-.btn-warning [class^="icon-"],.btn-warning [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
-.btn-danger [class^="icon-"],.btn-error [class^="icon-"],.btn-danger [class*=" icon-"],.btn-error [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-red.png")}
+.btn-inverse [class^="icon-"],.btn-inverse [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.btn-info [class^="icon-"],.btn-info [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.btn-success [class^="icon-"],.btn-success [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
+.btn-warning [class^="icon-"],.btn-warning [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
+.btn-danger [class^="icon-"],.btn-error [class^="icon-"],.btn-danger [class*=" icon-"],.btn-error [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-red.png")}
 .btn-small [class^="icon-"],.btn-small [class*=" icon-"]{margin-left:-2px;margin-right:3px}
 .btn-small.btn-icon [class^="icon-"],.btn-small.btn-icon [class*=" icon-"]{margin-left:0;margin-right:0}
 .btn-mini [class^="icon-"],.btn-mini [class*=" icon-"]{margin-top:0}
 .btn-icon [class^="icon-"],.btn-icon [class*=" icon-"]{margin-left:0;margin-right:0}
-.btn.disabled [class^="icon-"],.btn[disabled] [class^="icon-"],.btn.disabled [class*=" icon-"],.btn[disabled] [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
+.btn.disabled [class^="icon-"],.btn[disabled] [class^="icon-"],.btn.disabled [class*=" icon-"],.btn[disabled] [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
 .btn.disabled:active [class^="icon-"],.btn[disabled]:active [class^="icon-"],.btn.disabled.active [class^="icon-"],.btn[disabled].active [class^="icon-"],.btn.disabled:active [class*=" icon-"],.btn[disabled]:active [class*=" icon-"],.btn.disabled.active [class*=" icon-"],.btn[disabled].active [class*=" icon-"]{opacity:.15!important}
 .btn.disabled.loading [class^="icon-"],.btn[disabled].loading [class^="icon-"],.btn.disabled.loading [class*=" icon-"],.btn[disabled].loading [class*=" icon-"]{opacity:0!important}
-.btn-primary [class^="icon-"],.btn-primary [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:1}
+.btn-primary [class^="icon-"],.btn-primary [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:1}
 .btn-primary:active [class^="icon-"],.btn-primary.active [class*=" icon-"]{opacity:.7}
 .btn-primary.disabled [class^="icon-"],.btn-primary[disabled] [class^="icon-"],.btn-primary.disabled [class*=" icon-"],.btn-primary[disabled] [class*=" icon-"]{opacity:.15}
 .btn-primary.disabled:active [class^="icon-"],.btn-primary[disabled]:active [class^="icon-"],.btn-primary.disabled.active [class^="icon-"],.btn-primary[disabled].active [class^="icon-"],.btn-primary.disabled:active [class*=" icon-"],.btn-primary[disabled]:active [class*=" icon-"],.btn-primary.disabled.active [class*=" icon-"],.btn-primary[disabled].active [class*=" icon-"]{opacity:.15}
-.btn.loading:before{content:"";width:20px;height:20px;background-image:url("/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block;position:absolute;z-index:1060;left:50%;top:50%;margin-top:-10px;margin-left:-10px;-webkit-animation:keyframes-loading .8s steps(21) infinite;-moz-animation:keyframes-loading .8s steps(21) infinite;-ms-animation:keyframes-loading .8s steps(21) infinite;animation:keyframes-loading .8s steps(21) infinite}
-.btn.btn-link.loading:before{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-battlenet.png")}
+.btn.loading:before{content:"";width:20px;height:20px;background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block;position:absolute;z-index:1060;left:50%;top:50%;margin-top:-10px;margin-left:-10px;-webkit-animation:keyframes-loading .8s steps(21) infinite;-moz-animation:keyframes-loading .8s steps(21) infinite;-ms-animation:keyframes-loading .8s steps(21) infinite;animation:keyframes-loading .8s steps(21) infinite}
+.btn.btn-link.loading:before{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-battlenet.png")}
 .btn.disabled-loading{height:34px}
 .btn-large.disabled-loading{height:40px}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.btn.loading:before{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
-    .btn.btn-primary.loading:before{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.btn.loading:before{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
+    .btn.btn-primary.loading:before{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
 }
 .carousel{margin-bottom:20px;line-height:1;border:1px solid #000;box-shadow:0 5px 10px rgba(0,0,0,0.4);-moz-box-sizing:border-box;box-sizing:border-box}
 .carousel .carousel-inner{border:0;-moz-box-sizing:border-box;box-sizing:border-box}
@@ -1646,7 +1646,7 @@ input::selection{background:#037db6}
 .carousel.crossfade .carousel-inner>.item{-webkit-transition:.2s,ease-in-out,opacity;transition:.2s ease-in-out opacity}
 .carousel .carousel-controls{background-color:rgba(255,255,255,0.2);top:10px;right:10px;width:51px;height:26px;border:1px solid rgba(255,255,255,0.5);border-radius:3px;opacity:0;-webkit-transition:opacity,0.2s;transition:opacity .2s}
 .carousel .carousel-controls button{background-color:rgba(255,255,255,0.3);padding:0;width:26px;height:26px;top:0;border:0}
-.carousel .carousel-controls button span{background-image:url("/images/toolkit/defaults/carousels/sprite-carousel-control.png");background-repeat:no-repeat;margin:0 0 0 7px;padding:0;width:8px;height:14px;opacity:.6}
+.carousel .carousel-controls button span{background-image:url("/wow/images/toolkit/defaults/carousels/sprite-carousel-control.png");background-repeat:no-repeat;margin:0 0 0 7px;padding:0;width:8px;height:14px;opacity:.6}
 .carousel .carousel-controls button:hover{background-color:rgba(255,255,255,0.4)}
 .carousel .carousel-controls button:hover span{opacity:1}
 .carousel .carousel-controls button:active{background-color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.6)}
@@ -1659,15 +1659,15 @@ input::selection{background:#037db6}
 .carousel .carousel-controls .right span{background-position:-40px -80px;margin-left:10px}
 .carousel .carousel-controls .right:active{border-left:1px solid rgba(255,255,255,0.1)}
 .carousel .carousel-controls .right:active span{left:1px;top:1px}
-.close{float:right;display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-repeat:no-repeat;background-position:-112px -96px;text-indent:-9999px;margin:2px 2px 0 0;cursor:pointer;opacity:.2;-webkit-transition:opacity,0.2s;transition:opacity .2s}
+.close{float:right;display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-repeat:no-repeat;background-position:-112px -96px;text-indent:-9999px;margin:2px 2px 0 0;cursor:pointer;opacity:.2;-webkit-transition:opacity,0.2s;transition:opacity .2s}
 .close:focus,.close:hover{text-decoration:none;opacity:.4}
 button.close{padding:0;border:0;background:transparent;-webkit-appearance:none}
 code,pre{font-size:13px;line-height:20px;border-radius:2px}
 code{padding:0 .25em;background-color:rgba(0,0,0,0.03);border:1px solid rgba(255,255,255,0.15)}
 pre{margin:0 0 40px;font-size:13px;line-height:20px;padding:10px;background:rgba(0,0,0,0.03);border:1px solid rgba(255,255,255,0.15)}
 .dropdown-toggle{padding-right:30px}
-.caret{content:"";margin:2px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-repeat:no-repeat;text-indent:-9999px;-webkit-transition:opacity,0.2s;transition:opacity .2s;background-position:-64px -256px}
-.navbar .caret{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png")}
+.caret{content:"";margin:2px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-repeat:no-repeat;text-indent:-9999px;-webkit-transition:opacity,0.2s;transition:opacity .2s;background-position:-64px -256px}
+.navbar .caret{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png")}
 .dropdown-toggle>.caret{position:absolute;right:5px;top:0;opacity:.3;-webkit-transition:opacity,0.2s;transition:opacity .2s}
 .dropdown-toggle:focus>.caret,.dropdown-toggle:hover>.caret{opacity:.5}
 .nav-tabs .dropdown-toggle>.caret,.nav-pills .dropdown-toggle>.caret{top:5px}
@@ -1676,7 +1676,7 @@ pre{margin:0 0 40px;font-size:13px;line-height:20px;padding:10px;background:rgba
 .dropdown-menu li{margin:0 1px;padding:0}
 .dropdown-menu li>a{padding:4px 30px;font-size:13px;font-weight:normal;line-height:20px;color:rgba(255,255,255,0.7);-webkit-transition:background-color .2s,border-color .2s,color .2s;transition:background-color .2s,border-color .2s,color .2s}
 .dropdown-menu li>span{padding:4px 30px;font-size:13px;font-weight:normal;line-height:20px}
-.dropdown-menu [class^="icon-"],.dropdown-menu [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.dropdown-menu [class^="icon-"],.dropdown-menu [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
 .dropdown-menu [class^="icon-"]:not(.icon-external-link),.dropdown-menu [class*=" icon-"]:not(.icon-external-link){position:absolute;left:5px}
 .dropdown-menu .icon-external-link{position:absolute;right:5px}
 .navbar .dropdown-menu{margin-top:9px}
@@ -1693,11 +1693,11 @@ pre{margin:0 0 40px;font-size:13px;line-height:20px;padding:10px;background:rgba
 .dropdown-menu li>a:hover,.dropdown-menu li>a:focus,.dropdown-submenu:hover>a{color:#fff;background-color:rgba(255,255,255,0.07)}
 .dropdown-menu .active>a,.dropdown-menu .active>a:hover,.dropdown-menu .active>a:focus{color:#fff}
 .dropdown-menu .disabled>a,.dropdown-menu .disabled>a:hover,.dropdown-menu .disabled>a:focus{color:rgba(255,255,255,0.3)}
-.dropdown-menu>.disabled>a>[class^="icon-"],.dropdown-menu>.disabled>a>[class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.2}
+.dropdown-menu>.disabled>a>[class^="icon-"],.dropdown-menu>.disabled>a>[class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.2}
 .dropdown-submenu{position:relative}
 .dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:0}
 .dropdown-submenu:hover>.dropdown-menu{display:block}
-.dropdown-submenu>a:after{content:"";margin:2px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-repeat:no-repeat;text-indent:-9999px;background-position:0 -48px;position:absolute;right:5px;top:4px;opacity:.3;-webkit-transition:opacity,0.2s;transition:opacity .2s}
+.dropdown-submenu>a:after{content:"";margin:2px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");display:inline-block;width:16px;height:16px;overflow:hidden;line-height:16px;vertical-align:top;background-repeat:no-repeat;text-indent:-9999px;background-position:0 -48px;position:absolute;right:5px;top:4px;opacity:.3;-webkit-transition:opacity,0.2s;transition:opacity .2s}
 .dropdown-submenu:focus>a:after,.dropdown-submenu:hover>a:after{opacity:.5}
 .dropdown .dropdown-menu .nav-header{padding:4px 30px;margin:3px 0;border:solid #3d434f;border-width:1px 0;color:rgba(255,255,255,0.3)}
 .dropdown .dropdown-menu .nav-header:first-child{border-top:0;margin-top:0}
@@ -1717,7 +1717,7 @@ pre{margin:0 0 40px;font-size:13px;line-height:20px;padding:10px;background:rgba
 .footer-content .links{display:block}
 .footer-content .links a{display:inline-block;margin-right:20px}
 .footer-content .links a:last-of-type{margin-right:0}
-.footer-content .blizzard{display:block;width:102px;height:52px;overflow:hidden;float:right;background:transparent url("/images/toolkit/defaults/logos/blizzard/footer.png") no-repeat 0 -104px;text-indent:-9999px}
+.footer-content .blizzard{display:block;width:102px;height:52px;overflow:hidden;float:right;background:transparent url("/wow/images/toolkit/defaults/logos/blizzard/footer.png") no-repeat 0 -104px;text-indent:-9999px}
 form{margin:0}
 fieldset{padding:0;margin:0 0 30px 0;border:0}
 fieldset p:last-child,fieldset ul:last-child,fieldset ol:last-child{margin-bottom:0}
@@ -1786,20 +1786,20 @@ input.input-large.disabled:active,input.input-large[disabled]:active,input.input
 .help-inline,.help-block,.help-icon{color:rgba(255,255,255,0.7);line-height:20px;font-size:13px;min-height:20px}
 .help-inline:empty,.help-block:empty,.help-icon:empty{display:none}
 .help-inline.help-info,.help-block.help-info,.help-icon.help-info{color:rgba(255,255,255,0.8)}
-.help-inline.help-info [class^="icon-"],.help-block.help-info [class^="icon-"],.help-icon.help-info [class^="icon-"],.help-inline.help-info [class*=" icon-"],.help-block.help-info [class*=" icon-"],.help-icon.help-info [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.help-inline.help-info [class^="icon-"],.help-block.help-info [class^="icon-"],.help-icon.help-info [class^="icon-"],.help-inline.help-info [class*=" icon-"],.help-block.help-info [class*=" icon-"],.help-icon.help-info [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
 .help-inline.help-success,.help-block.help-success,.help-icon.help-success{color:rgba(255,255,255,0.8)}
-.help-inline.help-success [class^="icon-"],.help-block.help-success [class^="icon-"],.help-icon.help-success [class^="icon-"],.help-inline.help-success [class*=" icon-"],.help-block.help-success [class*=" icon-"],.help-icon.help-success [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
+.help-inline.help-success [class^="icon-"],.help-block.help-success [class^="icon-"],.help-icon.help-success [class^="icon-"],.help-inline.help-success [class*=" icon-"],.help-block.help-success [class*=" icon-"],.help-icon.help-success [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
 .help-inline.help-warning,.help-block.help-warning,.help-icon.help-warning{color:rgba(255,255,255,0.8)}
-.help-inline.help-warning [class^="icon-"],.help-block.help-warning [class^="icon-"],.help-icon.help-warning [class^="icon-"],.help-inline.help-warning [class*=" icon-"],.help-block.help-warning [class*=" icon-"],.help-icon.help-warning [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
+.help-inline.help-warning [class^="icon-"],.help-block.help-warning [class^="icon-"],.help-icon.help-warning [class^="icon-"],.help-inline.help-warning [class*=" icon-"],.help-block.help-warning [class*=" icon-"],.help-icon.help-warning [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
 .help-inline.help-error,.help-block.help-error,.help-icon.help-error,.help-inline.help-danger,.help-block.help-danger,.help-icon.help-danger,.help-inline.help-important,.help-block.help-important,.help-icon.help-important{color:#cd0606}
 .help-inline{display:inline-block;margin-left:10px;padding-top:10px;vertical-align:top}
 .help-block,.help-icon{clear:both;display:block;margin-bottom:10px}
-.help-icon:after{content:"";display:block;position:absolute;top:2px;left:0;width:16px;height:16px;overflow:hidden;line-height:20px;vertical-align:top;text-indent:-9999px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-repeat:no-repeat;background-position:-32px -224px}
+.help-icon:after{content:"";display:block;position:absolute;top:2px;left:0;width:16px;height:16px;overflow:hidden;line-height:20px;vertical-align:top;text-indent:-9999px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-repeat:no-repeat;background-position:-32px -224px}
 .help-icon{position:relative;padding-left:20px}
-.help-icon.help-info:after{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-32px -224px}
-.help-icon.help-success:after{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-green.png");background-position:-144px -80px}
-.help-icon.help-warning:after{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-orange.png");background-position:-128px -80px}
-.help-icon.help-error:after{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-red.png");background-position:-112px -96px}
+.help-icon.help-info:after{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-32px -224px}
+.help-icon.help-success:after{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-green.png");background-position:-144px -80px}
+.help-icon.help-warning:after{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-orange.png");background-position:-128px -80px}
+.help-icon.help-error:after{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-red.png");background-position:-112px -96px}
 .input-append,.input-prepend{margin:3px 0;font-size:0;white-space:nowrap}
 .input-append input,.input-prepend input,.input-append select,.input-prepend select,.input-append .uneditable-input,.input-prepend .uneditable-input{font-size:15px}
 .input-append input,.input-prepend input,.input-append select,.input-prepend select,.input-append .uneditable-input,.input-prepend .uneditable-input{position:relative;vertical-align:top;border-radius:0 2px 2px 0}
@@ -1825,10 +1825,10 @@ input::-webkit-color-swatch-wrapper{border:0;padding:5px 0}
 input::-webkit-color-swatch{border:1px solid rgba(255,255,255,0.3);padding:0}
 input::-webkit-inner-spin-button{-webkit-appearance:none;width:0;overflow:hidden}
 input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0;width:0;overflow:hidden}
-input::-webkit-calendar-picker-indicator{background:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-position:-16px -256px;opacity:.3;width:16px;height:16px;padding:0;color:rgba(255,255,255,0);-webkit-transition:opacity,200ms;transition:opacity 200ms}
+input::-webkit-calendar-picker-indicator{background:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-position:-16px -256px;opacity:.3;width:16px;height:16px;padding:0;color:rgba(255,255,255,0);-webkit-transition:opacity,200ms;transition:opacity 200ms}
 input:hover::-webkit-calendar-picker-indicator{opacity:.5}
 input:focus::-webkit-calendar-picker-indicator{opacity:.5}
-input::-webkit-clear-button{-webkit-appearance:none;background:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-position:-112px -96px;opacity:.3;width:16px;height:16px}
+input::-webkit-clear-button{-webkit-appearance:none;background:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");background-position:-112px -96px;opacity:.3;width:16px;height:16px}
 input:hover::-webkit-clear-button{opacity:.5}
 input:focus::-webkit-clear-button{opacity:.5}
 input::-webkit-datetime-edit{padding:0}
@@ -1839,7 +1839,7 @@ input::-webkit-datetime-edit-year-field:focus,input::-webkit-datetime-edit-month
 input[disabled]::-webkit-datetime-edit-text,input.disabled::-webkit-datetime-edit-text,input[disabled]::-webkit-datetime-edit-year-field,input.disabled::-webkit-datetime-edit-year-field,input[disabled]::-webkit-datetime-edit-month-field,input.disabled::-webkit-datetime-edit-month-field,input[disabled]::-webkit-datetime-edit-week-field,input.disabled::-webkit-datetime-edit-week-field,input[disabled]::-webkit-datetime-edit-day-field,input.disabled::-webkit-datetime-edit-day-field,input[disabled]::-webkit-datetime-edit-hour-field,input.disabled::-webkit-datetime-edit-hour-field,input[disabled]::-webkit-datetime-edit-minute-field,input.disabled::-webkit-datetime-edit-minute-field,input[disabled]::-webkit-datetime-edit-second-field,input.disabled::-webkit-datetime-edit-second-field,input[disabled]::-webkit-datetime-edit-millisecond-field,input.disabled::-webkit-datetime-edit-millisecond-field,input[disabled]::-webkit-datetime-edit-ampm-field,input.disabled::-webkit-datetime-edit-ampm-field{color:#3f3f3f!important}
 .js-enabled input[type="checkbox"]:not(.css-input),.js-enabled input[type="radio"]:not(.css-input){width:0;height:0;overflow:hidden;opacity:0!important}
 .js-enabled label.checkbox-label:not(.css-label),.js-enabled label.radio-label:not(.css-label){cursor:pointer}
-.js-enabled label.checkbox-label:not(.css-label):after,.js-enabled label.radio-label:not(.css-label):after{content:"";display:block;width:20px;height:20px;overflow:hidden;position:absolute;left:0;top:0;cursor:pointer;background:rgba(0,0,0,0.5) url("/images/toolkit/themes/bnet/forms/sprite-18-inputs.png") no-repeat -64px -96px;border:1px solid rgba(255,255,255,0.3);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms;transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms}
+.js-enabled label.checkbox-label:not(.css-label):after,.js-enabled label.radio-label:not(.css-label):after{content:"";display:block;width:20px;height:20px;overflow:hidden;position:absolute;left:0;top:0;cursor:pointer;background:rgba(0,0,0,0.5) url("/wow/images/toolkit/themes/bnet/forms/sprite-18-inputs.png") no-repeat -64px -96px;border:1px solid rgba(255,255,255,0.3);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms;transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms}
 .js-enabled label.checkbox-label:not(.css-label).focus:after,.js-enabled label.radio-label:not(.css-label).focus:after{background-color:rgba(0,0,0,0.5);border-color:#1e5f99}
 .js-enabled label.checkbox-label:not(.css-label):hover:not(.disabled):after,.js-enabled label.radio-label:not(.css-label):hover:not(.disabled):after{background-color:rgba(0,0,0,0.5);border-color:rgba(255,255,255,0.5)}
 .js-enabled label.checkbox-label:not(.css-label).disabled:after,.js-enabled label.radio-label:not(.css-label).disabled:after{background-color:rgba(20,20,23,0.5)!important;border-color:rgba(255,255,255,0.3)!important;cursor:default!important}
@@ -1873,7 +1873,7 @@ label.checkbox-label.css-label,label.radio-label.css-label{cursor:pointer}
 label.checkbox-label.css-label>input[type="checkbox"]:not(.css-input),label.radio-label.css-label>input[type="checkbox"]:not(.css-input),label.checkbox-label.css-label>input[type="radio"]:not(.css-input),label.radio-label.css-label>input[type="radio"]:not(.css-input){width:0;height:0;overflow:hidden;opacity:0}
 label.checkbox-label.css-label>input[type="checkbox"]+.input-checkbox,label.radio-label.css-label>input[type="checkbox"]+.input-checkbox{border-radius:2px}
 label.checkbox-label.css-label>input[type="radio"]+.input-radio,label.radio-label.css-label>input[type="radio"]+.input-radio{border-radius:10px}
-label.checkbox-label.css-label>input[type="checkbox"]+.input-checkbox,label.radio-label.css-label>input[type="checkbox"]+.input-checkbox,label.checkbox-label.css-label>input[type="radio"]+.input-radio,label.radio-label.css-label>input[type="radio"]+.input-radio{display:block;width:20px;height:20px;overflow:hidden;position:absolute;left:0;top:0;cursor:pointer;background:rgba(0,0,0,0.5) url("/images/toolkit/themes/bnet/forms/sprite-18-inputs.png") no-repeat -64px -96px;border:1px solid rgba(255,255,255,0.3);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms;transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms}
+label.checkbox-label.css-label>input[type="checkbox"]+.input-checkbox,label.radio-label.css-label>input[type="checkbox"]+.input-checkbox,label.checkbox-label.css-label>input[type="radio"]+.input-radio,label.radio-label.css-label>input[type="radio"]+.input-radio{display:block;width:20px;height:20px;overflow:hidden;position:absolute;left:0;top:0;cursor:pointer;background:rgba(0,0,0,0.5) url("/wow/images/toolkit/themes/bnet/forms/sprite-18-inputs.png") no-repeat -64px -96px;border:1px solid rgba(255,255,255,0.3);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms;transition:box-shadow 200ms,background-color 200ms,border-color 200ms,color 200ms}
 label.checkbox-label.css-label>input[type="checkbox"]:focus+.input-checkbox,label.radio-label.css-label>input[type="checkbox"]:focus+.input-checkbox,label.checkbox-label.css-label>input[type="radio"]:focus+.input-radio,label.radio-label.css-label>input[type="radio"]:focus+.input-radio{background-color:rgba(0,0,0,0.5);border-color:#1e5f99}
 label.checkbox-label.css-label:hover>input[type="checkbox"]:not(:disabled)+.input-checkbox,label.radio-label.css-label:hover>input[type="checkbox"]:not(:disabled)+.input-checkbox,label.checkbox-label.css-label:hover>input[type="radio"]:not(:disabled)+.input-radio,label.radio-label.css-label:hover>input[type="radio"]:not(:disabled)+.input-radio{background-color:rgba(0,0,0,0.5);border-color:rgba(255,255,255,0.5)}
 label.checkbox-label.css-label>input[type="checkbox"]:checked+.input-checkbox,label.radio-label.css-label>input[type="checkbox"]:checked+.input-checkbox{background-position:0 0}
@@ -1901,11 +1901,11 @@ label.checkbox-label.css-label>input[type="radio"]:checked:disabled+.input-radio
 .js-enabled .control-group.error label.checkbox-label.css-label:hover>input[type="checkbox"]:not(:disabled)+.input-checkbox,.js-enabled .control-group.danger label.checkbox-label.css-label:hover>input[type="checkbox"]:not(:disabled)+.input-checkbox,.js-enabled .control-group.important label.checkbox-label.css-label:hover>input[type="checkbox"]:not(:disabled)+.input-checkbox,.js-enabled .control-group.error label.radio-label.css-label:hover>input[type="radio"]:not(:disabled)+.input-radio,.js-enabled .control-group.danger label.radio-label.css-label:hover>input[type="radio"]:not(:disabled)+.input-radio,.js-enabled .control-group.important label.radio-label.css-label:hover>input[type="radio"]:not(:disabled)+.input-radio{border-color:rgba(205,6,6,0.8)}
 .js-enabled .control-group.error label.checkbox-label.css-label>input[type="checkbox"]:checked+.input-checkbox,.js-enabled .control-group.danger label.checkbox-label.css-label>input[type="checkbox"]:checked+.input-checkbox,.js-enabled .control-group.important label.checkbox-label.css-label>input[type="checkbox"]:checked+.input-checkbox{background-position:0 -54px}
 .js-enabled .control-group.error label.radio-label.css-label>input[type="radio"]:checked+.input-radio,.js-enabled .control-group.danger label.radio-label.css-label>input[type="radio"]:checked+.input-radio,.js-enabled .control-group.important label.radio-label.css-label>input[type="radio"]:checked+.input-radio{background-position:-18px -54px}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.js-enabled label.checkbox-label:not(.css-label):after,.js-enabled label.radio-label:not(.css-label):after{background:rgba(0,0,0,0.5) url("/images/toolkit/themes/bnet/forms/sprite-36-inputs.png") no-repeat -64px -96px;background-size:36px 108px}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.js-enabled label.checkbox-label:not(.css-label):after,.js-enabled label.radio-label:not(.css-label):after{background:rgba(0,0,0,0.5) url("/wow/images/toolkit/themes/bnet/forms/sprite-36-inputs.png") no-repeat -64px -96px;background-size:36px 108px}
 }
 .js-enabled select:not(.css-input),.js-enabled select:not(.css-input) option{opacity:0}
 .js-enabled .select-box{cursor:default;position:relative;display:inline-block;height:34px;padding:0 22px 0 0;text-indent:10px;margin-top:3px;margin-bottom:3px;font-size:15px;line-height:20px;color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.3);border-radius:2px;background:rgba(0,0,0,0.5);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:background-color .2s,border-color .2s,box-shadow .2s;transition:background-color .2s,border-color .2s,box-shadow .2s}
-.js-enabled .select-box .arrow{width:22px;height:100%;overflow:hidden;border-top-right-radius:2px;border-bottom-right-radius:2px;position:absolute;top:0;right:0;background:url("/images/toolkit/themes/bnet/forms/sprite-22-select.png") no-repeat 0 0}
+.js-enabled .select-box .arrow{width:22px;height:100%;overflow:hidden;border-top-right-radius:2px;border-bottom-right-radius:2px;position:absolute;top:0;right:0;background:url("/wow/images/toolkit/themes/bnet/forms/sprite-22-select.png") no-repeat 0 0}
 .js-enabled .select-box.input-block{width:100%}
 .js-enabled .select-box:hover{border-color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.5)}
 .js-enabled .select-box:hover>.current{color:rgba(255,255,255,0.7)}
@@ -1931,7 +1931,7 @@ label.checkbox-label.css-label>input[type="radio"]:checked:disabled+.input-radio
 .js-enabled .select-box .options>.option:last-of-type{border-bottom-left-radius:2px;border-bottom-right-radius:2px}
 .js-enabled .select-box.disabled,.js-enabled .select-box.disabled:focus,.js-enabled .select-box.disabled:hover{background-color:rgba(20,20,23,0.5)!important;border-color:rgba(255,255,255,0.3)!important;cursor:default!important}
 .js-enabled .select-box.disabled .current{color:#3f3f3f!important}
-.js-enabled .select-box.disabled .current [class^="icon-"]:not([class*="icon-payment-"]),.js-enabled .select-box.disabled .current [class*=" icon-"]:not([class*="icon-payment-"]){background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15!important}
+.js-enabled .select-box.disabled .current [class^="icon-"]:not([class*="icon-payment-"]),.js-enabled .select-box.disabled .current [class*=" icon-"]:not([class*="icon-payment-"]){background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15!important}
 .js-enabled .select-box.disabled .current [class^="icon-payment-"],.js-enabled .select-box.disabled .current [class*=" icon-payment-"]{opacity:.15!important}
 .js-enabled .select-box.disabled .arrow{opacity:.15!important;background-position:0 -32px!important}
 .js-enabled .control-group.control-info .select-box{border-color:rgba(0,174,255,0.6)}
@@ -1975,7 +1975,7 @@ label.checkbox-label.css-label>input[type="radio"]:checked:disabled+.input-radio
 .multiselect-container>li.multiselect-all.active{background-color:transparent!important}
 .multiselect-container>li.filter{padding:7px 10px 3px}
 .multiselect-container>li.filter .input-group .multiselect-search{font-size:13px;width:100%}
-.multiselect-container>li.filter .input-group:not(.filtered):after{content:"";display:inline-block;position:absolute;top:19px;right:16px;width:16px;height:16px;line-height:16px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-80px -16px}
+.multiselect-container>li.filter .input-group:not(.filtered):after{content:"";display:inline-block;position:absolute;top:19px;right:16px;width:16px;height:16px;line-height:16px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");background-position:-80px -16px}
 .multiselect-container>li.filter .input-group .multiselect-clear-filter{display:none;cursor:pointer;position:absolute;top:11px;right:11px;width:32px;height:32px;border:0;background-color:transparent}
 .multiselect-container>li.filter .input-group .multiselect-clear-filter .icon-remove{top:5px;left:10px}
 .multiselect-container>li.filter .input-group.filtered .multiselect-clear-filter{display:inline-block}
@@ -2061,15 +2061,15 @@ a{color:#00aeff;-webkit-transition:color,0.2s;transition:color .2s}
 a:focus,a:hover{color:#fff}
 a.inverse{color:rgba(255,255,255,0.7)}
 a.inverse:focus,a.inverse:hover{color:#fff}
-.logo{width:300px;height:70px;text-indent:-9999px;background:url("/images/logos/bnet-default.png") -5px 0;margin:0 auto}
-:lang(zh-CN) .logo{background:url("/images/toolkit/defaults/logos/bnet/china-default.png")}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.logo{background:url("/images/toolkit/defaults/logos/bnet/default-2x.png");background-size:300px 70px}
-    :lang(zh-CN) .logo{background:url("/images/toolkit/defaults/logos/bnet/china-default-2x.png");background-size:300px 70px}
+.logo{width:300px;height:70px;text-indent:-9999px;background:url("/wow/images/logos/bnet-default.png") -5px 0;margin:0 auto}
+:lang(zh-CN) .logo{background:url("/wow/images/toolkit/defaults/logos/bnet/china-default.png")}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.logo{background:url("/wow/images/toolkit/defaults/logos/bnet/default-2x.png");background-size:300px 70px}
+    :lang(zh-CN) .logo{background:url("/wow/images/toolkit/defaults/logos/bnet/china-default-2x.png");background-size:300px 70px}
 }
 .media{padding:20px 0;border:solid rgba(255,255,255,0.1);border-width:1px 0}
 .media.blizzard{background-color:rgba(0,66,136,0.3)}
 .media+.media{border-top-width:0}
-.media .img{margin-right:20px;width:82px;height:82px;padding:6px;overflow:hidden;position:relative;background-image:url("/images/toolkit/themes/bnet/media/media-org.png")}
+.media .img{margin-right:20px;width:82px;height:82px;padding:6px;overflow:hidden;position:relative;background-image:url("/wow/images/toolkit/themes/bnet/media/media-org.png")}
 .media .img:after{content:"";position:absolute;top:6px;left:6px;z-index:10;display:block;width:82px;height:82px;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.7),inset 0 0 0 2px rgba(255,255,255,0.1)}
 .media.blizzard .img{background-position:-94px 0;padding-bottom:84px}
 .media .img img{width:82px;height:82px;background-color:#000}
@@ -2084,7 +2084,7 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .media .dt-published{font-size:13px;line-height:20px}
 .modal-backdrop{z-index:1040}
 .modal-backdrop,.modal-backdrop.fade.in{opacity:.8}
-.modal{padding-top:10px;position:fixed;top:10%;left:50%;z-index:1050;overflow:visible;width:560px;margin-left:-280px;border-style:solid;border-width:1px;border-color:#000;box-shadow:0 5px 10px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.07);background:#1d222c;background-repeat:no-repeat;background-size:contain;background-position:center bottom,center top,center -100px;background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/images/toolkit/defaults/modals/modal-gradient.png"),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-clip:padding-box;outline:0}
+.modal{padding-top:10px;position:fixed;top:10%;left:50%;z-index:1050;overflow:visible;width:560px;margin-left:-280px;border-style:solid;border-width:1px;border-color:#000;box-shadow:0 5px 10px rgba(0,0,0,.75),inset 0 0 0 1px rgba(255,255,255,.07);background:#1d222c;background-repeat:no-repeat;background-size:contain;background-position:center bottom,center top,center -100px;background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),-webkit-linear-gradient(top,#263145 0,#1d222c 70%),-webkit-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),-moz-linear-gradient(top,#263145 0,#1d222c 70%),-moz-radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-image:url("/wow/images/toolkit/defaults/modals/modal-gradient.png"),linear-gradient(top,#263145 0,#1d222c 70%),radial-gradient(50% 100px,closest-side,#263145,#1d222c);background-clip:padding-box;outline:0}
 .modal .close{z-index:1051;position:absolute;margin:0;top:5px;right:7px}
 .modal .close [class^="icon-"],.modal .close [class*=" icon-"]{display:block;margin:0}
 .modal:before{content:"";position:absolute;top:1px;left:75px;right:75px;display:block;height:0;border-top:10px solid rgba(255,255,255,0.14);border-left:10px solid transparent;border-right:10px solid transparent}
@@ -2138,7 +2138,7 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .nav-list>li:last-child{margin-bottom:40px}
 .nav-list.icons>li:not(.nav-header){padding-left:30px}
 .nav-list.icons>li:not(.nav-header) [class^="icon-"]:not(.icon-external-link),.nav-list.icons>li:not(.nav-header) [class*="icon-"]:not(.icon-external-link){left:5px}
-.nav-list.icons>li:not(.nav-header).disabled [class^="icon-"]:not(.icon-external-link),.nav-list.icons>li:not(.nav-header).disabled [class*="icon-"]:not(.icon-external-link){background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15}
+.nav-list.icons>li:not(.nav-header).disabled [class^="icon-"]:not(.icon-external-link),.nav-list.icons>li:not(.nav-header).disabled [class*="icon-"]:not(.icon-external-link){background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15}
 .nav .nav-header{margin:0 0 10px 0;padding:0;font-size:12px;font-weight:400;line-height:20px;color:rgba(255,255,255,0.3);text-transform:uppercase;letter-spacing:.075em}
 .nav.nav-tabs:after{border-bottom:3px solid rgba(255,255,255,0.15);height:30px}
 .nav-tabs>li{border-bottom:3px solid rgba(255,255,255,0.15);padding:0}
@@ -2164,7 +2164,7 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .navbar-static .navbar.header+.navbar,.navbar-fixed .navbar.header+.navbar{border-top:1px solid rgba(255,255,255,0.07)}
 .navbar-fixed{width:100%;position:fixed;z-index:1030}
 .navbar.header .brand{float:left;display:block;text-transform:uppercase;font-weight:300;font-size:23px;line-height:30px;height:30px;padding:25px 0;color:#fff}
-.navbar.header .brand.mark{background:transparent url("/images/toolkit/defaults/logos/bnet/mark.png") no-repeat left 18px;display:inline-block;padding-left:60px}
+.navbar.header .brand.mark{background:transparent url("/wow/images/toolkit/defaults/logos/bnet/mark.png") no-repeat left 18px;display:inline-block;padding-left:60px}
 .navbar.header a.brand{-webkit-transition:text-shadow .2s,color .2s;transition:text-shadow .2s,color .2s}
 .navbar.header a.brand:hover,.navbar.header a.brand:focus{color:#fff;text-shadow:0 0 10px rgba(255,255,255,0.3),0 0 10px rgba(255,255,255,0.3)}
 .navbar.header .brand .tag{color:rgba(255,255,255,0.5);display:inline-block;font-size:12px;line-height:20px;text-transform:uppercase;letter-spacing:.075em;padding:1px 0 0 3px;vertical-align:text-top}
@@ -2197,9 +2197,9 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .pager>.active>a{color:#fff!important;background:rgba(255,255,255,0.07)!important;cursor:default!important;padding:1px!important;box-shadow:none!important}
 .pager>.disabled>a,.pager>.disabled>a:focus,.pager>.disabled>a:hover,.pager>.disabled>a:active{color:rgba(255,255,255,0.3)!important;background:rgba(0,0,0,0.1)!important;cursor:default!important;padding:1px 8px!important;box-shadow:none!important}
 .pager>.disabled>span{color:rgba(255,255,255,0.3)!important}
-.pager>li>a [class^="icon-"],.pager>li>span [class^="icon-"],.pager>li>a [class*=" icon-"],.pager>li>span [class*=" icon-"]{margin-top:3px;margin-right:-6px;margin-left:-6px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.pager>li>a:active [class^="icon-"],.pager>li>a:active [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.pager>.disabled>span [class^="icon-"],.pager>.disabled>a [class^="icon-"],.pager>.disabled>span [class*=" icon-"],.pager>.disabled>a [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
+.pager>li>a [class^="icon-"],.pager>li>span [class^="icon-"],.pager>li>a [class*=" icon-"],.pager>li>span [class*=" icon-"]{margin-top:3px;margin-right:-6px;margin-left:-6px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.pager>li>a:active [class^="icon-"],.pager>li>a:active [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.pager>.disabled>span [class^="icon-"],.pager>.disabled>a [class^="icon-"],.pager>.disabled>span [class*=" icon-"],.pager>.disabled>a [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
 .pagination{height:30px;margin:0}
 .pagination ul>li{margin-top:2px;margin-bottom:2px;margin-right:4px}
 .pagination ul>li:last-child{margin-right:0}
@@ -2211,9 +2211,9 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .pagination ul>.active>a{color:#fff!important;background:rgba(255,255,255,0.07)!important;cursor:default!important;padding:1px!important;box-shadow:none!important}
 .pagination ul>.disabled>a,.pagination ul>.disabled>a:focus,.pagination ul>.disabled>a:hover,.pagination ul>.disabled>a:active{color:rgba(255,255,255,0.3)!important;background:rgba(0,0,0,0.1)!important;cursor:default!important;padding:1px 8px!important;box-shadow:none!important}
 .pagination ul>.disabled>span{color:rgba(255,255,255,0.3)!important}
-.pagination ul>li>a [class^="icon-"],.pagination ul>li>span [class^="icon-"],.pagination ul>li>a [class*=" icon-"],.pagination ul>li>span [class*=" icon-"]{margin-top:3px;margin-right:-6px;margin-left:-6px;background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.pagination ul>li>a:active [class^="icon-"],.pagination ul>li>a:active [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
-.pagination ul>.disabled>span [class^="icon-"],.pagination ul>.disabled>a [class^="icon-"],.pagination ul>.disabled>span [class*=" icon-"],.pagination ul>.disabled>a [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
+.pagination ul>li>a [class^="icon-"],.pagination ul>li>span [class^="icon-"],.pagination ul>li>a [class*=" icon-"],.pagination ul>li>span [class*=" icon-"]{margin-top:3px;margin-right:-6px;margin-left:-6px;background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.pagination ul>li>a:active [class^="icon-"],.pagination ul>li>a:active [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png")}
+.pagination ul>.disabled>span [class^="icon-"],.pagination ul>.disabled>a [class^="icon-"],.pagination ul>.disabled>span [class*=" icon-"],.pagination ul>.disabled>a [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png")!important;opacity:.15!important}
 .results-counter{font-size:13px;line-height:26px;height:26px;margin:2px 0}
 .pagination-group:before,.pagination-group:after{content:".";font-size:0;line-height:0;display:block;overflow:hidden;visibility:hidden;width:0;height:0}
 .pagination-group:after{clear:both}
@@ -2242,8 +2242,8 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .progress .bar{height:22px;font-size:13px;line-height:22px;background-image:-webkit-linear-gradient(top,#474a4e,#414447 50%,#474a4e);background-image:linear-gradient(to bottom,#474a4e,#414447 50%,#474a4e);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.01),inset 0 0 14px rgba(255,255,255,0.1);-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:width,0.6s,ease;transition:width .6s ease;-webkit-border-top-left-radius:2px;-moz-border-radius-topleft:2px;border-top-left-radius:2px;-webkit-border-bottom-left-radius:2px;-moz-border-radius-bottomleft:2px;border-bottom-left-radius:2px}
 .progress .bar+.bar{-webkit-border-top-left-radius:0;-moz-border-radius-topleft:0;border-top-left-radius:0;-webkit-border-bottom-left-radius:0;-moz-border-radius-bottomleft:0;border-bottom-left-radius:0}
 .progress .bar[style*="100%"]{-webkit-border-top-right-radius:2px;-moz-border-radius-topright:2px;border-top-right-radius:2px;-webkit-border-bottom-right-radius:2px;-moz-border-radius-bottomright:2px;border-bottom-right-radius:2px}
-.progress.active .bar:after{height:50px;overflow:hidden;background:url("/images/toolkit/themes/bnet/progress-bars/progress-pulse.png") repeat-y;top:-14px;width:92px;right:-8px}
-.progress-striped .bar:before{height:50px;background:url("/images/toolkit/themes/bnet/progress-bars/progress-stripes.png") no-repeat 0 0;top:-14px;-webkit-border-top-left-radius:2px;-moz-border-radius-topleft:2px;border-top-left-radius:2px;-webkit-border-bottom-left-radius:2px;-moz-border-radius-bottomleft:2px;border-bottom-left-radius:2px}
+.progress.active .bar:after{height:50px;overflow:hidden;background:url("/wow/images/toolkit/themes/bnet/progress-bars/progress-pulse.png") repeat-y;top:-14px;width:92px;right:-8px}
+.progress-striped .bar:before{height:50px;background:url("/wow/images/toolkit/themes/bnet/progress-bars/progress-stripes.png") no-repeat 0 0;top:-14px;-webkit-border-top-left-radius:2px;-moz-border-radius-topleft:2px;border-top-left-radius:2px;-webkit-border-bottom-left-radius:2px;-moz-border-radius-bottomleft:2px;border-bottom-left-radius:2px}
 @-webkit-keyframes progress-bar-stripes{from{background-position:-195px 0}
     to{background-position:200% 0}
 }
@@ -2281,24 +2281,24 @@ a.inverse:focus,a.inverse:hover{color:#fff}
 .progress-warning .bar,.progress .bar-warning{background-image:-webkit-linear-gradient(top,#ffa800,#f08a19 50%,#ffa800);background-image:linear-gradient(to bottom,#ffa800,#f08a19 50%,#ffa800);opacity:.8}
 .progress-tracker{height:20px}
 .progress-tracker li{padding:0 20px;font-size:13px;line-height:20px;color:rgba(255,255,255,0.15)}
-.progress-tracker li [class^="icon-"],.progress-tracker li [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15}
+.progress-tracker li [class^="icon-"],.progress-tracker li [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.15}
 .progress-tracker li.active{color:rgba(255,255,255,0.5)}
-.progress-tracker li.active [class^="icon-"],.progress-tracker li.active [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.5}
+.progress-tracker li.active [class^="icon-"],.progress-tracker li.active [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png");opacity:.5}
 .scrollbar-content .scrollbar{width:22px}
 .scrollbar-content .track{width:22px}
 .scrollbar-content .thumb{cursor:pointer;height:22px;width:22px;padding:5px 7px}
 .scrollbar-content .thumb .end{background-color:rgba(255,255,255,0.1);width:8px;border-radius:4px;-webkit-transition:background-color .2s;transition:background-color .2s}
 .scrollbar-content:hover .thumb .end{background-color:rgba(255,255,255,0.1)}
-.spinner-loading{width:20px;height:20px;background-image:url("/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block}
-.spinner-loading.spinner-loading-white{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-battlenet-white.png")}
-.spinner-40-loading{width:40px;height:40px;background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-position:-280px 0;display:inline-block}
-.spinner-40-loading.spinner-40-loading-white{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet-white.png")}
-.spinner-patching{width:20px;height:20px;background-image:url("/images/toolkit/defaults/spinners/spinner-patching-white.png");display:inline-block}
-.spinner-patching.spinner-danger{background-image:url("/images/toolkit/defaults/spinners/spinner-patching-red.png")}
-.spinner-patching.spinner-warning{background-image:url("/images/toolkit/defaults/spinners/spinner-patching-orange.png")}
-.spinner-patching.spinner-success{background-image:url("/images/toolkit/defaults/spinners/spinner-patching-green.png")}
-.spinner-patching.spinner-info{background-image:url("/images/toolkit/defaults/spinners/spinner-patching-blue.png")}
-.spinner-patching.spinner-inverse{background-image:url("/images/toolkit/defaults/spinners/spinner-patching-gray.png")}
+.spinner-loading{width:20px;height:20px;background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block}
+.spinner-loading.spinner-loading-white{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-battlenet-white.png")}
+.spinner-40-loading{width:40px;height:40px;background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-position:-280px 0;display:inline-block}
+.spinner-40-loading.spinner-40-loading-white{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet-white.png")}
+.spinner-patching{width:20px;height:20px;background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-white.png");display:inline-block}
+.spinner-patching.spinner-danger{background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-red.png")}
+.spinner-patching.spinner-warning{background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-orange.png")}
+.spinner-patching.spinner-success{background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-green.png")}
+.spinner-patching.spinner-info{background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-blue.png")}
+.spinner-patching.spinner-inverse{background-image:url("/wow/images/toolkit/defaults/spinners/spinner-patching-gray.png")}
 @-webkit-keyframes keyframes-loading{from{background-position:0 0}
     to{background-position:-420px}
 }
@@ -2338,46 +2338,46 @@ a.inverse:focus,a.inverse:hover{color:#fff}
     to{background-position:-840px}
 }
 .spinner-40-loading{-webkit-animation:keyframes-40-loading .8s steps(21) infinite;-moz-animation:keyframes-40-loading .8s steps(21) infinite;-ms-animation:keyframes-40-loading .8s steps(21) infinite;animation:keyframes-40-loading .8s steps(21) infinite}
-.spinner-battlenet{width:20px;height:20px;background-image:url("/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block;-webkit-animation:keyframes-loading .8s steps(21) infinite;-moz-animation:keyframes-loading .8s steps(21) infinite;-ms-animation:keyframes-loading .8s steps(21) infinite;animation:keyframes-loading .8s steps(21) infinite}
-.spinner-40-battlenet{width:40px;height:40px;background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-position:-280px 0;display:inline-block;-webkit-animation:keyframes-40-loading .8s steps(21) infinite;-moz-animation:keyframes-40-loading .8s steps(21) infinite;-ms-animation:keyframes-40-loading .8s steps(21) infinite;animation:keyframes-40-loading .8s steps(21) infinite}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.spinner-battlenet{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
-    .spinner-40-battlenet{background-image:url("/images/toolkit/themes/bnet/spinners/spinner-80-battlenet.png");background-size:840px 40px}
+.spinner-battlenet{width:20px;height:20px;background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-battlenet.png");background-position:-140px 0;display:inline-block;-webkit-animation:keyframes-loading .8s steps(21) infinite;-moz-animation:keyframes-loading .8s steps(21) infinite;-ms-animation:keyframes-loading .8s steps(21) infinite;animation:keyframes-loading .8s steps(21) infinite}
+.spinner-40-battlenet{width:40px;height:40px;background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-position:-280px 0;display:inline-block;-webkit-animation:keyframes-40-loading .8s steps(21) infinite;-moz-animation:keyframes-40-loading .8s steps(21) infinite;-ms-animation:keyframes-40-loading .8s steps(21) infinite;animation:keyframes-40-loading .8s steps(21) infinite}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){.spinner-battlenet{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-40-battlenet.png");background-size:420px 20px}
+    .spinner-40-battlenet{background-image:url("/wow/images/toolkit/themes/bnet/spinners/spinner-80-battlenet.png");background-size:840px 40px}
 }
-[class^="icon-"],[class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-blue.png");margin:2px}
-[class^="icon-24-"],[class*=" icon-24-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-blue.png")}
-[class^="icon-payment-"],[class*=" icon-payment-"]{background-image:url("/images/toolkit/defaults/icons/sprite-16-payment.png")}
-[class^="icon-24-payment-"],[class*=" icon-24-payment-"]{background-image:url("/images/toolkit/defaults/icons/sprite-24-payment.png")}
-[class^="icon-48-"],[class*=" icon-48-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-blue.png")}
-[class^="icon-128-"],[class*=" icon-128-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-128-blue.png")}
-.icon-white{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-white.png")}
-.icon-24-white{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-white.png")}
-.icon-gray{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-gray.png")}
-.icon-24-gray{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-gray.png")}
-.icon-orange{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
-.icon-24-orange{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-orange.png")}
-.icon-128-orange{background-image:url("/images/toolkit/themes/bnet/icons/sprite-128-orange.png")}
-.icon-red{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-red.png")}
-.icon-24-red{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-red.png")}
-.icon-green{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
-.icon-24-green{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-green.png")}
-.icon-128-green{background-image:url("/images/toolkit/themes/bnet/icons/sprite-128-green.png")}
-.icon-purple{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-purple.png")}
-.icon-fullcolor{background-image:url("/images/toolkit/themes/bnet/icons/sprite-16-fullcolor.png")}
-.icon-24-fullcolor{background-image:url("/images/toolkit/themes/bnet/icons/sprite-24-fullcolor.png")}
-@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){[class^="icon-"],[class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-blue.png");background-size:160px 480px}
-    [class^="icon-payment-"],[class*=" icon-payment-"]{background-image:url("/images/toolkit/defaults/icons/sprite-32-payment.png");background-size:192px 176px}
-    .icon-gray,.nav-pills>.active>a>[class^="icon-"],.nav-pills>.active>a>[class*=" icon-"],.nav-list>.active>a>[class^="icon-"],.nav-list>.active>a>[class*=" icon-"],.navbar-inverse .nav>.active>a>[class^="icon-"],.navbar-inverse .nav>.active>a>[class*=" icon-"],.dropdown-submenu:hover>a>[class^="icon-"],.dropdown-submenu:hover>a>[class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-gray.png")}
-    .icon-white,.dropdown-menu>.disabled>a>[class^="icon-"],.dropdown-menu>.disabled>a>[class*=" icon-"],.btn-primary [class^="icon-"],.btn-primary [class*=" icon-"],.btn.disabled [class^="icon-"],.btn.disabled [class*=" icon-"],.btn[disabled] [class^="icon-"],.btn[disabled] [class*=" icon-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-white.png");background-size:160px 480px}
-    .icon-orange{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-orange.png")}
-    .icon-red{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-red.png")}
-    .icon-green{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-green.png")}
-    .icon-fullcolor{background-image:url("/images/toolkit/themes/bnet/icons/sprite-32-fullcolor.png")}
-    [class^="icon-24-"],[class*=" icon-24-"]{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-blue.png");background-size:240px 720px}
-    .icon-orange{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-orange.png")}
-    .icon-red{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-red.png")}
-    .icon-green{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-green.png")}
-    .icon-fullcolor{background-image:url("/images/toolkit/themes/bnet/icons/sprite-48-fullcolor.png")}
-    [class^="icon-24-payment-"],[class*=" icon-24-payment-"]{background-image:url("/images/toolkit/defaults/icons/sprite-48-payment.png");background-size:288px 264px}
+[class^="icon-"],[class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-blue.png");margin:2px}
+[class^="icon-24-"],[class*=" icon-24-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-blue.png")}
+[class^="icon-payment-"],[class*=" icon-payment-"]{background-image:url("/wow/images/toolkit/defaults/icons/sprite-16-payment.png")}
+[class^="icon-24-payment-"],[class*=" icon-24-payment-"]{background-image:url("/wow/images/toolkit/defaults/icons/sprite-24-payment.png")}
+[class^="icon-48-"],[class*=" icon-48-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-blue.png")}
+[class^="icon-128-"],[class*=" icon-128-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-128-blue.png")}
+.icon-white{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-white.png")}
+.icon-24-white{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-white.png")}
+.icon-gray{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-gray.png")}
+.icon-24-gray{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-gray.png")}
+.icon-orange{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-orange.png")}
+.icon-24-orange{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-orange.png")}
+.icon-128-orange{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-128-orange.png")}
+.icon-red{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-red.png")}
+.icon-24-red{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-red.png")}
+.icon-green{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-green.png")}
+.icon-24-green{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-green.png")}
+.icon-128-green{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-128-green.png")}
+.icon-purple{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-purple.png")}
+.icon-fullcolor{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-16-fullcolor.png")}
+.icon-24-fullcolor{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-24-fullcolor.png")}
+@media only screen and (-webkit-min-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (min-device-pixel-ratio:1.5){[class^="icon-"],[class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-blue.png");background-size:160px 480px}
+    [class^="icon-payment-"],[class*=" icon-payment-"]{background-image:url("/wow/images/toolkit/defaults/icons/sprite-32-payment.png");background-size:192px 176px}
+    .icon-gray,.nav-pills>.active>a>[class^="icon-"],.nav-pills>.active>a>[class*=" icon-"],.nav-list>.active>a>[class^="icon-"],.nav-list>.active>a>[class*=" icon-"],.navbar-inverse .nav>.active>a>[class^="icon-"],.navbar-inverse .nav>.active>a>[class*=" icon-"],.dropdown-submenu:hover>a>[class^="icon-"],.dropdown-submenu:hover>a>[class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-gray.png")}
+    .icon-white,.dropdown-menu>.disabled>a>[class^="icon-"],.dropdown-menu>.disabled>a>[class*=" icon-"],.btn-primary [class^="icon-"],.btn-primary [class*=" icon-"],.btn.disabled [class^="icon-"],.btn.disabled [class*=" icon-"],.btn[disabled] [class^="icon-"],.btn[disabled] [class*=" icon-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-white.png");background-size:160px 480px}
+    .icon-orange{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-orange.png")}
+    .icon-red{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-red.png")}
+    .icon-green{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-green.png")}
+    .icon-fullcolor{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-32-fullcolor.png")}
+    [class^="icon-24-"],[class*=" icon-24-"]{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-blue.png");background-size:240px 720px}
+    .icon-orange{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-orange.png")}
+    .icon-red{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-red.png")}
+    .icon-green{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-green.png")}
+    .icon-fullcolor{background-image:url("/wow/images/toolkit/themes/bnet/icons/sprite-48-fullcolor.png")}
+    [class^="icon-24-payment-"],[class*=" icon-24-payment-"]{background-image:url("/wow/images/toolkit/defaults/icons/sprite-48-payment.png");background-size:288px 264px}
 }
 .table{margin-bottom:40px}
 .table th,.table td{font-weight:400;padding:10px;line-height:20px;border-top:1px solid rgba(255,255,255,0.07)}

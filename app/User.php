@@ -67,4 +67,9 @@ class User extends Authenticatable {
         return true;
     }
 
+    public static function SetBalance($UserID, $Balance) {
+        $data = DB::table('users')->where('id', $UserID)->update(['balance' => $Balance]);
+        return true;
+    }
+
 }
