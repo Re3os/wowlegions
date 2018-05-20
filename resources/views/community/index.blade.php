@@ -134,24 +134,6 @@ community-home
                 <div class="sidebar-module " id="sidebar-game-realms">
                     <div class="sidebar-title">
                         <h3 class="header-3 title-game-realms">
-                            Аукционный дом                        </h3>
-                    </div>
-                    <div class="sidebar-content">
-                        <ul>
-                            <li>
-                                <a href="/vault/character/auction/" class="web-auction-house block">
-                                    <span class="content-icon"></span>
-                                    <span class="content-title">Мобильный аукцион</span>
-                                    <span class="content-desc">Просматривайте, покупайте и продавайте предметы прямо на сайте!</span>
-                                    <span class="clear"><!-- --></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="sidebar-module " id="sidebar-game-realms">
-                    <div class="sidebar-title">
-                        <h3 class="header-3 title-game-realms">
                             Информация                        </h3>
                     </div>
                     <div class="sidebar-content">
@@ -165,7 +147,7 @@ community-home
                                 </a>
                             </li>
                             <li>
-                                <a href="/community/bugtracker" class="web-auction-house block">
+                                <a href="{{ route('bugtracker') }}" class="web-auction-house block">
                                     <span class="content-icon"></span>
                                     <span class="content-title">Bugtracker</span>
                                     <span class="content-desc">Found a bug? Report it</span>
@@ -183,7 +165,7 @@ community-home
                     <div class="sidebar-content">
                         <ul>
                             <li>
-                                <a href="/community/status" class="realm-status block">
+                                <a href="{{ route('community-status') }}" class="realm-status block">
                                     <span class="content-icon"></span>
                                     <span class="content-title">Состояние игровых миров</span>
                                     <span class="content-desc">Список игровых миров и состояние каждого мира.</span>
@@ -197,4 +179,5 @@ community-home
             <span class="clear"></span>
         </div>
     </div>
+</div>
 @endsection

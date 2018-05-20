@@ -40,10 +40,32 @@
                             </div>
                         </div>
                     </form>
-<button class="Forum-button Forum-button--new" id="toggle-create-topic" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element"></span>
-<span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>				</div>
+            @guest
+                <button class="Forum-button Forum-button--new" id="toggle-create-topic" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element"></span>
+                <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
+            @else
+                @if(Auth::user()->charactersActive)
+                <button class="Forum-button Forum-button--new" id="toggle-create-topic" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element"></span>
+            <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
+                @else
+                <button class="Forum-button Forum-button--new" id="toggle-create-topic" disabled="disabled" data-toggle="tooltip" data-tooltip-content="На вашей учетной записи нет персонажа. Создайте персонажа в игре и авторизуйтесь заново." data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element" disabled="disabled" data-toggle="tooltip" data-tooltip-content="На вашей учетной записи нет персонажа. Создайте персонажа в игре и авторизуйтесь заново."></span>
+            <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
+                @endif
+            @endif
+                </div>
             </div>
-            @include('forum.new_topic')
+            @guest
+                <div class="Section Section--secondary is-hidden">
+				<div class="CreateTopic-container">
+<div class="LoginPlaceholder" id="create-topic"> <header class="LoginPlaceholder-header"><h1 class="LoginPlaceholder-heading">Обсудить</h1><a class="TopicForm-button--close" data-trigger="create.topicpost.forum" data-forum-button="true"></a> </header> <div class="LoginPlaceholder-content"> <aside class="LoginPlaceholder-author"> <div class="Author" id="" data-topic-post-body-content="true"><div class="Author-avatar Author-avatar--default"></div><div class="Author-details"><span class="Author-name is-blank"></span> <span class="Author-posts is-blank"></span></div></div> <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> </span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div> </aside> <div class="LoginPlaceholder-details"> <div class="LogIn-message">Вам есть что сказать? Авторизуйтесь, чтобы создать тему.</div> <a class="LogIn-button" href="?login"> <span class="LogIn-button-content" >Авторизация</span> </a> </div> </div> </div>				</div>
+			</div>
+                @else
+                @if(Auth::user()->charactersActive)
+                    @include('forum.new_topic', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
+                @else
+                    @include('forum.new_topic_no_characters')
+                @endif
+            @endguest
         </header>
 
         <div class="Forum-content" data-track="nexus.checkbox" id="forum-topics">
@@ -80,7 +102,9 @@
 </span>
 </span>
 <span class="ForumTopic--preview">{!! $topic->content !!}</span>
-<span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">{{ $topic->user->name }}</span>
+<span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">
+    {{ $topic->characters->name }}
+</span>
 
 <span class="ForumTopic-replies">
 <i class="Icon"></i>
@@ -122,7 +146,9 @@
 </span>
 </span>
 <span class="ForumTopic--preview">{!! $topic->content !!}</span>
-<span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">{{ $topic->user->name }}</span>
+<span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">
+    {{ $topic->characters->name }}
+</span>
 
 <span class="ForumTopic-replies">
 <i class="Icon"></i>

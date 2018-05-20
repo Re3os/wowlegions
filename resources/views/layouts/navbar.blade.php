@@ -56,7 +56,7 @@
                         <div id="username">
                             <div class="dropdown pull-right">
                                 <a class="nav-link username dropdown-toggle" data-toggle="dropdown" rel="navbar">
-                                    {{ Auth::user()->name }}<b class="caret"></b>
+                                    @if(Auth::user()->name) {{ Auth::user()->name }} @else {{ Auth::user()->email }} @endif<b class="caret"></b>
                                 </a>
                                 <div class="dropdown-menu pull-right">
                                     <div class="arrow top"></div>
@@ -64,19 +64,11 @@
                                         <div class="dropdown-section">
                                             <div class="nav-box selectable">
                                                     <div class="label">
-                                                        <span class="battletag">{{ Auth::user()->name }}</span>
-                                                        <span class="code">#{{ Auth::user()->name_id }}</span>
+                                                        @if(Auth::user()->name)<span class="battletag">{{ Auth::user()->name }}</span>
+                                                        <span class="code">#{{ Auth::user()->name_id }}</span>@endif
                                                     </div>
                                                     <div class="email">{{ Auth::user()->email }}</div>
                                             </div>
-                                        </div>
-                                        <div class="dropdown-section">
-                                            <ul class="nav-list">
-                                                <li>
-                                                    <a class="nav-item nav-a nav-item-box" href="/dashboard" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
-                                                        <i class="nav-icon-24-blue nav-icon-character-cog"></i>Dashboard</a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="dropdown-section">
                                             <ul class="nav-list">

@@ -2,11 +2,11 @@
 
 /* overrides */
 .profile-contents { margin-left: 0; }
-.profile-sidebar-inner { background-image: url("/images/character/summary/sidebar-bg.png"); }
+.profile-sidebar-inner { background-image: url("/wow/images/character/summary/sidebar-bg.png"); }
 ul.profile-sidebar-menu,
-ul.profile-sidebar-menu li { background-image: url("/images/profile/sidebar-menu-sep.png"); }
+ul.profile-sidebar-menu li { background-image: url("/wow/images/profile/sidebar-menu-sep.png"); }
 ul.profile-sidebar-menu a { width: 160px; }
-ul.profile-sidebar-menu a:hover { background: url("/images/profile/sidebar-menu-hover.png") left top no-repeat; }
+ul.profile-sidebar-menu a:hover { background: url("/wow/images/profile/sidebar-menu-hover.png") left top no-repeat; }
 .profile-wrapper { background: no-repeat 182px 75px; }
 .profile-wrapper-advanced ul.profile-sidebar-menu a { width: 150px; }
 .profile-recentactivity .category { font-size: 20px; }
@@ -20,7 +20,7 @@ ul.profile-sidebar-menu a:hover { background: url("/images/profile/sidebar-menu-
 /* light background */
 .profile-wrapper-light .summary-averageilvl .rest { color: #181818; }
 .profile-wrapper-light .summary-averageilvl .rest .tip { color: #0c0c0c; }
-.profile-wrapper-light .summary-top-right ul.profile-view-options a { background-image: url("/images/icons/view-options-light.png"); }
+.profile-wrapper-light .summary-top-right ul.profile-view-options a { background-image: url("/wow/images/icons/view-options-light.png"); }
 
 /* layout */
 .summary-top { margin-left: 230px; height: 700px; }
@@ -35,7 +35,7 @@ ul.profile-sidebar-menu a:hover { background: url("/images/profile/sidebar-menu-
 .summary-middle-inner { padding: 15px 25px; background-color: rgba(0, 0, 0, 0.15); -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
 .summary-middle-left { margin-right: 367px; }
 .summary-middle-right { float: right; width: 333px; }
-.summary-bottom { padding: 32px 40px; background: url("/images/character/summary/bottom-bg.png") left top no-repeat; min-height: 655px; }
+.summary-bottom { padding: 32px 40px; background: url("/wow/images/character/summary/bottom-bg.png") left top no-repeat; min-height: 655px; }
 .summary-bottom-sub-content { border-top: 1px solid #3d1e0f; margin-top: 19px; padding-top: 45px;}
 .summary-bottom-left { margin-right: 367px; }
 .summary-bottom-right { float: right; width: 385px; }
@@ -49,7 +49,7 @@ ul.profile-sidebar-menu a:hover { background: url("/images/profile/sidebar-menu-
 /* sidebar */
 .summary-sidebar-links { padding: 35px 0 0 25px; }
 .summary-sidebar-button { float: left; margin-right: 10px; }
-a.summary-link-tools { display: block; width: 21px; height: 21px; background: url("/images/icons/tools-button.gif") no-repeat; }
+a.summary-link-tools { display: block; width: 21px; height: 21px; background: url("/wow/images/icons/tools-button.gif") no-repeat; }
 .hover a.summary-link-tools, a.summary-link-tools:hover { background-position: bottom left; }
 
 /* average item level */
@@ -65,14 +65,14 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 .summary-inventory a.item { width: 49px; height: 49px; display: block; position: absolute; }
 .summary-inventory a.item img { display: block; width: 44px; height: 44px; padding: 3px 0 0 3px; }
 .summary-inventory a.item:hover .frame { background-color: rgba(255, 255, 255, 0.2); }
-.summary-inventory a.empty { width: 49px; height: 49px; display: block; cursor: help; position: absolute; background: url("/images/character/summary/item-empty-bg.png") no-repeat; opacity: 0.33333; }
+.summary-inventory a.empty { width: 49px; height: 49px; display: block; cursor: help; position: absolute; background: url("/wow/images/character/summary/item-empty-bg.png") no-repeat; opacity: 0.33333; }
 .summary-inventory a.empty:hover { opacity: 0.66666; }
-.summary-inventory a.item .frame, .summary-inventory a.empty .frame { position: absolute; left: 0; top: 0; width: 49px; height: 49px; background: url("/images/icons/frames/inventory-slots.png") no-repeat; }
+.summary-inventory a.item .frame, .summary-inventory a.empty .frame { position: absolute; left: 0; top: 0; width: 49px; height: 49px; background: url("/wow/images/icons/frames/inventory-slots.png") no-repeat; }
 .summary-inventory .slot,
 .summary-inventory a.item,
 .summary-inventory a.item .frame,
 .summary-inventory a.empty { -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px; }
-.summary-inventory .transmog-frame { width:17px; height:17px; display:block; position:absolute; z-index:2; top:32px; left:0; background: url("/images/wiki/item/transmogrify-icon.gif") 0 -17px no-repeat }
+.summary-inventory .transmog-frame { width:17px; height:17px; display:block; position:absolute; z-index:2; top:32px; left:0; background: url("/wow/images/wiki/item/transmogrify-icon.gif") 0 -17px no-repeat }
 .summary-inventory .transmog-frame:hover { background-position:-17px -17px }
 .summary-inventory .slot-align-right .transmog-frame { left:32px; background-position:0 0 }
 .summary-inventory .slot-align-right .transmog-frame:hover { background-position:-17px 0 }
@@ -119,7 +119,7 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 
 /* inventory (advanced) */
 .summary-inventory-advanced { width: 807px; height: 521px; position: absolute; left: -45px; top: -2px; }
-.summary-inventory-advanced .slot-inner { width: 265px; height: 57px; background: url("/images/character/summary/item-slot-advanced-bg.png") left top repeat-y; }
+.summary-inventory-advanced .slot-inner { width: 265px; height: 57px; background: url("/wow/images/character/summary/item-slot-advanced-bg.png") left top repeat-y; }
 .summary-inventory-advanced .slot-highlight .slot-inner { background-position: left bottom; }
 .summary-inventory-advanced .details { position: absolute; width: 204px; height: 49px; left: 57px; top: 4px; white-space: nowrap; }
 .summary-inventory-advanced a.item,
@@ -128,7 +128,7 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 .summary-inventory-advanced .name, .summary-inventory-advanced .name-shadow { position: absolute; font-size: 11px; }
 .summary-inventory-advanced .name { left: 0; top: -2px; }
 .summary-inventory-advanced .name-shadow { left: 1px; top: -1px; color: black; }
-.summary-inventory-advanced .audit-warning { display: inline-block; background: url("/images/icons/warning-small.png") right center no-repeat; width: 10px; height: 10px; margin-left: 5px; cursor: help; }
+.summary-inventory-advanced .audit-warning { display: inline-block; background: url("/wow/images/icons/warning-small.png") right center no-repeat; width: 10px; height: 10px; margin-left: 5px; cursor: help; }
 .summary-inventory-advanced .enchant, .summary-inventory-advanced .enchant-shadow { position: absolute; font-size: 11px; }
 .summary-inventory-advanced .enchant { left: 0; top: 12px; color: #0f0; }
 .summary-inventory-advanced .enchant .tip { border-bottom: 0; }
@@ -200,11 +200,11 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 /* reforging */
 .summary-reforging .category { margin-top: 15px; }
 .summary-reforging .arrow-anchor { position: relative; width: 1px; height: 0; margin: 0 auto; }
-.summary-reforging .arrow-anchor .arrow { position: absolute; width: 20px; height: 20px; background: url("/images/character/summary/reforging-arrow.gif") left top no-repeat; left: -10px; top: 0; }
+.summary-reforging .arrow-anchor .arrow { position: absolute; width: 20px; height: 20px; background: url("/wow/images/character/summary/reforging-arrow.gif") left top no-repeat; left: -10px; top: 0; }
 .reforging-highlight .arrow-anchor .arrow { display: none; }
 .reforging-highlight li { opacity: 0.3333; }
 .summary-reforging li { cursor: default; line-height: 15px; padding: 0px 0; position: relative; letter-spacing:-.010em;}
-.summary-reforging li .arrow { display: none; position: absolute; width: 10px; height: 10px; top: 8px; background: url("/images/character/summary/reforging-arrow-small.png") left top no-repeat; }
+.summary-reforging li .arrow { display: none; position: absolute; width: 10px; height: 10px; top: 8px; background: url("/wow/images/character/summary/reforging-arrow-small.png") left top no-repeat; }
 .summary-reforging li .text { padding: 5px 0; padding-left: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .summary-reforging li.highlight { opacity: 1; }
 .summary-reforging li.highlight .arrow { display: block; }
@@ -224,7 +224,7 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 
 /* health/resource */
 .summary-health-resource { float: left; margin: 0 0px 10px; color: white; }
-.summary-health-resource li { margin-right: 11px; padding-left: 11px; text-shadow: 1px 1px 1px #000; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; background: url("/images/character/summary/health-resource-bg.png") repeat-x; cursor: help; display: inline-block; width: 157px;}
+.summary-health-resource li { margin-right: 11px; padding-left: 11px; text-shadow: 1px 1px 1px #000; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; background: url("/wow/images/character/summary/health-resource-bg.png") repeat-x; cursor: help; display: inline-block; width: 157px;}
 .summary-health-resource li, .summary-health-resource span { height: 23px; line-height: 23px; }
 .summary-health-resource .name { font-size: 11px; }
 .summary-health-resource .value { font-size: 12px; font-family:"Arial Black", Arial, sans-serif; font-weight:900; padding-left: 5px; }
@@ -249,13 +249,13 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 .summary-talents .profile-box-simple { border-top: 0px; margin-top: 0px;}
 
 .summary-talents .talent-export { float: right; font-size: 11px; letter-spacing: 0; display: inline-block; line-height: 49px;}
-.summary-talents .talent-export .arrow { display: inline-block; background: url("/images/icons/flyout-arrows.gif") no-repeat -4px -123px; width: 6px; height: 10px; margin: 0 0 -1px 6px;}
+.summary-talents .talent-export .arrow { display: inline-block; background: url("/wow/images/icons/flyout-arrows.gif") no-repeat -4px -123px; width: 6px; height: 10px; margin: 0 0 -1px 6px;}
 
 .summary-talents .talent-specs { background-color: rgba(0,0,0,0.15); border-radius: 4px; border-bottom: 1px solid #3C1E12; clear: both;}
 
 .summary-talents .talent-specs .inner { display: block; padding: 8px 7px 11px 12px; padding-bottom: 0; position: relative;}
 .summary-talents .talent-specs .roles { position: absolute; left: 13px; top: 25px; width: 32px; height: 16px; }
-.summary-talents .talent-specs .checkmark { background: url("/images/character/summary/talents-check.gif") no-repeat; width:15px; height:11px; float: right; position: absolute; top: 18px; right: 7px;}
+.summary-talents .talent-specs .checkmark { background: url("/wow/images/character/summary/talents-check.gif") no-repeat; width:15px; height:11px; float: right; position: absolute; top: 18px; right: 7px;}
 
 .summary-talents .talent-specs .frame { float: left; width: 26px; height: 26px; margin-right: 9px; margin-top: 1px; background-color: black; border: 1px solid #434445; border-bottom-color: #2F3032; border-top-color: #B1B2B4; overflow: hidden; -webkit-box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.50); box-shadow:0px 1px 8px 0px rgba(0,0,0,0.50);}
 .summary-talents .talent-specs .icon img { display: block; width: 26px; height: 26px;}
@@ -346,22 +346,22 @@ a.summary-link-tools { display: block; width: 21px; height: 21px; background: ur
 .summary-stats-end { clear: left; }
 .summary-stats-simple { line-height: normal; }
 .summary-stats-simple li { padding: 6px 0; }
-a.summary-stats-simple-arrow-left { position: absolute; right: 30px; top: 1px; width: 26px; height: 20px; background: url("/images/profile/nav.gif") left top no-repeat; }
+a.summary-stats-simple-arrow-left { position: absolute; right: 30px; top: 1px; width: 26px; height: 20px; background: url("/wow/images/profile/nav.gif") left top no-repeat; }
 a.summary-stats-simple-arrow-left:hover { background-position: left bottom; }
-a.summary-stats-simple-arrow-right { position: absolute; right: -1px; top: 1px; width: 26px; height: 20px; background: url("/images/profile/nav.gif") right top no-repeat; }
+a.summary-stats-simple-arrow-right { position: absolute; right: -1px; top: 1px; width: 26px; height: 20px; background: url("/wow/images/profile/nav.gif") right top no-repeat; }
 a.summary-stats-simple-arrow-right:hover { background-position: right bottom; }
 .summary-stats-simple-base, .summary-stats-advanced-base { float: left; margin-right: 27px; }
 .summary-stats-simple-other { position: relative; }
 .summary-stats-simple-other, .summary-stats-advanced-role { float: left; }
 .summary-stats-advanced li { padding: 10px 0; border-top: 1px solid #2f1e18; }
-a.summary-stats-toggler, a.summary-stats-toggler .inner { display: block; height: 26px; line-height: 26px; background: url("/images/character/summary/stats-expand-bg.gif") left top no-repeat; font-size: 11px; }
+a.summary-stats-toggler, a.summary-stats-toggler .inner { display: block; height: 26px; line-height: 26px; background: url("/wow/images/character/summary/stats-expand-bg.gif") left top no-repeat; font-size: 11px; }
 a.summary-stats-toggler { margin-top: 15px; text-align: center; padding-left: 10px; }
 a.summary-stats-toggler .inner { background-position: right top; padding-right: 10px; }
 a.summary-stats-toggler:hover { background-position: left bottom; }
 a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 .summary-stats-bottom { border-top: 1px solid #2f1e18; margin-top: 25px; padding-top: 25px; }
 
-.summary-bottom-sub-content .category .view-more { background: url("/images/icons/more-arrows-wide.gif") no-repeat 100% 12px; display: inline-block; padding-right: 14px; }
+.summary-bottom-sub-content .category .view-more { background: url("/wow/images/icons/more-arrows-wide.gif") no-repeat 100% 12px; display: inline-block; padding-right: 14px; }
 .summary-bottom-sub-content .category .view-more:hover { background-position: 100% -77px; }
 
 /* professions */
@@ -372,7 +372,7 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 .summary-professions,
 .summary-professions li,
 .summary-professions .profession-details { width: 312px; display: block; }
-.summary-professions li { height: 23px; margin-bottom: 7px; background: #462414 url("/images/character/summary/professions-bar-bg.png") repeat-x; background-size:cover; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
+.summary-professions li { height: 23px; margin-bottom: 7px; background: #462414 url("/wow/images/character/summary/professions-bar-bg.png") repeat-x; background-size:cover; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; }
 .summary-professions .profession-details { position: absolute; left: 0; top: 0; text-shadow: 1px 1px 1px #000; }
 .summary-professions a.profession-details:hover { background-color: rgba(255, 255, 255, 0.15); }
 .summary-professions .profession-details span { float: left; color: white; }
@@ -383,12 +383,12 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 .summary-professions li.empty .name { color: #572e1b; text-shadow: none; float:none; margin:0; display:block; height:23px; text-align:center;}
 
 .summary-professions .profile-progress { background: none; margin: 0; text-align: left; }
-.summary-professions .profile-progress .bar { height: 23px; background: url("/images/character/summary/professions-bar-bg.png") left -23px repeat-x; width: 100%; }
+.summary-professions .profile-progress .bar { height: 23px; background: url("/wow/images/character/summary/professions-bar-bg.png") left -23px repeat-x; width: 100%; }
 .summary-professions .profile-progress .bar-contents { line-height: 23px; }
 
 /* battlegrounds */
 .summary-battlegrounds { width: 183px; float: left; margin-top:4px; }
-.summary-battlegrounds .link { display: inline-block; font-size: 13px; position:relative; top:-1px; background: url("/images/icons/more-arrows-wide.gif") no-repeat 100% 4px; padding-right: 14px; margin-bottom: 7px;}
+.summary-battlegrounds .link { display: inline-block; font-size: 13px; position:relative; top:-1px; background: url("/wow/images/icons/more-arrows-wide.gif") no-repeat 100% 4px; padding-right: 14px; margin-bottom: 7px;}
 .summary-battlegrounds .link:hover { background-position: 100% -85px; }
 .summary-battlegrounds li { line-height: 23px; }
 .summary-battlegrounds .name { display: block; font-size: 11px; position:relative; top:-1px;}
@@ -406,12 +406,12 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 #battle-pet-summary .pet-summary-slot.end  { margin-right: 0; }
 #battle-pet-summary .pet-summary-slot .character { width: 96px; height: 96px; display: block; cursor: default;
     border: 1px solid #3c2012; overflow: hidden;
-    background: url("/images/character/summary/battle-pet-container-small.png") 50% 50% no-repeat;
+    background: url("/wow/images/character/summary/battle-pet-container-small.png") 50% 50% no-repeat;
     -moz-box-shadow: 0 0 10px #241209; -webkit-box-shadow: 0 0 10px #241209; box-shadow: 0 0 10px #241209;
     -moz-border-radius: 6px; -webkit-border-radius: 6px; border-radius: 6px;
 }
 #battle-pet-summary .pet-summary-slot .character a {display:block;}
-#battle-pet-summary .pet-summary-slot.locked .character  { background: url("/images/character/summary/battle-pet-container-locked-small.png") 50% 50% no-repeat; }
+#battle-pet-summary .pet-summary-slot.locked .character  { background: url("/wow/images/character/summary/battle-pet-container-locked-small.png") 50% 50% no-repeat; }
 #battle-pet-summary .pet-summary-slot .character .preview img { width: 96px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 #battle-pet-summary .pet-summary-slot .character .family-icon-small { position: absolute; top: 3px; left: -10px; }
 #battle-pet-summary .pet-summary-slot .pet-info { font-size: 12px; text-align: left; margin-top: 6px; width:98px;}
@@ -425,7 +425,7 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 /* raid progression */
 .summary-raid { padding-top: 37px; }
 .summary-raid-wrapper { margin-top: 10px; }
-.summary-raid-wrapper a.arrow-left, .summary-raid-wrapper a.arrow-right { position: absolute; top: 50px; width: 26px; height: 30px; background: url("/images/profile/nav2.gif") left top no-repeat; z-index: 1; }
+.summary-raid-wrapper a.arrow-left, .summary-raid-wrapper a.arrow-right { position: absolute; top: 50px; width: 26px; height: 30px; background: url("/wow/images/profile/nav2.gif") left top no-repeat; z-index: 1; }
 .summary-raid-wrapper a.arrow-left { left: 0; }
 .summary-raid-wrapper a.arrow-left:hover { background-position: left bottom; }
 .summary-raid-wrapper a.arrow-right { left: 36px; display: none; background-position: right top; }
@@ -469,7 +469,7 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 .summary-raid tr.icons td.expansion-5 .icon { border-color: #ff320a; }
 .summary-raid tr.icons td.expansion-6 .icon { border-color: #a8ff00; }
 .summary-raid tr.icons .icon, .summary-raid tr.icons .icon a { width: 61px; height: 60px; display: block; }
-.summary-raid tr.icons .icon { background: url("/images/character/summary/raid-icons.jpg") no-repeat; }
+.summary-raid tr.icons .icon { background: url("/wow/images/character/summary/raid-icons.jpg") no-repeat; }
 .summary-raid tr.icons .icon a,
 .summary-raid tr.icons .icon span { display: block; overflow: hidden; text-align: center; text-shadow: 1px 1px 1px black; font-family:"Arial Black", Arial, sans-serif; font-weight:900; font-size: 11px; line-height: 98px; color: white; width:60px; height:61px }
 .summary-raid tr.icons .icon span { cursor: help; }
@@ -521,7 +521,7 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 .summary-raid td.status-completed div { background-color: #5cc301; }
 
 .summary-raid-legend { text-align: center; padding: 24px 0 11px 0; }
-.summary-raid-legend span { background: url("/images/character/summary/raid-legend.gif") no-repeat left center; padding-left: 14px; margin-right: 20px; }
+.summary-raid-legend span { background: url("/wow/images/character/summary/raid-legend.gif") no-repeat left center; padding-left: 14px; margin-right: 20px; }
 .summary-raid-legend .in-progress { color: #fcff00; background-position: 0 center; margin-right: 0; }
 .summary-raid-legend .completed   { color: #5cc301; background-position: -150px center; }
 
@@ -534,7 +534,7 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 /* arena */
 .summary-arena { padding-top: 40px; }
 .summary-arena .arena-columns { width: 645px; margin: 0 auto; }
-.summary-arena .arena-column { width: 205px; height: 242px; float: right; margin-left: 10px; background: #2a150b url("/images/character/summary/arena-bg.png") no-repeat; }
+.summary-arena .arena-column { width: 205px; height: 242px; float: right; margin-left: 10px; background: #2a150b url("/wow/images/character/summary/arena-bg.png") no-repeat; }
 .summary-arena .arena-column.column-disabled { background-position: -205px 0; }
 .summary-arena .arena-column.column-disabled .cell-top h2 { color: #421e0a }
 .summary-arena .cell { margin-top: 20px; padding-bottom: 17px; }
@@ -573,17 +573,17 @@ a.summary-stats-toggler:hover .inner { background-position: right bottom; }
 
 /* sidebar */
 .summary-fansite-anchor { padding: 25px; font-size: 11px; }
-.summary-thirdparty a { padding-right: 12px; background: url("/images/icons/goto-fansite.gif") no-repeat 100% 3px;  }
+.summary-thirdparty a { padding-right: 12px; background: url("/wow/images/icons/goto-fansite.gif") no-repeat 100% 3px;  }
 .summary-save-image { margin-top: 10px }
-.summary-save-image a { margin-right: 10px; background: url('/images/icons/down.gif') no-repeat right 3px; padding-right: 12px;}
+.summary-save-image a { margin-right: 10px; background: url('/wow/images/icons/down.gif') no-repeat right 3px; padding-right: 12px;}
 
 /* Tally of Medals Earned */
 .summary-challenge-mode { float: left; margin-top: 28px; }
-.summary-challenge-mode .link { display: inline-block; font-size: 13px; position:relative; top:-1px; background: url("/images/icons/more-arrows-wide.gif") no-repeat 100% 4px; padding-right: 14px;}
+.summary-challenge-mode .link { display: inline-block; font-size: 13px; position:relative; top:-1px; background: url("/wow/images/icons/more-arrows-wide.gif") no-repeat 100% 4px; padding-right: 14px;}
 .summary-challenge-mode .link:hover { background-position: 100% -85px; }
 
 #challenge-mode-medals { height: 32px; font-size: 22px; top: 18px;}
-#challenge-mode-medals .medal { padding-right: 30px; background: transparent url("/images/game/challenge/medals-sprite.png") no-repeat right 27px; line-height: 27px; display: inline-block; }
+#challenge-mode-medals .medal { padding-right: 30px; background: transparent url("/wow/images/game/challenge/medals-sprite.png") no-repeat right 27px; line-height: 27px; display: inline-block; }
 #challenge-mode-medals .medal.gold { background-position: right 0; color: #ffd700; }
 #challenge-mode-medals .medal.silver { background-position: right -27px; color: #c0c0c0; }
 #challenge-mode-medals .medal.bronze { background-position: right -54px; color: #cd7f32; }

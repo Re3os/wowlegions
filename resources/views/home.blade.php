@@ -92,7 +92,7 @@ homepage news
                             <li>
                                 <div class="article-wrapper">
                                     <a href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}" class="featured-news-link" data-category="wow" data-action="Blog_Click-Throughs" data-label="home ">
-                                        <div class="article-image" style="background-image:url(/uploads/news/{{ $item->images }})">
+                                        <div class="article-image" style="background-image:url({{ asset('uploads/images/'.$item->images) }})">
                                             <div class="article-image-frame"></div>
                                         </div>
                                         <div class="article-content">
@@ -113,7 +113,7 @@ homepage news
                         @foreach($blog as $item)
                         <div class="article-wrapper" >
                             <a href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}">
-                                <div class="article-image" style="background-image:url(/uploads/news/{{ $item->images }})">
+                                <div class="article-image" style="background-image:url({{ asset('uploads/images/'.$item->images) }})">
                                     <div class="article-image-frame"></div>
                                 </div>
 
@@ -128,7 +128,7 @@ homepage news
                                     <meta content="{{ $item->created_at }}">
                                     <meta content="ru">
                                     <meta content="UserComments:{{ App\Comment::where('post_id', $item->id)->count() }} ">
-                                    <meta content="/uploads/news/{{ $item->images }}">
+                                    <meta content="{{ asset('uploads/images/'.$item->images) }}">
                                 </div></a>
 
                             <div class="article-meta">

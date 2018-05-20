@@ -24,7 +24,8 @@ class TopicsController extends Controller
           'title'       => request('subject'),
           'content'     => request('messages'),
           'category_id' => $category->id,
-          'user_id'  => \Auth::user()->id
+          'user_id'  => \Auth::user()->id,
+          'characters_id' => \Auth::user()->charactersActive,
         ]);
 
         return redirect()->route('forum.topic', [$category->id, $topic->id]);
@@ -38,7 +39,8 @@ class TopicsController extends Controller
 
         $topic->replies()->create([
             'content'  => request('detail'),
-            'user_id'  => \Auth::user()->id
+            'user_id'  => \Auth::user()->id,
+            'characters_id' => \Auth::user()->charactersActive,
         ]);
 
         return back();

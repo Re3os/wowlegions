@@ -7,8 +7,8 @@ use Request;
 
 class LocaleMiddleware
 {
-    public static $mainLanguage = 'ru';
-    public static $languages = ['en', 'ru'];
+    public static $mainLanguage = 'ru-ru';
+    public static $languages = ['de-de', 'en-us', 'en-gb', 'es-es', 'fr-fr', 'it-it', 'ru-ru', 'ja-jp', 'zh-cn'];
 
     public static function getLocale() {
         $uri = Request::path();

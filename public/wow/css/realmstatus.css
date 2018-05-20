@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#content .content-top { background:url(/images/game/comparison/content-top.jpg) no-repeat scroll 0 0 transparent; }
+#content .content-top { background:url(/wow/images/game/comparison/content-top.jpg) no-repeat scroll 0 0 transparent; }
 
 #realm-filters { margin-top: 15px; clear:both }
 #realm-filters input[type=text],
@@ -21,7 +21,7 @@
 
 .filter-text { display:none; }
 .table td.status { padding-top:0; padding-bottom:0; }
-.status-icon { background:url(/images/icons/status.gif) 0 0 no-repeat; margin:0 auto; height:28px; width:27px; }
+.status-icon { background:url(/wow/images/icons/status.gif) 0 0 no-repeat; margin:0 auto; height:28px; width:27px; }
 .status-icon.up { background-position:-110px 0; }
 
 td.type span,

@@ -6,14 +6,14 @@
 <div class="TopicForm-content">
 <aside class="TopicForm-author" data-topic-form="{'userId': {{ Auth::user()->id }}  }">
 <div class="Author" id="" data-topic-post-body-content="true">
-<a href="/user/{{ Auth::user()->name }}" class="Author-avatar ">
+<a href="/user/{{ $active->name }}" class="Author-avatar ">
 <img src="/images/avatars/wow/4-0.jpg" alt="" /></a>
 <div class="Author-details">
 <span class="Author-name">
-<a class="Author-name--profileLink" href="/user/{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+<a class="Author-name--profileLink" href="/user/{{ $active->name }}">{{ $active->name }}</a>
 </span>
 <span class="Author-posts">
-<a class="Author-posts" href="/search?a={{ Auth::user()->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
+<a class="Author-posts" href="/search?a={{ $active->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
 @lang('forum.count_messages', ['count' => Auth::user()->posts_count])
 </a>
 </span>
@@ -62,12 +62,6 @@
 <div class="TopicForm-action--buttons">
 <button type="submit" id="submit-button" class="TopicForm-button TopicForm-button--create" data-topic-post-button="true">
 <span class="Button-content">@lang('forum.TopicFormButtonCreate')</span>
-</button>
-<button type="button" class="TopicForm-button TopicForm-button--preview" data-topic-post-button="true" data-text="@lang('forum.TopicFormButtonPreview')">
-<span class="Button-content">@lang('forum.TopicFormButtonPreview')</span>
-</button>
-<button type="button" class="TopicForm-button TopicForm-button--edit" data-topic-post-button="true" data-text="@lang('forum.TopicFormButtonEdit')">
-<span class="Button-content">@lang('forum.TopicFormButtonEdit')</span>
 </button>
 </div>
 </form></div></div>

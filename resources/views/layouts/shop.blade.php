@@ -377,7 +377,25 @@ body.className = body.className + " js-enabled";
                     <li class="active">World of Warcraft</li>
             </ul>
         </div>
-                    </div>
+        @guest
+        @else
+        <div class="grid-50">
+            <ul class="nav">
+                <li class="dropdown pull-right battlenet-balance-status">
+                    <a href="#" class="dropdown-toggle" id="battlenet-balance-select" role="button" data-toggle="dropdown">
+                        <span class="balance-amount">{{ Auth::user()->balance }} {{ Auth::user()->currency }}</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="battlenet-balance-select">
+                        <li><a tabindex="-1" href="{{ route('add-balance') }}">Пополнить кошелек</a></li>
+                        <li><a tabindex="-1" href="{{ route('claim-code') }}" data-external="sso">Использовать код<i class="icon-external-link"></i></a></li>
+                        <li><a tabindex="-1" href="{{ route('transaction-history') }}" data-external="sso">История операций с кошельком<i class="icon-external-link"></i></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @endguest
+    </div>
 </nav>
 </div>
 <div class="body-content">

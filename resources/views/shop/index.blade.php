@@ -21,7 +21,7 @@ browse-template product-family-wow
                         Фильтры                    </h3>
                     <ul class="filter-list nav nav-list">
                                                         <li>
-                                    <a href="/shop/?categories=mounts" class="checkbox-label">
+                                    <a href="{{ $mount->appends(['sort' => 'votes'])->links() }}" class="checkbox-label">
                                             <span class="input-checkbox "></span>
                                             <span class="">
                                                 <span class="filter-text">

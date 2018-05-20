@@ -4,23 +4,26 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use \DB;
+use Illuminate\Auth\Passwords\CanResetPassword;
+
+use App\Mail\MailPasswordReset;
+use DB;
 
 class User extends Authenticatable {
 
     use Notifiable;
 
     protected $fillable = [
-        'name', 'email', 'password', 'balance', 'role',
+        'name', 'name_id', 'email', 'password', 'balance', 'role', 'is_admin',
     ];
 
     protected $hidden = [
-        'password', 'remember_token',
+        'remember_token',
     ];
 
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new ResetPasswordNotification($token));
+        \Mail::to($_POST['email'])->send(new MailPasswordReset($token));
     }
     
     public function comments() {
@@ -39,31 +42,31 @@ class User extends Authenticatable {
         return $this->topics->count() + $this->replies->count();
     }
 
-    public static function createNameID($email, $user) {
+    public static function createNameID($email, $tagName) {
         $tagNameID = 1;
-        if(!self::isTagNameFree($user)) {
-            $tagNameID = self::getLastTagNameID($user);
+        if(!self::isTagName($tagName)) {
+            $tagNameID = self::getLastTagNameID($tagName);
         }
-        self::updateUsersTagName($email, $tagNameID);
-        return array('tag' => $user, 'id' => $tagNameID);
+        self::updateUsersTagName($email, $tagName, $tagNameID);
+        return array('tag' => $tagName, 'id' => $tagNameID);
     }
 
-    private static function isTagNameFree($user) {
-        $name_id = DB::table('users')->select('name')->where('name', '=', $user)->get();
+    private static function isTagName($tagName) {
+        $name_id = DB::table('users')->select('name')->where('name', '=', $tagName)->get();
         if($name_id->count() > 0) {
-            return false;
-        } else {
             return true;
+        } else {
+            return false;
         }
     }
 
-    private static function getLastTagNameID($user) {
-        $name_id = DB::table('users')->select(DB::raw('MAX(name_id)+1 as new_id'))->where('name', '=', $user)->get();
+    private static function getLastTagNameID($tagName) {
+        $name_id = DB::table('users')->select(DB::raw('MAX(name_id)+1 as new_id'))->where('name', '=', $tagName)->get();
         return $name_id[0]->new_id;
     }
 
-    private static function updateUsersTagName($email, $user_id) {
-        $data = DB::table('users')->where('email', $email)->update(['name_id' => $user_id]);
+    private static function updateUsersTagName($email, $tagName, $user_id) {
+        $data = DB::table('users')->where('email', $email)->update(['name' => $tagName, 'name_id' => $user_id]);
         return true;
     }
 

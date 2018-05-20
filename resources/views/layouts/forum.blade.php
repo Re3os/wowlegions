@@ -43,8 +43,8 @@
         Core.supportUrl			= '/support/';
         Core.secureSupportUrl 	= '/support/';
         Core.project			= '';
-        Core.locale				= 'ru-ru';
-        Core.language			= 'ru';
+        Core.locale				= '{{ app()->getLocale() }}';
+        Core.language			= '{{ app()->getLocale() }}';
         Core.region				= 'eu';
         Core.shortDateFormat 	= 'dd/MM/yyyy';
         Core.dateTimeFormat		= 'dd/MM/yyyy HH:mm';
@@ -289,15 +289,62 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
         <div class="arrow top"></div>
     </div>
         </div>
-    </div><div class="Subnav">
+    </div>
+
+    <div class="Subnav">
     <div class="Container Container--content">
     <div class="GameSite-link"> <a class="GameSite-link--heading" href="/"> <i class="Icon"></i>World of Warcraft </a> </div>
     @yield('sidebar')
+    @guest
+    @else
+        @if(Auth::user()->charactersActive === NULL)
+            <div class="User-menu"> <span class="User-menu-label">Разместить как:</span> <div class="Dropdown"> <span class="User-menu-heading" data-trigger="toggle.dropdown.menu"><div class="Author-avatar Author-avatar--default"></div> <i class="Icon"></i> </span> <div class="Dropdown-menu Dropdown-menu--userMenu"> <span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span> <div class="Dropdown-items"> <a href="/forums/ru/wow/search?a=fan33rus%232367" class="Dropdown-item Dropdown-item--postHistory">История сообщений</a> </div> </div> </div> </div>
+        @else
+            @php
+                $active = \App\Characters::activeUserCharacters(Auth::user()->charactersActive);
+            @endphp
+            <div class="User-menu"> <span class="User-menu-label">Разместить как:</span> <div class="Dropdown"> <span class="User-menu-heading" data-trigger="toggle.dropdown.menu"><div class="Author-avatar" ><img src="/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></div> <i class="Icon"></i> </span> <div class="Dropdown-menu Dropdown-menu--userMenu"> <span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span> <div class="Dropdown-items"> <a href="/forum/search?a={{ $active->name }}" class="Dropdown-item Dropdown-item--postHistory">История сообщений</a> <a href="{{ route('characters-simple', [$active->name]) }}" class="Dropdown-item Dropdown-item--profileLink"> Профиль<i class="Icon-profileLink"></i></a><div class="Dropdown-divider"></div> <span class="Dropdown-item" data-select-character="true"> Изменить персонажа</span> </div> </div> </div> </div>
+        @endif
+    @endguest
     </div>
 </div>
+
 <div role="main">
     @yield('content')
 </div>
+@guest
+@else
+@if(count(\App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)))
+@php
+    $all = \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id);
+@endphp
+<div class="CharacterSelect-modal" id="CharacterSelect-modal">
+<div class="CharacterSelect-modal--inner"> <div class="CharacterSelect-title">
+<span class="Title">Выбрать персонажа</span> <a class="TopicForm-button--close is-active close" id="CharacterSelect-modal--close" type="button"></a> </div>
+<div class="Characters" data-loc-attr='{ "topicId":"", "forumId":"" }' >
+<div class="CharacterSelect-search"> <i class="Icon"></i> <input class="CharacterSelect-search--input" placeholder="Фильтр" type="text"/> </div>
+@foreach($all as $char)
+<div class="Author UserCharacter" id="{{ $char->guid }}" data-topic-post-body-content="true">
+    <a href="{{ route('characters-simple', [$char->name]) }}" class="Author-avatar " >
+        <img src="/images/avatars/wow/{{ $char->race }}-{{ $char->gender }}.jpg" alt="" />
+    </a>
+<div class="Author-details">
+    <span class="Author-name">
+        <a class="Author-name--profileLink" href="{{ route('characters-simple', [$char->name]) }}">{{ $char->name }}</a>
+    </span>
+<span class="Author-class paladin"> {{ $char->level }}   </span>
+<span class="Author-realm"> ElisGrimm </span>
+<span class="Author-posts"> <a class="Author-posts" href="/forum/search?a={{ $char->name }}" data-toggle="tooltip" data-tooltip-content="Просмотреть историю сообщений"> Сообщений: NaN </a>
+</span>
+</div>
+</div>
+<div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> <a class="Author-name--profileLink" href="{{ route('characters-simple', [$char->name]) }}">{{ $char->name }}</a> </span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div>
+@endforeach
+</div>
+</div>
+</div>
+@endif
+@endguest
 <footer class="Forums-footer"> Спасибо, что заглянули на <a href="{{ route('forums') }}">Форумы WoWLegions</a> (0.0.3) · <a href="{{ route('forums') }}">Описание обновлений</a> </footer>
 @include('layouts.footer')
 

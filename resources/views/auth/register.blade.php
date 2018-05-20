@@ -35,14 +35,6 @@
                 </div>
                 @endif
 
-                <div class="control-group {{ $errors->has('name') ? 'control-error text-error' : '' }}">
-                    <label class="control-label" for="name" id="name-label">Username</label>
-
-                    <div class="controls">
-                        <input class="input-block input-large" id="name" maxlength="320" name="name" placeholder="Username" spellcheck="false" tabindex="1" title="Username" type="text" value="{{ old('name') }}" required autofocus>
-                    </div>
-                </div>
-
                 <div class="control-group {{ $errors->has('email') ? 'control-error text-error' : '' }}">
                     <label class="control-label" for="email" id="email-label">E-Mail</label>
 

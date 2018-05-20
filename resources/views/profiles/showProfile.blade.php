@@ -36,8 +36,11 @@ Blizzard Mobile Authenticator — бесплатный способ защити
 <span class="edit">[<a href="{{ route('change-email') }}">Редактировать</a>]</span>
 </p>
 <h4 class="subcategory help-link-right" data-tooltip="Это имя, под которым вас будут знать на " data-tooltip-options='{"location": "mouse"}'>Имя</h4>
-<p>{{ $profileUser->name }} <span class="edit">[<a href="{{ route('tag-name-change') }}" id="battletag-purchase">Платная смена имени</a>]</span>
-</p>
+@if($profileUser->name)
+<p>{{ $profileUser->name }} <span class="edit">[<a href="{{ route('tag-name-change') }}" id="battletag-purchase">Платная смена имени</a>]</span></p>
+@else
+<p>{{ $profileUser->name }} <span class="edit"><a href="{{ route('create-name') }}">Создать</a></span></p>
+@endif
 </div>
 <h3 class="section-title">Защита записи</h3>
 <div class="lobby-box security-box">

@@ -8,7 +8,7 @@ class CodesShop extends Model {
 
     protected $connection = 'mysql';
 
-    protected $fillable = ['purchased_item', 'purchase_code', 'purchase_date', 'purchased_for_account', 'code_activated'];
+    protected $fillable = ['purchased_item', 'item_id', 'item_name', 'purchase_code', 'purchase_date', 'purchased_for_account', 'code_activated'];
 
     public static function generateItemCode() {
         $tokens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';

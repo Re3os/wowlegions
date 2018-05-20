@@ -2,8 +2,7 @@
 
 namespace Illuminate\Contracts\Hashing;
 
-interface Hasher
-{
+interface Hasher {
     /**
      * Get information about the given hashed value.
      *

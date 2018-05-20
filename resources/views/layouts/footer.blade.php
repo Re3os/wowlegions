@@ -11,19 +11,25 @@
             <a class="dropdown-toggle nav-item" data-toggle="dropdown">
                 <i class="nav-icon-24-blue nav-icon-globe"></i>
                 Europe -
-                @if(App::isLocale('en'))
-                English (EU)
-                @elseif(App::isLocale('es'))
-                Español (EU)
-                @elseif(App::isLocale('ru'))
-                Русский
-                @elseif(App::isLocale('de'))
-                Deutsch
-                @elseif(App::isLocale('fr'))
-                Français
-                @elseif(App::isLocale('cn'))
-                简体中文
-                @endif
+            @if(App::isLocale('de-de'))
+            Deutsch
+            @elseif(App::isLocale('en-us'))
+            English (US)
+            @elseif(App::isLocale('en-gb'))
+            English (EU)
+            @elseif(App::isLocale('es-es'))
+            Español (EU)
+            @elseif(App::isLocale('fr-fr'))
+            Français
+            @elseif(App::isLocale('it-it'))
+            Italiano
+            @elseif(App::isLocale('ru-ru'))
+            Русский
+            @elseif(App::isLocale('ja-jp'))
+            日本
+            @elseif(App::isLocale('zh-cn'))
+            简体中文
+            @endif
                 <b class="caret"></b>
             </a>
             <div class="dropdown-menu" data-placement="top">
@@ -44,23 +50,32 @@
                     <h3>Язык</h3>
                         <div class="region region-languages active current" data-region="eu">
                             <ul class="region-ul">
-                                <li class="@if(App::isLocale('en')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
+                                <li class="@if(App::isLocale('de-de')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de-de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
+                                <li class="@if(App::isLocale('en-us')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-us']) ?>" data-target="eu" data-language="en-us">English (US)</a>
                                 </li>
-                                <li class="@if(App::isLocale('ru')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
+                                <li class="@if(App::isLocale('en-gb')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-gb']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
+                                <li class="@if(App::isLocale('es-es')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es-es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
+                                <li class="@if(App::isLocale('fr-fr')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr-fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'cn']) ?>" data-target="eu" data-language="cn-cn">简体中文</a>
+                                <li class="@if(App::isLocale('it-it')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'it-it']) ?>" data-target="eu" data-language="it-it">Italiano</a>
+                                </li>
+                                <li class="@if(App::isLocale('ru-ru')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru-ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
+                                </li>
+                                <li class="@if(App::isLocale('ja-jp')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ja-jp']) ?>" data-target="eu" data-language="ja-jp">日本</a>
+                                </li>
+                                <li class="@if(App::isLocale('zh-cn')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'zh-cn']) ?>" data-target="eu" data-language="zh-cn">简体中文</a>
                                 </li>
                             </ul>
                         </div>
@@ -168,17 +183,23 @@
         <a href="javascript:;" data-toggle="nav-collapse" data-target="#nav-client-collapsible-languages" class="nav-item dropdown dropdown-toggle collapsible-btn-mobile">
             <i class="nav-icon-24-blue nav-icon-globe"></i>
             Europe -
-            @if(App::isLocale('en'))
-            English (EU)
-            @elseif(App::isLocale('es'))
-            Español (EU)
-            @elseif(App::isLocale('ru'))
-            Русский
-            @elseif(App::isLocale('de'))
+            @if(App::isLocale('de-de'))
             Deutsch
-            @elseif(App::isLocale('fr'))
+            @elseif(App::isLocale('en-us'))
+            English (US)
+            @elseif(App::isLocale('en-gb'))
+            English (EU)
+            @elseif(App::isLocale('es-es'))
+            Español (EU)
+            @elseif(App::isLocale('fr-fr'))
             Français
-            @elseif(App::isLocale('cn'))
+            @elseif(App::isLocale('it-it'))
+            Italiano
+            @elseif(App::isLocale('ru-ru'))
+            Русский
+            @elseif(App::isLocale('ja-jp'))
+            日本
+            @elseif(App::isLocale('zh-cn'))
             简体中文
             @endif
             <b class="caret"></b>
@@ -200,23 +221,32 @@
                     <h3>Язык</h3>
                         <div class="region region-languages active current" data-region="eu">
                             <ul class="region-ul">
-                                <li class="@if(App::isLocale('en')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
+                                <li class="@if(App::isLocale('de-de')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de-de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
+                                <li class="@if(App::isLocale('en-us')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-us']) ?>" data-target="eu" data-language="en-us">English (US)</a>
                                 </li>
-                                <li class="@if(App::isLocale('ru')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
+                                <li class="@if(App::isLocale('en-gb')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-gb']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
+                                <li class="@if(App::isLocale('es-es')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es-es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
+                                <li class="@if(App::isLocale('fr-fr')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr-fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
                                 </li>
-                                <li class="">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'cn']) ?>" data-target="eu" data-language="cn-cn">简体中文</a>
+                                <li class="@if(App::isLocale('it-it')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'it-it']) ?>" data-target="eu" data-language="it-it">Italiano</a>
+                                </li>
+                                <li class="@if(App::isLocale('ru-ru')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru-ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
+                                </li>
+                                <li class="@if(App::isLocale('ja-jp')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ja-jp']) ?>" data-target="eu" data-language="ja-jp">日本</a>
+                                </li>
+                                <li class="@if(App::isLocale('zh-cn')) active current @endif">
+                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'zh-cn']) ?>" data-target="eu" data-language="zh-cn">简体中文</a>
                                 </li>
                             </ul>
                         </div>

@@ -102,7 +102,7 @@ blog-article news
                         <a href="#comments" class="comments-link">{{ App\Comment::where('post_id', $blog->id)->count() }} </a>
                         <div class="article-content">
                             <div class="header-image">
-                                <img itemprop="image" alt="{{ $blog->title }}" src="/uploads/news/{{ $blog->images }}" />
+                                <img itemprop="image" alt="{{ $blog->title }}" src="{{ asset('uploads/images/'.$blog->images) }}" />
                             </div>
                             <div class="detail" itemprop="articleBody">
                                 {!! $blog->full_blog !!}
@@ -118,7 +118,7 @@ blog-article news
                     <script type="text/javascript">
                         //<![CDATA[
                         $(function() {
-                            Comments.initialize('{{ $blog->id }}', '{{ $blog->comments_key }}', '0');
+                            Comments.initialize('{{ $blog->id }}', '{{ $blog->id }}', '0');
                         });
                         //]]>
                     </script>

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{Category, Topic, Account};
+
+use App\{Category, Topic, Account, User, CodesShop, PaymentDetails, Characters};
+
+use App\Services\Soap;
 
 class UserController extends Controller
 {
@@ -11,6 +14,73 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+    public function createNameAction(Request $request) {
+        $userTeg = User::createNameID(\Auth::user()->email, $request->get('freedomTag'));
+        return view('profiles.createNameDone', [
+            'profileUser' => \Auth::user(),
+            'userTeg' => $userTeg,
+        ]);
+    }
+
+    public function createName() {
+        return view('profiles.createName', [
+            'profileUser' => \Auth::user(),
+        ]);
+    }
+
+    public function showOrders() {
+        return view('profiles.orser.showOrders', [
+            'profileUser' => \Auth::user(),
+            'history' => PaymentDetails::where('userid', \Auth::user()->id)->get(),
+        ]);
+    }
+
+    public function claimCodeSendAction(Request $request) {
+        $infoKey = CodesShop::where('purchase_code', $request->get('key'))->get();
+        if($infoKey[0]->code_activated == 1) {
+            return redirect()->back()->with("error","Mail does not match");
+        } else {
+            Soap::AddItemToList($infoKey[0]->item_id, 1);
+            if(Soap::SendItem($request->get('character'), $infoKey[0]->item_name)) {
+                CodesShop::where('purchase_code', $request->get('key'))->update(['purchased_for_account' => \Auth::user()->id, 'code_activated' => '1']);
+                return view('profiles.code.sendItem', [
+                    'profileUser' => \Auth::user(),
+                ]);
+            } else {
+                return redirect()->back()->with("error","Mail does not match");
+            }
+        }
+    }
+
+    public function claimCodeAction(Request $request) {
+        $infoKey = CodesShop::where('purchase_code', $request->get('key'))->get();
+        if(isset($infoKey[0])) {
+            if($infoKey[0]->type == 1) {
+                $accountID = Account::userGameAccount();
+                return view('profiles.code.selectCharacters', [
+                    'profileUser' => \Auth::user(),
+                    'userGamrAccount' => $accountID,
+                    'userCharacters' => Account::userGameCharacters($accountID[0]->id),
+                    'key' => $request->get('key'),
+                ]);
+            }elseif($infoKey[0]->type == 2) {
+                if($infoKey[0]->code_activated == 1) {
+                    return redirect()->back()->with("error","Mail does not match");
+                } else {
+                    $user = \Auth::user();
+                    $user->balance += $infoKey[0]->money;
+                    $user->save();
+                    CodesShop::where('purchase_code', $request->get('key'))->update(['purchased_for_account' => \Auth::user()->id, 'code_activated' => '1']);
+                    return view('profiles.code.addMoney', [
+                        'profileUser' => \Auth::user(),
+                    ]);
+                }
+            }
+        } else {
+            return redirect()->back()->with("error","Mail does not match");
+        }
     }
 
     public function tagNameChange() {

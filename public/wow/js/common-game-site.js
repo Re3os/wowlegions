@@ -506,6 +506,9 @@ var CharSelect = {
 		Tooltip.hide();
 		$('div.character-list').html("").addClass('loading-chars');
 		$.ajax({
+		    headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
 			type: 'POST',
 			url: Core.baseUrl + '/account/pin/'+index,
 			data: {

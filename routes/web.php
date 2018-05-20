@@ -5,12 +5,10 @@ Route::get('/', function () {
 });
 
 Route::get('lang/{lang}', function ($lang) {
-
     $referer = Redirect::back()->getTargetUrl();
     $parse_url = parse_url($referer, PHP_URL_PATH);
     $segments = explode('/', $parse_url);
     if (in_array($segments[1], App\Http\Middleware\LocaleMiddleware::$languages)) {
-
         unset($segments[1]);
     }
 
@@ -20,7 +18,6 @@ Route::get('lang/{lang}', function ($lang) {
         $url = $url.'?'. parse_url($referer, PHP_URL_QUERY);
     }
     return redirect($url);
-
 })->name('lang');
 
 //// Comments route
@@ -33,12 +30,18 @@ Route::get('/sidebar/client', 'SidebarController@SidebarClient')->name('client')
 Route::get('/sidebar/events', 'SidebarController@SidebarEvents')->name('events');
 Route::get('/sidebar/blizzard-posts', 'SidebarController@SidebarForum')->name('forum');
 
+
+Route::get('account/management/services/is-character-eligible', 'DiscussionController@isCharacterEligible');
+
 Route::get('version', 'DiscussionController@version');
+Route::post('account/pin/{characters}', 'DiscussionController@pin');
 
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function(){
     /// Auth route
     Auth::routes();
     Route::get('logout','Auth\LoginController@logout');
+    // Password Reset Routes...
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password-reset');
     /// Auth route end
 
     Route::get('/', 'HomeController@index')->name('home');
@@ -47,15 +50,20 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::resource('blog', 'BlogController', ['parameters' => ['id' => 'id', 't' => 't']]);
 
     //// Shop route
-    Route::get('shop/', 'ShopController@index')->name('shop');
+    Route::get('family/world-of-warcraft', 'ShopController@index')->name('shop');
+    Route::get('shop/family/world-of-warcraft', 'ShopController@test')->name('shop-test');
     Route::get('shop/mount-{name}', 'ShopController@view')->name('shop.mount');
     Route::get('shop/item-{name}', 'ShopController@view')->name('shop.item');
     Route::get('shop/buy-{name}', 'ShopController@buy')->name('shop.buy');
     Route::post('shop/complete-{name}', 'ShopController@store')->name('shop.complete');
     Route::get('shop/complete-{name}', 'ShopController@buyComplete')->name('shop.buyComplete');
-    Route::get('shop/checkout/add-balance', 'UserController@showProfile')->name('add-balance');
+    Route::get('shop/checkout/add-balance', 'ShopController@addBalance')->name('add-balance');
+    Route::post('shop/checkout/pay', 'ShopController@payBalanceAction')->name('pay-balanceAction');
+    Route::get('shop/checkout/pay', 'ShopController@payBalance')->name('pay-balance');
+    Route::get('shop/checkout/paypal', 'ShopController@payPaypal')->name('pay-paypal');
 
     /// Forum route
+    Route::post('forums/pref/character/{characters}', 'DiscussionController@pin');
     Route::get('forums/', 'CategoryController@index')->name('forums');
     Route::get('forums/{category}', 'CategoryController@show')->name('forum')->where('category', '[0-9]+');
     Route::get('forums/search', 'TopicsController@search')->name('forum.search');
@@ -76,20 +84,45 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
 
     Route::get('account/management/tag-name-change.html', 'UserController@tagNameChange');
     Route::post('account/management/tag-name-change.html', 'UserController@tagNameChangeActoin')->name('tag-name-change');
+    Route::get('account/management/tag-name-create', 'UserController@createName')->name('create-name');
+    Route::post('account/management/tag-name-create', 'UserController@createNameAction')->name('create-name-action');
 
     Route::get('account/management/wallet.html', 'UserController@showWallet')->name('wallet');
     Route::get('account/management/primary-address.html', 'UserController@showProfile')->name('primary-address');
     Route::get('account/management/wow/dashboard.html', 'UserController@dashboard')->name('dashboard');
 
     Route::get('account/management/claim-code.html', 'UserController@claimCode')->name('claim-code');
+    Route::get('account/management/claim-code-item.html', 'UserController@claimCodeSendAction')->name('claim-code-send');
+    Route::post('account/management/claim-code.html', 'UserController@claimCodeAction')->name('claim-code-action');
+
     Route::get('account/management/get-a-game.html', 'UserController@showProfile')->name('get-a-game');
     Route::get('account/management/download/', 'UserController@showProfile')->name('download-game');
     Route::get('account/management/beta-profile.html', 'UserController@showProfile')->name('beta-profile');
 
-    Route::get('account/management/orders.html', 'UserController@showProfile')->name('orders');
+    Route::get('account/management/orders.html', 'UserController@showOrders')->name('orders');
     Route::get('account/management/transaction-history.html', 'UserController@showProfile')->name('transaction-history');
     Route::get('account/management/gift-claim-history.html', 'UserController@showProfile')->name('gift-claim-history');
 
-    Route::get('community', 'CommunityController@index')->name('community');
+    Route::get('community', 'CommunityController@Communityindex')->name('community');
+    Route::get('community/bugtracker', 'CommunityController@bugtrackerIndex')->name('bugtracker');
+    Route::get('community/status', 'CommunityController@CommunityStatus')->name('community-status');
+    Route::get('community/bugtracker/create', 'CommunityController@bugtrackerCreate')->name('bugtracker-create');
+    Route::post('community/bugtracker/comment', 'CommunityController@bugtrackerComment')->name('bugtracker-comment');
+    Route::post('community/bugtracker/submit', 'CommunityController@bugtrackerSubmit')->name('bugtracker-submit');
+    Route::post('community/bugtracker/comment_submit', 'CommunityController@bugtrackerCommentSubmit')->name('bugtracker-comment-submit');
+    Route::get('community/bugtracker/comment_edit/{id}', 'CommunityController@bugtrackerCommentEdit')->name('bugtracker-comment-edit');
+    Route::get('community/bugtracker/{id}', 'CommunityController@bugtrackerView')->name('bugtracker-view');
 
+    Route::get('characters/ElisGrimm/{characters}/simple', 'CharactersController@characters')->name('characters-simple');
+});
+
+///// ADMIN /////
+Route::group(['middleware' => ['auth', 'admin']], function(){
+    Route::get('/admin','Admin\AdminController@index')->name('admin-home');
+    Route::get('/admin/news/list','Admin\NewsController@list')->name('admin-news-list');
+    Route::get('/admin/news/edit/{id}','Admin\NewsController@edit')->name('admin-news-edit');
+    Route::post('/admin/news/save','Admin\NewsController@save')->name('admin-news-save');
+    Route::get('/admin/news/delete/{id}','Admin\NewsController@delete')->name('admin-news-delete');
+    Route::get('/admin/news/create','Admin\NewsController@create')->name('admin-news-add');
+    Route::post('/admin/news/create','Admin\NewsController@createAction');
 });

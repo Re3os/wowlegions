@@ -44,4 +44,11 @@ class Account extends Authenticatable {
         return \DB::connection('auth')->table('account')->where('email', '=', \Auth::user()->email)->get();
     }
 
+    public static function userGameCharacters($id) {
+        return \DB::connection('characters')->table('characters')->where('account', '=', $id)->get();
+    }
+
+    public static function banedUser() {
+        return \DB::connection('auth')->table('account_banned')->where('active', '=', 1)->count();
+    }
 }

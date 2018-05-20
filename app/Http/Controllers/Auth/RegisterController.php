@@ -21,7 +21,6 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -30,16 +29,11 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         Account::createBattleNet($data);
-
-        $register = User::create([
-            'name' => $data['name'],
+        $passwordHash = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper($data['email'])).":".strtoupper($data['password']))))))));
+        return User::create([
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => $passwordHash,
             'balance' => '0',
         ]);
-
-        User::createNameID($data['email'], $data['name']);
-
-        return $register;
     }
 }

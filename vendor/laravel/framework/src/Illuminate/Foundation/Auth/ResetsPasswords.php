@@ -102,11 +102,15 @@ trait ResetsPasswords
      */
     protected function resetPassword($user, $password)
     {
-        $user->password = Hash::make($password);
+        $passwordHash = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper($user['email'])).":".strtoupper($password))))))));
+
+        $user->password = $passwordHash;
 
         $user->setRememberToken(Str::random(60));
 
         $user->save();
+
+        \App\Account::newPassword($user['email'], $password);
 
         event(new PasswordReset($user));
 

@@ -1,12 +1,3 @@
-@guest
-<section class="Section Section--secondary">
-<div data-topic-post="true" tabindex="0" class="TopicForm is-editing" id="topic-reply">
-
-<div class="LoginPlaceholder-content"> <aside class="LoginPlaceholder-author"> <div class="Author" id="" data-topic-post-body-content="true"><div class="Author-avatar Author-avatar--default"></div><div class="Author-details"><span class="Author-name is-blank"></span> <span class="Author-posts is-blank"></span></div></div> <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> </span><div class="Author-posts Author-posts--ignored">@lang('forum.ignored')</div></div> </aside> <div class="LoginPlaceholder-details"> <div class="LogIn-message">@lang('forum.logIn_message')</div> <a class="LogIn-button" href="{{ route('login') }}"> <span class="LogIn-button-content" >@lang('forum.logIn_content')</span> </a> </div> </div>
-
-</div>
-</section>
-@else
 <section class="Section Section--secondary">
 <div data-topic-post="true" tabindex="0" class="TopicForm is-editing" id="topic-reply">
 
@@ -15,8 +6,8 @@
 </header>
 <div class="TopicForm-content">
 <aside class="TopicForm-author" data-topic-form="{'userId': {{ Auth::user()->id }}}">
-<div class="Author" id="" data-topic-post-body-content="true"><a href="/user/{{ Auth::user()->name }}" class="Author-avatar "><img src="/images/avatars/wow/4-0.jpg" alt="" /></a><div class="Author-details"> <span class="Author-name">
-<a class="Author-name--profileLink" href="/user/{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+<div class="Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters-simple', [$active->name]) }}" class="Author-avatar "><img src="/images/avatars/wow/4-0.jpg" alt="" /></a><div class="Author-details"> <span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('characters-simple', [$active->name]) }}">{{ $active->name }}</a>
 </span>
 <span class="Author-posts">
 <a class="Author-posts" href="/search?a={{ Auth::user()->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
@@ -25,9 +16,14 @@
 </span></div></div>
 <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
 <span class="Author-name">
-<a class="Author-name--profileLink" href="/user/{{ Auth::user()->name }}">{{ Auth::user()->name }}</a>
+<a class="Author-name--profileLink" href="{{ route('characters-simple', [$active->name]) }}">{{ $active->name }}</a>
 </span>
 <div class="Author-posts Author-posts--ignored">@lang('forum.ignored')</div></div>
+<div class="SelectCharacter-button--container">
+                <button class="TopicForm-button TopicForm-button--selectCharacter" type="button">
+                  <span class="Button-content">Изменить персонажа</span>
+                </button>
+              </div>
 </aside>
 @if(!Auth::user()->role > 2 && $topic->closed)
 <div class="LoginPlaceholder-details"> <div class="LogIn-message LogIn-message--center"> @lang('forum.thread_is_locked')</div> </div>
@@ -81,4 +77,3 @@
 </div>
 </div>
 </section>
-@endguest

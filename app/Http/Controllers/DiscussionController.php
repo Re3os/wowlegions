@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Comment;
-use App\Blog;
+use App\{Comment, Blog, Characters};
 
 class DiscussionController extends Controller {
+
+    public function isCharacterEligible() {
+        $response = Characters::verifyEligibility($_REQUEST['character'], $_REQUEST['service']);
+        return response()->json($response);
+    }
+
+    public function pin($characters) {
+        $user = \Auth::user();
+        $user->charactersActive = $characters;
+        $user->save();
+    }
 
     public function version() {
         $result = array(

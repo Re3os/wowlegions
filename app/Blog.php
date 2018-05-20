@@ -11,7 +11,7 @@ use App\{User, Comment};
 class Blog extends Model
 {
 
-    protected $fillable = ['title', 'short_description', 'full_description', 'id', 'posted_by'];
+    protected $fillable = ['title', 'desc_blog', 'full_blog', 'id', 'posted_by', 'images', 'comments_key'];
 
     protected $dateFormat = 'Y-m-d H:i:s';
 
@@ -25,7 +25,7 @@ class Blog extends Model
     }
 
     public function setContentAttribute($value) {
-        $this->attributes['full_description'] = trim($value);
+        $this->attributes['full_blog'] = trim($value);
     }
 
 }

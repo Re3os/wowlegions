@@ -1,70 +1,97 @@
-@extends('layouts.app')
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{ app()->getLocale() }}" class="{{ app()->getLocale() }}">
+    <head xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+        <meta http-equiv="imagetoolbar" content="false" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Авторизация учетной записи -  World of Warcraft</title>
+        <link rel="shortcut icon" href="{{ asset('images/meta/favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/toolkit/freedomnet-web.min.css') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/login/global.min.css') }}" />
+        <script type="text/javascript" src="{{ asset('js/third-party/jquery-1.11.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/core.min.js') }}"></script>
+        <meta name="viewport" content="width=device-width" />
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card card-default">
-                <div class="card-header">Reset Password</div>
+    </head>
+    <body class="{{ app()->getLocale() }} login-template web wow WotLK" data-embedded-state="STATE_LOGIN">
+        <div class="grid-container wrapper">
+            <h1 class="logo" style="height:91px;">Авторизация учетной записи</h1>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.request') }}">
-                        @csrf
+            <div class="hide" id="info-wrapper">
+                <h2><strong class="info-title"></strong></h2>
 
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ $email or old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Reset Password
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                <p class="info-body"></p><button class="btn btn-block hide visible-phone" id="info-phone-close">Close</button>
             </div>
+
+            <div class="input-container" id="login-wrapper">
+                <form action="{{ route('password.request') }}" class=" username-required input-focus" id= "password-form" method="post" name="password-form">
+                    @csrf
+
+                    <input type="hidden" name="token" value="{{ $token }}">
+
+                    @if ($errors->has('email') || $errors->has('password'))
+                    <div id="error" class="alert alert-error alert-icon">Исправьте, пожалуйста, следующее.
+                        <ul>
+                            @if ($errors->has('email'))<li>{{ $errors->first('email') }}</li>@endif
+                            @if ($errors->has('password'))<li>{{ $errors->first('password') }}</li>@endif
+                        </ul>
+                    </div>
+                    @endif
+                    <div class="control-group{{ $errors->has('email') ? ' control-error text-error' : '' }}">
+                        <label class="control-label" for="accountName" id= "accountName-label">E-Mail Address</label>
+                        <div class="controls">
+                            <input class="input-block input-large" id="accountName" maxlength="320" name="email" placeholder="E-Mail" spellcheck="false" tabindex="1" title="E-Mail" type= "text" value="{{ $email or old('email') }}" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="control-group{{ $errors->has('password') ? ' control-error text-error' : '' }}">
+                        <label class="control-label" for="password" id= "password-label">Password</label>
+
+                        <div class="controls">
+                            <input autocomplete="off" class="input-block input-large" id="password" maxlength="16" name="password" placeholder= "Password" spellcheck="false" tabindex="1" title= "Password" type="password" required>
+                        </div>
+                    </div>
+
+                    <div class="control-group{{ $errors->has('password_confirmation') ? ' control-error text-error' : '' }}">
+                        <label class="control-label" for="password_confirmation" id= "password-label">Confirm Password</label>
+
+                        <div class="controls">
+                            <input autocomplete="off" class="input-block input-large" id="password" maxlength="16" name="password_confirmation" placeholder= "Confirm Password" spellcheck="false" tabindex="1" title= "Confirm Password" type="password" required>
+                        </div>
+                    </div>
+
+                    <div class="control-group submit">
+                        <button class="btn btn-primary btn-large btn-block"
+                        data-loading-text="" id="submit" tabindex="1" type= "submit">Reset Password<i class="spinner-battlenet"></i></button>
+                    </div>
+                    <ul id="help-links">
+                        <li>
+                            <a class="btn btn-block btn-large" href= "{{ route('register') }}" rel="external" tabindex="1">Register!<i class="icon-external-link"></i></a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <footer class="footer footer-eu">
+                <div class="lower-footer-wrapper">
+                    <div class="lower-footer">
+                        <div id="copyright">
+                            © World of Warcraft, 2017 г.
+                        </div>
+
+                        <div id="legal">
+                            <div class="png-fix" id="legal-ratings"></div><span class="clear"><!-- --></span>
+                        </div>
+                    </div>
+
+                    <div id="marketing-trackers">
+                        <div class="marketing-cover"></div>
+                    </div>
+                </div>
+            </footer>
         </div>
-    </div>
-</div>
-@endsection
+    <script type="text/javascript" src="{{ asset('js/embed-0.1.5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/login/toolkit.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/login/global.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/login/login.min.js') }}"></script>
+    </body>
+</html>

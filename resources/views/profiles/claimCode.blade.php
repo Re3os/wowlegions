@@ -13,7 +13,19 @@
 @section('content')
 <div id="layout-middle">
 			<div class="wrapper">
-				<div id="content">
+				<div id="content">@if (session('error'))
+				    <div class="alert error border-4 glow-shadow     closeable         " style="             ">
+			<div class="alert-inner">
+				<div class="alert-message">
+						<p class="title"><strong>Произошла ошибка.</strong></p>
+
+						<p class="error.addGame.gameKey.invalid">Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.</p>
+				</div>
+			</div>
+				<a class="alert-close" href="#" onclick="$(this).parent().fadeOut(250, function() { $(this).css({opacity:0}).animate({height: 0}, 100, function() { $(this).remove(); }); }); return false;">Закрыть</a>
+	<span class="clear"><!-- --></span>
+		</div> @endif
+
 	<div class="add-game">
 		<div id="page-header">
 			<h2 class="subcategory">Управление игрой</h2>
@@ -24,8 +36,8 @@
 </div>
 
 	<div class="section-box border-5 code-claim">
-		<form method="post" action="{{ route('claim-code') }}" id="add-game" onsubmit="return checkEntry(this);">
-		{{ csrf_field() }}
+		<form method="post" action="{{ route('claim-code-action') }}" id="add-game" onsubmit="return checkEntry(this);">
+		    {{ csrf_field() }}
 
 			<p class="caption"><label for="key">Введите код</label></p>
 			<p class="simple-input required">
@@ -33,8 +45,11 @@
 			</p>
 
 	<fieldset class="ui-controls " >
-
-<button class="ui-button button1" type="submit" id="add-game-submit"><span class="button-left"><span class="button-right">Использовать код</span></span></button>
+        <button class="ui-button button1" type="submit" id="add-game-submit">
+            <span class="button-left">
+                <span class="button-right">Использовать код</span>
+            </span>
+        </button>
 	</fieldset>
 		</form>
 	</div>
@@ -83,35 +98,6 @@
 
     <ul class="form-titles">
     <li>
-        <a href="#form-game" class="form-anchor">
-            <span class="icon-32 closed"></span>
-            <span class="icon-32-label form-name">Ключ игры</span>
-        </a>
-
-    <div class="sub-form hide-element" id="form-game">
-        <ul>
-            <li>Если вы приобрели розничный экземпляр игры в магазине, то ключ — в коробке.</li>
-                <li>Если вы получили электронную версию игры в подарок, то ключ — в письме, которое вы получили по электронной почте. Вы можете ввести его здесь или просто щелкнуть по ссылке в этом письме.</li>
-        </ul>
-    </div>
-
-    </li>
-    <li>
-        <a href="#form-gameTime" class="form-anchor">
-            <span class="icon-32 closed"></span>
-            <span class="icon-32-label form-name">Код для оплаты игрового времени</span>
-        </a>
-
-    <div class="sub-form hide-element" id="form-gameTime">
-        <div class="prepaid-card-image"></div>
-        <ul>
-            <li>Если вы приобрели карту для оплаты игрового времени, сотрите защитный слой (серебристая полоска на карте): код указан под ней. Учтите, что когда вы сотрете защитный слой, карта будет считаться использованной, и вы больше не сможете вернуть ее в магазин.</li>
-            <li>Если вы получили игровое время в подарок, то ключ — в письме, которое вы получили по электронной почте. Вы можете ввести его здесь или просто щелкнуть по ссылке в этом письме.</li>
-        </ul>
-    </div>
-
-    </li>
-    <li>
         <a href="#form-gameItem" class="form-anchor">
             <span class="icon-32 closed"></span>
             <span class="icon-32-label form-name">Код для получения предмета</span>
@@ -138,10 +124,6 @@
         <ul>
             <li>Если вы приобрели карту предоплаты для пополнения кошелька, сотрите защитный слой (серебристая полоска на карте): код указан под ней. Учтите, что когда вы сотрете защитный слой, карта будет считаться использованной, и вы больше не сможете вернуть ее в магазин.</li>
         </ul>
-
-        <p>
-                Подробнее читайте в разделе <a href="http://eu.battle.net/support/article/balance-card-faq" onclick="window.open(this.href);return false">вопросов и ответов по кошельку Blizzard</a>.
-        </p>
     </div>
 
     </li>

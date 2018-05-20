@@ -28,7 +28,7 @@
         Core.region = 'eu';
         Core.shortDateFormat = 'dd/MM/yyyy';
         Core.dateTimeFormat = 'dd/MM/yyyy HH:mm';
-        Core.loggedIn =@guest false; @else true; @endguest
+        Core.loggedIn = @guest false; @else true; @endguest
         Core.userAgent = 'web';
         Login.embeddedUrl = '/{{ app()->getLocale() }}/login';
         var _gaq = _gaq || [];
@@ -55,14 +55,15 @@
                 </form>
             </div>
             <h1 id="logo">
-                <a href="/">World of Warcraft</a>
+                <a href='javascript:(function(){function h(){
+var e=document.createElement("link");e.setAttribute("type","text/css");e.setAttribute("rel","stylesheet");e.setAttribute("href",l);e.setAttribute("class",c);document.body.appendChild(e)}function p(){var e=document.getElementsByClassName(c);for(var t=0;t<e.length;t++){document.body.removeChild(e[t])}}function d(){var e=document.createElement("div");e.setAttribute("class",f);document.body.appendChild(e);setTimeout(function(){document.body.removeChild(e)},100)}function v(e){return{height:e.offsetHeight,width:e.offsetWidth}}function m(i){var s=v(i);return s.height>e&amp;&amp;s.height<n&amp;&amp;s.width>t&amp;&amp;s.width<r}function g(e){var t=e;var n=0;while(!!t){n+=t.offsetTop;t=t.offsetParent}return n}function y(){var e=document.documentElement;if(!!window.innerWidth){return window.innerHeight}else if(e&amp;&amp;!isNaN(e.clientHeight)){return e.clientHeight}return 0}function b(){if(window.pageYOffset){return window.pageYOffset}return Math.max(document.documentElement.scrollTop,document.body.scrollTop)}function S(e){var t=g(e);return t>=E&amp;&amp;t<=w+E}function x(){var e=document.createElement("audio");e.setAttribute("class",c);e.src=i;e.loop=false;var t=false,n=false,r=false;e.addEventListener("timeupdate",function(){var i=e.currentTime,s=D,o=s.length,u;if(i>=.5&amp;&amp;!t){t=true;T(_)}if(i>=15.5&amp;&amp;!n){n=true;k();d();for(u=0;u<o;u++){N(s[u])}}if(e.currentTime>=28.4&amp;&amp;!r){r=true;C()}},true);e.addEventListener("ended",function(){k();p()},true);e.innerHTML="<p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p>";document.body.appendChild(e);e.play()}function T(e){e.className+=" "+s+" "+u}function N(e){e.className+=" "+s+" "+a[Math.floor(Math.random()*a.length)]}function C(){var e=document.getElementsByClassName(s);for(var t=0;t<e.length;){e[t].className=e[t].className.replace(s,o)}s=o}function k(){var e=document.getElementsByClassName(s);var t=new RegExp("\\b"+s+"\\b");for(var n=0;n<e.length;){e[n].className=e[n].className.replace(t,"")}}var e=30;var t=30;var n=1000;var r=1000;var i="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.ogg";var s="mw-harlem_shake_me";var o="mw-harlem_shake_slow";var u="im_first";var a=["im_drunk","im_baked","im_trippin","im_blown"];var f="mw-strobe_light";var l="//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";var c="mw_added_css";var w=y();var E=b();var L=document.getElementsByTagName("*"),A=L.length,O,M;var _=null;for(O=0;O<A;O++){M=L[O];if(m(M)){if(S(M)){_=M;break}}}if(M===null){console.warn("Could not find a node of the right size. Please try a different page.");return}h();x();var D=[];for(O=0;O<A;O++){M=L[O];if(m(M)){D.push(M)}}})()'>World of Warcraft</a>
             </h1>
 
             <div class="header-plate">
             <ul class="menu" id="menu">
-                <li class="menu-home"><a href="{{ route('home') }}" class="menu-active"><span>@lang('site.home')</span></a></li>
+                <li class="menu-home"><a href="{{ route('home') }}" @if(Route::currentRouteName() == 'home') class="menu-active" @endif><span>@lang('site.home')</span></a></li>
                 <li class="menu-game"><a href="/game/"><span>@lang('site.game')</span></a></li>
-                <li class="menu-community"><a href="{{ route('community') }}"><span>@lang('site.community')</span></a></li>
+                <li class="menu-community"><a href="{{ route('community') }}" @if(Route::currentRouteName() == 'community') class="menu-active" @endif><span>@lang('site.community')</span></a></li>
                 <li class="menu-media"><a href="/media/"><span>@lang('site.media')</span></a></li>
                 <li class="menu-forums"><a href="{{ route('forums') }}"><span>@lang('site.forums')</span></a></li>
                 <li class="menu-services"><a href="{{ route('shop') }}"><span>@lang('site.shop')</span></a></li>
@@ -77,15 +78,36 @@
                 </a>
                 </div>
                 @else
-                <div class="user-plate">
-                <div class="card-character plate-default no-character"></div>
-                <div class="meta-wrapper meta-no-character ajax-update">
-                <div class="meta">
-                <div class="player-name">{{ Auth::user()->name }}</div>
-                    @lang('site.no-characters')
-                </div>
-                </div>
-                </div>
+					@if(count(\App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)))
+                        @if(Auth::user()->charactersActive === NULL)
+                            @php
+                                $user = \Auth::user();
+                                $user->charactersActive = \App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)[0]->guid;
+                                $user->save();
+                            @endphp
+                            <div class="user-plate">
+							<div class="card-character plate-default no-character"></div>
+							<div class="meta-wrapper meta-no-character ajax-update">
+							<div class="meta">
+							<div class="player-name">@if(Auth::user()->name) {{ Auth::user()->name }} @else {{ Auth::user()->email }} @endif </div>
+								@lang('site.no-characters')
+							</div>
+							</div>
+							</div>
+						@else
+							@include('characters.all', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive), 'all' => \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id)])
+                        @endif
+                    @else
+                        <div class="user-plate">
+                        <div class="card-character plate-default no-character"></div>
+                        <div class="meta-wrapper meta-no-character ajax-update">
+                        <div class="meta">
+                        <div class="player-name">@if(Auth::user()->name) {{ Auth::user()->name }} @else {{ Auth::user()->email }} @endif </div>
+                            @lang('site.no-characters')
+                        </div>
+                        </div>
+                        </div>
+                    @endif
                 @endguest
             </div>
         </div>
@@ -218,6 +240,7 @@
         });
         //]]>
     </script>
-            <script type="text/javascript" src="{{ asset('wow/js/cms.min.js') }}"></script>
+    @yield('js')
+    <script type="text/javascript" src="{{ asset('wow/js/cms.min.js') }}"></script>
     </body>
 </html>

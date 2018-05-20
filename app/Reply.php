@@ -8,7 +8,7 @@ class Reply extends Model
 {
     protected $connection = 'mysql';
 
-    protected $fillable = ['content', 'user_id'];
+    protected $fillable = ['content', 'user_id', 'characters_id'];
 
     public function topic()
     {
@@ -18,5 +18,9 @@ class Reply extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function characters() {
+        return $this->belongsTo(Characters::class, 'characters_id', 'guid');
     }
 }
