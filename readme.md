@@ -19,7 +19,7 @@
 ## Information
 
 <ul>
-<li><a href="http://wowlegions.ru/ru" rel="nofollow">Demo site here</a>.</li>
+<li><a href="http://wowlegions.ru/" rel="nofollow">Demo site here</a>.</li>
 <li><a href="https://github.com/anonymous33rus/wowlegions/issues" rel="nofollow">Bugtracker</a>.</li>
 </ul>
 
