@@ -33,6 +33,30 @@ class Characters extends Model {
         return array('eligible' => false, 'reasons' => array(self::verificationTranslation('20034Title')));
     }
 
+    private static function verificationTranslation($Reason) {
+        $ErrorTypes = array(
+            '20012Title' => __('account.service_error_one_title'),
+            '20012Desc' => __('account.service_error_one_desc'),
+            '20016Title' => __('account.service_error_two_title'),
+            '20016Desc' => __('account.service_error_two_desc'),
+            '20032Title' => __('account.service_error_20032Title'),
+            '20032Desc' => __('account.service_error_20032Desc'),
+            '20033Title' => __('account.service_error_20033Title'),
+            '20033Desc' => __('account.service_error_20033Desc'),
+            '20034Title' => __('account.service_error_five_title'),
+            '20034Desc' => __('account.service_error_five_desc'),
+            '20057Title' => __('account.service_error_20057Title'),
+            '20057Desc' => __('account.service_error_20057Desc'),
+            '20064Title' => __('account.service_error_20064Title'),
+            '20064Desc' => __('account.service_error_20064Desc'),
+            'unknown' => __('account.service_error_unknown')
+        );
+        if(array_key_exists($Reason, $ErrorTypes))
+            return $ErrorTypes[$Reason];
+        else
+            return $ErrorTypes['unknown'];
+    }
+
     private static function checkCharacterInbox($character) {
         $result = \DB::connection('characters')->select('SELECT m.*, c.name FROM mail m, characters c WHERE m.receiver = c.guid AND c.name = ?', [$character]);
         if(empty($result))
