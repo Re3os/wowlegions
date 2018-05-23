@@ -93,7 +93,7 @@ var dle_login_hash = '6acc39500426d77e6a32d576b88fa77bd717de3d';
                                     <a href="#" class="has-ul"><i class="fa fa-wrench"></i> <span>Настройки скрипта</span></a>
                                 <ul class="hidden-ul">
                                     <li><a href="/dashboard/options">Настройка системы</a></li>
-                                    <li><a href="/dashboard/forum">Настройки форума</a></li>
+                                    <li><a href="{{ route('admin-forum-list') }}">Настройки форума</a></li>
                                     <li><a href="/dashboard/slideshow">Настройки слайдшоу</a></li>
                                     <li><a href="/dashboard/protection">Вопросы и ответы для защиты от спама</a></li>
                                 </ul>
@@ -110,8 +110,8 @@ var dle_login_hash = '6acc39500426d77e6a32d576b88fa77bd717de3d';
                                 <li>
                                     <a href="#" class="has-ul"><i class="fa fa-leaf"></i> <span>Магазин</span></a>
                                 <ul class="hidden-ul">
-                                    <li><a href="/dashboard/shop/add">Добавить</a></li>
-                                    <li><a href="/dashboard/shop/list">Список</a></li>
+                                    <li><a href="{{ route('admin-shop-add') }}">Добавить</a></li>
+                                    <li><a href="{{ route('admin-shop-list') }}">Список</a></li>
                                 </ul>
                                 </li>
                                 <li>

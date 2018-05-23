@@ -56,12 +56,12 @@ body.className = body.className + " js-enabled";
     //<![CDATA[
     var dataLayer = [{
         "userAgent": "web",
-        "currencyCode": "RUB",
+        "currencyCode": "{{ Auth::user()->currency }}",
         "region": "eu",
         "authenticated": "0",
         "analyticsViewName": "/shop/ru/browse/wow",
         "ecommerce": {
-            "currencyCode": "RUB",
+            "currencyCode": "{{ Auth::user()->currency }}",
             "impressions": [{
                 "id": "EU UNKNOWN",
                 "name": "EU World of Warcraft",
@@ -383,7 +383,7 @@ body.className = body.className + " js-enabled";
             <ul class="nav">
                 <li class="dropdown pull-right battlenet-balance-status">
                     <a href="#" class="dropdown-toggle" id="battlenet-balance-select" role="button" data-toggle="dropdown">
-                        <span class="balance-amount">{{ Auth::user()->balance }} {{ Auth::user()->currency }}</span>
+                        <span class="balance-amount">{{ Auth::user()->balance }} ₽</span>
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="battlenet-balance-select">

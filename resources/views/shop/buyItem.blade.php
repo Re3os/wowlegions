@@ -59,7 +59,7 @@ product-template video-enabled product-family-wow
                 <div class="purchase-sidebar">
                     <div class="product-summary clearfix">
                         <div class="product-image thumbnail">
-                            <img src="/wow/images/shop/mounts/{{ $item->images }}.jpg" alt="World of Warcraft� In-Game Mount: {{ $item->title }}" title="" />
+                            <img src="/uploads/shop/{{ $item->images }}" alt="{{ $item->title }}" title="" />
                         </div>
                         <div class="product-name-group">
                             <h6 class="product-desc-label">Вы приобретаете</h6>
@@ -70,7 +70,7 @@ product-template video-enabled product-family-wow
                             <div class="product-price-group">
                                 <h6 class="product-desc-label">Цена</h6>
                                 <p class="mp-product-price">
-                                    <span class="currency-code">USD</span> {{ $item->price }} </p>
+                                    <span class="currency-code">₽</span> {{ $item->price }} </p>
                             </div>
                             <div class="product-details-group">
                                 <h6 class="product-desc-label">Детали</h6>
@@ -128,7 +128,7 @@ product-template video-enabled product-family-wow
                         <div class="control-group">
                             <label class="control-label">Подробнее</label>
                             <span class="uneditable-input input-block saved-payment-info">
-                                Баланс: {{ Auth::user()->balance }} {{ Auth::user()->currency }}
+                                Баланс: {{ Auth::user()->balance }} ₽
                             </span>
                         </div>
                     </fieldset>
@@ -145,7 +145,7 @@ product-template video-enabled product-family-wow
                                 </span>
                             </h2>
                             <h3 class="heading-1 total-cost" id="total-cost" data-base-cost="{{ $item->price }}">
-                               <span class="currency-code">USD</span> {{ $item->price }} </h3>
+                               <span class="currency-code">₽</span> {{ $item->price }} </h3>
                         </div>
                     </div>
                         @if(Auth::user()->balance >= $item->price)

@@ -59,7 +59,7 @@ product-template video-enabled product-family-wow
                 <div class="purchase-sidebar">
                     <div class="product-summary clearfix">
                         <div class="product-image thumbnail">
-                            <img src="/wow/images/shop/mounts/{{ $item->images }}.jpg" alt="World of Warcraft� In-Game Mount: {{ $item->title }}" title="" />
+                            <img src="/uploads/shop/{{ $item->images }}" alt="{{ $item->title }}" title="" />
                         </div>
                         <div class="product-name-group">
                             <h6 class="product-desc-label">Вы приобретаете</h6>
@@ -70,7 +70,7 @@ product-template video-enabled product-family-wow
                             <div class="product-price-group">
                                 <h6 class="product-desc-label">Цена</h6>
                                 <p class="mp-product-price">
-                                    <span class="currency-code">USD</span> {{ $item->price }} </p>
+                                    <span class="currency-code">₽</span> {{ $item->price }} </p>
                             </div>
                             <div class="product-details-group">
                                 <h6 class="product-desc-label">Детали</h6>
@@ -104,6 +104,5 @@ product-template video-enabled product-family-wow
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection

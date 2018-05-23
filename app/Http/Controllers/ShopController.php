@@ -23,7 +23,7 @@ class ShopController extends Controller
 
     public function index() {
         $mount = Shop::where('item_type', '=', '3')->paginate();
-        $item = Shop::where('item_type', '=', '2')->paginate(2);
+        $item = Shop::where('item_type', '=', '2')->paginate();
         return view('shop.index', ['mount' => $mount, 'items' => $item]);
     }
 

@@ -98,7 +98,7 @@ browse-template product-family-wow
 <div class="grid-100 mobile-grid-100">
 <div class="control-group">
 <span class="help-block">
-На Ваш счет зачислено <span id="total-cost-offsite" data-base-cost="{{ $balance }}"><span class="price-container">{{ $balance }}</span> <span class="currency-code">RUB</span></span>.
+На Ваш счет зачислено <span id="total-cost-offsite" data-base-cost="{{ $balance }}"><span class="price-container">{{ $balance }}</span> <span class="currency-code">₽</span></span>.
 </span>
 </div>
 </div>
@@ -106,18 +106,18 @@ browse-template product-family-wow
 <div class="price-breakdown">
 <div class="tax-breakdown hide">
 <div>Всего</div>
-<div><span class="price-container">{{ $balance }}</span><span class="currency-code">RUB</span></div>
+<div><span class="price-container">{{ $balance }}</span><span class="currency-code">₽</span></div>
 </div>
 <div class="tax-breakdown hide">
 <div>Налоги</div>
-<div id="tax"><span class="price-container">0,00</span> <span class="currency-code">RUB</span></div>
+<div id="tax"><span class="price-container">0,00</span> <span class="currency-code">₽</span></div>
 </div>
 <div class="checkout-total spacious-total">
 <div>
 Итого (включая налоги)<span class="icon-question-circle tooltipstered" data-tooltips="tap" id="total-heading"></span>
 </div>
 <div data-base-cost="" id="total-cost">
-<span class="price-container">{{ $balance }}</span> <span class="currency-code">RUB</span> </div>
+<span class="price-container">{{ $balance }}</span> <span class="currency-code">₽</span> </div>
 </div>
 </div>
 <div class="form-actions purchase-form-actions"></div>

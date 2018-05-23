@@ -70,7 +70,7 @@ product-template video-enabled product-family-wow
                         <span class="heading-1 product-priceline">
                             <span class="product-price ">
                                 <span class="currency-code">
-                                    USD
+                                    ₽
                                 </span>
                                 {{ $item->price }}
                             </span>

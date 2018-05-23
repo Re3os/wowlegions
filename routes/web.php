@@ -36,6 +36,9 @@ Route::get('account/management/services/is-character-eligible', 'DiscussionContr
 Route::get('version', 'DiscussionController@version');
 Route::post('account/pin/{characters}', 'DiscussionController@pin');
 
+
+Route::get('item/{item}/tooltip', 'ItemController@tooltip');
+
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function(){
     /// Auth route
     Auth::routes();
@@ -125,4 +128,18 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::get('/admin/news/delete/{id}','Admin\NewsController@delete')->name('admin-news-delete');
     Route::get('/admin/news/create','Admin\NewsController@create')->name('admin-news-add');
     Route::post('/admin/news/create','Admin\NewsController@createAction');
+
+    Route::get('/admin/shop/list','Admin\ShopController@list')->name('admin-shop-list');
+    Route::get('/admin/shop/edit/{id}','Admin\ShopController@edit')->name('admin-shop-edit');
+    Route::post('/admin/shop/save','Admin\ShopController@save')->name('admin-shop-save');
+    Route::get('/admin/shop/delete/{id}','Admin\ShopController@delete')->name('admin-shop-delete');
+    Route::get('/admin/shop/create','Admin\ShopController@create')->name('admin-shop-add');
+    Route::post('/admin/shop/create','Admin\ShopController@createAction');
+
+    Route::get('/admin/forum/list','Admin\ForumController@list')->name('admin-forum-list');
+    Route::get('/admin/forum/edit/{id}','Admin\ForumController@edit')->name('admin-forum-edit');
+    Route::post('/admin/forum/save','Admin\ForumController@save')->name('admin-forum-save');
+    Route::get('/admin/forum/delete/{id}','Admin\ForumController@delete')->name('admin-forum-delete');
+    Route::get('/admin/forum/create','Admin\ForumController@create')->name('admin-forum-add');
+    Route::post('/admin/forum/create','Admin\ForumController@createAction');
 });

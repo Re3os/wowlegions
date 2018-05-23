@@ -74,7 +74,7 @@ browse-template product-family-wow
 <div class="controls">
 <div class="balance-input-wrapper mobile-grid-100">
 <div id="balance-input" class="balance-input input-prepend">
-<span class="currency-display add-on grid-10 mobile-grid-20">RUB.</span>
+<span class="currency-display add-on grid-10 mobile-grid-20">₽.</span>
 <input type="text" class="balance-input-text grid-40 mobile-grid-80" id="balance-input-text" name="balanceAmount" autocomplete="off" autofocus="autofocus" />
 </div>
 </div>
@@ -86,7 +86,7 @@ browse-template product-family-wow
 </div>
 </div>
 </div>
-<span id="balance-input-help" class="help-block balance-help-block"><i class="icon-exclamation-circle icon-gray"></i>У вас в кошельке должно быть не менее 10,00 RUB и не более 9 999,00 RUB.</span>
+<span id="balance-input-help" class="help-block balance-help-block"><i class="icon-exclamation-circle icon-gray"></i>У вас в кошельке должно быть не менее 10,00 ₽ и не более 9 999,00 ₽.</span>
 </fieldset>
 <div class="form-actions">
 <button class="btn btn-primary" id="payment-submit" data-gtm-id="payment-submit" tabindex="1" type="submit" disabled="disabled" data-bnet-shop="payment-submit">Перейти к платежу</button>
@@ -115,12 +115,12 @@ authenticatorCap: 5000,
 remainingAuthenticatorLimit: 4959
 };
 var addBalanceMsgs = {
-authenticatorRequired: "Чтобы зачислить в кошелек сумму свыше 5 000,00 RUB, необходимо прикрепить к вашей записи Blizzard Authenticator.",
+authenticatorRequired: "Чтобы зачислить в кошелек сумму свыше 5 000,00 ₽, необходимо прикрепить к вашей записи Blizzard Authenticator.",
 capped: {
-max: "Такую сумму зачислить нельзя, иначе объем средств в кошельке превысит допустимый максимум (10 000,00 RUB).",
+max: "Такую сумму зачислить нельзя, иначе объем средств в кошельке превысит допустимый максимум (10 000,00 ₽).",
 },
 minRequired: {
-minRequired: "Минимальная сумма — 10,00 RUB."
+minRequired: "Минимальная сумма — 10,00 ₽."
 },
 wrongFormat: {
 wrongFormat: "Укажите сумму в корректном формате, например: 15,23"

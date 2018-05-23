@@ -60,17 +60,17 @@ browse-template product-family-wow
                 </div>
             </div>
             <div class="browse-column main">
-                                                <h2 class="filter-title">Mounts</h2>
+                    <h2 class="filter-title">Mounts</h2>
                     <ul class="product-card-container thumbnails">
                     @foreach($mount as $item)
                     <li>
                         <a class="product-link" href="{{ route('shop.mount', ['name' => $item->short_code ]) }}" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Mount: {{ $item->title }}">
                             <div class="cover"></div>
                             <div class="thumbnail">
-                                <img src="/wow/images/shop/mounts/{{ $item->images }}.jpg" alt="{{ $item->title }}" />
+                                <img src="/uploads/shop/{{ $item->images }}" alt="{{ $item->title }}" />
                                 <div class="product-card-info">
                                     <h3 class="product-name">{{ $item->title }}</h3>
-                                    <p class="product-price ">USD {{ $item->price }}</p>
+                                    <p class="product-price ">{{ $item->price }}&nbsp;₽</p>
                                 </div>
                             </div>
                         </a>
@@ -84,10 +84,10 @@ browse-template product-family-wow
                         <a class="product-link" href="{{ route('shop.item', ['name' => $item->short_code ]) }}" tabindex="1" data-gtm-click="productCardClick" data-gtm-product-name="In-Game Mount: {{ $item->title }}">
                             <div class="cover"></div>
                             <div class="thumbnail">
-                                <img src="/wow/images/shop/items/{{ $item->images }}.jpg" alt="{{ $item->title }}" />
+                                <img src="/uploads/shop/{{ $item->images }}" alt="{{ $item->title }}" />
                                 <div class="product-card-info">
                                     <h3 class="product-name">{{ $item->title }}</h3>
-                                    <p class="product-price ">USD {{ $item->price }}</p>
+                                    <p class="product-price ">{{ $item->price }}&nbsp;₽</p>
                                 </div>
                             </div>
                         </a>

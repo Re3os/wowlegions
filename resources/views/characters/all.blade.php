@@ -9,7 +9,7 @@
 <a class="character-name context-link serif name-small" href="{{ route('characters-simple', [$active->name]) }}" rel="np">
 {{ $active->name }}</a>
 <span class="avatar-frame">
-<img src="/wow/images/2d/avatar/{{ $active->race }}-{{ $active->gender }}.jpg" class="avatar avatar-wow" />
+<img src="https://render-eu.worldofwarcraft.com/character/deathguard/7/159818247-avatar.jpg?alt=/wow/images/2d/avatar/{{ $active->race }}-{{ $active->gender }}.jpg" class="avatar avatar-wow" />
 <span class="border"></span>
 <span class="icon icon-wow"></span>
 </span>
