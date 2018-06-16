@@ -431,10 +431,7 @@
                 <div class="panel-footer">
                     <button type="submit" class="btn bg-teal btn-sm btn-raised position-left"><i class="fa fa-floppy-o position-left"></i>Сохранить</button>
                     <button onclick="confirmDelete('{{ route('admin-news-delete', ['id' => $blog->id]) }}', '{{ $blog->id }}'); return false;" class="btn bg-danger btn-sm btn-raised"><i class="fa fa-trash-o position-left"></i>Удалить</button>
-                    <input type="hidden" name="id" value="1" />
-                    <input type="hidden" name="expires_alt" value="" />
-                    <input type="hidden" name="action" value="doeditnews" />
-                    <input type="hidden" name="mod" value="editnews" />
+                    <input type="hidden" name="id" value="{{ $blog->id }}" />
                 </div>
 </form>
 </div>

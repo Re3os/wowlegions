@@ -34,6 +34,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => $passwordHash,
             'balance' => '0',
+            'question' => $data['question1'],
+            'answer' => $data['answer1'],
+            'receive' => $data['receiveNewsSpecialOffersThirdParty'],
         ]);
     }
 }

@@ -6,8 +6,8 @@
 </header>
 <div class="TopicForm-content">
 <aside class="TopicForm-author" data-topic-form="{'userId': {{ Auth::user()->id }}}">
-<div class="Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters-simple', [$active->name]) }}" class="Author-avatar "><img src="/images/avatars/wow/4-0.jpg" alt="" /></a><div class="Author-details"> <span class="Author-name">
-<a class="Author-name--profileLink" href="{{ route('characters-simple', [$active->name]) }}">{{ $active->name }}</a>
+<div class="Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$active->name]) }}" class="Author-avatar "><img src="{{ Auth::user()->avatar }}/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></a><div class="Author-details"> <span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('characters', [$active->name]) }}">{{ $active->name }}</a>
 </span>
 <span class="Author-posts">
 <a class="Author-posts" href="/search?a={{ Auth::user()->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
@@ -16,7 +16,7 @@
 </span></div></div>
 <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
 <span class="Author-name">
-<a class="Author-name--profileLink" href="{{ route('characters-simple', [$active->name]) }}">{{ $active->name }}</a>
+<a class="Author-name--profileLink" href="{{ route('characters', [$active->name]) }}">{{ $active->name }}</a>
 </span>
 <div class="Author-posts Author-posts--ignored">@lang('forum.ignored')</div></div>
 <div class="SelectCharacter-button--container">

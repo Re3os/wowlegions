@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>@yield('title')</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 36px;
-                padding: 20px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            <div class="content">
-                <div class="title">
-                    @yield('message')
-                </div>
-            </div>
-        </div>
-    </body>
+<head>
+	<meta charset="utf-8">
+	<title>@yield('title')</title>
+	<style type="text/css">
+	::selection { background-color: #f07746; color: #fff; }
+	::-moz-selection { background-color: #f07746; color: #fff; }
+	body {
+		background-color: #fff;
+		margin: 40px auto;
+		max-width: 1024px;
+		font: 16px/24px normal "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #808080;
+	}
+	a {
+		color: #dd4814;
+		background-color: transparent;
+		font-weight: normal;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #97310e;
+	}
+	h1 {
+		color: #fff;
+		background-color: #dd4814;
+		border-bottom: 1px solid #d0d0d0;
+		font-size: 22px;
+		font-weight: bold;
+		margin: 0 0 14px 0;
+		padding: 5px 15px;
+		line-height: 40px;
+	}
+	h2 {
+		color:#404040;
+		margin:0;
+		padding:0 0 10px 0;
+	}
+	code {
+		font-family: Consolas, Monaco, Courier New, Courier, monospace;
+		font-size: 13px;
+		background-color: #f5f5f5;
+		border: 1px solid #e3e3e3;
+		border-radius: 4px;
+		color: #002166;
+		display: block;
+		margin: 14px 0 14px 0;
+		padding: 12px 10px 12px 10px;
+	}
+	#container {
+		margin: 10px;
+		border: 1px solid #d0d0d0;
+		box-shadow: 0 0 8px #d0d0d0;
+		border-radius: 4px;
+	}
+	p {
+		margin: 0 0 10px;
+		padding:0;
+	}
+	#body {
+		margin: 0 15px 0 15px;
+		min-height: 96px;
+	}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>@yield('title')</h1>
+		<div id="body">
+			@yield('message')
+		</div>
+	</div>
+</body>
 </html>

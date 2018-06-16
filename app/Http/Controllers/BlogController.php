@@ -8,7 +8,19 @@ use App\{Blog, Comment};
 
 class BlogController extends Controller {
 
-    public function show(Blog $blog) {
-        return view('blog.show', compact('blog'));
+    public function index() {
+        $featured = Blog::with('comments')->orderBy('created_at', 'desc')->limit(3)->get();
+        $news = Blog::with('comments')->latest()->simplePaginate(10);
+        return view('blog.index', ['blog' => $news, 'featured' => $featured]);
+    }
+
+    public function show($id) {
+        $blog = Blog::with('comments')->with('characters')->where('id', $id)->firstOrFail();
+        return view('blog.show', ['blog' => $blog]);
+    }
+
+    public function frag() {
+        $news = Blog::with('comments')->simplePaginate(10);
+        return view('blog.frag', ['blog' => $news]);
     }
 }

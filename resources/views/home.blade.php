@@ -1,149 +1,50 @@
 @extends('layouts.app')
 
-@section('css')
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/common-game-site.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/expansion-Legion.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/wow-legion.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/nav-client-desktop-legion.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/lightbox.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/build/cms.min.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/cms.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/sidebar.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('wow/css/locale/'.app()->getLocale().'.css') }}" />
-@endsection
-
-@section('body')
-homepage news
-@endsection
-
 @section('content')
-<div id="content">
-    <div class="content-top body-top">
-        <div  class="content-trail">
-            <ol class="ui-breadcrumb">
-                <li class="last children" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-                    <a href="" rel="np" itemprop="url">
-                        <span class="breadcrumb-text" itemprop="name">World of Warcraft</span>
-                    </a>
-                </li>
-            </ol>
-        </div>
-        <div class="content-bot clear">
+<div class="page-Home"><div class="page-Home-masthead"><div class="VideoPane VideoPane--fadeBottom VideoPane--disabled" media-wide="VideoPane--underSiteNav !VideoPane--disabled"><div class="VideoPane-bg"><video class="VideoPane-video" src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/8DRNQWMHYGK51522889992206.mp4" data-src="https://bnetcmsus-a.akamaihd.net/cms/template_resource/8DRNQWMHYGK51522889992206.mp4" loop="loop" muted="muted" autoplay="autoplay" playsinline="playsinline"></video><div class="VideoPane-overlay"></div><div class="VideoPane-fallback" style="background-image: url('https://bnetcmsus-a.akamaihd.net/cms/template_resource/2s/2SZV67PP7FC41510083813775.jpg');"></div></div><div class="VideoPane-content"><div class="gutter-normal gutter-negative" media-wide="hide"><div class="Art Art--fadeBottom" style="margin-bottom:-52.5%;"><div class="Art-size" style="padding-top:90%"></div><div class="Art-image" style="background-image:url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/st/STJT9R8U4H5I1522442506407.jpg);"></div><div class="Art-overlay"></div></div></div><div class="hide" media-wide="!hide"><div class="space-huge"></div><div class="space-large"></div></div><div class="align-left"><div media-small="gutter-vertical" media-large="!gutter-vertical"><div class="align-center" media-wide="!align-center"><div class="font-semp-xxLarge-white text-upper">Добро пожаловать на сервер</div><div class="contain-masthead" media-wide="contain-left"><div class="space-rhythm-medium"></div><div class="font-bliz-light-medium-beige">Война на пороге. Заручитесь поддержкой новых союзных рас и готовьтесь к бою!</div><div class="space-rhythm-large"></div><div class="List List--gutters List--center List--vertical" media-large="!List--vertical" media-wide="!List--center List--left"><div class="Lightbox Lightbox--video" name="VIDEO-1" type="VIDEO" data-url="https://www.youtube.com/watch?v=xbUrrwlPJTE" data-video="https://www.youtube.com/watch?v=xbUrrwlPJTE"><div class="Lightbox-back" title="Назад"><div class="List"><div class="List-item"><span class="Icon Icon--back Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#back"></use></svg></span></div><div class="List-item"><div class="Lightbox-back-text">Назад</div></div></div></div><div class="Lightbox-close pswp__close" title="Закрыть (Esc)"><span class="Icon Icon--close Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#close"></use></svg></span></div><div class="Lightbox-content"></div></div>@guest<a class="Link Button Button--ghost Panel-button" href="{{ route('login') }}" data-analytics="homepage-panel" data-analytics-placement="Gameplay &amp; Features Video"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Вход">Вход</div></div></div></a><a class="Link Link--external Button Button--ghost Panel-button Button--purchase" href="{{ route('register') }}" data-analytics="shop-link" data-analytics-placement="BFA Presales || Home - Top"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Регистрация">Регистрация</div></div></div></a>@else<a class="Link Button Button--ghost Panel-button" href="{{ route('account') }}" data-analytics="homepage-panel" data-analytics-placement="Gameplay &amp; Features Video"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Параметры">Параметры</div></div></div></a><a class="Link Link--external Button Button--ghost Panel-button Button--purchase" href="{{ route('logout') }}" data-analytics="shop-link" data-analytics-placement="BFA Presales || Home - Top"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Выход">Выход</div></div></div></a>@endguest</div></div></div></div></div><div class="hide" media-wide="!hide"><div class="space-large"></div></div><div class="space-large" media-wide="space-huge"></div><div class="List List--gutters"><div class="List-item font-semp-small-white text-upper">Последние новости</div><div class="List-item fontFamily-blizzard"><a class="Link Link--text" href="{{ route('news.index') }}" data-analytics="action-link" data-analytics-placement="News || Home - View All News">Все новости</a></div></div><div class="gutter-normal gutter-negative"><div class="Grid Grid--gutter Grid--gutters">@foreach($blog as $item)<div class="ArticleTile" media-small="Grid-full" media-wide="!Grid-full Grid-1of2" media-huge="Grid-1of4"><div class="ArticleTile-content"><div class="Tile ArticleTile-tile"><div class="Tile-area"><div class="Tile-bg" style="background-image:url(&quot;{{ asset('uploads/images/'.$item->images) }}&quot;);"></div><div class="Tile-content"></div></div></div><div class="ArticleTile-fade"></div><div class="ArticleTile-play"><div class="ArticleTile-playArrow"></div></div><div class="ArticleTile-bottom"><div class="ArticleTile-bottomInner"><div class="ArticleTile-left"><div class="ArticleTile-subtitle">{{ $item->created_at->format('d M Y') }}</div><div class="ArticleTile-title">{{ $item->title }}</div></div><div class="ArticleTile-right"><div class="ArticleTile-commentTotal List-right"><a class="Link ArticleTile-comments" href="{{ route('news.show', ['id' => $item->id, \App\Services\Text::createSlug($item->title) ]) }}#comments" data-analytics="featured-blog" data-analytics-panel="slot:0 - type:blog - id:{{ $item->id }} || {{ $item->title }}"><div class="CommentTotal CommentTotal--horizontal CommentTotal--right ArticleTile-commentTotal"><span class="Icon Icon--comment Icon--small CommentTotal-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#comment"></use></svg></span><div class="CommentTotal-number">{{ App\Comment::where('post_id', $item->id)->count() }}</div></div></a></div></div></div></div><a class="Link ArticleTile-link" href="{{ route('news.show', ['id' => $item->id, \App\Services\Text::createSlug($item->title) ]) }}" data-thumb="{{ asset('uploads/images/'.$item->images) }}" data-analytics="featured-blog" data-analytics-panel="slot:0 - type:blog - id:{{ $item->id }} || {{ $item->title }}"></a></div></div>@endforeach</div></div><div class="space-normal"></div></div></div></div><div class="Divider"></div><div class="page-Guide-section"><div class="Panel Panel--small Panel--alignCenter bordered Panel--stacked" media-wide="hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;https://bnetcmsus-a.akamaihd.net/cms/template_resource/OIGG8GR6SLK01508438875537.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-title">Союзные расы</div><div class="Content Content--onDark Panel-desc"><span>На сервере доступны союзные расы: озаренные дренеи, таурены Крутогорья и др.</span></div><div class="Panel-buttons"><div class="Lightbox Lightbox--video" name="VIDEO-4" type="VIDEO" data-url="https://www.youtube.com/watch?v=meS9_RnxzU8" data-video="https://www.youtube.com/watch?v=meS9_RnxzU8"><div class="Lightbox-back" title="Назад"><div class="List"><div class="List-item"><span class="Icon Icon--back Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#back"></use></svg></span></div><div class="List-item"><div class="Lightbox-back-text">Назад</div></div></div></div><div class="Lightbox-close pswp__close" title="Закрыть (Esc)"><span class="Icon Icon--close Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#close"></use></svg></span></div><div class="Lightbox-content"></div></div><a class="Link Button Button--ghost Panel-button" type="VIDEO" data-video="VIDEO-4" data-analytics="homepage-panel" data-analytics-placement="Community Allied Races Video"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Обзор">Обзор</div></div></div></a></div></div></div></div></div><div class="Panel bordered hide Panel--normal Panel--right Panel--alignRight" media-wide="!hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;https://bnetcmsus-a.akamaihd.net/cms/template_resource/7R58XAEGP4991508438875531.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-title">Союзные расы</div><div class="Content Content--onDark Panel-desc"><span>На сервере доступны союзные расы: озаренные дренеи, таурены Крутогорья и др.</span></div><div class="Panel-buttons"><div class="Lightbox Lightbox--video" name="VIDEO-5" type="VIDEO" data-url="https://www.youtube.com/watch?v=meS9_RnxzU8" data-video="https://www.youtube.com/watch?v=meS9_RnxzU8"><div class="Lightbox-back" title="Назад"><div class="List"><div class="List-item"><span class="Icon Icon--back Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#back"></use></svg></span></div><div class="List-item"><div class="Lightbox-back-text">Назад</div></div></div></div><div class="Lightbox-close pswp__close" title="Закрыть (Esc)"><span class="Icon Icon--close Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#close"></use></svg></span></div><div class="Lightbox-content"></div></div><a class="Link Button Button--ghost Panel-button" type="VIDEO" data-video="VIDEO-5" data-analytics="homepage-panel" data-analytics-placement="Community Allied Races Video"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Обзор">Обзор</div></div></div></a></div></div></div></div></div></div><div class="Divider"></div><div class="page-Guide-section1of2"><div class="Grid Separator SyncHeight" media-small="Separator--vertical" media-wide="!Separator--vertical"><div class="Grid-col" media-wide="Grid-1of2"><div class="Panel Panel--link Panel--small Panel--alignCenter bordered Panel--stacked" media-wide="hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;//bnetcmsus-a.akamaihd.net/cms/template_resource/30WZ1HGMZU5C1463691816866.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-subtitle">Как начать играть?</div><div class="Panel-title">Новым игрокам</div><div class="Panel-buttons"></div></div></div></div><a class="Link Panel-link" href="{{ route('community-start') }}" data-analytics="action-link" data-analytics-placement="Getting Started || Home - New Players"></a></div><div class="Panel Panel--link bordered hide Panel--tiny Panel--stacked Panel--alignCenter" media-wide="!hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;//bnetcmsus-a.akamaihd.net/cms/template_resource/30WZ1HGMZU5C1463691816866.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-subtitle">Как начать играть?</div><div class="Panel-title">Новым игрокам</div><div class="Panel-buttons"></div></div></div></div><a class="Link Panel-link" href="{{ route('community-start') }}" data-analytics="action-link" data-analytics-placement="Getting Started || Home - New Players"></a></div></div><div class="Grid-col" media-wide="Grid-1of2"><div class="Panel Panel--link Panel--small Panel--alignCenter bordered Panel--stacked" media-wide="hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;//bnetcmsus-a.akamaihd.net/cms/template_resource/C96JQLGPQKLA1463691818913.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-subtitle">Вы нужны Азероту!</div><div class="Panel-title">Давно не играли?</div><div class="Panel-buttons"></div></div></div></div><a class="Link Panel-link" href="{{ route('community-return') }}" data-analytics="action-link" data-analytics-placement="Welcome Back || Home - Returning Players"></a></div><div class="Panel Panel--link bordered hide Panel--tiny Panel--stacked Panel--alignCenter" media-wide="!hide"><div class="Panel-bg" style="background-color:;background-image:url(&quot;//bnetcmsus-a.akamaihd.net/cms/template_resource/C96JQLGPQKLA1463691818913.jpg&quot;);"></div><div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-subtitle">Вы нужны Азероту!</div><div class="Panel-title">Давно не играли?</div><div class="Panel-buttons"></div></div></div></div><a class="Link Panel-link" href="{{ route('community-return') }}" data-analytics="action-link" data-analytics-placement="Welcome Back || Home - Returning Players"></a></div></div></div></div></div><div class="Divider"></div>
 
-             <div id="slideshow" class="ui-slideshow">
-                <div class="slideshow">
-                    <div class="slide" id="slide-0" style="background-image: url('/uploads/slider/vk.jpg'); "></div>
-                </div>
-                <div class="paging">
-                <a href="javascript:;" class="prev" onclick="Slideshow.prev();"></a>
-                <a href="javascript:;" class="next" onclick="Slideshow.next();"></a>
-            </div>
+<div class="page-Guide-section">
+    <div class="Panel Panel--small Panel--alignCenter bordered Panel--stacked" media-wide="hide">
+        <div class="Panel-bg" style="background-color:;background-image:url(&quot;https://bnetcmsus-a.akamaihd.net/cms/template_resource/ys/YSBOBUZEQ1Y71522350524869.jpg&quot;);"></div>
+<div class="Panel-area SyncHeight-item"><div class="Panel-box"><div class="Panel-content"><div class="Panel-title">Союзные расы</div><div class="Content Content--onDark Panel-desc"><span>На сервере доступны союзные расы: озаренные дренеи, таурены Крутогорья и др.</span></div><div class="Panel-buttons"><div class="Lightbox Lightbox--video" name="VIDEO-4" type="VIDEO" data-url="https://www.youtube.com/watch?v=meS9_RnxzU8" data-video="https://www.youtube.com/watch?v=meS9_RnxzU8"><div class="Lightbox-back" title="Назад"><div class="List"><div class="List-item"><span class="Icon Icon--back Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#back"></use></svg></span></div><div class="List-item"><div class="Lightbox-back-text">Назад</div></div></div></div><div class="Lightbox-close pswp__close" title="Закрыть (Esc)"><span class="Icon Icon--close Icon--small Lightbox-icon"><svg class="Icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><use xlink:href="/static/components/Icon/Icon.svg#close"></use></svg></span></div><div class="Lightbox-content"></div></div><a class="Link Button Button--ghost Panel-button" type="VIDEO" data-video="VIDEO-4" data-analytics="homepage-panel" data-analytics-placement="Community Allied Races Video"><div class="Button-outer"><div class="Button-inner"><div class="Button-label" data-text="Обзор">Обзор</div></div></div></a></div></div></div></div></div>
 
-        <div class="caption">
-            <h3><a href="javascript:;" class="link">test</a></h3>
-        </div>
-                <div class="preview"></div>
-                <div class="mask"></div>
-            </div>
-
-            <script type="text/javascript">
-                //<![CDATA[
-                $(function() {
-                    Slideshow.initialize('#slideshow', [
-                         {
-                        image: "/uploads/slider/vk.jpg",
-                        desc: "test 2",
-                        title: "test 2",
-                        url: "test",
-                        id: "2",
-                        duration: 5                        },
-                    ]);
-                });
-                //]]>
-            </script>
-
-            <div class="right-sidebar" >
-                <div class="sidebar" id="sidebar">
-                    <div class="sidebar-top">
-                        <div class="sidebar-bot">
-                            <div class="sidebar-loading" id="sidebar-loading">@lang('site.loading')</div>
-                            <div id="dynamic-sidebar-target"></div>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript">
-                    //<![CDATA[
-                    $(function() {
-                        Sidebar.sidebar([
-                            { "type": "client", "query": "" },
-                            { "type": "realm-status", "query": "" },
-                            { "type": "events", "query": "" },
-                            { "type": "blizzard-posts", "query": "" },
-                        ]);
-                    });
-                    //]]>
-                </script>
-            </div>
-            <div class="left-content" itemscope="itemscope" itemtype="http://schema.org/WebPageElement">
-                <div class="left-container-inner">
-                    <div class="featured-news-container">
-                        <ul class="featured-news">
-                            @foreach($featured as $item)
-                            <li>
-                                <div class="article-wrapper">
-                                    <a href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}" class="featured-news-link" data-category="wow" data-action="Blog_Click-Throughs" data-label="home ">
-                                        <div class="article-image" style="background-image:url({{ asset('uploads/images/'.$item->images) }})">
-                                            <div class="article-image-frame"></div>
-                                        </div>
-                                        <div class="article-content">
-                                            <span class="article-title" title="{{ $item->title }}">{{ $item->title }}</span>
-                                            <span class="article-summary">{{ $item->title }}</span>
-                                        </div>
-                                    </a>
-                                    <div class="article-meta">
-                                        <a href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}#comments" class="comments-link">{{ App\Comment::where('post_id', $item->id)->count() }} </a>
-                                        <span class="publish-date" title="{{ $item->created_at }}">{{ $item->created_at->format('d M Y') }}</span>
-                                    </div>
-                                </div>
-                            </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    <div id="blog-articles" class="blog-articles" itemscope="itemscope" itemtype="http://schema.org/Blog">
-                        @foreach($blog as $item)
-                        <div class="article-wrapper" >
-                            <a href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}">
-                                <div class="article-image" style="background-image:url({{ asset('uploads/images/'.$item->images) }})">
-                                    <div class="article-image-frame"></div>
-                                </div>
-
-                                <div class="article-content">
-                                    <h2 class="header-2"><span class="article-title">{{ $item->title }}</span></h2>
-                                    <span class="clear"><!-- --></span>
-
-                                    <div class="article-summary">
-                                        {{ $item->desc_blog }}
-                                    </div>
-                                    <span class="clear"><!-- --></span>
-                                    <meta content="{{ $item->created_at }}">
-                                    <meta content="ru">
-                                    <meta content="UserComments:{{ App\Comment::where('post_id', $item->id)->count() }} ">
-                                    <meta content="{{ asset('uploads/images/'.$item->images) }}">
-                                </div></a>
-
-                            <div class="article-meta">
-                                <span class="publish-date" title="{{ $item->created_at }}">{{ $item->created_at->format('d M Y') }}</span>
-                                <a class="comments-link" href="{{ route('blog.show', ['id' => $item->id, 't' => $item->title ]) }}#comments">
-                                    {{ App\Comment::where('post_id', $item->id)->count() }}
-                                </a>
-                            </div><span class="clear"><!-- --></span>
-                        </div>
+<div class="Panel bordered hide Panel--normal Panel--right Panel--alignRight" media-wide="!hide">
+    <div class="Panel-bg" style="background-color:;background-image:url(&quot;https://bnetcmsus-a.akamaihd.net/cms/template_resource/ic/ICAS2HN9NS841522349888288.jpg&quot;);"></div>
+    <div class="Panel-area SyncHeight-item">
+        <div class="Panel-box">
+            <div class="Panel-content">
+                <div class="Panel-title">Новое на форуме</div>
+                <div class="Content Content--onDark Panel-desc">
+                    <table style="width: 600px">
+                        <tr>
+                            <td>Категория</td>
+                            <td>Форум</td>
+                            <td>Тема</td>
+                        </tr>
+                        @foreach($forum as $cnc)
+                        <tr>
+                            <td><a href="{{ route('forum.topic', [$cnc->category->id, $cnc])}}" class="topic">{{ $cnc->title }}</a> </td>
+                            <td><a href="{{ route('forum', [$cnc->category->id])}}" class="forum">{{ $cnc->category->name }}</a></td>
+                            <td>{{ $cnc->created_at->format('d M Y H:i:s') }}</td>
+                        </tr>
                         @endforeach
-                    </div>
-                    <span class="clear"></span>
+                    </table>
+                    <!--span>На сервере доступны союзные расы: озаренные дренеи, таурены Крутогорья и др.</span-->
+                </div>
+                <div class="Panel-buttons">
+                    <a href="{{ route('forums') }}" class="Link Button Button--ghost Panel-button" data-analytics="homepage-panel" data-analytics-placement="Community Allied Races Video">
+                        <div class="Button-outer">
+                            <div class="Button-inner">
+                                <div class="Button-label" data-text="Форум">Форум</div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
- </div>
+</div>
+
+</div>
+<div class="Divider"></div>
 @endsection

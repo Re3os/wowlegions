@@ -1,106 +1,34 @@
 @foreach($items as $comm)
 <li class="" id="post-{{ $comm->id }}">
 <div class="comment-tile">
-    <div class="rate-post-wrapper rate-post-login comment-rating"></div>
-        <div class="rate-post-wrapper">
-        <a href="javascript:;" class="rate-option rate-up" data-post-id="{{ $comm->id }}" data-post-author="{{ $comm->user->username }}" data-vote-type="up" data-report-type="1">
-        <span class="button-left">
-            <span class="button-right">
-                Like
-            </span>
-        </span>
-        </a>
-        <div class="rate-option downvote-wrapper">
-            <a href="javascript:;" onclick="$(this).next('.downvote-menu').toggle();" class="rate-down"/>
-            <div class="downvote-menu" style="display:none">
-                <div class="ui-dropdown">
-                    <div class="dropdown-wrapper">
-                        <ul>
-                            <li>
-                                <a href="javascript:;" data-post-id="{{ $comm->id }}" data-post-author="{{ $comm->user->username }}" data-vote-type="down" data-report-type="1">
-                                    Dislike
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-post-id="{{ $comm->id }}" data-post-author="{{ $comm->user->username }}" data-vote-type="down" data-report-type="2">
-                                    Trolling
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:;" data-post-id="{{ $comm->id }}" data-post-author="{{ $comm->user->username }}" data-vote-type="down" data-report-type="3">
-                                    Spam
-                                </a>
-                            </li>
-                            <li class="report-comment">
-                                <a href="javascript:;" data-post-id="{{ $comm->id }}" data-post-author="{{ $comm->user->username }}" data-vote-type="report">
-                                    Report
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-        <span class="clear"></span>
-    </div>
-    <div class="bnet-avatar">
-        <div class="avatar-outer">
-            <a href="/user/{{ $comm->user->name }}">
-                <img height="64" width="64" src="/wow/images/2d/avatar/4-0.jpg" alt=""/>
-                <span class="avatar-inner"/></span>
-            </a>
-        </div>
-    </div>
-    <div class="comment-head">
-        <div class="bnet-username" itemscope="itemscope" itemprop="author" itemtype="http://schema.org/Person">
-            <div id="context-3" class="ui-context">
-                <div class="context">
-                    <a href="javascript:;" clas="close" onclick="return CharSelect.close(this);"/>
-                    <div class="context-user">
-                        <strong>{{ $comm->user->name }}</strong>
-                    </div>
-                    </a>
-                    <div class="context-links">
-                        <a href="/user/{{ $comm->user->name }}" title="Profile" rel="np" class="icon-profile link-first">
-                            <span class="context-icon"/>
-                            Profile</span>
-                        </a>
-                        <a href="/search?f=post&a={{ $comm->user->name }}&sort=time" title="View posts" rel="np" class="icon-posts link-last">
-                            <span class="context-icon"/> </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <a href="/user/{{ $comm->user->name }}"  itemprop="url" class="context-link wow-class-9">
-                <span itemprop="name" class="poster-name">{{ $comm->user->name }}</span>
-            </a>
-            <span class="timestamp">{{ $comm->created_at->format('d M Y H:i') }}</span>
-        </div>
-    </div>
-    <div class="comment-body">{{ $comm->text }}</div>
-            @guest
-
-            @else
-            <div class="comment-foot">
-                <button class="ui-button button2" type="button" onclick="Comments.toggleDelete('{{ $comm->id }}');" data-tooltip="Posts may be deleted within 15 minutes of posting.">
-                <span class="button-left">
-                    <span class="button-right">
-                        Delete
-                    </span>
-                </span>
-                    </button>
-                <button class="ui-button button2 reply-button" type="button" onclick="Comments.reply('{{ $comm->id }}', {{ $comm->id }}, '{{ $comm->user->name }}'); return false;">
-                <span class="button-left">
-                    <span class="button-right">
-                        Reply
-                    </span>
-                </span>
-                </button>
-                <span class="clear"><!-- --></span>
-            </div>
-            @endguest
-    <span class="clear"></span>
+<!--div class="rate-post-wrapper rate-post-login comment-rating comment-rating-positive">
++1
+</div-->
+<div class="rate-post-wrapper rate-post-login">
+Чтобы дать оценку, <a href="?login" onclick="return Login.open('https://eu.battle.net/login/login.frag')">авторизуйтесь</a>.
+</div>
+<div class="comment-head">
+<div class="CommentAuthor Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$comm->characters->name]) }}" class="Author-avatar "><img src="/images/avatars/wow/avatar-wow-default.png" alt=""></a><div class="Author-details"> <span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('characters', [$comm->characters->name]) }}">{{ $comm->characters->name }}</a>
+<span class="Author-timestamp">{{ $comm->created_at->format('d M Y H:i') }}</span>
+</span>
+<span class="Author-class @lang('forum.character_class_key_'.$comm->characters->class)">
+{{ $comm->characters->level }} @lang('forum.race_'.$comm->characters->race) @lang('forum.class_'.$comm->characters->class)
+</span>
+<!--a class="Author-guild" href="http://eu.battle.net/wow/ru/guild/%D0%B1%D0%BE%D1%80%D0%B5%D0%B8%D1%81%D0%BA%D0%B0%D1%8F-%D1%82%D1%83%D0%BD%D0%B4%D1%80%D0%B0/%D0%9C%D0%9E%D0%93%D0%A3%D0%A7%D0%90%D0%AF%20%D0%9A%D0%A3%D0%A7%D0%9A%D0%90/">МОГУЧАЯ КУЧКА</a-->
+<span class="Author-realm">
+ElisGrimm
+</span>
+<span class="Author-posts is-blank"></span><span class="Author-comment">{{ $comm->text }}</span></div></div>
+<div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
+<span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('characters', [$comm->characters->name]) }}">{{ $comm->characters->name }}</a>
+</span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div>
+</div>
+<div class="comment-foot">
+<span class="clear"><!-- --></span>
+</div>
+<span class="clear"><!-- --></span>
 </div>
 </li>
  @if(isset($com[$comm->id]))

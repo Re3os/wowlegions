@@ -10,7 +10,7 @@ use Auth;
 
 use App\{
     Shop,
-    Item
+    Category
 };
 
 use App\Services\Text;
@@ -28,23 +28,22 @@ class ForumController extends Controller
     }
 
     public function delete($id) {
-        Shop::where('id', $id)->delete();
+        Category::where('id', $id)->delete();
         return redirect()->route('admin-forum-list');
     }
 
     public function save(Request $request) {
-        Shop::where('id', $request->input('id'))->update([
-            'title' => $request->input('title'),
-            'price' => $request->input('price'),
-            'short_code' => Text::createSlug($request->input('title')),
-            'item_id' => $request->input('item_id'),
-            'item_type' => $request->input('type')
+        Category::where('id', $request->input('id'))->update([
+            'name' => $request->input('cat_name'),
+            'category_description' => $request->input('fulldescr'),
+            'parent_id' => $request->input('parentid'),
+            'icons' => $request->input('cat_icon')
         ]);
         return redirect()->route('admin-forum-list');
     }
 
     public function edit($id) {
-        return view('admin.forum.edit', ['blog' => Shop::where('id', $id)->firstOrFail()]);
+       return view('admin.forum.edit', ['edit' => Category::where('id', $id)->firstOrFail(), 'list' => Category::whereNull('parent_id')->with('forums')->get()]);
     }
 
     public function create()
@@ -53,19 +52,18 @@ class ForumController extends Controller
     }
 
     public function list() {
-        return view('admin.forum.list', ['list' => Shop::orderBy('created_at', 'desc')->simplePaginate(10)]);
+        $list = Category::whereNull('parent_id')->with('forums')->get();
+        return view('admin.forum.list', ['list' => $list]);
     }
 
     public function createAction(Request $request) {
         $image_name = $request->file('img')->getClientOriginalName();
         $file = $request->file('img')->move(public_path('cms/forum_icon/'), $image_name);
-        Shop::create([
-            'title' => $request->input('title'),
-            'price' => $request->input('price'),
-            'short_code' => Text::createSlug($request->input('title')),
-            'item_id' => $request->input('item_id'),
-            'images' => $image_name,
-            'item_type' => $request->input('type')
+        Category::create([
+            'name' => $request->input('cat_name'),
+            'category_description' => $request->input('fulldescr'),
+            'parent_id' => $request->input('forum'),
+            'icons' => $image_name
         ]);
         return redirect()->route('admin-forum-list');
     }

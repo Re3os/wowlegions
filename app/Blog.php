@@ -20,6 +20,10 @@ class Blog extends Model
      return $this->hasMany(Comment::class );
     }
 
+    public function characters() {
+        return $this->belongsTo(Characters::class, 'user_id', 'guid');
+    }
+
     public function user() {
         return $this->belongsTo(User::class, 'posted_by', 'id');
     }

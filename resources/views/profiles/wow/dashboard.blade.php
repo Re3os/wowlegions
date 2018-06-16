@@ -8,7 +8,6 @@
 <!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard-ie6.0hHvq.css" />
 <![endif]-->
 <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/compiled/wow/full-page-upsell.0VWHy.css" />
-
 @endsection
 
 @section('js')

@@ -1,297 +1,141 @@
-<div id="nav-client-footer" class="nav-client">
-    <div class="mobileFooterEnabled footer-content footer-desktop grid-container">	<div class="nav-section support-feedback">
-            <div class="nav-left">
-                <div id="nav-feedback">
-<a id="nav-client-news" class="nav-item nav-a nav-item-btn" href="/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support"><i class="nav-icon-24-blue nav-icon-question-circle"></i>@lang('forum.support')</a>
-                </div>
-            </div>
-                <div class="nav-right">
-    <div id="nav-client-region-select">
-        <div class="dropdown dropup pull-right">
-            <a class="dropdown-toggle nav-item" data-toggle="dropdown">
-                <i class="nav-icon-24-blue nav-icon-globe"></i>
-                Europe -
-            @if(App::isLocale('de-de'))
-            Deutsch
-            @elseif(App::isLocale('en-us'))
-            English (US)
-            @elseif(App::isLocale('en-gb'))
-            English (EU)
-            @elseif(App::isLocale('es-es'))
-            Español (EU)
-            @elseif(App::isLocale('fr-fr'))
-            Français
-            @elseif(App::isLocale('it-it'))
-            Italiano
-            @elseif(App::isLocale('ru-ru'))
-            Русский
-            @elseif(App::isLocale('ja-jp'))
-            日本
-            @elseif(App::isLocale('zh-cn'))
-            简体中文
-            @endif
-                <b class="caret"></b>
-            </a>
-            <div class="dropdown-menu" data-placement="top">
-                <div class="arrow bottom"></div>
-                <div id="nav-client-international-desktop">
-    <div class="nav-international-container">
-        <div class="dropdown-section nav-column-container">
-            <div class="nav-column-50">
-                <div id="select-regions" class="nav-box regions">
-                    <h3>Регион</h3>
-                    <ul class="region-ul">
-                        <li class="region active current"><a class="nav-item select-region" href="javascript:;" data-target="eu">Europe</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="nav-column-50">
-                <div id="select-language" class="nav-box languages">
-                    <h3>Язык</h3>
-                        <div class="region region-languages active current" data-region="eu">
-                            <ul class="region-ul">
-                                <li class="@if(App::isLocale('de-de')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de-de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
-                                </li>
-                                <li class="@if(App::isLocale('en-us')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-us']) ?>" data-target="eu" data-language="en-us">English (US)</a>
-                                </li>
-                                <li class="@if(App::isLocale('en-gb')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-gb']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
-                                </li>
-                                <li class="@if(App::isLocale('es-es')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es-es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
-                                </li>
-                                <li class="@if(App::isLocale('fr-fr')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr-fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
-                                </li>
-                                <li class="@if(App::isLocale('it-it')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'it-it']) ?>" data-target="eu" data-language="it-it">Italiano</a>
-                                </li>
-                                <li class="@if(App::isLocale('ru-ru')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru-ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
-                                </li>
-                                <li class="@if(App::isLocale('ja-jp')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ja-jp']) ?>" data-target="eu" data-language="ja-jp">日本</a>
-                                </li>
-                                <li class="@if(App::isLocale('zh-cn')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'zh-cn']) ?>" data-target="eu" data-language="zh-cn">简体中文</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                </div>
-            </div>
-        </div>
+<div class="Pane Pane--dirtDark Pane--above">
+    <div class="Pane-bg">
+        <div class="Pane-overlay"></div>
     </div>
-                    <div class="dropdown-section dropdown-well nav-box localeChange">
-                        <a id="nav-client-change-language-desktop" href="javascript:;" class="nav-lang-change nav-btn">@lang('forum.change_lang')</a>
+<div class="Pane-content">
+    <div class="SiteFooter">
+        <div class="NavbarFooter is-regionless" data-hash="5fa0a9ec7c8b160b81e2c9c81792d7976df4bffa" data-region-selection="none" data-region="eu" data-locale="">
+            <div class="NavbarFooter-overlay"></div>
+            <div class="NavbarFooter-selector">
+                <div class="NavbarFooter-selectorToggle">
+                        <div class="NavbarFooter-icon NavbarFooter-selectorToggleIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                <use xlink:href="#Navbar-icon-globe"></use>
+                            </svg>
+                        </div>
+                    <div class="NavbarFooter-selectorToggleLabel">@if(App::isLocale('de-de'))
+                    Deutsch
+                    @elseif(App::isLocale('en-us'))
+                    English (US)
+                    @elseif(App::isLocale('en-gb'))
+                    English (EU)
+                    @elseif(App::isLocale('es-es'))
+                    Español (EU)
+                    @elseif(App::isLocale('fr-fr'))
+                    Français
+                    @elseif(App::isLocale('it-it'))
+                    Italiano
+                    @elseif(App::isLocale('ru-ru'))
+                    Русский
+                    @elseif(App::isLocale('ja-jp'))
+                    日本
+                    @elseif(App::isLocale('zh-cn'))
+                    简体中文
+                    @endif</div>
+                    <div class="NavbarFooter-icon NavbarFooter-selectorToggleArrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                            <use xlink:href="#Navbar-icon-selector"></use>
+                        </svg>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-                </div>
-    </div>
-    <div class="nav-section">
-            <div class="nav-left nav-logo-group">
-                    <div class="footer-logo nav-left">
-
-
-
-
-<a class="nav-item logo-link" href="http://eu.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Blizzard Logo"><img class="blizzard-logo" src="/images/nav-client/blizzard.png?v=58-84" alt="" /></a>
-
-                    </div>
-                <div class="footer-links nav-left">
-
-
-
-
-
-
-<a class="nav-item nav-a" href="/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">@lang('forum.Careers')</a>
-
-            <span>|</span>
-
-
-
-
-
-<a class="nav-item nav-a" href="/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">@lang('forum.About')</a>
-
-            <span>|</span>
-
-
-
-
-
-<a class="nav-item nav-a" href="/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">@lang('forum.Privacy')</a>
-
-            <span>|</span>
-
-
-
-
-
-<a class="nav-item nav-a" href="/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">@lang('forum.Terms')</a>
-
-            <span>|</span>
-
-
-
-
-
-<a class="nav-item nav-a" href="/" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a>
-
-    <div class="copyright">© Blizzard Entertainment, 2017 г.</div>
-    <div class="nav-footer-icon-container">
-        <ul class="nav-footer-icon-list">
-        </ul>
-    </div>
-                </div>
-            </div>
-            <div class="nav-ratings">
-            <div class="legal-rating">
-
-
-
-    <div class="product-rating mkrf-rating clearfix">
-        <a href="http://mkrf.ru/" tabindex="1" rel="external" target="_blank"><img class="mkrf-logo" src="/images/legal/ratings/mkrf/12.png?v=58-84" alt="12+" width="65" height="72" /></a>
-    </div>
-            </div>
-
-
-            </div>
-    </div>
-</div>
-
-
-    <div class="mobileFooterEnabled footer-content footer-mobile grid-container">	<div class="nav-section support-feedback">
-                <div class="nav-client-feedback" id="nav-client-feedback">
-
-
-
-
-<a id="nav-client-news" class="nav-item nav-a nav-item-btn" href="/support/" data-analytics="global-nav" data-analytics-placement="Footer - Support"><i class="nav-icon-24-blue nav-icon-question-circle"></i>@lang('forum.support')</a>
-
-
-                </div>
-    </div>
-    <div class="nav-section locale-selector">
-    <div id="nav-client-region-select">
-        <a href="javascript:;" data-toggle="nav-collapse" data-target="#nav-client-collapsible-languages" class="nav-item dropdown dropdown-toggle collapsible-btn-mobile">
-            <i class="nav-icon-24-blue nav-icon-globe"></i>
-            Europe -
-            @if(App::isLocale('de-de'))
-            Deutsch
-            @elseif(App::isLocale('en-us'))
-            English (US)
-            @elseif(App::isLocale('en-gb'))
-            English (EU)
-            @elseif(App::isLocale('es-es'))
-            Español (EU)
-            @elseif(App::isLocale('fr-fr'))
-            Français
-            @elseif(App::isLocale('it-it'))
-            Italiano
-            @elseif(App::isLocale('ru-ru'))
-            Русский
-            @elseif(App::isLocale('ja-jp'))
-            日本
-            @elseif(App::isLocale('zh-cn'))
-            简体中文
-            @endif
-            <b class="caret"></b>
-        </a>
-        <div class="nav-collapse dropdown-well" id="nav-client-collapsible-languages">
-            <div id="nav-client-international-mobile" class="nav-container region-container-mobile">
-    <div class="nav-international-container">
-        <div class="dropdown-section nav-column-container">
-            <div class="nav-column-50">
-                <div id="select-regions" class="nav-box regions">
-                    <h3>Регион</h3>
-                    <ul class="region-ul">
-                            <li class="region active current"><a class="nav-item select-region" href="javascript:;" data-target="eu">Europe</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="nav-column-50">
-                <div id="select-language" class="nav-box languages">
-                    <h3>Язык</h3>
-                        <div class="region region-languages active current" data-region="eu">
-                            <ul class="region-ul">
-                                <li class="@if(App::isLocale('de-de')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'de-de']) ?>" data-target="eu" data-language="de-de">Deutsch</a>
-                                </li>
-                                <li class="@if(App::isLocale('en-us')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-us']) ?>" data-target="eu" data-language="en-us">English (US)</a>
-                                </li>
-                                <li class="@if(App::isLocale('en-gb')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'en-gb']) ?>" data-target="eu" data-language="en-gb">English (EU)</a>
-                                </li>
-                                <li class="@if(App::isLocale('es-es')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'es-es']) ?>" data-target="eu" data-language="es-es">Español (EU)</a>
-                                </li>
-                                <li class="@if(App::isLocale('fr-fr')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'fr-fr']) ?>" data-target="eu" data-language="fr-fr">Français</a>
-                                </li>
-                                <li class="@if(App::isLocale('it-it')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'it-it']) ?>" data-target="eu" data-language="it-it">Italiano</a>
-                                </li>
-                                <li class="@if(App::isLocale('ru-ru')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ru-ru']) ?>" data-target="eu" data-language="ru-ru">Русский</a>
-                                </li>
-                                <li class="@if(App::isLocale('ja-jp')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'ja-jp']) ?>" data-target="eu" data-language="ja-jp">日本</a>
-                                </li>
-                                <li class="@if(App::isLocale('zh-cn')) active current @endif">
-                                <a class="nav-item select-language" href="<?= route('lang', ['lang' => 'zh-cn']) ?>" data-target="eu" data-language="zh-cn">简体中文</a>
-                                </li>
-                            </ul>
+            <div class="NavbarFooter-selectorDropdown">
+                <div class="NavbarFooter-selectorDropdownContainer">
+                    <div class="NavbarFooter-selectorCloser">
+                        <div class="NavbarFooter-selectorCloserAnchor">
+                            <div class="NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-close"></use>
+                                </svg>
+                            </div>
                         </div>
+                    </div>
+                <div class="NavbarFooter-selectorLocales NavbarFooter-selectorSection">
+                    <div class="NavbarFooter-selectorSectionBlock">
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('de-de')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'de-de', 'current' => app()->getLocale()]) ?>" data-id="de-de">
+                            <div class="NavbarFooter-selectorOptionLabel">Deutsch</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('en-us')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'en-us', 'current' => app()->getLocale()]) ?>" data-id="en-us">
+                            <div class="NavbarFooter-selectorOptionLabel">English (US)</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('en-gb')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'en-gb']) ?>" data-id="en-gb">
+                            <div class="NavbarFooter-selectorOptionLabel">English (EU)</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('es-es')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'es-es', 'current' => app()->getLocale()]) ?>" data-id="es-es">
+                            <div class="NavbarFooter-selectorOptionLabel">Español (EU)</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('fr-fr')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'fr-fr', 'current' => app()->getLocale()]) ?>" data-id="fr-fr">
+                            <div class="NavbarFooter-selectorOptionLabel">Français</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('it-it')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'it-it', 'current' => app()->getLocale()]) ?>" data-id="it-it">
+                            <div class="NavbarFooter-selectorOptionLabel">Italiano</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="NavbarFooter-selectorSectionBlock">
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('ru-ru')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'ru-ru', 'current' => app()->getLocale()]) ?>" data-id="ru-ru">
+                            <div class="NavbarFooter-selectorOptionLabel">Русский</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('ja-jp')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'ja-jp', 'current' => app()->getLocale()]) ?>" data-id="ja-jp">
+                            <div class="NavbarFooter-selectorOptionLabel">日本</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a class="NavbarFooter-selectorLocale @if(App::isLocale('zh-cn')) is-active is-selected @endif NavbarFooter-selectorOption" href="<?= route('lang', ['lang' => 'zh-cn', 'current' => app()->getLocale()]) ?>" data-id="zh-cn">
+                            <div class="NavbarFooter-selectorOptionLabel">繁體中文</div>
+                            <div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
+                                    <use xlink:href="#Navbar-icon-check"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="NavbarFooter-selectorTick"></div>
                 </div>
             </div>
         </div>
-    </div>
-                <div class="dropdown-section nav-box">
-                    <a id="nav-client-change-language-mobile" href="javascript:;" class="nav-a nav-lang-change nav-btn">@lang('forum.change_lang')</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-        <div class="nav-logo-group">
-                <div class="footer-logo">
-<a class="nav-item logo-link" href="http://eu.blizzard.com/" data-analytics="global-nav" data-analytics-placement="Footer - Blizzard Logo"><img class="blizzard-logo" src="/images/nav-client/blizzard.png?v=58-84" alt="" /></a>
-                </div>
-            <div class="footer-links">
-<a class="nav-item nav-a" href="/" data-analytics="global-nav" data-analytics-placement="Footer - Careers">@lang('forum.Careers')</a>
-            <span>|</span>
-<a class="nav-item nav-a" href="/company/about/" data-analytics="global-nav" data-analytics-placement="Footer - About">@lang('forum.About')</a>
-            <span>|</span>
-<a class="nav-item nav-a" href="/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">@lang('forum.Privacy')</a>
-            <span>|</span>
-<a class="nav-item nav-a" href="/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">@lang('forum.Terms')</a>
-            <span>|</span>
-<a class="nav-item nav-a" href="/" data-analytics="global-nav" data-analytics-placement="Footer - API">API</a>
-            </div>
+<div class="NavbarFooter-logoContainer">
+<a href="/" class="NavbarFooter-logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoUpper"><use xlink:href="#NavbarFooter-blizzard-upper"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoLower"><use xlink:href="#NavbarFooter-blizzard-lower"></use></svg></a></div>
 
-    <div class="copyright">© Blizzard Entertainment, 2017 г.</div>
-    <div class="nav-footer-icon-container">
-        <ul class="nav-footer-icon-list">
-        </ul>
-    </div>
-            <div class="nav-ratings">
-            <div class="legal-rating">
+<div class="NavbarFooter-links NavbarFooter-mainLinks"><div class="NavbarFooter-linksLeft"><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://careers.blizzard.com/" class="NavbarFooter-anchor" data-id="careers" data-analytics="global-nav" data-analytics-placement="Footer - Careers">Вакансии</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="/company/about/" class="NavbarFooter-anchor" data-id="about" data-analytics="global-nav" data-analytics-placement="Footer - About">О компании</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://eu.support.blizzard.com/" class="NavbarFooter-anchor" data-id="support" data-analytics="global-nav" data-analytics-placement="Footer - Support">Поддержка</a></div></div><div class="NavbarFooter-linksRight"><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="/company/about/contact.html" class="NavbarFooter-anchor" data-id="contact" data-analytics="global-nav">Открыть запрос</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://blizzard.gamespress.com/" class="NavbarFooter-anchor" data-id="press" data-analytics="global-nav" data-analytics-placement="Footer - Press">Пресс-релизы</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://dev.battle.net/" class="NavbarFooter-anchor" data-id="api" data-analytics="global-nav" data-analytics-placement="Footer - Battle.net API">API</a></div></div></div>
 
-    <div class="product-rating mkrf-rating clearfix">
-        <a href="http://mkrf.ru/" tabindex="1" rel="external" target="_blank"><img class="mkrf-logo" src="/images/legal/ratings/mkrf/12.png?v=58-84" alt="12+" width="65" height="72" /></a>
-    </div>
-            </div>
-
-
-            </div>
-        </div>
-</div>
-    </div>
+<div class="NavbarFooter-copyright">©Blizzard Entertainment, 2018. Все права защищены.</div>
+<div class="NavbarFooter-trademark">Developed by <a href="https://wowlegions.ru/">WoWLegions</a> (ver. 1.10)</div>
+</div></div></div></div>

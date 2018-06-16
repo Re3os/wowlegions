@@ -1,0 +1,1687 @@
+@charset "UTF-8";
+/**
+* SassFlexbox
+* Manage Flexbox in Sass easily.
+*
+* @author     Samuel Marchal (zessx)
+* @version    0.1
+*/
+/*
+    Display
+ */
+[data=Blog] .blog_card-group,
+.Blog .blog_card-group, [data=Blog] .blog_card-group .blog_card-list,
+.Blog .blog_card-group .blog_card-list, [data=Blog] .blog_card-group .blog_card,
+.Blog .blog_card-group .blog_card, [data=Blog] .blog_card-group .blog_card .blog_card-block,
+.Blog .blog_card-group .blog_card .blog_card-block, [data=Blog] .gallery,
+.Blog .gallery, [data=Blog] .nav-tabs,
+.Blog .nav-tabs {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+
+/*
+    Flex direction
+ */
+[data=Blog] .gallery,
+.Blog .gallery {
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+[data=Blog] .blog_card-group .blog_card,
+.Blog .blog_card-group .blog_card, [data=Blog] .blog_card-group .blog_card .blog_card-block,
+.Blog .blog_card-group .blog_card .blog_card-block {
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+
+/*
+    Flex wrap
+ */
+[data=Blog] .blog_card-group,
+.Blog .blog_card-group, [data=Blog] .gallery,
+.Blog .gallery {
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+/*
+    Flex flow
+ */
+/*
+    Order
+ */
+/*
+    Flex grow
+ */
+/*
+    Flex shrink
+ */
+/*
+    Flex basis
+ */
+/*
+    Flex
+ */
+/*
+    Justify content
+ */
+[data=Blog] .blog_card-group,
+.Blog .blog_card-group {
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -webkit-flex-pack: start;
+  -ms-flex-pack: start;
+  -moz-justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start; }
+
+[data=Blog] .nav-tabs,
+.Blog .nav-tabs {
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  -webkit-flex-pack: justify;
+  -ms-flex-pack: justify;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+
+/*
+    Align items
+ */
+[data=Blog] .nav-tabs,
+.Blog .nav-tabs {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  align-items: center; }
+
+/*
+    Align self
+ */
+/*
+    Align content
+ */
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear; }
+  .fade.in {
+    opacity: 1; }
+
+.collapse {
+  display: none; }
+  .collapse.in {
+    display: block; }
+
+tr.collapse.in {
+  display: table-row; }
+
+tbody.collapse.in {
+  display: table-row-group; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-duration: .35s;
+  transition-timing-function: ease; }
+
+[data=Blog] h1, [data=Blog] .h1,
+[data=Blog] h2, [data=Blog] .h2,
+[data=Blog] h3, [data=Blog] .h3,
+[data=Blog] h4, [data=Blog] .h4,
+[data=Blog] h5, [data=Blog] .h5,
+[data=Blog] h6, [data=Blog] .h6,
+.Blog h1,
+.Blog .h1,
+.Blog h2,
+.Blog .h2,
+.Blog h3,
+.Blog .h3,
+.Blog h4,
+.Blog .h4,
+.Blog h5,
+.Blog .h5,
+.Blog h6,
+.Blog .h6, [data=Blog] .dl-horizontal dd,
+.Blog .dl-horizontal dd, [data=Blog] .pull-left,
+.Blog .pull-left, [data=Blog] .pull-right,
+.Blog .pull-right {
+  *zoom: 1; }
+  [data=Blog] h1:before, [data=Blog] .h1:before,
+  [data=Blog] h2:before, [data=Blog] .h2:before,
+  [data=Blog] h3:before, [data=Blog] .h3:before,
+  [data=Blog] h4:before, [data=Blog] .h4:before,
+  [data=Blog] h5:before, [data=Blog] .h5:before,
+  [data=Blog] h6:before, [data=Blog] .h6:before,
+  .Blog h1:before,
+  .Blog .h1:before,
+  .Blog h2:before,
+  .Blog .h2:before,
+  .Blog h3:before,
+  .Blog .h3:before,
+  .Blog h4:before,
+  .Blog .h4:before,
+  .Blog h5:before,
+  .Blog .h5:before,
+  .Blog h6:before,
+  .Blog .h6:before, [data=Blog] .dl-horizontal dd:before,
+  .Blog .dl-horizontal dd:before, [data=Blog] .pull-left:before,
+  .Blog .pull-left:before, [data=Blog] .pull-right:before,
+  .Blog .pull-right:before, [data=Blog] h1:after, [data=Blog] .h1:after,
+  [data=Blog] h2:after, [data=Blog] .h2:after,
+  [data=Blog] h3:after, [data=Blog] .h3:after,
+  [data=Blog] h4:after, [data=Blog] .h4:after,
+  [data=Blog] h5:after, [data=Blog] .h5:after,
+  [data=Blog] h6:after, [data=Blog] .h6:after,
+  .Blog h1:after,
+  .Blog .h1:after,
+  .Blog h2:after,
+  .Blog .h2:after,
+  .Blog h3:after,
+  .Blog .h3:after,
+  .Blog h4:after,
+  .Blog .h4:after,
+  .Blog h5:after,
+  .Blog .h5:after,
+  .Blog h6:after,
+  .Blog .h6:after, [data=Blog] .dl-horizontal dd:after,
+  .Blog .dl-horizontal dd:after, [data=Blog] .pull-left:after,
+  .Blog .pull-left:after, [data=Blog] .pull-right:after,
+  .Blog .pull-right:after {
+    display: table;
+    content: "";
+    line-height: 0; }
+  [data=Blog] h1:after, [data=Blog] .h1:after,
+  [data=Blog] h2:after, [data=Blog] .h2:after,
+  [data=Blog] h3:after, [data=Blog] .h3:after,
+  [data=Blog] h4:after, [data=Blog] .h4:after,
+  [data=Blog] h5:after, [data=Blog] .h5:after,
+  [data=Blog] h6:after, [data=Blog] .h6:after,
+  .Blog h1:after,
+  .Blog .h1:after,
+  .Blog h2:after,
+  .Blog .h2:after,
+  .Blog h3:after,
+  .Blog .h3:after,
+  .Blog h4:after,
+  .Blog .h4:after,
+  .Blog h5:after,
+  .Blog .h5:after,
+  .Blog h6:after,
+  .Blog .h6:after, [data=Blog] .dl-horizontal dd:after,
+  .Blog .dl-horizontal dd:after, [data=Blog] .pull-left:after,
+  .Blog .pull-left:after, [data=Blog] .pull-right:after,
+  .Blog .pull-right:after {
+    clear: both; }
+
+[data=Blog] strong,
+[data=Blog] b,
+.Blog strong,
+.Blog b {
+  font-weight: 700; }
+
+[data=Blog],
+.Blog {
+  /* for two levels of nested quotations */
+  /* extra content definitions for pre-2011 WebKit */
+  line-height: 1.75;
+  font-size: 14px;
+  font-weight: 200;
+  font-family: "opensans", sans-serif;
+  background-color: transparent;
+  color: #ebdec2; }
+  [data=Blog] blockquote,
+  .Blog blockquote {
+    font-size: 16px;
+    line-height: 1.75;
+    font-style: normal;
+    background: rgba(255, 255, 255, 0.1);
+    background-size: 6px 6px;
+    background-position: 0 0;
+    margin-bottom: 1.75rem;
+    padding: 1em;
+    border-width: 0 0 0 0.5em;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    /* q in pullquotes */ }
+    [data=Blog] blockquote p,
+    .Blog blockquote p {
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 100;
+      text-transform: none; }
+      [data=Blog] blockquote p:last-of-type,
+      .Blog blockquote p:last-of-type {
+        margin-bottom: 0; }
+    [data=Blog] blockquote footer,
+    .Blog blockquote footer {
+      padding: 1em 0 0 0;
+      line-height: 1.75;
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      font-weight: 400;
+      display: block; }
+      [data=Blog] blockquote footer::before,
+      .Blog blockquote footer::before {
+        content: " - "; }
+    [data=Blog] blockquote.blockquote-reverse footer::before,
+    .Blog blockquote.blockquote-reverse footer::before {
+      content: ''; }
+    [data=Blog] blockquote.blockquote-reverse footer::after,
+    .Blog blockquote.blockquote-reverse footer::after {
+      content: " - "; }
+    @media (min-width: 62em) {
+      [data=Blog] blockquote.blockquote-reverse,
+      .Blog blockquote.blockquote-reverse {
+        text-align: right; } }
+    [data=Blog] blockquote q:before,
+    [data=Blog] blockquote q:before,
+    .Blog blockquote q:before,
+    .Blog blockquote q:before {
+      content: '‘';
+      content: open-quote; }
+    [data=Blog] blockquote q:after,
+    .Blog blockquote q:after {
+      content: '’';
+      content: close-quote; }
+    [data=Blog] blockquote q q:before,
+    .Blog blockquote q q:before {
+      content: '“';
+      content: open-quote; }
+    [data=Blog] blockquote q q:after,
+    .Blog blockquote q q:after {
+      content: '”';
+      content: close-quote; }
+  [data=Blog] .pullquote,
+  .Blog .pullquote {
+    font-size: 16px;
+    line-height: 1.75;
+    font-style: normal;
+    background: rgba(255, 255, 255, 0.1);
+    background-size: 6px 6px;
+    background-position: 0 0;
+    margin-bottom: 1.75rem;
+    padding: 1em;
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    /* q in pullquotes */ }
+    [data=Blog] .pullquote p,
+    .Blog .pullquote p {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 100;
+      text-transform: none; }
+      [data=Blog] .pullquote p:last-of-type,
+      .Blog .pullquote p:last-of-type {
+        margin-bottom: 0; }
+    [data=Blog] .pullquote footer.pullquote-source,
+    .Blog .pullquote footer.pullquote-source {
+      padding: 1em 0 0 0;
+      line-height: 1.75;
+      font-size: 0.7em;
+      color: rgba(255, 255, 255, 0.7);
+      text-transform: uppercase;
+      font-weight: 400;
+      display: block; }
+      [data=Blog] .pullquote footer.pullquote-source::before,
+      .Blog .pullquote footer.pullquote-source::before {
+        content: " - "; }
+    [data=Blog] .pullquote.pullquote-reverse footer::before,
+    .Blog .pullquote.pullquote-reverse footer::before {
+      content: ''; }
+    [data=Blog] .pullquote.pullquote-reverse footer::after,
+    .Blog .pullquote.pullquote-reverse footer::after {
+      content: " - "; }
+    @media (min-width: 62em) {
+      [data=Blog] .pullquote.pullquote-reverse,
+      .Blog .pullquote.pullquote-reverse {
+        text-align: right; } }
+    [data=Blog] .pullquote q:before,
+    [data=Blog] .pullquote q:before,
+    .Blog .pullquote q:before,
+    .Blog .pullquote q:before {
+      content: '‘';
+      content: open-quote; }
+    [data=Blog] .pullquote q:after,
+    .Blog .pullquote q:after {
+      content: '’';
+      content: close-quote; }
+    [data=Blog] .pullquote q q:before,
+    .Blog .pullquote q q:before {
+      content: '“';
+      content: open-quote; }
+    [data=Blog] .pullquote q q:after,
+    .Blog .pullquote q q:after {
+      content: '”';
+      content: close-quote; }
+  [data=Blog] q,
+  .Blog q {
+    quotes: '“' '”' '‘' '’'; }
+  [data=Blog] q:before,
+  .Blog q:before {
+    content: '“';
+    content: open-quote; }
+  [data=Blog] q:after,
+  .Blog q:after {
+    content: '”';
+    content: close-quote; }
+  [data=Blog] q q:before,
+  .Blog q q:before {
+    content: '‘';
+    content: open-quote; }
+  [data=Blog] q q:after,
+  .Blog q q:after {
+    content: '’';
+    content: close-quote; }
+  [data=Blog] hr,
+  .Blog hr {
+    margin: 1.75em 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.25);
+    height: 1px;
+    border: 0 none;
+    width: 50%;
+    margin: 1.75rem auto; }
+    [data=Blog] hr.image-divider,
+    .Blog hr.image-divider {
+      position: relative;
+      height: 30px;
+      width: 50%;
+      background-image: url(../components/Blog/Blog-divider.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      background-color: transparent; }
+  [data=Blog] h1, [data=Blog] .h1,
+  .Blog h1,
+  .Blog .h1 {
+    font-size: 2.986rem;
+    line-height: 1.5em;
+    font-family: "Semplicita Pro";
+    color: #fff;
+    font-weight: bold;
+    text-transform: none; }
+    [data=Blog] h1 .small,
+    [data=Blog] h1 small, [data=Blog] .h1 .small,
+    [data=Blog] .h1 small,
+    .Blog h1 .small,
+    .Blog h1 small,
+    .Blog .h1 .small,
+    .Blog .h1 small {
+      text-transform: uppercase; }
+  [data=Blog] h2, [data=Blog] .h2,
+  .Blog h2,
+  .Blog .h2 {
+    font-size: 2.488rem;
+    line-height: 1.5em;
+    font-family: "Semplicita Pro";
+    color: #fff;
+    font-weight: bold;
+    text-transform: none; }
+    [data=Blog] h2 .small,
+    [data=Blog] h2 small, [data=Blog] .h2 .small,
+    [data=Blog] .h2 small,
+    .Blog h2 .small,
+    .Blog h2 small,
+    .Blog .h2 .small,
+    .Blog .h2 small {
+      text-transform: none; }
+  [data=Blog] h3, [data=Blog] .h3,
+  .Blog h3,
+  .Blog .h3 {
+    font-size: 1.728rem;
+    line-height: 1.5em;
+    font-family: "Semplicita Pro";
+    color: #fff;
+    font-weight: bold;
+    text-transform: none; }
+    [data=Blog] h3 .small,
+    [data=Blog] h3 small, [data=Blog] .h3 .small,
+    [data=Blog] .h3 small,
+    .Blog h3 .small,
+    .Blog h3 small,
+    .Blog .h3 .small,
+    .Blog .h3 small {
+      text-transform: none; }
+  [data=Blog] h4, [data=Blog] .h4,
+  .Blog h4,
+  .Blog .h4 {
+    font-size: 1.44rem;
+    line-height: 1.5em;
+    font-family: "Semplicita Pro";
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; }
+    [data=Blog] h4 .small,
+    [data=Blog] h4 small, [data=Blog] .h4 .small,
+    [data=Blog] .h4 small,
+    .Blog h4 .small,
+    .Blog h4 small,
+    .Blog .h4 .small,
+    .Blog .h4 small {
+      text-transform: none; }
+  [data=Blog] h5, [data=Blog] .h5,
+  .Blog h5,
+  .Blog .h5 {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; }
+    [data=Blog] h5 .small,
+    [data=Blog] h5 small, [data=Blog] .h5 .small,
+    [data=Blog] .h5 small,
+    .Blog h5 .small,
+    .Blog h5 small,
+    .Blog .h5 .small,
+    .Blog .h5 small {
+      text-transform: none; }
+  [data=Blog] h6, [data=Blog] .h6,
+  .Blog h6,
+  .Blog .h6 {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase; }
+    [data=Blog] h6 .small,
+    [data=Blog] h6 small, [data=Blog] .h6 .small,
+    [data=Blog] .h6 small,
+    .Blog h6 .small,
+    .Blog h6 small,
+    .Blog .h6 .small,
+    .Blog .h6 small {
+      text-transform: none; }
+  [data=Blog] h1 small,
+  [data=Blog] h1 .small, [data=Blog] .h1 small,
+  [data=Blog] .h1 .small,
+  [data=Blog] h2 small,
+  [data=Blog] h2 .small, [data=Blog] .h2 small,
+  [data=Blog] .h2 .small,
+  [data=Blog] h3 small,
+  [data=Blog] h3 .small, [data=Blog] .h3 small,
+  [data=Blog] .h3 .small,
+  [data=Blog] h4 small,
+  [data=Blog] h4 .small, [data=Blog] .h4 small,
+  [data=Blog] .h4 .small,
+  [data=Blog] h5 small,
+  [data=Blog] h5 .small, [data=Blog] .h5 small,
+  [data=Blog] .h5 .small,
+  [data=Blog] h6 small,
+  [data=Blog] h6 .small, [data=Blog] .h6 small,
+  [data=Blog] .h6 .small,
+  .Blog h1 small,
+  .Blog h1 .small,
+  .Blog .h1 small,
+  .Blog .h1 .small,
+  .Blog h2 small,
+  .Blog h2 .small,
+  .Blog .h2 small,
+  .Blog .h2 .small,
+  .Blog h3 small,
+  .Blog h3 .small,
+  .Blog .h3 small,
+  .Blog .h3 .small,
+  .Blog h4 small,
+  .Blog h4 .small,
+  .Blog .h4 small,
+  .Blog .h4 .small,
+  .Blog h5 small,
+  .Blog h5 .small,
+  .Blog .h5 small,
+  .Blog .h5 .small,
+  .Blog h6 small,
+  .Blog h6 .small,
+  .Blog .h6 small,
+  .Blog .h6 .small {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 75%;
+    display: block;
+    line-height: 1.1; }
+  [data=Blog] h1.bullet-heading, [data=Blog] .h1.bullet-heading,
+  [data=Blog] h2.bullet-heading, [data=Blog] .h2.bullet-heading,
+  [data=Blog] h3.bullet-heading, [data=Blog] .h3.bullet-heading,
+  [data=Blog] h4.bullet-heading, [data=Blog] .h4.bullet-heading,
+  [data=Blog] h5.bullet-heading, [data=Blog] .h5.bullet-heading,
+  [data=Blog] h6.bullet-heading, [data=Blog] .h6.bullet-heading,
+  .Blog h1.bullet-heading,
+  .Blog .h1.bullet-heading,
+  .Blog h2.bullet-heading,
+  .Blog .h2.bullet-heading,
+  .Blog h3.bullet-heading,
+  .Blog .h3.bullet-heading,
+  .Blog h4.bullet-heading,
+  .Blog .h4.bullet-heading,
+  .Blog h5.bullet-heading,
+  .Blog .h5.bullet-heading,
+  .Blog h6.bullet-heading,
+  .Blog .h6.bullet-heading {
+    padding: 0 0 0 1.2em;
+    background: none;
+    background-size: contain; }
+  [data=Blog] code,
+  .Blog code {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: rgba(248, 183, 0, 0.2);
+    color: #fff;
+    padding: 2px 4px;
+    font-size: 0.8em;
+    border-radius: 3px;
+    margin: 0 2px; }
+  [data=Blog] mark,
+  .Blog mark {
+    background-color: rgba(248, 183, 0, 0.7);
+    padding: 0 0.5em;
+    color: white; }
+  [data=Blog] i,
+  [data=Blog] em,
+  .Blog i,
+  .Blog em {
+    font-style: italic; }
+  @media (min-width: 62em) {
+    [data=Blog] abbr[title],
+    .Blog abbr[title] {
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
+      cursor: help; } }
+  [data=Blog] abbr[title]::after,
+  .Blog abbr[title]::after {
+    font-size: 75%;
+    color: rgba(255, 255, 255, 0.7);
+    content: "(" attr(title) ") "; }
+    @media (min-width: 62em) {
+      [data=Blog] abbr[title]::after,
+      .Blog abbr[title]::after {
+        content: ''; } }
+  [data=Blog] sup,
+  .Blog sup {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 75%;
+    vertical-align: super; }
+  [data=Blog] sub,
+  .Blog sub {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 75%;
+    vertical-align: baseline; }
+  [data=Blog] a,
+  .Blog a {
+    color: #f8b700;
+    text-decoration: none; }
+    [data=Blog] a:hover, [data=Blog] a:focus,
+    .Blog a:hover,
+    .Blog a:focus {
+      color: #ffc82c;
+      text-decoration: none; }
+    [data=Blog] a:focus,
+    .Blog a:focus {
+      outline: 0 none;
+      outline-offset: 0; }
+  [data=Blog] a.btn.disabled,
+  fieldset[disabled] [data=Blog] a.btn,
+  .Blog a.btn.disabled,
+  fieldset[disabled]
+  .Blog a.btn {
+    pointer-events: none; }
+  [data=Blog] ul,
+  [data=Blog] ol,
+  .Blog ul,
+  .Blog ol {
+    padding-left: 1.75rem;
+    margin-bottom: 1.75rem;
+    margin-top: 0; }
+    [data=Blog] ul ul,
+    [data=Blog] ul ol,
+    [data=Blog] ol ul,
+    [data=Blog] ol ol,
+    .Blog ul ul,
+    .Blog ul ol,
+    .Blog ol ul,
+    .Blog ol ol {
+      margin-bottom: 0; }
+    [data=Blog] ul ol,
+    [data=Blog] ol ol,
+    .Blog ul ol,
+    .Blog ol ol {
+      list-style: lower-roman; }
+  [data=Blog] ul,
+  .Blog ul {
+    list-style: square; }
+  [data=Blog] ol,
+  .Blog ol {
+    list-style: decimal; }
+  [data=Blog] ul ul,
+  [data=Blog] ol ul,
+  .Blog ul ul,
+  .Blog ol ul {
+    list-style-type: circle; }
+  [data=Blog] .list-unstyled,
+  .Blog .list-unstyled {
+    padding-left: 0;
+    list-style: none; }
+  [data=Blog] .list-inline,
+  .Blog .list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px; }
+    [data=Blog] .list-inline > li,
+    .Blog .list-inline > li {
+      position: relative;
+      display: inline-block;
+      padding-left: 5px;
+      padding-right: 5px; }
+  [data=Blog] .list-custom,
+  .Blog .list-custom {
+    padding-left: 0;
+    list-style: none; }
+    [data=Blog] .list-custom li,
+    .Blog .list-custom li {
+      position: relative;
+      padding-left: 1.75rem;
+      display: block; }
+      [data=Blog] .list-custom li::before,
+      .Blog .list-custom li::before {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        background: url("../components/Blog/Blog-list-bullet.png") no-repeat 0 0;
+        background-size: contain;
+        content: ' ';
+        display: inline-block;
+        text-indent: -9999px; }
+    [data=Blog] .list-custom ul,
+    .Blog .list-custom ul {
+      padding-left: 0;
+      list-style: none; }
+  [data=Blog] dl,
+  .Blog dl {
+    margin-bottom: 1.75rem;
+    margin-top: 0; }
+  [data=Blog] dt,
+  [data=Blog] dd,
+  .Blog dt,
+  .Blog dd {
+    line-height: 1.75rem; }
+  [data=Blog] dt,
+  .Blog dt {
+    font-weight: bold;
+    color: #fff; }
+  [data=Blog] dd,
+  .Blog dd {
+    margin-left: 0; }
+  [data=Blog] .dl-horizontal dt,
+  .Blog .dl-horizontal dt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 160px;
+    margin-right: 1.75rem;
+    float: left;
+    clear: left;
+    text-align: right; }
+    @media (max-width: 25em) {
+      [data=Blog] .dl-horizontal dt,
+      .Blog .dl-horizontal dt {
+        float: none;
+        text-align: left;
+        width: 100%; } }
+    [data=Blog] .dl-horizontal dt dd,
+    .Blog .dl-horizontal dt dd {
+      margin-left: 180px; }
+  [data=Blog] p,
+  .Blog p {
+    margin-bottom: 1.75rem; }
+    [data=Blog] p.lead, [data=Blog] p.lede,
+    .Blog p.lead,
+    .Blog p.lede {
+      font-size: 20px;
+      line-height: 1.75;
+      font-weight: 200;
+      color: #fff; }
+  [data=Blog] .type,
+  .Blog .type {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin-top: 0; }
+  [data=Blog] .vertical-top,
+  .Blog .vertical-top {
+    vertical-align: top; }
+  [data=Blog] .vertical-bottom,
+  .Blog .vertical-bottom {
+    vertical-align: bottom; }
+  [data=Blog] .vertical-middle,
+  .Blog .vertical-middle {
+    vertical-align: middle; }
+  [data=Blog] .text-uppercase,
+  .Blog .text-uppercase {
+    text-transform: uppercase; }
+  [data=Blog] .text-lowercase,
+  .Blog .text-lowercase {
+    text-transform: lowercase; }
+  [data=Blog] .text-capitalize,
+  .Blog .text-capitalize {
+    text-transform: capitalize; }
+  [data=Blog] .text-reset,
+  .Blog .text-reset {
+    text-transform: none; }
+  [data=Blog] .text-left,
+  .Blog .text-left {
+    text-align: left; }
+  [data=Blog] .text-right,
+  .Blog .text-right {
+    text-align: right; }
+  [data=Blog] .text-center,
+  .Blog .text-center {
+    text-align: center; }
+  [data=Blog] .text-justify,
+  .Blog .text-justify {
+    text-align: justify; }
+  [data=Blog] .text-nowrap,
+  .Blog .text-nowrap {
+    white-space: nowrap; }
+  [data=Blog] .no-border,
+  .Blog .no-border {
+    border: 0 none; }
+  [data=Blog] .no-shadow,
+  .Blog .no-shadow {
+    box-shadow: none; }
+  [data=Blog] .center-block, [data=Blog] .pull-left, [data=Blog] .pull-right,
+  .Blog .center-block,
+  .Blog .pull-left,
+  .Blog .pull-right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+    [data=Blog] .center-block img, [data=Blog] .pull-left img, [data=Blog] .pull-right img,
+    .Blog .center-block img,
+    .Blog .pull-left img,
+    .Blog .pull-right img {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto; }
+  [data=Blog] .pull-left,
+  .Blog .pull-left {
+    float: none !important; }
+    @media (min-width: 48em) {
+      [data=Blog] .pull-left,
+      .Blog .pull-left {
+        *zoom: 1;
+        margin: 0 1.75rem 0 0;
+        max-width: 60%;
+        float: left !important;
+        display: inline; }
+        [data=Blog] .pull-left:before, [data=Blog] .pull-left:after,
+        .Blog .pull-left:before,
+        .Blog .pull-left:after {
+          display: table;
+          content: "";
+          line-height: 0; }
+        [data=Blog] .pull-left:after,
+        .Blog .pull-left:after {
+          clear: both; } }
+  [data=Blog] .pull-right,
+  .Blog .pull-right {
+    float: none !important; }
+    @media (min-width: 48em) {
+      [data=Blog] .pull-right,
+      .Blog .pull-right {
+        *zoom: 1;
+        margin: 0 0 0 1.75rem;
+        max-width: 60%;
+        float: right !important;
+        display: inline; }
+        [data=Blog] .pull-right:before, [data=Blog] .pull-right:after,
+        .Blog .pull-right:before,
+        .Blog .pull-right:after {
+          display: table;
+          content: "";
+          line-height: 0; }
+        [data=Blog] .pull-right:after,
+        .Blog .pull-right:after {
+          clear: both; } }
+  [data=Blog] .panel-group .panel,
+  .Blog .panel-group .panel {
+    margin-bottom: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(10, 12, 16, 0.5);
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    /* For some Androids */ }
+    [data=Blog] .panel-group .panel .panel-heading,
+    .Blog .panel-group .panel .panel-heading {
+      position: relative; }
+      [data=Blog] .panel-group .panel .panel-heading .panel-title a,
+      .Blog .panel-group .panel .panel-heading .panel-title a {
+        padding: 1em 4.3em 1em 1em;
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 1.2em;
+        text-decoration: none;
+        display: block; }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a img,
+        .Blog .panel-group .panel .panel-heading .panel-title a img {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          margin: 0;
+          box-shadow: none;
+          border: 0 none;
+          z-index: 0; }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a::after, [data=Blog] .panel-group .panel .panel-heading .panel-title a::before,
+        .Blog .panel-group .panel .panel-heading .panel-title a::after,
+        .Blog .panel-group .panel .panel-heading .panel-title a::before {
+          position: absolute;
+          top: 40%;
+          right: 4em;
+          background-color: #f8b700;
+          transition: all 0.2s ease-in-out;
+          right: 2em;
+          width: 3px;
+          height: 9px;
+          content: ""; }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a:before,
+        .Blog .panel-group .panel .panel-heading .panel-title a:before {
+          transform: translate(-2px, 0) rotate(45deg); }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a:after,
+        .Blog .panel-group .panel .panel-heading .panel-title a:after {
+          transform: translate(2px, 0) rotate(-45deg); }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a.collapsed::after, [data=Blog] .panel-group .panel .panel-heading .panel-title a.collapsed::before,
+        .Blog .panel-group .panel .panel-heading .panel-title a.collapsed::after,
+        .Blog .panel-group .panel .panel-heading .panel-title a.collapsed::before {
+          background-color: #adadae; }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a.collapsed:before,
+        .Blog .panel-group .panel .panel-heading .panel-title a.collapsed:before {
+          transform: translate(2px, 0) rotate(45deg); }
+        [data=Blog] .panel-group .panel .panel-heading .panel-title a.collapsed:after,
+        .Blog .panel-group .panel .panel-heading .panel-title a.collapsed:after {
+          transform: translate(-2px, 0) rotate(-45deg); }
+  [data=Blog] .panel-group .panel-collapse.collapse,
+  .Blog .panel-group .panel-collapse.collapse {
+    display: none; }
+    [data=Blog] .panel-group .panel-collapse.collapse.in,
+    .Blog .panel-group .panel-collapse.collapse.in {
+      display: block; }
+  [data=Blog] .panel-group .panel-body,
+  .Blog .panel-group .panel-body {
+    padding: 1em 4.3em 1em 1em; }
+  [data=Blog] .btn,
+  .Blog .btn {
+    border-radius: 0px;
+    padding: 8px 24px;
+    border: 1px solid;
+    font-size: 1em;
+    text-decoration: none;
+    margin-bottom: 1.75rem;
+    transition: all 0.2s ease-in;
+    display: block;
+    cursor: pointer;
+    text-align: center; }
+    @media (min-width: 48em) {
+      [data=Blog] .btn,
+      .Blog .btn {
+        display: inline-block; } }
+    [data=Blog] .btn.center-block, [data=Blog] .btn.pull-left, [data=Blog] .btn.pull-right,
+    .Blog .btn.center-block,
+    .Blog .btn.pull-left,
+    .Blog .btn.pull-right {
+      margin: 0 auto 1.75rem;
+      text-align: center; }
+    [data=Blog] .btn.block,
+    .Blog .btn.block {
+      margin: 0 auto 1.75rem;
+      display: block; }
+    [data=Blog] .btn-lg,
+    .Blog .btn-lg {
+      font-size: 1.2em;
+      padding: 12px 30px; }
+    [data=Blog] .btn-sm,
+    .Blog .btn-sm {
+      font-size: 0.8em;
+      padding: 5px 16px; }
+    [data=Blog] .btn-xs,
+    .Blog .btn-xs {
+      font-size: 0.7em;
+      padding: 5px 16px; }
+    [data=Blog] .btn-alternate, [data=Blog] .btn-primary,
+    .Blog .btn-alternate,
+    .Blog .btn-primary {
+      background-color: #9f1600;
+      border-color: #ea3012;
+      color: #f7b10a; }
+      [data=Blog] .btn-alternate:hover, [data=Blog] .btn-primary:hover,
+      .Blog .btn-alternate:hover,
+      .Blog .btn-primary:hover {
+        background-color: #7a1100;
+        border-color: #ea3012;
+        color: #f7b10a;
+        text-decoration: none; }
+    [data=Blog] .btn-default,
+    .Blog .btn-default {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-color: #c77e19;
+      color: #f7b10a; }
+      [data=Blog] .btn-default:hover, [data=Blog] .btn-default:focus,
+      .Blog .btn-default:hover,
+      .Blog .btn-default:focus {
+        background-color: #b06601;
+        border-color: #c77e19;
+        color: #ffd36b;
+        text-decoration: none; }
+  [data=Blog] .blog_card,
+  .Blog .blog_card {
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0px;
+    height: auto;
+    margin-bottom: 1.75rem; }
+    @media (min-width: 48em) {
+      [data=Blog] .blog_card,
+      .Blog .blog_card {
+        max-width: 16rem; } }
+    [data=Blog] .blog_card img,
+    .Blog .blog_card img {
+      display: block;
+      height: auto;
+      margin: 0 auto;
+      max-width: 100%;
+      width: 100%;
+      flex-shrink: 0; }
+    [data=Blog] .blog_card .blog_card-img-top,
+    [data=Blog] .blog_card .blog_card-img-bottom,
+    .Blog .blog_card .blog_card-img-top,
+    .Blog .blog_card .blog_card-img-bottom {
+      box-shadow: none;
+      box-sizing: border-box;
+      display: block;
+      width: 100%; }
+    [data=Blog] .blog_card .blog_card-img-top,
+    .Blog .blog_card .blog_card-img-top {
+      border-width: 0 0 1px 0;
+      border-color: #2b2c2f;
+      border-style: solid; }
+    [data=Blog] .blog_card .blog_card-img-bottom,
+    .Blog .blog_card .blog_card-img-bottom {
+      border-width: 1px 0 0 0;
+      border-color: #2b2c2f;
+      border-style: solid; }
+    [data=Blog] .blog_card .blog_card-block,
+    .Blog .blog_card .blog_card-block {
+      padding: 0 1em;
+      height: inherit; }
+      [data=Blog] .blog_card .blog_card-block .blog_card-title,
+      .Blog .blog_card .blog_card-block .blog_card-title {
+        text-transform: normal;
+        font-weight: bold;
+        margin: 0;
+        padding: 1em 0 0.5em 0;
+        font-size: 1.1em;
+        font-family: "Semplicita Pro"; }
+      [data=Blog] .blog_card .blog_card-block .blog_card-text,
+      .Blog .blog_card .blog_card-block .blog_card-text {
+        margin: 0;
+        color: #ebdec2;
+        padding: 0 0 1em; }
+    [data=Blog] .blog_card .blog_card-header,
+    .Blog .blog_card .blog_card-header {
+      margin: 0;
+      padding: 0.8em 1em;
+      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 1em;
+      color: rgba(255, 255, 255, 0.8); }
+    [data=Blog] .blog_card .blog_card-footer,
+    .Blog .blog_card .blog_card-footer {
+      margin: 0;
+      padding: 0.6em 1.3em;
+      background-color: rgba(255, 255, 255, 0.1);
+      font-size: 0.8em;
+      color: rgba(255, 255, 255, 0.3);
+      border-width: 1px 0 0 0;
+      border-color: #2b2c2f;
+      border-style: solid; }
+  [data=Blog] a.card,
+  .Blog a.card {
+    display: block; }
+  [data=Blog] .blog_card-group,
+  .Blog .blog_card-group {
+    margin-bottom: 1.75rem;
+    max-width: 100%; }
+    [data=Blog] .blog_card-group .blog_card-list,
+    .Blog .blog_card-group .blog_card-list {
+      -webkit-flex-grow: 0;
+      -webkit-box-flex: 0;
+      -moz-flex-grow: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      margin-bottom: 1.75rem;
+      transition: width .4s ease-in-out,-ms-flex .4s ease-in-out;
+      box-sizing: border-box; }
+      @media (min-width: 30em) {
+        [data=Blog] .blog_card-group .blog_card-list,
+        .Blog .blog_card-group .blog_card-list {
+          width: 50%;
+          padding: 0 0 0.2em 0.2em;
+          margin: 0; }
+          [data=Blog] .blog_card-group .blog_card-list:nth-child(2n+1),
+          .Blog .blog_card-group .blog_card-list:nth-child(2n+1) {
+            clear: both; } }
+      @media (min-width: 62em) {
+        [data=Blog] .blog_card-group .blog_card-list,
+        .Blog .blog_card-group .blog_card-list {
+          width: 33.33%;
+          margin: 0; }
+          [data=Blog] .blog_card-group .blog_card-list:nth-child(3n+1),
+          .Blog .blog_card-group .blog_card-list:nth-child(3n+1) {
+            clear: both; } }
+    [data=Blog] .blog_card-group .blog_card,
+    .Blog .blog_card-group .blog_card {
+      margin-bottom: 0;
+      max-width: 100%;
+      flex-basis: 100%; }
+      [data=Blog] .blog_card-group .blog_card .blog_card-block,
+      .Blog .blog_card-group .blog_card .blog_card-block {
+        -webkit-flex-grow: 1;
+        -webkit-box-flex: 1;
+        -moz-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-flex-shrink: 0;
+        -webkit-box-flex: 0;
+        -moz-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-flex-basis: auto;
+        -moz-flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto; }
+      [data=Blog] .blog_card-group .blog_card .blog_card-text,
+      .Blog .blog_card-group .blog_card .blog_card-text {
+        -webkit-flex-grow: 1;
+        -webkit-box-flex: 1;
+        -moz-flex-grow: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-flex-shrink: 0;
+        -webkit-box-flex: 0;
+        -moz-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-flex-basis: auto;
+        -moz-flex-basis: auto;
+        -ms-flex-preferred-size: auto;
+        flex-basis: auto; }
+  [data=Blog] figure,
+  .Blog figure {
+    position: relative;
+    background-color: transparent;
+    width: auto; }
+    [data=Blog] figure img,
+    .Blog figure img {
+      margin-bottom: 0; }
+    [data=Blog] figure .video + figcaption,
+    .Blog figure .video + figcaption {
+      margin-bottom: 0; }
+    [data=Blog] figure figcaption,
+    .Blog figure figcaption {
+      position: relative;
+      margin-bottom: 1.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1em;
+      line-height: 1.75;
+      font-size: 14px;
+      font-style: normal;
+      color: rgba(255, 255, 255, 0.5);
+      background-size: 6px 6px;
+      text-align: left;
+      height: initial;
+      z-index: 1; }
+  [data=Blog] .gallery,
+  .Blog .gallery {
+    position: relative;
+    margin: 1.75rem 0;
+    width: 100%; }
+    [data=Blog] .gallery a,
+    [data=Blog] .gallery div,
+    [data=Blog] .gallery figure,
+    .Blog .gallery a,
+    .Blog .gallery div,
+    .Blog .gallery figure {
+      position: relative;
+      -webkit-flex-grow: 1;
+      -webkit-box-flex: 1;
+      -moz-flex-grow: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      -webkit-flex-shrink: auto;
+      -webkit-box-flex: auto;
+      -moz-flex-shrink: auto;
+      -ms-flex-negative: auto;
+      flex-shrink: auto;
+      -webkit-flex-basis: auto;
+      -moz-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+      width: 230px;
+      margin: 3px; }
+      [data=Blog] .gallery a img,
+      [data=Blog] .gallery div img,
+      [data=Blog] .gallery figure img,
+      .Blog .gallery a img,
+      .Blog .gallery div img,
+      .Blog .gallery figure img {
+        width: 100%;
+        margin: 0 auto;
+        height: auto;
+        display: block; }
+  [data=Blog] .img-responsive,
+  .Blog .img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto; }
+  [data=Blog] .img-rounded,
+  .Blog .img-rounded {
+    border-radius: 0.3em; }
+  [data=Blog] .img-thumbnail,
+  .Blog .img-thumbnail {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    padding: 2px;
+    line-height: 1.75;
+    background-color: rgba(248, 183, 0, 0.2);
+    border: 1px solid transparent;
+    border-radius: 0.3em;
+    transition: all .2s ease-in-out; }
+    [data=Blog] .img-thumbnail.img-small,
+    .Blog .img-thumbnail.img-small {
+      width: 60px;
+      height: 60px; }
+  [data=Blog] .img-circle,
+  .Blog .img-circle {
+    border-radius: 50%; }
+  [data=Blog] img,
+  .Blog img {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle; }
+    [data=Blog] img::after,
+    .Blog img::after {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset;
+      content: ''; }
+  [data=Blog] .media,
+  [data=Blog] .media-body,
+  .Blog .media,
+  .Blog .media-body {
+    zoom: 1;
+    overflow: hidden; }
+  [data=Blog] .media,
+  .Blog .media {
+    margin-top: 1.75rem;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent; }
+    [data=Blog] .media:first-child,
+    .Blog .media:first-child {
+      margin-top: 0; }
+    [data=Blog] .media-body,
+    .Blog .media-body {
+      width: 10000px; }
+    [data=Blog] .media-object,
+    .Blog .media-object {
+      max-width: 80px;
+      min-width: 80px;
+      display: block;
+      margin-bottom: 0; }
+    [data=Blog] .media-right,
+    [data=Blog] .media > .pull-right,
+    .Blog .media-right,
+    .Blog .media > .pull-right {
+      padding-left: 1em; }
+    [data=Blog] .media-left,
+    [data=Blog] .media > .pull-left,
+    .Blog .media-left,
+    .Blog .media > .pull-left {
+      padding-right: 1em; }
+    [data=Blog] .media-left, [data=Blog] .media-right, [data=Blog] .media-body,
+    .Blog .media-left,
+    .Blog .media-right,
+    .Blog .media-body {
+      display: table-cell;
+      vertical-align: top; }
+    [data=Blog] .media-middle,
+    .Blog .media-middle {
+      vertical-align: middle; }
+    [data=Blog] .media-bottom,
+    .Blog .media-bottom {
+      vertical-align: bottom; }
+    [data=Blog] .media-heading,
+    .Blog .media-heading {
+      font-size: 1;
+      font-family: "blizzard", sans-serif;
+      font-weight: 200;
+      text-transform: none;
+      color: #fff;
+      margin-bottom: 5px;
+      margin-top: 0; }
+    [data=Blog] .media-list,
+    .Blog .media-list {
+      padding-left: 0;
+      list-style: none; }
+  [data=Blog] .media,
+  .Blog .media {
+    margin-bottom: 1.75rem; }
+  [data=Blog] table,
+  .Blog table {
+    background-color: transparent;
+    font-size: 1em; }
+  [data=Blog] caption,
+  .Blog caption {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: left; }
+  [data=Blog] th,
+  .Blog th {
+    text-transform: normal;
+    color: #fff;
+    text-align: left; }
+  [data=Blog] .table tr.text-left,
+  .Blog .table tr.text-left {
+    text-align: left; }
+    [data=Blog] .table tr.text-left td, [data=Blog] .table tr.text-left th,
+    .Blog .table tr.text-left td,
+    .Blog .table tr.text-left th {
+      text-align: left; }
+  [data=Blog] .table tr.text-center,
+  .Blog .table tr.text-center {
+    text-align: center; }
+    [data=Blog] .table tr.text-center td, [data=Blog] .table tr.text-center th,
+    .Blog .table tr.text-center td,
+    .Blog .table tr.text-center th {
+      text-align: center; }
+  [data=Blog] .table tr.text-right,
+  .Blog .table tr.text-right {
+    text-align: right; }
+    [data=Blog] .table tr.text-right td, [data=Blog] .table tr.text-right th,
+    .Blog .table tr.text-right td,
+    .Blog .table tr.text-right th {
+      text-align: right; }
+  [data=Blog] .table.text-left td, [data=Blog] .table.text-left th,
+  .Blog .table.text-left td,
+  .Blog .table.text-left th {
+    text-align: left; }
+  [data=Blog] .table.text-right td, [data=Blog] .table.text-right th,
+  .Blog .table.text-right td,
+  .Blog .table.text-right th {
+    text-align: right; }
+  [data=Blog] .table.text-center td, [data=Blog] .table.text-center th,
+  .Blog .table.text-center td,
+  .Blog .table.text-center th {
+    text-align: center; }
+  [data=Blog] .table,
+  .Blog .table {
+    border-collapse: collapse; }
+    [data=Blog] .table tr.vertical-top,
+    .Blog .table tr.vertical-top {
+      vertical-align: top; }
+      [data=Blog] .table tr.vertical-top td, [data=Blog] .table tr.vertical-top th,
+      .Blog .table tr.vertical-top td,
+      .Blog .table tr.vertical-top th {
+        vertical-align: top; }
+    [data=Blog] .table tr.vertical-bottom,
+    .Blog .table tr.vertical-bottom {
+      vertical-align: bottom; }
+      [data=Blog] .table tr.vertical-bottom td, [data=Blog] .table tr.vertical-bottom th,
+      .Blog .table tr.vertical-bottom td,
+      .Blog .table tr.vertical-bottom th {
+        vertical-align: bottom; }
+    [data=Blog] .table tr.vertical-middle,
+    .Blog .table tr.vertical-middle {
+      vertical-align: middle; }
+      [data=Blog] .table tr.vertical-middle td, [data=Blog] .table tr.vertical-middle th,
+      .Blog .table tr.vertical-middle td,
+      .Blog .table tr.vertical-middle th {
+        vertical-align: middle; }
+    [data=Blog] .table.vertical-top td, [data=Blog] .table.vertical-top th,
+    .Blog .table.vertical-top td,
+    .Blog .table.vertical-top th {
+      vertical-align: top; }
+    [data=Blog] .table.vertical-bottom td, [data=Blog] .table.vertical-bottom th,
+    .Blog .table.vertical-bottom td,
+    .Blog .table.vertical-bottom th {
+      vertical-align: bottom; }
+    [data=Blog] .table.vertical-middle td, [data=Blog] .table.vertical-middle th,
+    .Blog .table.vertical-middle td,
+    .Blog .table.vertical-middle th {
+      vertical-align: middle; }
+  [data=Blog] .table,
+  .Blog .table {
+    margin-bottom: 1.75rem;
+    width: 100%;
+    max-width: 100%; }
+    [data=Blog] .table > thead > tr > th,
+    [data=Blog] .table > thead > tr > td,
+    [data=Blog] .table > tbody > tr > th,
+    [data=Blog] .table > tbody > tr > td,
+    [data=Blog] .table > tfoot > tr > th,
+    [data=Blog] .table > tfoot > tr > td,
+    .Blog .table > thead > tr > th,
+    .Blog .table > thead > tr > td,
+    .Blog .table > tbody > tr > th,
+    .Blog .table > tbody > tr > td,
+    .Blog .table > tfoot > tr > th,
+    .Blog .table > tfoot > tr > td {
+      padding: 0.5em;
+      line-height: 1.75;
+      border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    [data=Blog] .table > thead > tr > th,
+    .Blog .table > thead > tr > th {
+      vertical-align: bottom;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+    [data=Blog] .table > caption + thead > tr:first-child > th,
+    [data=Blog] .table > caption + thead > tr:first-child > td,
+    [data=Blog] .table > colgroup + thead > tr:first-child > th,
+    [data=Blog] .table > colgroup + thead > tr:first-child > td,
+    [data=Blog] .table > thead:first-child > tr:first-child > th,
+    [data=Blog] .table > thead:first-child > tr:first-child > td,
+    .Blog .table > caption + thead > tr:first-child > th,
+    .Blog .table > caption + thead > tr:first-child > td,
+    .Blog .table > colgroup + thead > tr:first-child > th,
+    .Blog .table > colgroup + thead > tr:first-child > td,
+    .Blog .table > thead:first-child > tr:first-child > th,
+    .Blog .table > thead:first-child > tr:first-child > td {
+      border-top: 0; }
+    [data=Blog] .table > tbody + tbody,
+    .Blog .table > tbody + tbody {
+      border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    [data=Blog] .table .table,
+    .Blog .table .table {
+      background-color: transparent; }
+  [data=Blog] .table-condensed > thead > tr > th,
+  [data=Blog] .table-condensed > thead > tr > td,
+  [data=Blog] .table-condensed > tbody > tr > th,
+  [data=Blog] .table-condensed > tbody > tr > td,
+  [data=Blog] .table-condensed > tfoot > tr > th,
+  [data=Blog] .table-condensed > tfoot > tr > td,
+  .Blog .table-condensed > thead > tr > th,
+  .Blog .table-condensed > thead > tr > td,
+  .Blog .table-condensed > tbody > tr > th,
+  .Blog .table-condensed > tbody > tr > td,
+  .Blog .table-condensed > tfoot > tr > th,
+  .Blog .table-condensed > tfoot > tr > td {
+    padding: 0.4em; }
+  [data=Blog] .table-bordered,
+  .Blog .table-bordered {
+    border: 1px solid rgba(255, 255, 255, 0.1); }
+    [data=Blog] .table-bordered > thead > tr > th,
+    [data=Blog] .table-bordered > thead > tr > td,
+    [data=Blog] .table-bordered > tbody > tr > th,
+    [data=Blog] .table-bordered > tbody > tr > td,
+    [data=Blog] .table-bordered > tfoot > tr > th,
+    [data=Blog] .table-bordered > tfoot > tr > td,
+    .Blog .table-bordered > thead > tr > th,
+    .Blog .table-bordered > thead > tr > td,
+    .Blog .table-bordered > tbody > tr > th,
+    .Blog .table-bordered > tbody > tr > td,
+    .Blog .table-bordered > tfoot > tr > th,
+    .Blog .table-bordered > tfoot > tr > td {
+      border: 1px solid rgba(255, 255, 255, 0.1); }
+    [data=Blog] .table-bordered > thead > tr > th,
+    [data=Blog] .table-bordered > thead > tr > td,
+    .Blog .table-bordered > thead > tr > th,
+    .Blog .table-bordered > thead > tr > td {
+      border-bottom-width: 1px; }
+  [data=Blog] .table-striped > tbody > tr:nth-of-type(odd),
+  .Blog .table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.02); }
+  [data=Blog] .table-hover > tbody > tr:hover,
+  .Blog .table-hover > tbody > tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); }
+  [data=Blog] table col[class*="col-"],
+  .Blog table col[class*="col-"] {
+    position: static;
+    float: none;
+    display: table-column; }
+  [data=Blog] table td[class*="col-"],
+  [data=Blog] table th[class*="col-"],
+  .Blog table td[class*="col-"],
+  .Blog table th[class*="col-"] {
+    position: static;
+    float: none;
+    display: table-cell; }
+  [data=Blog] .table-responsive,
+  .Blog .table-responsive {
+    margin-bottom: 1.75rem;
+    overflow-x: auto;
+    min-height: 0.01%; }
+    [data=Blog] .table-responsive .table,
+    .Blog .table-responsive .table {
+      margin-bottom: 0; }
+    @media screen and (max-width: 768px) {
+      [data=Blog] .table-responsive,
+      .Blog .table-responsive {
+        margin-bottom: 1.3125rem;
+        width: 100%;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar; }
+        [data=Blog] .table-responsive .table,
+        .Blog .table-responsive .table {
+          margin-bottom: 0; }
+          [data=Blog] .table-responsive .table > thead > tr > th,
+          [data=Blog] .table-responsive .table > thead > tr > td,
+          [data=Blog] .table-responsive .table > tbody > tr > th,
+          [data=Blog] .table-responsive .table > tbody > tr > td,
+          [data=Blog] .table-responsive .table > tfoot > tr > th,
+          [data=Blog] .table-responsive .table > tfoot > tr > td,
+          .Blog .table-responsive .table > thead > tr > th,
+          .Blog .table-responsive .table > thead > tr > td,
+          .Blog .table-responsive .table > tbody > tr > th,
+          .Blog .table-responsive .table > tbody > tr > td,
+          .Blog .table-responsive .table > tfoot > tr > th,
+          .Blog .table-responsive .table > tfoot > tr > td {
+            white-space: nowrap; }
+        [data=Blog] .table-responsive > .table-bordered,
+        .Blog .table-responsive > .table-bordered {
+          border: 0; }
+          [data=Blog] .table-responsive > .table-bordered > thead > tr > th:first-child,
+          [data=Blog] .table-responsive > .table-bordered > thead > tr > td:first-child,
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr > th:first-child,
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr > td:first-child,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr > td:first-child,
+          .Blog .table-responsive > .table-bordered > thead > tr > th:first-child,
+          .Blog .table-responsive > .table-bordered > thead > tr > td:first-child,
+          .Blog .table-responsive > .table-bordered > tbody > tr > th:first-child,
+          .Blog .table-responsive > .table-bordered > tbody > tr > td:first-child,
+          .Blog .table-responsive > .table-bordered > tfoot > tr > th:first-child,
+          .Blog .table-responsive > .table-bordered > tfoot > tr > td:first-child {
+            border-left: 0; }
+          [data=Blog] .table-responsive > .table-bordered > thead > tr > th:last-child,
+          [data=Blog] .table-responsive > .table-bordered > thead > tr > td:last-child,
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr > th:last-child,
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr > td:last-child,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr > td:last-child,
+          .Blog .table-responsive > .table-bordered > thead > tr > th:last-child,
+          .Blog .table-responsive > .table-bordered > thead > tr > td:last-child,
+          .Blog .table-responsive > .table-bordered > tbody > tr > th:last-child,
+          .Blog .table-responsive > .table-bordered > tbody > tr > td:last-child,
+          .Blog .table-responsive > .table-bordered > tfoot > tr > th:last-child,
+          .Blog .table-responsive > .table-bordered > tfoot > tr > td:last-child {
+            border-right: 0; }
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr:last-child > th,
+          [data=Blog] .table-responsive > .table-bordered > tbody > tr:last-child > td,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+          [data=Blog] .table-responsive > .table-bordered > tfoot > tr:last-child > td,
+          .Blog .table-responsive > .table-bordered > tbody > tr:last-child > th,
+          .Blog .table-responsive > .table-bordered > tbody > tr:last-child > td,
+          .Blog .table-responsive > .table-bordered > tfoot > tr:last-child > th,
+          .Blog .table-responsive > .table-bordered > tfoot > tr:last-child > td {
+            border-bottom: 0; } }
+  [data=Blog] .table-stack,
+  .Blog .table-stack {
+    margin: 1.75rem 0; }
+    @media (max-width: 25em) {
+      [data=Blog] .table-stack thead,
+      .Blog .table-stack thead {
+        display: none; }
+      [data=Blog] .table-stack tr td,
+      .Blog .table-stack tr td {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        margin-left: auto; }
+        [data=Blog] .table-stack tr td::before,
+        .Blog .table-stack tr td::before {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          font-weight: 200;
+          text-align: right;
+          color: #fff;
+          padding-right: 1em;
+          width: 40%;
+          content: attr(data-heading);
+          display: inline-block; } }
+  [data=Blog] .nav-tabs,
+  .Blog .nav-tabs {
+    padding-left: 0;
+    list-style: none;
+    background-color: rgba(10, 12, 16, 0.5);
+    border-width: 1px 1px 1px 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    border-style: solid;
+    margin-bottom: 0;
+    overflow-x: auto; }
+    [data=Blog] .nav-tabs > li,
+    .Blog .nav-tabs > li {
+      width: 100%; }
+      [data=Blog] .nav-tabs > li > a,
+      .Blog .nav-tabs > li > a {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border-width: 0 0 4px 0;
+        border-color: transparent;
+        padding: 1em 1em 0.5em 1em;
+        color: #f8b700;
+        text-decoration: none;
+        display: block;
+        border-style: solid;
+        text-align: center;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-tap-highlight-color: transparent;
+        /* For some Androids */ }
+        [data=Blog] .nav-tabs > li > a:hover, [data=Blog] .nav-tabs > li > a:focus,
+        .Blog .nav-tabs > li > a:hover,
+        .Blog .nav-tabs > li > a:focus {
+          outline: none !important;
+          border-width: 0 0 4px 0;
+          border-color: transparent;
+          color: #fff;
+          border-image: linear-gradient(#f8b700, #f8b700) 1;
+          background-color: rgba(255, 255, 255, 0); }
+      [data=Blog] .nav-tabs > li:hover, [data=Blog] .nav-tabs > li.active,
+      .Blog .nav-tabs > li:hover,
+      .Blog .nav-tabs > li.active {
+        background-color: rgba(255, 255, 255, 0); }
+        [data=Blog] .nav-tabs > li:hover > a, [data=Blog] .nav-tabs > li.active > a,
+        .Blog .nav-tabs > li:hover > a,
+        .Blog .nav-tabs > li.active > a {
+          outline: none !important;
+          border-width: 0 0 4px 0;
+          background-color: rgba(255, 255, 255, 0);
+          color: #fff;
+          border-image: linear-gradient(#f8b700, #f8b700) 1; }
+      [data=Blog] .nav-tabs > li.active > a:hover, [data=Blog] .nav-tabs > li.active > a:focus,
+      .Blog .nav-tabs > li.active > a:hover,
+      .Blog .nav-tabs > li.active > a:focus {
+        outline: none !important;
+        background-color: rgba(255, 255, 255, 0);
+        border-width: 0 0 4px 0;
+        background-color: rgba(255, 255, 255, 0);
+        color: #fff;
+        border-image: linear-gradient(#f8b700, #f8b700) 1; }
+  [data=Blog] .tab-content,
+  .Blog .tab-content {
+    background-color: rgba(10, 12, 16, 0.5);
+    margin-bottom: 1em;
+    padding: 1em;
+    border-width: 0 1px 1px 1px;
+    border-color: rgba(255, 255, 255, 0.08);
+    border-style: solid;
+    margin-top: -1px; }
+    [data=Blog] .tab-content .tab-pane,
+    .Blog .tab-content .tab-pane {
+      display: none; }
+      [data=Blog] .tab-content .tab-pane.active,
+      .Blog .tab-content .tab-pane.active {
+        display: block; }
+  [data=Blog] .tabs-responsive .nav-tabs,
+  .Blog .tabs-responsive .nav-tabs {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; }
+    [data=Blog] .tabs-responsive .nav-tabs li,
+    .Blog .tabs-responsive .nav-tabs li {
+      white-space: nowrap; }
+  [data=Blog] iframe,
+  .Blog iframe {
+    padding: 0;
+    margin: 0; }
+  [data=Blog] .video-container,
+  .Blog .video-container {
+    width: 100%;
+    margin-bottom: 1.75rem; }
+  [data=Blog] .video,
+  .Blog .video {
+    position: relative;
+    padding-bottom: 56.25%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0 none;
+    height: 0;
+    z-index: 1; }
+    [data=Blog] .video iframe,
+    .Blog .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: block;
+      z-index: 1; }
+  @media (min-width: 1200px) {
+    [data=Blog],
+    .Blog {
+      font-size: calc( 14px + (16 - 14) * ((100vw - 1200px) / (721 - 1200))); } }
+  @media (min-width: 721px) {
+    [data=Blog],
+    .Blog {
+      font-size: 16px; } }

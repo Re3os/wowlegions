@@ -10,6 +10,10 @@ class Characters extends Model {
 
     protected $fillable = ['guid', 'name', 'gender', 'class', 'race', 'level'];
 
+    public function comments() {
+        return $this->belongsTo(Comment::class);
+    }
+
     public static function verifyEligibility($character, $service) {
         $Eligible = false;
         $HasMail = false;
@@ -77,8 +81,32 @@ class Characters extends Model {
         return \DB::connection('characters')->table('characters')->where('account', '=', $id)->get();
     }
 
+    public static function userCharacters($name) {
+        $characters = \DB::connection('characters')->table('characters')->where('name', '=', $name)->get()[0];
+        $characters->side = self::getSideByRaceID($characters->race)['name'];
+        return $characters;
+    }
+
     public static function activeUserCharacters($id) {
-        return \DB::connection('characters')->table('characters')->where('guid', '=', $id)->get()[0];
+        $characters = \DB::connection('characters')->table('characters')->where('guid', '=', $id)->get()[0];
+        $characters->side = self::getSideByRaceID($characters->race)['name'];
+        return $characters;
+    }
+
+    public static function ifCharacters($id) {
+        $characters = \DB::connection('characters')->table('characters')->where('guid', '=', $id)->get();
+        if ($characters) {
+            return true;
+        } return false;
+    }
+
+    public static function getSideByRaceID($RaceID)
+    {
+        $HordeRaces = array(2, 5, 6, 8, 9, 10, 26, 28, 29);
+        if(in_array($RaceID, $HordeRaces))
+            return array('id' => '1', 'name' => 'horde');
+        else
+            return array('id' => '0', 'name' => 'alliance');
     }
 
 }

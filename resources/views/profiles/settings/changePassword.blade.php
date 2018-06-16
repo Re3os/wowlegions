@@ -1,7 +1,7 @@
 @extends('layouts.account')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/settings.35TLB.css?v=58-29" />
+    <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/settings.0g1pg.css?v=58-29" />
 @endsection
 
 @section('js')

@@ -283,7 +283,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
     </div>
     <div id="nav-blackout" style="display:none"></div>
 <!--<![endif]-->
-    @include('layouts.navbar')
+    @include('layouts.navbar.forum')
     <div class="nav-notification-responsive-container">
     <div class="nav-notification-dropdown dropdown-menu">
         <div class="arrow top"></div>
@@ -303,7 +303,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
             @php
                 $active = \App\Characters::activeUserCharacters(Auth::user()->charactersActive);
             @endphp
-            <div class="User-menu"> <span class="User-menu-label">Разместить как:</span> <div class="Dropdown"> <span class="User-menu-heading" data-trigger="toggle.dropdown.menu"><div class="Author-avatar" ><img src="/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></div> <i class="Icon"></i> </span> <div class="Dropdown-menu Dropdown-menu--userMenu"> <span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span> <div class="Dropdown-items"> <a href="/forum/search?a={{ $active->name }}" class="Dropdown-item Dropdown-item--postHistory">История сообщений</a> <a href="{{ route('characters-simple', [$active->name]) }}" class="Dropdown-item Dropdown-item--profileLink"> Профиль<i class="Icon-profileLink"></i></a><div class="Dropdown-divider"></div> <span class="Dropdown-item" data-select-character="true"> Изменить персонажа</span> </div> </div> </div> </div>
+            <div class="User-menu"> <span class="User-menu-label">Разместить как:</span> <div class="Dropdown"> <span class="User-menu-heading" data-trigger="toggle.dropdown.menu"><div class="Author-avatar" ><img src="{{ Auth::user()->avatar }}/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></div> <i class="Icon"></i> </span> <div class="Dropdown-menu Dropdown-menu--userMenu"> <span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span> <div class="Dropdown-items"> <a href="/forum/search?a={{ $active->name }}" class="Dropdown-item Dropdown-item--postHistory">История сообщений</a> <a href="{{ route('characters', [$active->name]) }}" class="Dropdown-item Dropdown-item--profileLink"> Профиль<i class="Icon-profileLink"></i></a><div class="Dropdown-divider"></div> <span class="Dropdown-item" data-select-character="true"> Изменить персонажа</span> </div> </div> </div> </div>
         @endif
     @endguest
     </div>
@@ -325,12 +325,12 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 <div class="CharacterSelect-search"> <i class="Icon"></i> <input class="CharacterSelect-search--input" placeholder="Фильтр" type="text"/> </div>
 @foreach($all as $char)
 <div class="Author UserCharacter" id="{{ $char->guid }}" data-topic-post-body-content="true">
-    <a href="{{ route('characters-simple', [$char->name]) }}" class="Author-avatar " >
-        <img src="/images/avatars/wow/{{ $char->race }}-{{ $char->gender }}.jpg" alt="" />
+    <a href="{{ route('characters', [$char->name]) }}" class="Author-avatar " >
+        <img src="{{ Auth::user()->avatar }}/images/avatars/wow/{{ $char->race }}-{{ $char->gender }}.jpg" alt="" />
     </a>
 <div class="Author-details">
     <span class="Author-name">
-        <a class="Author-name--profileLink" href="{{ route('characters-simple', [$char->name]) }}">{{ $char->name }}</a>
+        <a class="Author-name--profileLink" href="{{ route('characters', [$char->name]) }}">{{ $char->name }}</a>
     </span>
 <span class="Author-class paladin"> {{ $char->level }}   </span>
 <span class="Author-realm"> ElisGrimm </span>
@@ -338,7 +338,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 </span>
 </div>
 </div>
-<div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> <a class="Author-name--profileLink" href="{{ route('characters-simple', [$char->name]) }}">{{ $char->name }}</a> </span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div>
+<div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> <a class="Author-name--profileLink" href="{{ route('characters', [$char->name]) }}">{{ $char->name }}</a> </span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div>
 @endforeach
 </div>
 </div>
@@ -346,7 +346,7 @@ LOCALIZATION.UNPOSTED_PROMPT = "You've started writing a post...";
 @endif
 @endguest
 <footer class="Forums-footer"> Спасибо, что заглянули на <a href="{{ route('forums') }}">Форумы WoWLegions</a> (0.0.3) · <a href="{{ route('forums') }}">Описание обновлений</a> </footer>
-@include('layouts.footer')
+@include('layouts.navbar.footer')
 
 <script type="text/javascript" src="{{ asset('js/vendor/tether/dist/js/tether.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/vendor/waypoints/lib/jquery.waypoints.js') }}"></script>

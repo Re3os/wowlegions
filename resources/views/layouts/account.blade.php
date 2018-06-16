@@ -3,25 +3,31 @@
 <head xmlns:og="http://ogp.me/ns#">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>@lang('account.title')</title>
-<link rel="shortcut icon" href="//bneteu-a.akamaihd.net/account/static/images/meta/favicon.0gxnz.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/ru-ru/data/opensearch" title="Поиск по сайтам Blizzard" />
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/polyfills.min.1SYUs.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/core.min.3qhIh.js"></script>
-<link rel="stylesheet" type="text/css" media="all" href="https://eu.battle.net/account/static/css/navbar.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/local-common/css/common.1XvaP.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/bnet.2uWeB.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="print" href="//bneteu-a.akamaihd.net/account/static/css/bnet-print.0dd98.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/legal/ratings.2wHIl.css?v=58-29" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/bnet-ie.3MxTS.css?v=58-29" />
+<link rel="shortcut icon" href="//bnetus-a.akamaihd.net/account/static/images/meta/favicon.0gxnz.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://us.battle.net/ru-ru/data/opensearch" title="Поиск по сайтам Blizzard" />
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/polyfills.min.1SYUs.js"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/core.min.3qhIh.js"></script>
+<link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/static/css/navbar.css?v=58-29" />
+<link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/static/css/nav-client/nav-client-desktop.css?v=58-29" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/local-common/css/common.1XvaP.css?v=58-29" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet.0a1kC.css?v=58-29" />
+<link rel="stylesheet" type="text/css" media="print" href="//bnetus-a.akamaihd.net/account/static/css/bnet-print.3pMth.css?v=58-29" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/legal/ratings.2wHIl.css?v=58-29" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie.0LazC.css?v=58-29" />
 <![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/bnet-ie6.1Fca3.css?v=58-29" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie6.2HMHf.css?v=58-29" />
 <![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/bnet-ie7.2iZCW.css?v=58-29" />
+<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie7.2DMRT.css?v=58-29" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/inputs.3fAMj.css" />
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/inputs-ie6.1JcWn.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs.039RX.css" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs-ie6.0HfAf.css" />
 <![endif]-->
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/inputs-ie.39kaJ.css" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs-ie.4VZxb.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" media="all" href="https://bnetus-a.akamaihd.net/account/static/css/management/lobby.24rnt.css" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie.2vTEB.css" />
+<![endif]-->
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie6.2nZ0A.css" />
 <![endif]-->
 @yield('css')
 <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/locale/ru-ru.2Xlpm.css" />
@@ -223,7 +229,7 @@ data-support-url="https://eu.battle.net/support/update/json?callback="
 <div id="navigation">
 <div id="page-menu" class="large">
 <ul>
-<li class="active">
+<li>
 <a href="{{ route('account') }}" class="border-3">Информация</a>
 <span class="arrow"></span>
 </li>

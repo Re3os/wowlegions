@@ -57,12 +57,12 @@
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($topic->user->role > 1) Author--blizzard @endif @if($topic->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters-simple', [$topic->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="/images/avatars/wow/4-0.jpg" alt="" /></a>
+<div class="Author @if($topic->user->role > 1) Author--blizzard @endif @if($topic->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ $topic->user->avatar }}/images/avatars/wow/4-0.jpg" alt="" /></a>
 <div class="Author-details">
     @if($topic->user->role > 1)
     <span class="Author-name">{{ $topic->characters->name }}</span>
     @else
-    <a class="Author-name--profileLink" href="{{ route('characters-simple', [$topic->characters->name]) }}">{{ $topic->characters->name }}</a>
+    <a class="Author-name--profileLink" href="{{ route('characters', [$topic->characters->name]) }}">{{ $topic->characters->name }}</a>
     @endif
     @if($topic->user->role == 6)
     <span class="Author-job">Curator</span>
@@ -77,6 +77,18 @@
     @elseif($topic->user->role == 1)
     <span class="Author-job">MVP</span>
     @endif
+@if($topic->user->role <= 1)
+<!--span class="Author-guild">
+<a class="Author-guild--link" href="{{ route('characters', [$topic->characters->name]) }}" data-toggle="tooltip" data-tooltip-content="Гильдия">&lt;Лутоморье&gt;</a>
+</span-->
+<span class="Author-class @lang('forum.class_key_'.$topic->characters->class)">
+{{ $topic->characters->level }} @lang('forum.race_'.$topic->characters->race) @lang('forum.class_'.$topic->characters->class)
+</span>
+<!--span class="Author-achievements">
+<a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-achievements--link" data-toggle="tooltip" data-tooltip-content="Достижения">
+<i class="Icon"></i>9800</a>
+</span-->
+@endif
 <span class="Author-posts">
 <a class="Author-posts" href="/forum/search?a={{ $topic->characters->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
  @lang('forum.count_messages', ['count' => $topic->user->posts_count])</a>
@@ -103,6 +115,12 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
 @else
 <aside class="TopicPost-control">
 <div class="TopicPost-menu Dropdown"><button class="Button-dropdown Button--secondary Button--icon" data-trigger="toggle.dropdown.menu" data-toggle="tooltip" data-tooltip-content="@lang('forum.dropdown')" type="button" data-original-title="" title=""><span class="Button-content"><i class="Icon Icon--16 Icon--blue Icon--button Icon--caretdown"></i></span></button><div class="Dropdown-menu"><span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span><div class="Dropdown-items">
+@if(Auth::user()->admin)
+<a class="Dropdown-item" href="{{ route('forum.topic.closed', ['id' => $topic->id]) }}">Закрыть тему</a>
+<a class="Dropdown-item" href="{{ route('forum.topic.sticky', ['id' => $topic->id]) }}">Закрепить тему</a>
+<a class="Dropdown-item" href="{{ route('forum.topic.delete', ['id' => $topic->id, 'fid' => $topic->category->id]) }}">Удалить</a>
+<div class="Dropdown-divider"></div>
+@endif
 @if(Auth::user()->name == $topic->user->name)
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="edit.topicpost">@lang('forum.edit_topicpost')</span>
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="delete.topicpost">@lang('forum.delete_topicpost')</span>
@@ -142,12 +160,12 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($reply->user->role > 1) Author--blizzard @endif @if($reply->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters-simple', [$reply->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="/images/avatars/wow/4-1.jpg" alt="" /></a>
+<div class="Author @if($reply->user->role > 1) Author--blizzard @endif @if($reply->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ $reply->user->avatar }}/images/avatars/wow/4-1.jpg" alt="" /></a>
 <div class="Author-details">
     @if($reply->user->role > 1)
     <span class="Author-name">{{ $reply->characters->name }}</span>
     @else
-    <a class="Author-name--profileLink" href="{{ route('characters-simple', [$reply->characters->name]) }}">{{ $reply->characters->name }}</a>
+    <a class="Author-name--profileLink" href="{{ route('characters', [$reply->characters->name]) }}">{{ $reply->characters->name }}</a>
     @endif
     @if($reply->user->role == 6)
     <span class="Author-job">Curator</span>
@@ -162,9 +180,21 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
     @elseif($reply->user->role == 1)
     <span class="Author-job">MVP</span>
     @endif
+    @if($reply->user->role <= 1)
+    <!--span class="Author-guild">
+    <a class="Author-guild--link" href="{{ route('characters', [$reply->characters->name]) }}" data-toggle="tooltip" data-tooltip-content="Гильдия">&lt;Лутоморье&gt;</a>
+    </span-->
+    <span class="Author-class @lang('forum.class_key_'.$reply->characters->class)">
+    {{ $reply->characters->level }} @lang('forum.race_'.$reply->characters->race) @lang('forum.class_'.$reply->characters->class)
+    </span>
+    <!--span class="Author-achievements">
+    <a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-achievements--link" data-toggle="tooltip" data-tooltip-content="Достижения">
+    <i class="Icon"></i>9800</a>
+    </span-->
+    @endif
 <span class="Author-posts">
 <a class="Author-posts" href="/forum/search?a={{ $reply->characters->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
-@lang('forum.count_messages', ['count' => $topic->user->posts_count])</a>
+@lang('forum.count_messages', ['count' => $reply->user->posts_count])</a>
 </span></div></div>
 </div>
 </aside>

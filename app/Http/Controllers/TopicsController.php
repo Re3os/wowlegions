@@ -4,9 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\{Topic, Category, Reply, User};
+use App\Services\ParserText;
 
 class TopicsController extends Controller
 {
+
+    public function sticky_topic($id) {
+        Topic::where('id', $id)->update(['sticky' => '1']);
+        return back();
+    }
+
+    public function closed_topic($id) {
+        Topic::where('id', $id)->update(['closed' => '1']);
+        return back();
+    }
+
+    public function delete($id, $fid) {
+        Topic::where('id', $id)->delete();
+        return redirect()->route('forum', [$fid]);
+    }
 
     public function edit($category, Topic $topic)
     {
@@ -20,9 +36,11 @@ class TopicsController extends Controller
           'messages' => 'required|max:2000'
         ]);
 
+        $bb = new ParserText();
+
         $topic = Topic::create([
           'title'       => request('subject'),
-          'content'     => request('messages'),
+          'content'     => $bb->parse(request('messages')),
           'category_id' => $category->id,
           'user_id'  => \Auth::user()->id,
           'characters_id' => \Auth::user()->charactersActive,
@@ -37,8 +55,10 @@ class TopicsController extends Controller
             'detail' => 'required|max:2000'
         ]);
 
+        $bb = new ParserText();
+
         $topic->replies()->create([
-            'content'  => request('detail'),
+            'content'  => $bb->parse(request('detail')),
             'user_id'  => \Auth::user()->id,
             'characters_id' => \Auth::user()->charactersActive,
         ]);

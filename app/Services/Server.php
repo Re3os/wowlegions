@@ -8,29 +8,17 @@ class Server
 {
     public static function status()
     {
-        $status = Cache::remember('realm_status', 0.1 , function () {
-            return static::getServerStatus();
-        });
-
-        return $status;
+        return static::getServerStatus();
     }
 
     public static function playersOnline()
     {
-        $online = Cache::remember('players_online', 0.1 , function () {
-            return static::getOnlinePlayers();
-        });
-
-        return $online;
+        return static::getOnlinePlayers();
     }
 
     public static function uptime()
     {
-        $uptime = Cache::remember('server_uptine', 0.1 , function () {
-            return static::getServerUptime();
-        });
-
-        return $uptime;
+        return static::getServerUptime();
     }
 
     private static function getServerStatus() {
@@ -48,8 +36,8 @@ class Server
     {
         $playersOnline = DB::connection('characters')->table('characters')->where('online', 1)->get(['name', 'race', 'class', 'level']);
 
-        $allianceOnline = $playersOnline->whereIn('race', [1,3,4,7,11])->count();
-        $hordeOnline    = $playersOnline->whereIn('race', [2,5,6,8,10])->count();
+        $allianceOnline = $playersOnline->whereIn('race', [1,3,4,7,11,22,30,29,24,25])->count();
+        $hordeOnline    = $playersOnline->whereIn('race', [2,5,6,8,9,10,28,27,26])->count();
 
         $playersOnline->transform(function ($item, $key) {
             $item->faction = static::extractFaction($item->race);

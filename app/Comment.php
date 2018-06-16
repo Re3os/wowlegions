@@ -16,4 +16,7 @@ class Comment extends Model {
         return $this->belongsTo(User::class);
     }
 
+    public function characters() {
+        return $this->belongsTo(Characters::class, 'user_id', 'guid');
+    }
 }
