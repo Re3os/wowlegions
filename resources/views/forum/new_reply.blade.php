@@ -21,7 +21,7 @@
 <div class="Author-posts Author-posts--ignored">@lang('forum.ignored')</div></div>
 <div class="SelectCharacter-button--container">
                 <button class="TopicForm-button TopicForm-button--selectCharacter" type="button">
-                  <span class="Button-content">Изменить персонажа</span>
+                  <span class="Button-content">@lang('forum.data-select-character')</span>
                 </button>
               </div>
 </aside>
@@ -55,6 +55,9 @@
 <span class="BmlToolbar-divider"></span>
 <span data-toggle="tooltip" data-tooltip-content="@lang('forum.quote')" data-topic-post-button="true" data-trigger="bml.quote.bmltoolbar" class="BmlToolbar-button" data-original-title="" title="">
 <i class="Icon Icon--16 Icon--quote"></i>
+</span>
+<span data-toggle="tooltip" data-tooltip-content="@lang('forum.code')" data-topic-post-button="true" data-trigger="bml.code.bmltoolbar" class="BmlToolbar-button" data-original-title="" title="">
+<i class="Icon Icon--16 Icon--code"></i>
 </span>
 <span data-toggle="tooltip" data-tooltip-content="@lang('forum.code')" data-topic-post-button="true" data-trigger="bml.code.bmltoolbar" class="BmlToolbar-button" data-original-title="" title="">
 <i class="Icon Icon--16 Icon--code"></i>

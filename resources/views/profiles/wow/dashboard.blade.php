@@ -1,19 +1,19 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard.1q4Yz.css" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard.1DEOI.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard-ie.1QTqw.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard.0eBg2.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard.3qBrx.css" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard-ie.1muX5.css" />
 <![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard-ie6.0hHvq.css" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard-ie6.2v0KO.css" />
 <![endif]-->
 <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/compiled/wow/full-page-upsell.0VWHy.css" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/dashboard.02Ghr.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/wow/dashboard.04FD4.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/inputs.0VDAS.js"></script>
+<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/dashboard.1OOFS.js"></script>
+<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/wow/dashboard.3697j.js"></script>
+<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/inputs.2gjKG.js"></script>
 @endsection
 
 @section('content')

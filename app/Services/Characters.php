@@ -78,20 +78,12 @@ class Characters {
         return true;
     }
 
-    public static function LoadInventory($reload = false) {
-        if(self::IsInventoryLoaded() && !$reload) {
-            return true;
-        }
-        $inv = DB::connection('characters')
-            ->table('character_inventory')
-            ->where('bag', '=', 0)
-            ->where('slot', '<', 19)
-            ->where('guid', self::$guid)
-            ->get(['item', 'slot', 'bag'])
-        ;
+    public static function LoadInventory($guid) {
+        $inv = DB::connection('characters')->select('SELECT ii.guid, ii.itemEntry, ii.creatorGuid, ii.giftCreatorGuid, ii.count, ii.duration, ii.charges, ii.flags, ii.enchantments, ii.randomPropertyType, ii.randomPropertyId, ii.durability, ii.playedTime, ii.text, ii.upgradeId, ii.battlePetSpeciesId, ii.battlePetBreedData, ii.battlePetLevel, ii.battlePetDisplayId, ii.context, ii.bonusListIDs, iit.itemModifiedAppearanceAllSpecs, iit.itemModifiedAppearanceSpec1, iit.itemModifiedAppearanceSpec2, iit.itemModifiedAppearanceSpec3, iit.itemModifiedAppearanceSpec4, iit.spellItemEnchantmentAllSpecs, iit.spellItemEnchantmentSpec1, iit.spellItemEnchantmentSpec2, iit.spellItemEnchantmentSpec3, iit.spellItemEnchantmentSpec4, ig.gemItemId1, ig.gemBonuses1, ig.gemContext1, ig.gemScalingLevel1, ig.gemItemId2, ig.gemBonuses2, ig.gemContext2, ig.gemScalingLevel2, ig.gemItemId3, ig.gemBonuses3, ig.gemContext3, ig.gemScalingLevel3, im.fixedScalingLevel, im.artifactKnowledgeLevel, bag, slot FROM character_inventory ci JOIN item_instance ii ON ci.item = ii.guid LEFT JOIN item_instance_gems ig ON ii.guid = ig.itemGuid LEFT JOIN item_instance_transmog iit ON ii.guid = iit.itemGuid LEFT JOIN item_instance_modifiers im ON ii.guid = im.itemGuid WHERE ci.bag = 0 AND ci.slot < 19 AND ci.guid = ?  ORDER BY (ii.flags & 0x80000) ASC, bag ASC, slot ASC', [$guid]);
         foreach($inv as $item) {
+            self::$m_items[$item->slot] = $item;
             self::$m_items[$item->slot] = new Item();
-            self::$m_items[$item->slot]->LoadFromDB($item, self::$guid);
+            self::$m_items[$item->slot]->LoadFromDB($item);
         }
         return true;
     }
@@ -106,57 +98,31 @@ class Characters {
         if(!$item) {
             return false;
         }
-        $item_data = DB::connection('mysql')->table('item_prototypes')->where('entry', $item->GetEntry())->get()[0];
+        $item_data = DB::connection('mysql')->table('item_prototypes')->where('entry', $item->GetEntry())->get();
         $info = $item_data;
-
+        
         if(!$info) {
             return false;
         }
         $item_data = array(
-            'item_id'    => $item->GetEntry(),
-            'name'       => $item->GetItemName($item->GetEntry()),
-            'guid'       => $item->GetGUID(),
-            'quality'    => $info->Quality,
-            'item_level' => $item->GetItemLevel(),
-            'bonding'    => $item->GetBonding(),
-            'maxcount'   => $item->GetMaxCount(),
-            'requiredlevel'   => $item->GetRequiredLevel(),
-            'description'   => $item->GetDescription(),
-            'icon'       => $item->GetItemIcon(0, $info->entry),
-            'slot_id'    => $item->GetSlot(),
-            'enchid'     => $item->GetEnchantmentId(),
-            'g0'         => $item->GetSocketInfo(1),
-            'g1'         => $item->GetSocketInfo(2),
-            'g2'         => $item->GetSocketInfo(3),
-            'can_ench'   => !in_array($item->GetSlot(), array(3, 17, 18, 12, 13, 1, 16, 10, 11, 1, 5))
+            'item_id'           => $item->GetEntry(),
+            'name'              => $item->GetItemName($item->GetEntry()),
+            'guid'              => $item->GetGUID(),
+            'quality'           => $item->QualityItem(),
+            'item_level'        => $item->GetItemLevel(),
+            'bonding'           => $item->GetBonding(),
+            'maxcount'          => $item->GetMaxCount(),
+            'requiredlevel'     => $item->GetRequiredLevel(),
+            'description'       => $item->GetDescription(),
+            'icon'              => $item->GetItemIcon(0, $item->GetEntry()),
+            'slot_id'           => $item->GetSlot(),
+            'enchid'            => $item->GetEnchantmentId(),
+            'g0'                => $item->GetSocketInfo(1),
+            'g1'                => $item->GetSocketInfo(2),
+            'g2'                => $item->GetSocketInfo(3),
+            'can_ench'          => !in_array($item->GetSlot(), array(3, 17, 18, 12, 13, 1, 16, 10, 11, 1, 5))
         );
-        // Itemset check
-        $itemset_original = $item->GetOriginalItemSetID();
-        $itemset_changed = $item->GetItemSetID();
-        $itemsetID = 0;
-        $pieces_string = null;
-        if($itemset_original > 0) {
-            $itemsetID = $itemset_original;
-        }
-        if($itemset_changed > 0) {
-            $itemsetID = $itemset_changed;
-        }
-        /* if($itemsetID > 0) {
-            $pieces = $item->GetItemSetPieces();
-            $setpieces = explode(',', $pieces);
-            if(isset($setpieces[1])) {
-                $prev = false;
-                foreach($setpieces as $piece) {
-                    if(self::IsItemEquipped($piece)) {
-                        if($prev) {
-                            $pieces_string .= ',';
-                        }
-                        $pieces_string .= $piece;
-                        $prev = true;
-                    }
-                }
-            }
-        } */
+
         return $item_data;
     }
 

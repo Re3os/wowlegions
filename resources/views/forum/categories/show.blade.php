@@ -6,7 +6,7 @@
 
 @section('sidebar')
 <div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="{{ route('forums') }}" class="Breadcrumb-content">
-<span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span> @lang('forum.forum') </a> </span>
+<span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span>@lang('navbar.Navbar-forums')</a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
 <a href="{{ route('forum', [$category->id])}}" class="Breadcrumb-content is-active"> {{ $category->name }} </a> </span>
 </div>

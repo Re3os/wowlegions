@@ -61,9 +61,23 @@ $item_slots_left = array(
         @if($item_info['maxcount'] == 1)
         <li>Уникальный</li>
         @endif
-        <!--li><span class="float-right">Разное</span>Палец</li-->
+        @if(in_array($tooltip->sub->Class, array(4, 2)))
+        <li><span class="float-right">{{ $tooltip->subclass_name }}</span>@lang('inventory.template_item_invtype_' . $tooltip->InventoryType)</li>
+        @endif
+        @if($tooltip->sub->Class == 2)
+        <li>
+			<span class="float-right">Скорость {{ $tooltip->Delay }}</span>
+        	1&nbsp;389 - 2&nbsp;318
+        	Урон
+		</li>
+
+        <li>
+
+        	(712,69 ед. урона в секунду)
+        </li>
+        @endif
 	    @foreach($tooltip->ItemStat as $stat)
-            @if($stat['type'] == 74 | $stat['type'] == 73 | $stat['type'] == 7)
+            @if($stat['type'] == 74 | $stat['type'] == 73 | $stat['type'] == 7 | $stat['type'] == 4 | $stat['type'] == 72)
                 <li id="stat-{{ $stat['type'] }}">+<span>{{ $stat['value'] }}</span> @lang('inventory.template_item_stat_' . $stat['type'])</li>
             @endif
             @if($stat['type'] == 49 | $stat['type'] == 32 | $stat['type'] == 32 | $stat['type'] == 36 | $stat['type'] == 40)
@@ -87,7 +101,12 @@ $item_slots_left = array(
     										</li>
 				</ul>
 			</li-->
-
+        @if($tooltip->sub->Class == 2)
+        <li class="color-q2 item-spec-group">
+            Если на персонаже:
+            Предоставляет способность "Кристальные мечи", которая запускает в воздух парящие клинки, пронзающие ваших противников.
+        </li>
+        @endif
         @if($item_info['description'])
         <li class="color-tooltip-yellow">
 		    "{{ $item_info['description'] }}"
@@ -121,17 +140,17 @@ $item_slots_left = array(
 			    @if($item_info['requiredlevel'] > 1)
                 <li>Требуется уровень {{ $item_info['requiredlevel'] }}</li>
                 @endif
+                @if($tooltip->SellPrice > 0) 
                 @php
                     $sell_price = App\Services\ItemPrototype::getMoneyFormat($tooltip->SellPrice);
                     $sMoney = array('gold', 'silver', 'copper');
                 @endphp
                 <li>Цена продажи:
                 @foreach($sMoney as $money)
-                    @if($sell_price[$money] > 0)
-                        <span class="icon-{{ $money }}">{{ $sell_price[$money] }}</span>
-                    @endif
+                    <span class="icon-{{ $money }}">{{ $sell_price[$money] }}</span>
                 @endforeach
 				</li>
+                @endif
             </ul>
         </li>
 	</ul>

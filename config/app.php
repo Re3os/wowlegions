@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'name_forum' => env('APP_NAME', 'Laravel'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -78,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'en-gb',
 
     /*
     |--------------------------------------------------------------------------
@@ -91,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'en-gb',
 
     /*
     |--------------------------------------------------------------------------
@@ -211,7 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
-        'PayPal' => Srmklive\PayPal\Facades\PayPal::class
+        'PayPal' => Srmklive\PayPal\Facades\PayPal::class,
     ],
 
 ];

@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/', function () {
-    return redirect('/'. App\Http\Middleware\LocaleMiddleware::$mainLanguage);
+    return redirect('/'. App::getLocale() . '/');
 });
 
 Route::get('lang/{lang}/', function ($lang) {
@@ -29,9 +29,12 @@ Route::get('account/management/services/is-character-eligible', 'DiscussionContr
 
 Route::get('version', 'DiscussionController@version');
 Route::get('navbar/notifications', 'DiscussionController@notifications');
+Route::get('api/locales', 'DiscussionController@locales');
+Route::get('api/localized-strings', 'DiscussionController@localized');
+Route::get('api/user', 'DiscussionController@user');
 Route::post('account/pin/{characters}', 'DiscussionController@pin');
 
-Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], function(){
+Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], function(){
     /// Auth route
     Auth::routes();     
     Route::get('logout','Auth\LoginController@logout');
@@ -39,17 +42,29 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password-reset');
     /// Auth route end
 
+    /* Route::get('/', function () {
+        if ( Helpers::getSiteMaintenanceStatus() ) {
+          return view('misc.maintenance', ['title' => 'Maintenance Mode']);
+        } else {
+        return view('welcome');
+      }
+    }); */
     Route::get('/', 'HomeController@index')->name('home');
-
     //// Blog route
     Route::resource('news', 'BlogController', ['parameters' => ['id' => 'id']]);
     Route::get('news.frag', 'BlogController@frag');
 
     //// Shop route
-    Route::get('family/world-of-warcraft', function () {
-        return Redirect::to('https://shop.wowlegions.ru/');
-    })->name('shop');
-
+    Route::get('shop/family/world-of-warcraft', 'ShopController@index')->name('shop');
+    Route::get('shop/product/world-of-warcraft-{name}', 'ShopController@view')->name('shop.item');
+    Route::get('shop/buy-{name}', 'ShopController@buy')->name('shop.buy');
+    Route::post('shop/complete-{name}', 'ShopController@store')->name('shop.complete');
+    Route::get('shop/complete-{name}', 'ShopController@buyComplete')->name('shop.buyComplete');
+    Route::get('shop/checkout/add-balance', 'ShopController@addBalance')->name('add-balance');
+    Route::post('shop/checkout/pay', 'ShopController@payBalanceAction')->name('pay-balanceAction');
+    Route::get('shop/checkout/pay', 'ShopController@payBalance')->name('pay-balance');
+    Route::get('shop/checkout/paypal', 'ShopController@payPaypal')->name('pay-paypal');
+    
     /// Forum route
     Route::post('forums/pref/character/{characters}', 'DiscussionController@pin');
     Route::get('forums/', 'CategoryController@index')->name('forums');
@@ -105,6 +120,10 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocale()], fu
     Route::get('characters/elisgrimm/{characters}/reputation', 'CharactersController@characters')->name('reputation');
     Route::get('characters/elisgrimm/{characters}/pvp', 'CharactersController@charactersPvp')->name('characters-pvp');
     Route::get('characters', 'CharactersController@list')->name('characters-list');
+
+    Route::get('game/pvp/leaderboards/2v2', 'CommunityController@leaderboardsTwo')->name('pvp-2v2');
+    Route::get('game/pvp/leaderboards/3v3', 'CommunityController@leaderboardsTree')->name('pvp-3v3');
+    Route::get('game/pvp/leaderboards/battlegrounds', 'CommunityController@battlegrounds')->name('pvp-battlegrounds');
 });
 
 ///// ADMIN /////
@@ -130,4 +149,9 @@ Route::group(['middleware' => ['auth', 'admin']], function(){
     Route::get('/admin/forum/delete/{id}','Admin\ForumController@delete')->name('admin-forum-delete');
     Route::get('/admin/forum/create','Admin\ForumController@create')->name('admin-forum-add');
     Route::post('/admin/forum/create','Admin\ForumController@createAction');
+
+    Route::get('/admin/clearcache', function() {
+        Cache::flush();
+        return "The script cache is successfully cleared.";
+    });
 });

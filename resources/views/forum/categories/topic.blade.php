@@ -6,7 +6,7 @@
 
 @section('sidebar')
 <div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="{{ route('forums') }}" class="Breadcrumb-content">
-<span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span> @lang('forum.forum') </a> </span>
+<span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span>@lang('navbar.Navbar-forums')</a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
 <a href="{{ route('forum', [$topic->category->id])}}" class="Breadcrumb-content"> {{ $topic->category->name }} </a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
@@ -57,7 +57,7 @@
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($topic->user->role > 1) Author--blizzard @endif @if($topic->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ $topic->user->avatar }}/images/avatars/wow/4-0.jpg" alt="" /></a>
+<div class="Author @if($topic->user->role > 1) Author--blizzard @endif @if($topic->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$topic->user->avatar) }}" alt="" /></a>
 <div class="Author-details">
     @if($topic->user->role > 1)
     <span class="Author-name">{{ $topic->characters->name }}</span>
@@ -160,7 +160,7 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($reply->user->role > 1) Author--blizzard @endif @if($reply->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ $reply->user->avatar }}/images/avatars/wow/4-1.jpg" alt="" /></a>
+<div class="Author @if($reply->user->role > 1) Author--blizzard @endif @if($reply->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$reply->user->avatar) }}" alt="" /></a>
 <div class="Author-details">
     @if($reply->user->role > 1)
     <span class="Author-name">{{ $reply->characters->name }}</span>

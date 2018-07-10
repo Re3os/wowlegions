@@ -25,12 +25,12 @@
     <div class="CharacterProfile-render">
         <div class="Art CharacterProfile-bg" style="margin-top:-48.93617021276596%;margin-right:-77.6595744680851%;margin-bottom:-21.27659574468085%;margin-left:-77.6595744680851%;width:255.31914893617022%;">
             <div class="Art-size" style="padding-top:77.5%"></div>
-            <div class="Art-image" style="background-image:url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/KTBDECLHH8WI1479495659687.jpg);"></div>
+            <div class="Art-image" style="background-image:url({{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
             <div class="Art-overlay"></div>
         </div>
-        <div class="Art CharacterProfile-image" style="margin-right:-35.1063829787234%;margin-left:-35.1063829787234%;width:170.2127659574468%;" data-fallback="https://bnetcmsus-a.akamaihd.net/cms/template_resource/KTBDECLHH8WI1479495659687.jpg">
+        <div class="Art CharacterProfile-image" style="margin-right:-35.1063829787234%;margin-left:-35.1063829787234%;width:170.2127659574468%;" data-fallback="{{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }}">
             <div class="Art-size" style="padding-top:75%"></div>
-            <div class="Art-image" style="background-image:url(https://bnetcmsus-a.akamaihd.net/cms/template_resource/KTBDECLHH8WI1479495659687.jpg);"></div>
+            <div class="Art-image" style="background-image:url({{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
             <div class="Art-overlay"></div>
         </div>
     </div>
@@ -53,14 +53,6 @@ $item_slots_left = array(
     $item_info = App\Services\Characters::GetEquippedItemInfo($slot);
     @endphp
 
-    @if(!App\Services\Text::Exists(public_path('uploads/item/'.$item_info['icon'].'.jpg') ) )
-        @php
-        App\Services\Text::Download(
-        'https://render-eu.worldofwarcraft.com/icons/56/'.$item_info['icon'].'.jpg',
-        public_path('uploads/item/'.$item_info['icon'].'.jpg')
-        )
-        @endphp
-    @endif
     @if(!$item_info || $item_info['item_id'] == 0)
         <div class="CharacterProfile-item">
             <a class="Link Link--block" data-modal="{{ $data['modal'] }}" data-modal-analytics-type="Item" data-tooltip="{{ $data['tooltip'] }}">
@@ -111,14 +103,6 @@ $item_slots_left = array(
     @php
     $item_info = App\Services\Characters::GetEquippedItemInfo($slot);
     @endphp
-    @if(!App\Services\Text::Exists(public_path('uploads/item/'.$item_info['icon'].'.jpg') ) )
-        @php
-        App\Services\Text::Download(
-        'https://render-eu.worldofwarcraft.com/icons/56/'.$item_info['icon'].'.jpg',
-        public_path('uploads/item/'.$item_info['icon'].'.jpg')
-        )
-        @endphp
-    @endif
     @if(!$item_info || $item_info['item_id'] == 0)
         <div class="CharacterProfile-item">
             <a class="Link Link--block" data-modal="{{ $data['modal'] }}" data-modal-analytics-type="Item" data-tooltip="{{ $data['tooltip'] }}">
@@ -154,26 +138,18 @@ $item_slots_left = array(
 <div class="CharacterProfile-gear CharacterProfile-gear--bottom">
 @php
 $item_slots_left = array(
-    '15'   => array('modal' => 'item-slot-modal-weapon',  'tooltip' => 'tooltip-weapon', 'GameIcon' => 'slotWeapon'),
-    '16'   => array('modal' => 'item-slot-modal-offhand',  'tooltip' => 'tooltip-offhand', 'GameIcon' => 'slotOffhand')
+    '15'   => array('modal' => 'item-slot-modal-weapon',  'tooltip' => 'tooltip-weapon', 'GameIcon' => 'slotWeapon', 'List' => 'right'),
+    '16'   => array('modal' => 'item-slot-modal-offhand',  'tooltip' => 'tooltip-offhand', 'GameIcon' => 'slotOffhand', 'List' => 'left')
 );
 @endphp
 @foreach($item_slots_left as $slot => $data)
     @php
     $item_info = App\Services\Characters::GetEquippedItemInfo($slot);
     @endphp
-    @if(!App\Services\Text::Exists(public_path('uploads/item/'.$item_info['icon'].'.jpg') ) )
-        @php
-        App\Services\Text::Download(
-        'https://render-eu.worldofwarcraft.com/icons/56/'.$item_info['icon'].'.jpg',
-        public_path('uploads/item/'.$item_info['icon'].'.jpg')
-        )
-        @endphp
-    @endif
     @if(!$item_info || $item_info['item_id'] == 0)
         <div class="CharacterProfile-item"><a class="Link Link--block" data-modal="{{ $data['modal'] }}" data-modal-analytics-type="Item" data-tooltip="{{ $data['tooltip'] }}"><div><div class="GameIcon GameIcon--slot CharacterProfile-itemSlot GameIcon--{{ $data['GameIcon'] }}" media-wide="GameIcon--large"><div class="GameIcon-icon"></div><div class="GameIcon-transmog"></div></div></div></a></div>
     @else
-    <div class="CharacterProfile-item"><a class="Link Link--block" data-modal="item-slot-modal-weapon" data-modal-analytics-type="Item" data-tooltip="tooltip-weapon"><div><div class="GameIcon GameIcon--@lang('inventory.color-quality-' . $item_info['quality']) GameIcon--slot CharacterProfile-itemIcon CharacterProfile-itemSlot" media-wide="GameIcon--large"><div class="GameIcon-icon" style="background-image:url(&quot;{{ asset('uploads/item/'.$item_info['icon']) }}.jpg&quot;);"></div><div class="GameIcon-transmog"></div></div><div class="CharacterProfile-itemDetails"><div class="CharacterProfile-itemName color-quality-@lang('inventory.color-quality-' . $item_info['quality'])">{{ $item_info['name'] }}</div><div class="List List--right List--guttersTiny"><div class="List-item CharacterProfile-itemLevel">{{ $item_info['item_level'] }}</div></div></div></div></a></div>
+    <div class="CharacterProfile-item"><a class="Link Link--block" data-modal="{{ $data['modal'] }}" data-modal-analytics-type="Item" data-tooltip="{{ $data['tooltip'] }}"><div><div class="GameIcon GameIcon--@lang('inventory.color-quality-' . $item_info['quality']) GameIcon--slot CharacterProfile-itemIcon CharacterProfile-itemSlot" media-wide="GameIcon--large"><div class="GameIcon-icon" style="background-image:url(&quot;{{ asset('uploads/item/'.$item_info['icon']) }}.jpg&quot;);"></div><div class="GameIcon-transmog"></div></div><div class="CharacterProfile-itemDetails"><div class="CharacterProfile-itemName color-quality-@lang('inventory.color-quality-' . $item_info['quality'])">{{ $item_info['name'] }}</div><div class="List List--{{ $data['List'] }} List--guttersTiny"><div class="List-item CharacterProfile-itemLevel">{{ $item_info['item_level'] }}</div></div></div></div></a></div>
     @endif
 @endforeach
 </div>

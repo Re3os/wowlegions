@@ -2,6 +2,27 @@
 
 return [
 
+    'title' => 'Форум World of Warcraft',
+    'description' => 'Добро пожаловать на официальные форумы World of Warcraft',
+    'User-menu-label' => 'Разместить как:',
+    'postHistory' => 'История сообщений',
+    'profileLink' => 'Профиль',
+    'data-select-character' => 'Изменить персонажа',
+    'data-select-filter' => 'Выбрать персонажа',
+    'data-filter' => 'Фильтр',
+    'Author-posts' => 'Сообщений',
+    'data-Ignoriert' => 'проигнорировано',
+
+    'Forums-footer' => 'Спасибо, что заглянули на',
+    'Forums-footer-2' => 'Описание обновлений!',
+
+    'Careers' => 'Вакансии',
+    'Impressum' => 'О компании',
+    'Kundendienst' => 'Поддержка',
+    'Kontakt' => 'Открыть запрос',
+
+    'copyright' => 'Все права защищены.',
+
     'character_class_key_1' => 'warrior',
     'character_class_key_2' => 'paladin',
     'character_class_key_3' => 'hunter',

@@ -1,6 +1,8 @@
 <div class="BnetNav BnetNav--wow">
-            <div class="Sticky BnetNav-sticky" media-nav="is-disabled">
-                <div class="Sticky-content"><div class="BnetNav-navbar"><div class="Navbar is-compact is-auto is-custom-logo is-authenticated" data-region="us" data-locale="" data-hash="5fa0a9ec7c8b160b81e2c9c81792d7976df4bffa" data-service-type="l" data-service-endpoint="P" data-service-version="3.3.3" data-middleware-version="3.2.4" data-notification-url="/navbar/notifications" data-support-url="https://us.battle.net/support/update/json?callback=" data-current-site="games"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" class="Navbar-embedded"><g id="Navbar-icon-new_window">
+    <div class="Sticky BnetNav-sticky" media-nav="is-disabled">
+        <div class="Sticky-content">
+            <div class="BnetNav-navbar">
+                <div class="Navbar is-compact is-auto is-custom-logo is-authenticated" data-region="us" data-locale="" data-hash="5fa0a9ec7c8b160b81e2c9c81792d7976df4bffa" data-service-type="l" data-service-endpoint="P" data-service-version="3.3.3" data-middleware-version="3.2.4" data-notification-url="/navbar/notifications" data-support-url="/support/update/json?callback=" data-current-site="games"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" class="Navbar-embedded"><g id="Navbar-icon-new_window">
 <path d="M21.737,39.117c3.938-6.052,8.981-10.014,19.089-10.014v7.024L53.708,24.95   L40.826,13.77v6.72C26.135,20.489,21.737,32.97,21.737,39.117L21.737,39.117z"/>
 <path d="M48.792,35.739V47.23c0,0.276-0.224,0.5-0.5,0.5h-35c-0.276,0-0.5-0.224-0.5-0.5v-26   c0-0.276,0.224-0.5,0.5-0.5h12.624l5-5H13.292c-3.033,0-5.5,2.467-5.5,5.5v26c0,3.033,2.467,5.5,5.5,5.5h35   c3.033,0,5.5-2.467,5.5-5.5V30.739L48.792,35.739z"/>
 </g>
@@ -125,20 +127,20 @@
     <polygon points="116.66 60.93 114.88 60.93 114.88 64.94 113.65 64.94 113.65 60.93 111.88 60.93 111.88 60.03 116.66 60.03 116.66 60.93"/>
 </g></svg>
 <div class="Navbar-overlay"></div>
-<div class="Navbar-container"><nav class="Navbar-mobile"><div class="Navbar-mobileOverlay Navbar-overlay"></div><a data-target="Navbar-siteMenu" data-site-mode="true" class="Navbar-menu Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-mobileIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div></a><a href="{{ route('home') }}" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a><a href="" class="Navbar-customLogo"><img src="https://bnetcmsus-a.akamaihd.net/cms/page_media/lx/LX1K09P4TGAZ1493065079187.png"/></a><div class="Navbar-profileItems"><a data-target="Navbar-accountModal" class="Navbar-account Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-mobileIcon Navbar-profileIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-profile"></use></svg></div></a></div></nav>
+<div class="Navbar-container"><nav class="Navbar-mobile"><div class="Navbar-mobileOverlay Navbar-overlay"></div><a data-target="Navbar-siteMenu" data-site-mode="true" class="Navbar-menu Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-mobileIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div></a><a href="{{ route('home') }}" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a><a href="{{ route('home') }}" class="Navbar-customLogo"><img src="https://bnetcmsus-a.akamaihd.net/cms/page_media/lx/LX1K09P4TGAZ1493065079187.png"/></a><div class="Navbar-profileItems"><a data-target="Navbar-accountModal" class="Navbar-account Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-mobileIcon Navbar-profileIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-profile"></use></svg></div></a></div></nav>
 <nav class="Navbar-desktop">
     <div class="Navbar-desktopOverlay Navbar-overlay"></div>
-    <a href="{{ route('home') }}" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a>
+    <a href="{{ route('home') }}" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a>
 
-<div class="Navbar-collapsedItems is-hidden"><a data-target="Navbar-siteMenu" class="Navbar-menu Navbar-item Navbar-link Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-collapsedIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div><div class="Navbar-label">Меню</div></a></div>
+<div class="Navbar-collapsedItems is-hidden"><a data-target="Navbar-siteMenu" class="Navbar-menu Navbar-item Navbar-link Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-collapsedIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div><div class="Navbar-label">@lang('navbar.Navbar-menu')</div></a></div>
 
 <div class="Navbar-items">
-    <a href="{{ route('shop') }}" class="Navbar-item Navbar-link is-noSelect Navbar-shop" data-index='1' data-name="shop" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><div class="Navbar-label">Магазин</div></a>
-    <a href="/news" class="Navbar-item Navbar-link is-noSelect Navbar-news" data-index='2' data-name="news" data-analytics="global-nav" data-analytics-placement="Nav - News"><div class="Navbar-label">Новости</div></a>
+    <a href="{{ route('shop') }}" class="Navbar-item Navbar-link is-noSelect Navbar-shop" data-index='1' data-name="shop" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><div class="Navbar-label">@lang('navbar.Navbar-shop')</div></a>
+    <a href="{{ route('news.index') }}" class="Navbar-item Navbar-link is-noSelect Navbar-news" data-index='2' data-name="news" data-analytics="global-nav" data-analytics-placement="Nav - News"><div class="Navbar-label">@lang('navbar.Navbar-news')</div></a>
 </div>
 
 <div class="Navbar-profileItems">
-    <a href="{{ route('home') }}" class="Navbar-support Navbar-item Navbar-link is-noSelect" data-index="0" data-name="support" data-analytics="global-nav" data-analytics-placement="Nav - Support"><div class="Navbar-label">Поддержка</div><div class="Navbar-supportCounter">0</div></a>
+    <a href="{{ route('home') }}" class="Navbar-support Navbar-item Navbar-link is-noSelect" data-index="0" data-name="support" data-analytics="global-nav" data-analytics-placement="Nav - Support"><div class="Navbar-label">@lang('navbar.Navbar-support')</div><div class="Navbar-supportCounter">0</div></a>
     <a data-target="Navbar-accountDropdown" data-name="account" class="Navbar-account Navbar-item Navbar-modalToggle is-noSelect">
         <div class="Navbar-icon Navbar-employeeIcon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -146,9 +148,9 @@
             </svg>
         </div>
         @guest
-        <div class="Navbar-label Navbar-accountAuthenticated">Моя учетная запись</div>
+        <div class="Navbar-label Navbar-accountAuthenticated">@lang('navbar.Navbar-accountAuthenticated')</div>
         @else
-        <div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name){{ Auth::user()->name }} @else Моя учетная запись @endif</div>
+        <div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name){{ Auth::user()->name }} @else @lang('navbar.Navbar-accountAuthenticated') @endif</div>
         @endguest
         <div class="Navbar-icon Navbar-dropdownIcon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -174,7 +176,7 @@
             <div class="Navbar-accountDropdownLoggedIn">
                 <div class="Navbar-modalSection">
                     <a href="{{ route('login') }}" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
-                        <button class="Navbar-button is-full">Вход</button>
+                        <button class="Navbar-button is-full">@lang('navbar.Navbar-accountDropdownButtonLink')</button>
                     </a>
                 </div>
                 <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -183,7 +185,7 @@
                             <use xlink:href="#Navbar-icon-settings"></use>
                         </svg>
                     </div>
-                    <div class="Navbar-accountDropdownLinkLabel">Параметры</div>
+                    <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownLinkLabel')</div>
                 </a>
                 <a href="{{ route('register') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Create a Free Account">
                     <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
@@ -191,7 +193,7 @@
                             <use xlink:href="#Navbar-icon-account-add"></use>
                         </svg>
                     </div>
-                    <div class="Navbar-accountDropdownLinkLabel">Создать учетную запись</div>
+                    <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountCreateLinkLabel')</div>
                 </a>
             </div>
             @else
@@ -211,7 +213,7 @@
                         <use xlink:href="#Navbar-icon-settings"></use>
                     </svg>
                 </div>
-                <div class="Navbar-accountDropdownLinkLabel">Параметры</div>
+                <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownLinkLabel')</div>
             </a>
             <a href="{{ route('home') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownGifts" data-analytics="global-nav" data-analytics-placement="Nav - Gifts">
                 <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
@@ -219,7 +221,7 @@
                         <use xlink:href="#Navbar-icon-gifts"></use>
                     </svg>
                 </div>
-                <div class="Navbar-accountDropdownLinkLabel">Мои подарки</div>
+                <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownGifts')</div>
             </a>
             <a href="{{ route('logout') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log Out">
                 <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
@@ -227,7 +229,7 @@
                         <use xlink:href="#Navbar-icon-logout"></use>
                     </svg>
                 </div>
-            <div class="Navbar-accountDropdownLinkLabel">Выход</div>
+            <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountLogOut')</div>
             </a>
             </div>
             @endguest
@@ -247,7 +249,7 @@
         <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
                 <a href="{{ route('login') }}" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In">
-                    <button class="Navbar-button is-full">Вход</button>
+                    <button class="Navbar-button is-full">@lang('navbar.Navbar-accountDropdownButtonLink')</button>
                 </a>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSupport" data-analytics="global-nav" data-analytics-placement="Nav - Support">
@@ -256,7 +258,7 @@
                         <use xlink:href="#Navbar-icon-question"></use>
                     </svg>
                 </div>
-                <div class="Navbar-accountDropdownLinkLabel">Поддержка</div>
+                <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-support')</div>
                 <div class="Navbar-accountDropdownCounter">0</div>
             </a>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -265,7 +267,7 @@
                         <use xlink:href="#Navbar-icon-settings"></use>
                     </svg>
                 </div>
-                <div class="Navbar-accountDropdownLinkLabel">Параметры</div>
+                <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownLinkLabel')</div>
             </a>
             <a href="{{ route('register') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Create a Free Account">
                 <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
@@ -273,7 +275,7 @@
                         <use xlink:href="#Navbar-icon-account-add"></use>
                     </svg>
                 </div>
-            <div class="Navbar-accountDropdownLinkLabel">Создать учетную запись</div>
+            <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountCreateLinkLabel')</div>
             </a>
         </div>
         @else
@@ -293,15 +295,15 @@
                         <use xlink:href="#Navbar-icon-settings"></use>
                     </svg>
                 </div>
-                <div class="Navbar-accountDropdownLinkLabel">Параметры</div>
+                <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownLinkLabel')</div>
             </a>
-            <a href="/gifts/" class="Navbar-accountDropdownLink Navbar-accountDropdownGifts" data-analytics="global-nav" data-analytics-placement="Nav - Gifts">
+            <a href="/" class="Navbar-accountDropdownLink Navbar-accountDropdownGifts" data-analytics="global-nav" data-analytics-placement="Nav - Gifts">
                 <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
                         <use xlink:href="#Navbar-icon-gifts"></use>
                     </svg>
                 </div>
-            <div class="Navbar-accountDropdownLinkLabel">Мои подарки</div>
+            <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownGifts')</div>
             </a>
             <a href="{{ route('logout') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log Out">
                 <div class="Navbar-icon Navbar-accountDropdownLinkIcon">
@@ -309,18 +311,18 @@
                         <use xlink:href="#Navbar-icon-logout"></use>
                     </svg>
                 </div>
-            <div class="Navbar-accountDropdownLinkLabel">Выход</div>
+            <div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountLogOut')</div>
             </a>
         </div>
         @endguest
-    <a href="{{ route('home') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon">
-        <div class="Navbar-modalLinkLabel">На главную</div>
+    <a href="{{ route('home') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Icon">
+        <div class="Navbar-modalLinkLabel">@lang('navbar.Navbar-home')</div>
     </a>
     <a href="{{ route('shop') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Shop">
-        <div class="Navbar-modalLinkLabel">Магазин</div>
+        <div class="Navbar-modalLinkLabel">@lang('navbar.Navbar-shop')</div>
     </a>
-    <a href="/news" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - News">
-        <div class="Navbar-modalLinkLabel">Новости</div>
+    <a href="{{ route('news.index') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - News">
+        <div class="Navbar-modalLinkLabel">@lang('navbar.Navbar-news')</div>
     </a>
     <div class="Navbar-icon Navbar-modalClose">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -341,20 +343,20 @@
             <div class="BnetNav-searchInline">
                 <form action="/search" method="GET">
                     <span class="Icon Icon--searchGold BnetNav-searchIcon"></span>
-            <input class="BnetNav-searchInlineInput" id="searchInlineInput" name="q" type="search" placeholder="Что вы ищете?" autocomplete="off" tabIndex="1"/>
+            <input class="BnetNav-searchInlineInput" id="searchInlineInput" name="q" type="search" placeholder="@lang('navbar.Navbar-search')" autocomplete="off" tabIndex="1"/>
                 </form>
             </div>
             <div class="space-normal"></div>
             <div class="BnetNav-mobileSiteMenuList List List--vertical List--full">
                 <div class="BnetNav-mobileSiteMenuListItem List-item">
                     <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('home') }}" data-analytics="main-nav" data-analytics-placement="Home">
-                        <span class="BnetNav-mobileSiteMenuLinkText" data-text="Главная">Главная</span>
+                        <span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-home-mobile')">@lang('navbar.Navbar-home-mobile')</span>
                     </a>
                 </div>
                 <div class="BnetNav-mobileSiteMenuListItem List-item">
                     <a class="Link" data-dropdown="BnetNav-mobileSiteMenuGame">
                         <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink text-upper">
-                            <span class="BnetNav-mobileSiteMenuLinkText" data-text="Игра">Игра</span>
+                            <span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-game-mobile')">@lang('navbar.Navbar-game-mobile')</span>
                             <span class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></span>
                         </div>
                     </a>
@@ -364,7 +366,7 @@
                                 <a class="Link" data-dropdown="BnetNav-mobileSiteMenuGame1">
                                     <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink">
                                         <div class="Pair">
-                                            <div class="Pair-left">Игровой процесс</div>
+                                            <div class="Pair-left">@lang('navbar.Navbar-game-process')</div>
                                             <div class="Pair-right">
                                                 <div class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></div>
                                             </div>
@@ -374,12 +376,12 @@
                             <div class="Dropdown" name="BnetNav-mobileSiteMenuGame1" data-dropdown-group="BnetNav-mobileSiteMenuSubsections">
                                 <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">
                                     <div class="BnetNav-mobileSiteMenuListItem List-item">
-                                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/races" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Races">Расы</a>
+                                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/races" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Races">@lang('navbar.Navbar-races')</a>
                                     </div>
                                     <div class="BnetNav-mobileSiteMenuListItem List-item">
-                                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/classes" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Classes">Классы</a>
+                                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/classes" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Classes">@lang('navbar.Navbar-classes')</a>
                                     </div>
-                                    <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('community-status') }}" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Realm Status">Состояние игровых миров</a>
+                                    <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('community-status') }}" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Realm Status">@lang('navbar.Navbar-status')</a>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +390,7 @@
                         <a class="Link" data-dropdown="BnetNav-mobileSiteMenuGame2">
                             <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink">
                                 <div class="Pair">
-                                    <div class="Pair-left">Руководства</div>
+                                    <div class="Pair-left">@lang('navbar.Navbar-game-indicator')</div>
                                     <div class="Pair-right">
                                         <div class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></div>
                                     </div>
@@ -398,10 +400,10 @@
                         <div class="Dropdown" name="BnetNav-mobileSiteMenuGame2" data-dropdown-group="BnetNav-mobileSiteMenuSubsections">
                             <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">
                                 <div class="BnetNav-mobileSiteMenuListItem List-item">
-                                    <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/new-players-guide" data-analytics="main-nav" data-analytics-placement="Game - Guides - New Players">Руководство для начинающих</a>
+                                    <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('community-start') }}" data-analytics="main-nav" data-analytics-placement="Game - Guides - New Players">@lang('navbar.Navbar-new-players-guide')</a>
                                 </div>
                                 <div class="BnetNav-mobileSiteMenuListItem List-item">
-                                    <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/returning-players-guide" data-analytics="main-nav" data-analytics-placement="Game - Guides - Returning Players">Вы давно не играли?</a>
+                                    <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('community-return') }}" data-analytics="main-nav" data-analytics-placement="Game - Guides - Returning Players">@lang('navbar.Navbar-returning-players-guide')</a>
                                 </div>
                             </div>
                         </div>
@@ -410,7 +412,7 @@
                     <a class="Link" data-dropdown="BnetNav-mobileSiteMenuGame3">
                         <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink">
                             <div class="Pair">
-                                <div class="Pair-left">Соревновательная игра</div>
+                                <div class="Pair-left">@lang('navbar.Navbar-competitive-game')</div>
                                 <div class="Pair-right">
                                     <div class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></div>
                                 </div>
@@ -420,10 +422,10 @@
                 <div class="Dropdown" name="BnetNav-mobileSiteMenuGame3" data-dropdown-group="BnetNav-mobileSiteMenuSubsections">
                     <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">
                         <div class="BnetNav-mobileSiteMenuListItem List-item">
-                            <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/pve/leaderboards" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Mythic Leaderboards">Рейтинги эпохального режима</a>
+                            <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/pve/leaderboards" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Mythic Leaderboards">@lang('navbar.Navbar-mythic-leaderboards')</a>
                         </div>
                         <div class="BnetNav-mobileSiteMenuListItem List-item">
-                            <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/pvp/leaderboards/3v3" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Leaderboards">Рейтинги PvP</a>
+                            <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="/ru-ru/game/pvp/leaderboards/3v3" data-analytics="main-nav" data-analytics-placement="Game - Gameplay - Leaderboards">@lang('navbar.Navbar-leaderboards-pvp')</a>
                         </div>
                     </div>
                 </div>
@@ -432,7 +434,7 @@
             <a class="Link" data-dropdown="BnetNav-mobileSiteMenuGame4">
                 <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink">
                     <div class="Pair">
-                        <div class="Pair-left">Загрузить</div>
+                        <div class="Pair-left">@lang('navbar.Navbar-download')</div>
                         <div class="Pair-right">
                             <div class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></div>
                         </div>
@@ -442,11 +444,11 @@
             <div class="Dropdown" name="BnetNav-mobileSiteMenuGame4" data-dropdown-group="BnetNav-mobileSiteMenuSubsections">
                 <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">
                     <div class="BnetNav-mobileSiteMenuListItem List-item">
-                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ asset('uploads/file/PatchEG.zip') }}" data-analytics="Game - Expansions - Battle for Azeroth" data-analytics-placement="main-nav">Загрузить лаунчер
+                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ asset('uploads/file/PatchEG.zip') }}" data-analytics="Game - Expansions - Battle for Azeroth" data-analytics-placement="main-nav">@lang('navbar.Navbar-download-1')
                         </a>
                     </div>
                     <div class="BnetNav-mobileSiteMenuListItem List-item">
-                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ asset('uploads/file/Blizzard.zip') }}" target="_blank" data-analytics="Game - Expansions - Legion" data-analytics-placement="main-nav">Для Windows 7</a>
+                        <a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ asset('uploads/file/Blizzard.zip') }}" target="_blank" data-analytics="Game - Expansions - Legion" data-analytics-placement="main-nav">@lang('navbar.Navbar-download-2')</a>
                     </div>
                 </div>
             </div>
@@ -456,21 +458,21 @@
 </div>
 <div class="BnetNav-mobileSiteMenuListItem List-item">
     <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('news.index') }}" data-analytics="main-nav" data-analytics-placement="News">
-        <span class="BnetNav-mobileSiteMenuLinkText" data-text="Новости">Новости</span></a>
+        <span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-news')">@lang('navbar.Navbar-news')</span></a>
     </div>
 <div class="BnetNav-mobileSiteMenuListItem List-item">
-    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('forums') }}" data-analytics="main-nav" data-analytics-placement="Forums"><span class="BnetNav-mobileSiteMenuLinkText" data-text="Форумы">Форумы</span></a>
+    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('forums') }}" data-analytics="main-nav" data-analytics-placement="Forums"><span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-forums')">@lang('navbar.Navbar-forums')</span></a>
 </div>
 <div class="BnetNav-mobileSiteMenuListItem List-item">
-    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('shop') }}" data-analytics="shop-link" data-analytics-placement="Shop || Nav"><span class="BnetNav-mobileSiteMenuLinkText" data-text="Магазин">Магазин</span></a>
+    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('shop') }}" data-analytics="shop-link" data-analytics-placement="Shop || Nav"><span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-shop')">@lang('navbar.Navbar-shop')</span></a>
 </div>
 <div class="space-normal"></div>
 @guest
 <div class="BnetNav-mobileSiteMenuListItem List-item">
-    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('login') }}" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="BnetNav-mobileSiteMenuLinkText" data-text="Авторизация">Авторизация</span></a>
+    <a class="Link Link--block BnetNav-mobileSiteMenuLink text-upper" href="{{ route('login') }}" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-login')">@lang('navbar.Navbar-login')</span></a>
 </div>
 <div class="space-normal"></div>
-<div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item align-center"><div class="BnetNav-mobileSiteMenuListItemWrap"><a class="Link Link--block BnetNav-mobileSiteMenuLink BnetNav-mobileSiteMenuLink--signup text-upper" href="{{ route('register') }}" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="BnetNav-mobileSiteMenuLinkText" data-text="Играть бесплатно">Играть бесплатно</span></a></div></div>
+<div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item align-center"><div class="BnetNav-mobileSiteMenuListItemWrap"><a class="Link Link--block BnetNav-mobileSiteMenuLink BnetNav-mobileSiteMenuLink--signup text-upper" href="{{ route('register') }}" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-register')">@lang('navbar.Navbar-register')</span></a></div></div>
 @else
 <div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item">
     @if(count(\App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)))
@@ -499,7 +501,7 @@
                 <a class="Link" data-dropdown="BnetNav-mobileSiteMenuCharacters">
                     <div class="DropdownLink DropdownLink--gold BnetNav-mobileSiteMenuLink">
                         <div class="Pair">
-                            <div class="Pair-left">Выбрать другого персонажа</div>
+                            <div class="Pair-left">@lang('navbar.Navbar-choose-another-character')</div>
                             <div class="Pair-right">
                                 <div class="BnetNav-mobileDropdownIndicator DropdownLink-indicator"></div>
                             </div>
@@ -514,19 +516,18 @@
                         @foreach($all as $item)
                         <div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Character Character--@lang('forum.class_key_'.$item->class) Character--small Character--level Character--onDark BnetNav-mobileSiteMenuLink" href="{{ route('characters', [$item->name]) }}"><div class="Character-table"><div class="Character-avatar"><div class="Avatar Avatar--anon Avatar--medium"><div class="Avatar-image"></div></div></div><div class="Character-details"><div class="Character-role"></div><div class="Character-name">{{ $item->name }}</div><div class="Character-level"><b>{{ $item->level }}</b> @lang('forum.class_'.$item->class) <!--(Стрельба)--></div><div class="Character-realm">ElisGrimm</div></div></div></a></div> @endforeach
 
-</div></div></div><div class="BnetNav-mobileSiteMenuListItem List-item"><div class="BnetNav-mobileSiteMenuList BnetNav-mobileSiteMenuList--noSectionTitle List List--full List--vertical"><div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('characters-list') }}">Все ваши персонажи</a></div><div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('logout') }}" data-analytics="main-nav" data-analytics-placement="Community - Log Out">Выход</a></div></div></div></div></div>
+</div></div></div><div class="BnetNav-mobileSiteMenuListItem List-item"><div class="BnetNav-mobileSiteMenuList BnetNav-mobileSiteMenuList--noSectionTitle List List--full List--vertical"><div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('characters-list') }}">@lang('navbar.Navbar-characters-list')</a></div><div class="BnetNav-mobileSiteMenuListItem List-item"><a class="Link Link--block BnetNav-mobileSiteMenuLink" href="{{ route('logout') }}" data-analytics="main-nav" data-analytics-placement="Community - Log Out">@lang('navbar.Navbar-accountLogOut')</a></div></div></div></div></div>
 </div>
 @endguest
 <div class="space-normal"></div></div></div></div><div class="Navbar-siteMenuLogo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></div><div class="Navbar-modalClose Navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div><div class="Navbar-modalCloseGutter"></div></div>
-
 <div class="Navbar-modal Navbar-siteMenu is-animated is-scroll-blocking" data-default-mode="true" data-simple-mode="true">
     <div class="Navbar-modalContent">
-        <a href="{{ route('home') }}" class="Navbar-logo Navbar-mobileModalLogo" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon">
+        <a href="{{ route('home') }}" class="Navbar-logo Navbar-mobileModalLogo" data-analytics="global-nav" data-analytics-placement="Nav - Icon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false">
                 <use xlink:href="#Navbar-logo-blizzard"></use>
             </svg>
         </a>
-        <a href="{{ route('home') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon">
+        <a href="{{ route('home') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Icon">
             <div class="Navbar-modalLinkLabel">На главную</div>
         </a>
         <a href="{{ route('shop') }}" class="Navbar-modalLink is-noSelect" data-analytics="global-nav" data-analytics-placement="Nav - Shop">

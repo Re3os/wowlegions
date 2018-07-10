@@ -40,7 +40,7 @@ class UserController extends Controller
     public function claimCodeSendAction(Request $request) {
         $infoKey = CodesShop::where('purchase_code', $request->get('key'))->get();
         if($infoKey[0]->code_activated == 1) {
-            return redirect()->back()->with("error","Mail does not match");
+            return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.");
         } else {
             Soap::AddItemToList($infoKey[0]->item_id, 1);
             if(Soap::SendItem($request->get('character'), $infoKey[0]->item_name)) {
@@ -49,7 +49,7 @@ class UserController extends Controller
                     'profileUser' => \Auth::user(),
                 ]);
             } else {
-                return redirect()->back()->with("error","Mail does not match");
+                return redirect()->back()->with("error","Ошибка отправки итема");
             }
         }
     }
@@ -67,7 +67,7 @@ class UserController extends Controller
                 ]);
             }elseif($infoKey[0]->type == 2) {
                 if($infoKey[0]->code_activated == 1) {
-                    return redirect()->back()->with("error","Mail does not match");
+                    return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
                 } else {
                     $user = \Auth::user();
                     $user->balance += $infoKey[0]->money;
@@ -79,7 +79,7 @@ class UserController extends Controller
                 }
             }
         } else {
-            return redirect()->back()->with("error","Mail does not match");
+            return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
         }
     }
 

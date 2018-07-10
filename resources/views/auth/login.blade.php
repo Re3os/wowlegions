@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" class="ru-ru eu">
 <head xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <meta name="viewport" content="width=device-width" />
-<title>Авторизация учетной записи -  World of Warcraft</title>
+<title>@lang('login.title')</title>
 <link rel="shortcut icon" href="/account/creation/static/images/meta/favicon.0gxnz.ico" />
 <link rel="stylesheet" type="text/css" media="all" href="/account/creation/static/css/toolkit/blizzard-web.min.0RPhe.css?v=58-1" />
 <link rel="stylesheet" type="text/css" media="all" href="/account/creation/static/css/global.min.01ob2.css?v=58-1" />
@@ -68,11 +68,11 @@ document.body.className += " js-enabled";
 <div id="content">
 <div class="body-content grid">
 <div class="grid-100">
-<h1 class="logo">Авторизация учетной записи</h1>
+<h1 class="logo">@lang('login.logo')</h1>
 </div>
 <div class="content-container creation-container grid-parent">
 <div class="" id="information-container">
-<h1>Авторизация учетной записи</h1>
+<h1>@lang('login.logo')</h1>
 </div>
 <div class="grid-parent" id="form-container">
 <form action="{{ route('login') }}" id="account-creation" method="post" name="account-creation" novalidate="novalidate">
@@ -82,7 +82,7 @@ document.body.className += " js-enabled";
 <input type="email" id="emailAddress" name="email" value="" placeholder="E-mail" maxlength="320" autocapitalize="off" autocomplete="off" autocorrect="off" class="grid-100" spellcheck="false" required="true" /> <span id="emailAddress-error-inline" class="help-block"></span>
 </div>
 <div class="control-group row-password {{ $errors->has('password') ? 'control-error text-error' : '' }}">
-<input type="password" id="password" name="password" value="" maxlength="16" placeholder="Пароль" class="password-input showGuidelines" data-email_field="#emailAddress" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" required="true" /> <div class="password-rating"></div>
+<input type="password" id="password" name="password" value="" maxlength="16" placeholder="@lang('login.password')" class="password-input showGuidelines" data-email_field="#emailAddress" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" required="true" /> <div class="password-rating"></div>
 <span id="password-error-inline" class="help-block"></span>
 </div>
 </fieldset>
@@ -93,15 +93,15 @@ document.body.className += " js-enabled";
 </fieldset>
 <div class="form-controls">
 <button class="btn btn-block btn-primary" id="creation-submit-button" type="submit">
-<span class="button-text">Авторизация</span>
+<span class="button-text">@lang('login.submit')</span>
 <i class="spinner-battlenet"></i>
 </button>
 <a class="btn btn-block" id="creation-cancel-button" href="{{ route('register') }}">
-<span class="button-text">Нет учетной записи ?</span>
+<span class="button-text">@lang('login.register')</span>
 <i class="spinner-battlenet"></i>
 </a>
 <a class="btn btn-block" id="creation-cancel-button" href="{{ route('password.request') }}">
-<span class="button-text">Забыли пароль ?</span>
+<span class="button-text">@lang('login.password-request')</span>
 <i class="spinner-battlenet"></i>
 </a>
 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\{Topic, Category, Reply, User};
 use App\Services\ParserText;
+use Cache;
 
 class TopicsController extends Controller
 {
@@ -70,16 +71,26 @@ class TopicsController extends Controller
     {
         $replies = $topic->replies()->paginate(18);
 
-        return view('forum.categories.topic', compact('category', 'topic', 'replies'));
+        $categories = Cache::remember('category', "300", function () {
+            return Category::whereNull('parent_id')->with('forums')->get();
+        });
+
+        return view('forum.categories.topic', compact('category', 'topic', 'replies', 'categories'));
     }
 
 
     public function search(Request $request) {
+
+        $categories = Cache::remember('category', "300", function () {
+            return Category::whereNull('parent_id')->with('forums')->get();
+        });
+
         $q = $request->input('q');
         $max_page = 10;
         $results = $this->searchForum($q, $max_page);
         return view('forum.search', [
             'result' => $results,
+            'categories' => $categories,
         ])->render();
     }
 

@@ -4,7 +4,7 @@
             <div class="List">
                 <div class="List-item">
                     <div class="Avatar Avatar--goldMedium BnetNav-mobileAvatar">
-                        <div class="Avatar-image" style="background-image:url(&quot;{{ Auth::user()->avatar }}&quot;);"></div>
+                        <div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div>
                     </div>
                 </div>
                 <div class="List-item">

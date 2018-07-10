@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\{Shop, CodesShop, User, PaymentDetails, Invoice, Item};
+use App\{Shop, CodesShop, User, PaymentDetails, Invoice, Item, CatShop};
 
 use App\Mail\MailOrderShop;
 
@@ -18,18 +18,17 @@ class ShopController extends Controller
 
     public function __construct() {
         $this->provider = new ExpressCheckout();
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index() {
-        $mount = Shop::where('item_type', '=', '3')->paginate();
-        $item = Shop::where('item_type', '=', '2')->paginate();
-        return view('shop.index', ['mount' => $mount, 'items' => $item]);
+        $data = CatShop::where('act', '=', 1)->with('shop')->orderBy('order', 'asc')->get();
+        return view('shop.index', ['data' => $data]);
     }
 
     public function view($slug) {
-        $item = Shop::where('short_code', $slug)->firstOrFail();
-        return view('shop.mountView', ['item' => $item]);
+        $item = Shop::where('short_code', $slug)->leftJoin('cat_shops', 'shops.category_id', '=', 'cat_shops.id')->firstOrFail();
+        return view('shop.view', ['item' => $item]);
     }
 
     public function buy($slug) {

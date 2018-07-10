@@ -24,6 +24,7 @@ class Item {
     private $tc_data      = null;
     private $tc_ench      = null;
     private $bonding      = 0;
+    private $quality      = 0;
     private $itemset_o    = 0;
     private $maxcount     = 0;
     private $itemset      = 0;
@@ -86,17 +87,13 @@ class Item {
         return $this->description;
     }
 
-    public function LoadFromDB($data, $owner_guid) {
-        $this->m_owner = $owner_guid;
-        $this->m_guid = $data->item;
-        $this->tc_data = DB::connection('characters')->table('item_instance')->where('guid', $this->m_guid)->where('owner_guid', $this->m_owner)->get()[0];
-        if(!$this->tc_data) {
-            return false;
-        }
-        $this->entry = $this->tc_data->itemEntry;
-        $item_data = DB::connection('mysql')->table('item_prototypes')->where('entry', $this->tc_data->itemEntry)->get();
-        $this->tc_data->maxdurability = "";
-        $this->m_count = $this->tc_data->count;
+    public function QualityItem() {
+        return $this->quality;
+    }
+
+    public function LoadFromDB($data) {
+        $this->entry = $data->itemEntry;
+        $item_data = DB::connection('mysql')->table('item_prototypes')->where('entry', $data->itemEntry)->get();
         if($data->bag == 0 && $data->slot < '19') {
             $this->equipped = true;
         }
@@ -107,6 +104,7 @@ class Item {
         $this->itemset_o = $item_data[0]->ItemSet;
         $this->bonding = $item_data[0]->Bonding;
         $this->maxcount = $item_data[0]->MaxCount;
+        $this->quality = $item_data[0]->Quality;
         $this->requiredlevel = $item_data[0]->RequiredLevel;
         $this->description = $item_data[0]->Description;
         $this->loaded = true;

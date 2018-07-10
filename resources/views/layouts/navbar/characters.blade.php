@@ -4,7 +4,7 @@
             <div class="List-item">
                 <a class="Link Link--block" href="{{ route('characters', [$active->name]) }}">
                     <div class="Avatar Avatar--goldLarge SiteNav-avatar">
-                        <div class="Avatar-image" style="background-image:url(&quot;{{ Auth::user()->avatar }}&quot;);"></div>
+                        <div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div>
                     </div>
                 </a>
             </div>

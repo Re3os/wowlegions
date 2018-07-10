@@ -16,14 +16,9 @@
         <div class="List List--vertical">
             @foreach($char as $item)
             <div class="List-item">
-                <a class="Link Character Character--@lang('forum.class_key_'.$item->class) Character--avatar Character--level Character--onDark Character--small Character--square" href="/ru-ru/character/deathguard/стригойд">
+                <a class="Link Character Character--@lang('forum.class_key_'.$item->class) Character--avatar Character--level Character--onDark Character--small Character--square" href="{{ route('characters', [$item->name]) }}">
                     <div class="Character-table">
-                        <!--div class="Character-bust"><div class="Art Art--above"><div class="Art-size" style="padding-top:50.43478260869565%"></div><div class="Art-image" style="background-image:url(http://render-api-eu.worldofwarcraft.com/static-render/eu/deathguard/9/89583369-inset.jpg);"></div><div class="Art-overlay"></div></div></div><div class="Character-avatar"><div class="Avatar Avatar--medium"><div class="Avatar-image" style="background-image:url(&quot;https://render-api-eu.worldofwarcraft.com/static-render/eu/deathguard/9/89583369-avatar.jpg&quot;);"></div></div></div-->
-                        <div class="Character-avatar">
-                            <div class="Avatar Avatar--anon Avatar--medium">
-                                <div class="Avatar-image"></div>
-                            </div>
-                        </div>
+                        <div class="Character-bust"><div class="Art Art--above"><div class="Art-size" style="padding-top:50.43478260869565%"></div><div class="Art-image" style="background-image:url({{ asset('/uploads/avatar/'.Auth::user()->avatar) }});"></div><div class="Art-overlay"></div></div></div><div class="Character-avatar"><div class="Avatar Avatar--medium"><div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div></div></div>
                         <div class="Character-details">
                             <div class="Character-role"></div>
                             <div class="Character-name">{{ $item->name }}</div>
@@ -42,7 +37,7 @@
     <div class="space-normal"></div>
     <div class="Grid Grid--gutters SyncHeight">
 @foreach($char as $item)
-<div class="Grid-1of2 SyncHeight-item" media-wide="Grid-1of3" media-huge="Grid-1of4"><a class="Link Character Character--@lang('forum.class_key_'.$item->class) Character--avatar Character--level Character--onDark Character--square" href="{{ route('characters', [$item->name]) }}"><div class="Character-table"><!--div class="Character-bust"><div class="Art Art--above"><div class="Art-size" style="padding-top:50.43478260869565%"></div><div class="Art-image" style="background-image:url(https://render-eu.worldofwarcraft.com/character/deathguard/72/130512968-inset.jpg);"></div><div class="Art-overlay"></div></div></div><div class="Character-avatar"><div class="Avatar"><div class="Avatar-image" style="background-image:url(&quot;https://render-eu.worldofwarcraft.com/character/deathguard/72/130512968-avatar.jpg&quot;);"></div></div></div--><div class="Character-avatar"><div class="Avatar Avatar--anon"><div class="Avatar-image"></div></div></div><div class="Character-details"><div class="Character-role"></div><div class="Character-name">{{ $item->name }}</div><div class="Character-level"><b>{{ $item->level }}</b> @lang('forum.class_'.$item->class) <!--(Стрельба)--></div><div class="Character-realm">ElisGrimm</div></div></div></a></div>
+<div class="Grid-1of2 SyncHeight-item" media-wide="Grid-1of3" media-huge="Grid-1of4"><a class="Link Character Character--@lang('forum.class_key_'.$item->class) Character--avatar Character--level Character--onDark Character--square" href="{{ route('characters', [$item->name]) }}"><div class="Character-table"><div class="Character-bust"><div class="Art Art--above"><div class="Art-size" style="padding-top:50.43478260869565%"></div><div class="Art-image" style="background-image:url({{ asset('/uploads/avatar/'.Auth::user()->avatar) }});"></div><div class="Art-overlay"></div></div></div><div class="Character-avatar"><div class="Avatar"><div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div></div></div><div class="Character-details"><div class="Character-role"></div><div class="Character-name">{{ $item->name }}</div><div class="Character-level"><b>{{ $item->level }}</b> @lang('forum.class_'.$item->class) <!--(Стрельба)--></div><div class="Character-realm">ElisGrimm</div></div></div></a></div>
  @endforeach
 </div></div></div><div class="space-normal" media-large="space-large"></div></div></div><div class="Divider"></div>
  @endsection

@@ -1,10 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" class="ru-ru eu">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" class="ru-ru us">
 <head xmlns:og="http://ogp.me/ns#">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>@lang('account.title')</title>
 <link rel="shortcut icon" href="//bnetus-a.akamaihd.net/account/static/images/meta/favicon.0gxnz.ico" />
-<link rel="search" type="application/opensearchdescription+xml" href="http://us.battle.net/ru-ru/data/opensearch" title="Поиск по сайтам Blizzard" />
 <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/polyfills.min.1SYUs.js"></script>
 <script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/core.min.3qhIh.js"></script>
 <link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/static/css/navbar.css?v=58-29" />
@@ -24,24 +23,19 @@
 <![endif]-->
 <!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs-ie.4VZxb.css" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="https://bnetus-a.akamaihd.net/account/static/css/management/lobby.24rnt.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie.2vTEB.css" />
-<![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie6.2nZ0A.css" />
-<![endif]-->
 @yield('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/locale/ru-ru.2Xlpm.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/locale/ru-ru.19tBQ.css" />
 <script type="text/javascript">
 //<![CDATA[
 var _gaq = _gaq || [];
 //]]>
 </script>
-<og:image content="https:////bneteu-a.akamaihd.net/account/static/images/logos/bnet-logo.2IBt1.png" />
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/third-party/jquery-1.7.1.min.0vCiz.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/common/bootstrap.3Pnh6.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/third-party/class-inheritance.4V7WX.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/third-party/swfobject-2.2.1.min.0INo9.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/common.16hIS.js?v=58-29"></script>
+<og:image content="https:////bnetus-a.akamaihd.net/account/static/images/logos/bnet-logo.2IBt1.png" />
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/jquery-1.7.1.min.0vCiz.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common/bootstrap.3Pnh6.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/class-inheritance.4V7WX.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/swfobject-2.2.1.min.0INo9.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common.16hIS.js?v=58-29"></script>
 <script type="text/javascript">
 //<![CDATA[
 var Core = Core || {},
@@ -51,17 +45,17 @@ Core.sharedStaticUrl = '/account/static/local-common';
 Core.baseUrl = '/account';
 Core.projectUrl = '/account';
 Core.cdnUrl = 'http://media.blizzard.com';
-Core.supportUrl = 'http://eu.battle.net/support/';
-Core.secureSupportUrl = 'https://eu.battle.net/support/';
+Core.supportUrl = 'http://us.battle.net/support/';
+Core.secureSupportUrl = 'https://us.battle.net/support/';
 Core.project = 'bam';
 Core.locale = 'ru-ru';
 Core.language = 'ru';
-Core.region = 'eu';
+Core.region = 'us';
 Core.shortDateFormat = 'dd/MM/yyyy';
 Core.dateTimeFormat = 'dd/MM/yyyy HH:mm';
 Core.loggedIn = true;
 Core.userAgent = 'web';
-Login.embeddedUrl = 'https://eu.battle.net/login/login.frag';
+Login.embeddedUrl = 'https://us.battle.net/login/login.frag';
 var Flash = Flash || {};
 Flash.videoPlayer = 'http://media.blizzard.com/global-video-player/themes/bam/video-player.swf';
 Flash.videoBase = 'http://media.blizzard.com/bam/media/videos';
@@ -71,7 +65,7 @@ var _gaq = _gaq || [];
 //]]>
 </script>
 <!--[if lt IE 9]>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/third-party/jquery.placeholder-enhanced.min.2BSUS.js"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/third-party/jquery.placeholder-enhanced.min.2BSUS.js"></script>
 <![endif]-->
 </head>
 <body class="ru-ru web" data-analytics-view="/management/lobby">
@@ -213,35 +207,34 @@ data-support-url="https://eu.battle.net/support/update/json?callback="
 <div class="Navbar-items">
 <a href="{{ route('shop') }}" class="Navbar-item Navbar-link is-noSelect Navbar-shop" data-index='1' data-name="shop" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><div class="Navbar-label">@lang('account.shop')</div></a>
 
-<a href="/" class="Navbar-item Navbar-link is-noSelect Navbar-news" data-index='2' data-name="news" data-analytics="global-nav" data-analytics-placement="Nav - News"><div class="Navbar-label">@lang('account.news')</div></a>
+<a href="{{ route('news.index') }}" class="Navbar-item Navbar-link is-noSelect Navbar-news" data-index='2' data-name="news" data-analytics="global-nav" data-analytics-placement="Nav - News"><div class="Navbar-label">@lang('account.news')</div></a>
 
 </div><div class="Navbar-profileItems"><a href="/support/" class="Navbar-support Navbar-item Navbar-link is-noSelect" data-index="0" data-name="support" data-analytics="global-nav" data-analytics-placement="Nav - Support"><div class="Navbar-label">@lang('account.support')</div><div class="Navbar-supportCounter">0</div></a><a data-target="Navbar-accountDropdown" data-name="account" class="Navbar-account Navbar-item Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-employeeIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-blizz"></use></svg></div>@guest<div class="Navbar-label Navbar-accountUnauthenticated">@lang('account.accountUnauthenticated')</div>@else<div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name) {{ Auth::user()->name }} @else {{ Auth::user()->email }} @endif</div>@endguest<div class="Navbar-icon Navbar-dropdownIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-dropdown"></use></svg></div></a></div></nav>
 </div>
 <div class="Navbar-modals">
-<div class="Navbar-constrained"><div data-toggle="Navbar-account" class="Navbar-modal Navbar-dropdown Navbar-accountDropdown is-constrained"><div class="Navbar-tick"><div class="Navbar-tickInner"></div></div><div class="Navbar-modalContent">@guest<div class="Navbar-accountDropdownLoggedOut"><div class="Navbar-modalSection"><a href="?login" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><button class="Navbar-button is-full">@lang('account.login')</button></a></div><a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-settings"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('account.management')</div></a><a href="https://eu.battle.net/account/creation/" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Create a Free Account"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-account-add"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">Создать учетную запись</div></a></div>@else<div class="Navbar-accountDropdownLoggedIn"><div class="Navbar-modalSection">@if(Auth::user()->name)  <div class="Navbar-accountDropdownProfileInfo"><div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div><div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div></div>@endif<div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div></div><a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-settings"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('account.management')</div></a><a href="/gifts/" class="Navbar-accountDropdownLink Navbar-accountDropdownGifts" data-analytics="global-nav" data-analytics-placement="Nav - Gifts"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-gifts"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">Мои подарки</div></a><a href="{{ route('logout') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log Out"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-logout"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">Выход</div></a></div>@endguest</div></div></div>
+<div class="Navbar-constrained"><div data-toggle="Navbar-account" class="Navbar-modal Navbar-dropdown Navbar-accountDropdown is-constrained"><div class="Navbar-tick"><div class="Navbar-tickInner"></div></div><div class="Navbar-modalContent">@guest<div class="Navbar-accountDropdownLoggedOut"><div class="Navbar-modalSection"><a href="?login" class="Navbar-accountDropdownButtonLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log In"><button class="Navbar-button is-full">@lang('account.login')</button></a></div><a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-settings"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('account.management')</div></a><a href="https://eu.battle.net/account/creation/" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Create a Free Account"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-account-add"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">Создать учетную запись</div></a></div>@else<div class="Navbar-accountDropdownLoggedIn"><div class="Navbar-modalSection">@if(Auth::user()->name)  <div class="Navbar-accountDropdownProfileInfo"><div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div><div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div></div>@endif<div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div></div><a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-settings"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('account.management')</div></a><a href="/gifts/" class="Navbar-accountDropdownLink Navbar-accountDropdownGifts" data-analytics="global-nav" data-analytics-placement="Nav - Gifts"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-gifts"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountDropdownGifts')</div></a><a href="{{ route('logout') }}" class="Navbar-accountDropdownLink" data-analytics="global-nav" data-analytics-placement="Nav - Account - Log Out"><div class="Navbar-icon Navbar-accountDropdownLinkIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-logout"></use></svg></div><div class="Navbar-accountDropdownLinkLabel">@lang('navbar.Navbar-accountLogOut')</div></a></div>@endguest</div></div></div>
 </div>
-<div class="Navbar-toast Navbar-cookieCompliance"><div class="Navbar-toastContainer"><div class="Navbar-toastContent"><div class="Navbar-toastLabel Navbar-desktopOnly">Cookie-файлы</div><div class="Navbar-toastText"><div class="Navbar-desktopOnly">На сайтах Blizzard Entertainment используются cookie-файлы и другие аналогичные технологии. Если, прочитав это сообщение, вы остаетесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.</div><div class="Navbar-mobileOnly">На этом сайте используются cookie-файлы. Если вы сейчас остаетесь на сайте, это означает, что вы не возражаете против использования этих технологий.</div></div><button id="cookie-compliance-agree" class="Navbar-button">Хорошо</button><a href="http://eu.blizzard.com/company/about/privacy.html" target="_blank"><button class="Navbar-button is-tertiary"><span>Подробнее</span><div class="Navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-new_window"></use></svg></div></button></a></div><div class="Navbar-icon Navbar-toastClose"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div></div>
+<div class="Navbar-toast Navbar-promotion"><div class="Navbar-toastContainer Navbar-promotionContainer"><img src="" alt="" class="Navbar-toastImage Navbar-promotionImage"/><div class="Navbar-toastContent Navbar-promotionContent"><div class="Navbar-toastLabel Navbar-promotionLabel">%PROMO_LABEL%</div><div class="Navbar-toastText Navbar-promotionText">%PROMO_TEXT%</div><a href="%PROMO_LINK_URL" class="Navbar-toastLink Navbar-promotionLink">%PROMO_LINK_TEXT%</a></div><div class="Navbar-icon Navbar-toastClose"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div></div>
 </div>
 <div id="layout-top">
 <div class="wrapper">
 <div id="header">
-<h1 id="logo"><a accesskey="h" href="{{ route('account') }}" tabindex="50">Параметры</a></h1>
+<h1 id="logo"><a accesskey="h" href="{{ route('account') }}" tabindex="50">@lang('account.management')</a></h1>
 <div id="navigation">
 <div id="page-menu" class="large">
 <ul>
 <li>
-<a href="{{ route('account') }}" class="border-3">Информация</a>
+<a href="{{ route('account') }}" class="border-3">@lang('account.summary')</a>
 <span class="arrow"></span>
 </li>
 <li>
-<a href="#" class="border-3 menu-arrow" onclick="openAccountDropdown(this, 'settings'); return false;">Параметры</a>
+<a href="#" class="border-3 menu-arrow" onclick="openAccountDropdown(this, 'settings'); return false;">@lang('account.settings')</a>
 <span class="arrow"></span>
 <div class="flyout-menu" id="settings-menu" style="display: none">
 <ul>
-<li><a href="{{ route('change-email') }}">Смена E-mail</a></li>
-<li><a href="{{ route('change-password') }}">Смена пароля</a></li>
-<li><a href="{{ route('wallet') }}">Оплата и подписка</a></li>
-<li><a href="{{ route('primary-address') }}">Контактная информация и адрес доставки</a></li>
+<li><a href="{{ route('change-email') }}">@lang('account.change-email')</a></li>
+<li><a href="{{ route('change-password') }}">@lang('account.change-password')</a></li>
+<li><a href="{{ route('wallet') }}">@lang('account.wallet')</a></li>
 </ul>
 <!--[if IE 6]>&#160;
 <iframe id="settings-shim" src="javascript:false;" frameborder="0" scrolling="no" style="display: block; position: absolute; top: 0; left: 0; width: 200px; height: 220px; z-index: -1;"></iframe>
@@ -259,14 +252,13 @@ shim.style.display = 'block';
 </div>
 </li>
 <li>
-<a href="#" class="border-3 menu-arrow" onclick="openAccountDropdown(this, 'games'); return false;">Игры и коды</a>
+<a href="#" class="border-3 menu-arrow" onclick="openAccountDropdown(this, 'games'); return false;">@lang('account.games')</a>
 <span class="arrow"></span>
 <div class="flyout-menu" id="games-menu" style="display: none">
 <ul>
-<li><a href="{{ route('claim-code') }}">Прикрепить ключ игры</a></li>
-<li><a href="{{ route('download-game') }}">Загрузка клиентов игр</a></li>
-<li><a href="{{ route('beta-profile') }}">Бета-профиль</a></li>
-<li><a href="{{ route('claim-code') }}">Использовать код</a></li>
+<li><a href="{{ route('claim-code') }}">@lang('account.claim-code')</a></li>
+<li><a href="{{ route('download-game') }}">@lang('account.download-game')</a></li>
+<li><a href="{{ route('beta-profile') }}">@lang('account.beta-profile')</a></li>
 </ul>
 </div>
 </li>
@@ -280,40 +272,39 @@ ChargebackCall.initialize(true);
 })
 //]]>
 </script>
-<a href="#" class="border-3 menu-arrow transaction" onclick="openAccountDropdown(this, 'activity'); return false;">Операции
+<a href="#" class="border-3 menu-arrow transaction" onclick="openAccountDropdown(this, 'activity'); return false;">@lang('account.activity')
 <span id="chargebackCount" class="border-3" style="">0</span>
 </a>
 <span class="arrow"></span>
 <div class="flyout-menu" id="activity-menu" style="display: none">
 <ul>
-<li><a href="{{ route('orders') }}">История заказов</a></li>
-<li><a href="{{ route('transaction-history') }}">История операций с кошельком</a></li>
-<li><a href="{{ route('gift-claim-history') }}">История подарков</a></li>
+<li><a href="{{ route('orders') }}">@lang('account.orders')</a></li>
+<li><a href="{{ route('transaction-history') }}">@lang('account.transaction-history')</a></li>
+<li><a href="{{ route('gift-claim-history') }}">@lang('account.gift-claim-history')</a></li>
 </ul>
 </div>
 </li>
 <li class="account-balance account-balance-rub" id="accountBalanceCenter" data-tooltip-options='{"location": "mouse"}'>
 <a href="#" class="border-3 menu-arrow title" onclick="openAccountDropdown(this, 'accountBalance'); return false;">
-<span class="sub-title">Кошелек:</span><br/>
+<span class="sub-title">@lang('account.primary-balance')</span><br/>
 <span class="balance" id="primary-balance">--.--</span>
 </a>
 <div class="flyout-menu" id="accountBalance-menu">
 <ul>
 <li id="{{ $profileUser->currency }}" class="switch-currency"><span>{{ $profileUser->balance }} {{ $profileUser->currency }} </span></li>
-<li class=" first"><a href="{{ route('add-balance') }}">Пополнить кошелек</a></li>
-<li class=" "><a href="{{ route('claim-code') }}">Использование кода</a></li>
-<li class=" line "><a href="{{ route('transaction-history') }}">История</a></li>
-<li class="line"><a href="#" onclick="$('#account-balance-dialog').dialog('open'); return false;">Другие денежные единицы</a></li>
-<li id="refreshBalance"><a href="#" onclick="accountBalance.refreshBalance(); return false;">Обновить</a></li>
-<li class="refreshing" id="refreshingBalance"><a href="#" onclick="return false;"><img src="//bneteu-a.akamaihd.net/account/static/images/icons/loader.45RKv.gif" alt="" height="11" width="16" />Идет обновление...</a></li>
+<li class=" first"><a href="{{ route('add-balance') }}">@lang('account.add-balance')</a></li>
+<li class=" "><a href="{{ route('claim-code') }}">@lang('account.claim-code-1')</a></li>
+<li class=" line "><a href="{{ route('transaction-history') }}">@lang('account.transaction-history-1')</a></li>
+<li class="line"><a href="#" onclick="$('#account-balance-dialog').dialog('open'); return false;">@lang('account.account-balance-dialog')</a></li>
+<li id="refreshBalance"><a href="#" onclick="accountBalance.refreshBalance(); return false;">@lang('account.refreshBalance')</a></li>
+<li class="refreshing" id="refreshingBalance"><a href="#" onclick="return false;"><img src="//bneteu-a.akamaihd.net/account/static/images/icons/loader.45RKv.gif" alt="" height="11" width="16" />@lang('account.refreshing')</a></li>
 </ul>
 </div>
 </li>
 </ul>
 <span class="clear"><!-- --></span>
 </div>
-<div class="account-balance-dialog" style="display: none" id="account-balance-dialog" >
-Вы не сможете конвертировать одну валюту в кошельке в другую. Учтите, что те или иные денежные единицы используются только в пределах определенного региона. Например, американские доллары — только в североамериканском регионе.<br/>
+<div class="account-balance-dialog" style="display: none" id="account-balance-dialog" >@lang('account.account-balance-dialog-2')<br/>
 <br/>
 </div>
 <script type="text/javascript">
@@ -352,7 +343,7 @@ autoOpen: false,
 modal: true,
 position: "center",
 resizeable: false,
-closeText: "Закрыть",
+closeText: "@lang('account.closeText')",
 buttons: {
 'Готово': function() {
 $(this).dialog("close");
@@ -374,107 +365,7 @@ $(".ui-widget-overlay").css("opacity", 0.8);
 </div>
 </div>
 @yield('content')
-<div class="NavbarFooter is-region-limited" data-timestamp="1513719398421" data-hash="f1552344e46cdf99a32de45cf1e92921de579881" data-region-selection="limited" data-region="eu" data-locale="ru-ru" >
-<div class="NavbarFooter-overlay"></div>
-<div class="NavbarFooter-selector">
-<div class="NavbarFooter-selectorToggle">
-<div class="NavbarFooter-icon NavbarFooter-selectorToggleIcon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-globe"></use>
-</svg>
-</div>
-<div class="NavbarFooter-selectorToggleLabel">Русский</div>
-<div class="NavbarFooter-icon NavbarFooter-selectorToggleArrow">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-selector"></use>
-</svg>
-</div>
-</div>
-<div class="NavbarFooter-selectorDropdown">
-<div class="NavbarFooter-selectorDropdownContainer">
-<div class="NavbarFooter-selectorCloser">
-<div class="NavbarFooter-selectorCloserAnchor">
-<div class="NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-close"></use>
-</svg>
-</div>
-</div>
-</div>
-<div class="NavbarFooter-selectorRegions NavbarFooter-selectorSection">
-<div class="NavbarFooter-selectorLabel">Регион</div>
-<a class="NavbarFooter-selectorRegion is-active is-selected NavbarFooter-selectorOption " data-id="eu" >
-<div class="NavbarFooter-selectorOptionLabel">Европа</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-<div class="NavbarFooter-selectorRegionTick">
-<div class="NavbarFooter-selectorRegionTickOverlay"></div>
-</div>
-</div>
-<div class="NavbarFooter-selectorLocales NavbarFooter-selectorSection">
-<div class="NavbarFooter-selectorLabel">Язык</div>
-<div class="NavbarFooter-selectorSectionPage is-open is-active " data-region="eu">
-<div class="NavbarFooter-selectorSectionBlock">
-<a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption " href="<?= route('lang', ['lang' => 'de']) ?>" data-id="de-de" data-alias="" >
-<div class="NavbarFooter-selectorOptionLabel">Deutsch</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-<a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption " href="<?= route('lang', ['lang' => 'en']) ?>" data-id="en-us" data-alias="" >
-<div class="NavbarFooter-selectorOptionLabel">English (US)</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-<a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption " href="<?= route('lang', ['lang' => 'gb']) ?>" data-id="en-gb" data-alias="" >
-<div class="NavbarFooter-selectorOptionLabel">English (EU)</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-<a class="NavbarFooter-selectorLocale NavbarFooter-selectorOption " href="<?= route('lang', ['lang' => 'fr']) ?>" data-id="fr-fr" data-alias="" >
-<div class="NavbarFooter-selectorOptionLabel">Français</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-</div>
-<div class="NavbarFooter-selectorSectionBlock">
-<a class="NavbarFooter-selectorLocale is-active is-selected NavbarFooter-selectorOption " href="<?= route('lang', ['lang' => 'ru']) ?>" data-id="ru-ru" data-alias="" >
-<div class="NavbarFooter-selectorOptionLabel">Русский</div>
-<div class="NavbarFooter-selectorOptionCheck NavbarFooter-icon">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false" >
-<use xlink:href="#Navbar-icon-check"></use>
-</svg>
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="NavbarFooter-selectorTick"></div>
-</div>
-</div>
-</div>
-<div class="NavbarFooter-logoContainer"><a href="http://blizzard.com/" class="NavbarFooter-logo"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoUpper"><use xlink:href="#NavbarFooter-blizzard-upper"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 124 66" class="NavbarFooter-logoLower"><use xlink:href="#NavbarFooter-blizzard-lower"></use></svg></a></div><div class="NavbarFooter-links NavbarFooter-mainLinks"><div class="NavbarFooter-linksLeft"><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://careers.blizzard.com/" class="NavbarFooter-anchor" data-id="careers" data-analytics="global-nav" data-analytics-placement="Footer - Careers">Вакансии</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="http://eu.blizzard.com/company/about/" class="NavbarFooter-anchor" data-id="about" data-analytics="global-nav" data-analytics-placement="Footer - About">О компании</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://eu.battle.net/support/" class="NavbarFooter-anchor" data-id="support" data-analytics="global-nav" data-analytics-placement="Footer - Support">Поддержка</a></div></div><div class="NavbarFooter-linksRight"><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://blizzard.gamespress.com/" class="NavbarFooter-anchor" data-id="press" data-analytics="global-nav" data-analytics-placement="Footer - Press">Пресс-релизы</a></div><div class="NavbarFooter-link NavbarFooter-mainLink"><a href="https://dev.battle.net/" class="NavbarFooter-anchor" data-id="api" data-analytics="global-nav" data-analytics-placement="Footer - Battle.net API">API</a></div></div></div><div class="NavbarFooter-copyright">©Blizzard Entertainment, 2018. Все права защищены.</div><div class="NavbarFooter-trademark">Все упомянутые товарные знаки являются собственностью соответствующих владельцев.</div><div class="NavbarFooter-links NavbarFooter-subLinks"><div class="NavbarFooter-link NavbarFooter-subLink"><a href="http://eu.blizzard.com/company/about/privacy.html" class="NavbarFooter-anchor" data-id="privacy" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Политика конфиденциальности</a></div><div class="NavbarFooter-link NavbarFooter-subLink"><a href="http://eu.blizzard.com/company/legal/" class="NavbarFooter-anchor" data-id="terms" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Соглашения</a></div></div>
-<div class="NavbarFooter-legal">
-ru-RU
-<div class="NavbarFooter-legalRatings">
-</div>
-</div>
-</div>
+@include('layouts.footer')
 <script type="text/javascript">
 //<![CDATA[
 var csrftoken = "78f551c8-4c79-4be0-afeb-605ac356bfbb";
@@ -484,10 +375,11 @@ Locale.dataPath = "data/i18n.frag.xml";
 var fullTimeDisplay = true;
 //]]>
 </script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/bam.3UUTF.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/common/menu.2LSka.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/bam.3pD7s.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common/menu.2LSka.js?v=58-29"></script>
 @yield('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/third-party/jquery-ui-1.10.2.custom.min.4DFLs.js?v=58-29"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/jquery-ui-1.10.2.custom.min.4DFLs.js?v=58-29"></script>
+
 <script>
 //<![CDATA[
 var xsToken = '';

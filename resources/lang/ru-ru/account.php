@@ -2,17 +2,6 @@
 
 return [
 
-    /*
-    |--------------------------------------------------------------------------
-    | Account Language Lines
-    |--------------------------------------------------------------------------
-    |
-    | The following language lines are used during authentication for various
-    | messages that we need to display to the user. You are free to modify
-    | these language lines according to your application's requirements.
-    |
-    */
-
     'title' => 'Учетная запись ' . config('app.name', 'WoWLegions'),
     'menu' => 'Меню',
     'shop' => 'Магазин',
@@ -21,6 +10,34 @@ return [
     'accountUnauthenticated' => 'Моя учетная запись',
     'login' => 'Вход',
     'management' => 'Параметры',
+
+    'summary' => 'Информация',
+    'settings' => 'Параметры',
+    'change-email' => 'Смена E-mail',
+    'change-password' => 'Смена пароля',
+    'wallet' => 'Оплата и подписка',
+
+    'games' => 'Игры и коды',
+    'claim-code' => 'Использовать код',
+    'download-game' => 'Загрузка клиентов игр',
+    'beta-profile' => 'Бета-профиль',
+
+    'activity' => 'Операции',
+    'orders' => 'История заказов',
+    'transaction-history' => 'История операций с кошельком',
+    'gift-claim-history' => 'История подарков',
+
+    'primary-balance' => 'Кошелек:',
+    'add-balance' => 'Пополнить кошелек',
+    'claim-code-1' => 'Использование кода',
+    'transaction-history-1' => 'История',
+    'account-balance-dialog' => 'Другие денежные единицы',
+    'refreshBalance' => 'Обновить',
+    'refreshing' => 'Идет обновление...',
+    'account-balance-dialog-1' => 'Вы не сможете конвертировать одну валюту в кошельке в другую. Учтите, что те или иные денежные единицы используются только в пределах определенного региона. Например, американские доллары — только в североамериканском регионе.',
+
+    'closeText' => 'Закрыть',
+
     'service_error_one_title' => 'Персонаж является действующим главой гильдии',
     'service_error_one_desc' => 'Войдите в игру, распустите гильдию или передайте полномочия главы другому персонажу, затем снова выйдите из игры.',
     'service_error_two_title' => 'У персонажа есть письма в почтовом ящике',

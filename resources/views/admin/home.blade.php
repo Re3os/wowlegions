@@ -82,7 +82,7 @@ $.ajaxSetup({
 
 $('#clearbutton').click(function() {
 
-    $.get("/dashboard/home/clearcache", function( data ){
+    $.get("/admin/clearcache", function( data ){
 
         $('#cachesize').html('0 b');
         Growl.info({
@@ -144,7 +144,7 @@ $('#check_updates').click(function() {
                 </tr>
                 <tr>
                     <td>Общий размер кэша:</td>
-                    <td><span id="cachesize">0.0 Kb</span></td>
+                    <td><span id="cachesize">{{ $cacheSize }}</span></td>
                 </tr>
             </table>
 

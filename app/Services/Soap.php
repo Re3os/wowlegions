@@ -10,12 +10,12 @@ class Soap {
     private static function CreateConnection()
     {
         Soap::$SConnection = new \SoapClient(null, array(
-            'location'      =>  'http://109.174.28.128:7878/',
+            'location'      =>  'http://' . env('SOAP_HOST') .':' . env('SOAP_PORT') . '/',
             'uri'           =>  'urn:TC',
             'user_agent'    =>  'trinitycore',
             'style'         =>  SOAP_RPC,
-            'login'         =>  '5#1',
-            'password'      =>  's141297s',
+            'login'         =>  env('SOAP_USERNAME'),
+            'password'      =>  env('SOAP_PASSWORD'),
             'trace'         =>  1,
             'exceptions'    => 0
         ));

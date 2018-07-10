@@ -10,4 +10,9 @@ class Shop extends Model {
 
     protected $fillable = ['title', 'price', 'short_code', 'item_id', 'images', 'item_type'];
 
+    public function cat_shop()
+    {
+        return $this->hasMany(CatShop::class, 'id');
+    }
+
 }

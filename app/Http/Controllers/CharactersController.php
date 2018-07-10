@@ -39,9 +39,8 @@ class CharactersController extends Controller
 
     public function characters($characters) {
         $char = Characters::userCharacters($characters);
-        $charInfo = Inventory::getCharInfo($characters);
         $info = new Inventory();
-        $info->LoadInventory(true);
+        $info->LoadInventory($char->guid);
         $info->CalculateAverageItemLevel();
         Achievements::Initialize($char->guid);
         return view('characters.charactersView', ['char' => $char]);

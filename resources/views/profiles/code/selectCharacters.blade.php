@@ -1,15 +1,15 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="/wow/css/account/guild_services.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/wow/css/account/payment_history.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/wow/css/account/services.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/wow/css/account/ui.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/guild_services.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/payment_history.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/services.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/ui.css') }}" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="/wow/js/account/services.js"></script>
-<script type="text/javascript" src="/wow/js/account/realm-select.js"></script>
+<script type="text/javascript" src="{{ asset('account/management/js/services.js') }}"></script>
+<script type="text/javascript" src="{{ asset('account/management/js/realm-select.js') }}"></script>
 @endsection
 
 @section('content')
@@ -40,7 +40,7 @@
                                         @foreach($userCharacters as $characters)
                                         <li class="character border-4" id="WoW9:{{ $characters->guid }}:{{ $characters->name }}">
                                             <div class="character-icon wow-portrait-64-80 wow-{{ $characters->gender }}-{{ $characters->race }}-{{ $characters->class }} glow-shadow-3">
-                                                <img src="/wow/images/2d/avatar/{{ $characters->race }}-{{ $characters->gender }}.jpg" width="64" height="64" alt="" />
+                                                <img src="{{ Auth::user()->avatar }}" width="64" height="64" alt="" />
                                             </div>
                                             <div class="character-description">
                                             <span class="character-name caption">

@@ -34,6 +34,41 @@ Core.userAgent = 'web';
 Login.embeddedUrl = '/{{ app()->getLocale() }}/login';
 //]]>
 </script>
+<style type="text/css">
+<!--
+label.uploadbutton {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+    height: 30px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+label.uploadbutton input {
+    display: none;
+}
+
+label.uploadbutton .button {
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    background: #7300df;
+    transition: background 0.2s;
+    border: 1px solid rgba(0,0,0,0.1);
+    color: #fff;
+    display: inline-block;
+}
+label.uploadbutton:hover .button {
+    background: green;
+}
+
+label.uploadbutton .input {
+    width: 300px;
+    display: inline-block;
+}
+-->
+</style>
 </head>
 <body class="eu {{ app()->getLocale() }} wow-template web creation" data-embedded-state="STATE_ACCOUNT_CREATION" data-analytics-view="/creation/account-creation">
 <script>
@@ -75,7 +110,7 @@ document.body.className += " js-enabled";
 <h1>Создать запись</h1>
 </div>
 <div class="grid-parent" id="form-container">
-<form action="{{ route('register') }}" id="account-creation" method="post" name="account-creation" novalidate="novalidate">
+<form action="{{ route('register') }}" id="account-creation" method="post" name="account-creation" novalidate="novalidate" enctype="multipart/form-data">
 {{ csrf_field() }}
 <fieldset>
 <div class="control-group row-emailAddress {{ $errors->has('email') ? 'control-error text-error' : '' }}">
@@ -109,6 +144,13 @@ document.body.className += " js-enabled";
 </div>
 </fieldset>
 <fieldset>
+<label class="uploadbutton">
+    <div class="button" >Выбрать</div>
+    <div class='input'>Выберите файл</div>
+    <input type="file" name="avatar" onchange="this.previousSibling.previousSibling.innerHTML = this.value"/>
+</label>
+</fieldset>
+<fieldset>
 <div class="control-group">
 <div class="grid-100 row-checkbox">
 <label class="checkbox-label">
@@ -123,7 +165,7 @@ document.body.className += " js-enabled";
 <div class="grid-100 row-checkbox">
 <label class="checkbox-label">
 <input id="agreedToPrivacyPolicy" name="agreedToPrivacyPolicy" type="checkbox"/>
-Я принимаю условия <a href="http://eu.blizzard.com/ru-ru/company/about/privacy.html" rel="external" target="_blank">политики конфиденциальности<i class="icon-external-link"></i></a>.<br><em>Подробнее о том, как мы собираем пользовательские данные и как вы можете от этого отказаться, — в нашей Политике конфиденциальности.</em>
+Я принимаю условия <a href="/" rel="external" target="_blank">политики конфиденциальности<i class="icon-external-link"></i></a>.<br><em>Подробнее о том, как мы собираем пользовательские данные и как вы можете от этого отказаться, — в нашей Политике конфиденциальности.</em>
 </label>
 </div>
 </div>

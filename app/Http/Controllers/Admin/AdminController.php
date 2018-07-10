@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\{User, Account, Blog};
 
+use App\Services\Utils;
+
 use Auth;
 
 class AdminController extends Controller
@@ -32,6 +34,7 @@ class AdminController extends Controller
             'account' => User::count(),
             'banned' => Account::banedUser(),
             'news' => Blog::count(),
+            'cacheSize' => Utils::formatSize(Utils::dirsize(CACHE)),
        ]);
    }
 }

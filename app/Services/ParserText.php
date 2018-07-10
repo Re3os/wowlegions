@@ -4,10 +4,10 @@ namespace App\Services;
 
 class ParserText {
 
-	// URL до папки со смайликами
+	// URL РґРѕ РїР°РїРєРё СЃРѕ СЃРјР°Р№Р»РёРєР°РјРё
 	private $smiles_url = '/qx_upload/api/smiles/';
 
-	// Шаблоны обычных ББ-кодов (рекурсивные)
+	// РЁР°Р±Р»РѕРЅС‹ РѕР±С‹С‡РЅС‹С… Р‘Р‘-РєРѕРґРѕРІ (СЂРµРєСѓСЂСЃРёРІРЅС‹Рµ)
 	public $codes = array(
 		'b' => array(
 			'left_tag' => '<b>',
@@ -45,7 +45,7 @@ class ParserText {
 		),
 
 		'spoiler' => array(
-			'left_tag' => '<div class="qxbb-spoiler"><button type="button" class="qxbb-spoiler-btn">Спойлер</button><div class="qxbb-spoiler-body">',
+			'left_tag' => '<div class="qxbb-spoiler"><button type="button" class="qxbb-spoiler-btn">РЎРїРѕР№Р»РµСЂ</button><div class="qxbb-spoiler-body">',
 			'right_tag' => '</div></div>'
 		),
 
@@ -75,7 +75,7 @@ class ParserText {
 		),
 	);
 
-	// Шаблоны ББ-кодов с опциями и тонкими настройками регулярок (рекурсивные)
+	// РЁР°Р±Р»РѕРЅС‹ Р‘Р‘-РєРѕРґРѕРІ СЃ РѕРїС†РёСЏРјРё Рё С‚РѕРЅРєРёРјРё РЅР°СЃС‚СЂРѕР№РєР°РјРё СЂРµРіСѓР»СЏСЂРѕРє (СЂРµРєСѓСЂСЃРёРІРЅС‹Рµ)
 	private $codes_options = array(
 		'quote' => array(
 			'pattern' => '/\[(quote)\=\"(([\w]+) \| (\d{2}\.\d{2}\.\d{2} \- \d{2}\:\d{2}\:\d{2}))\"\]((?:[^[]|(?R))*)\[\/quote\]/Usi',
@@ -85,7 +85,7 @@ class ParserText {
 		),
 		'code' => array(
 			'pattern' => '/\[(code)\=\"(php|html|css|javascript)\"\]((?:[^[]|(?R))*)\[\/code\]/Usi',
-			'replace' => '<div class="qxbb-code"><div class="qxbb-code-info">Тип: {2}</div>{3}</div>',
+			'replace' => '<div class="qxbb-code"><div class="qxbb-code-info">РўРёРї: {2}</div>{3}</div>',
 			'values' => array(1,2,3),
 			'escapes' => 3,
 		),
@@ -125,9 +125,15 @@ class ParserText {
 			'values' => array(1,2,3),
 			'escapes' => false,
 		),
+		'item' => array(
+			'pattern' => '/\[(item)\=\"(?:https?:)?\/\/ru\.?(?:wowhead)\.com\/\item=(?<id>[0-9\.-]+)\/?(?<slug>[\w\d\-]+|)?&?(?<rel>[\w\d\-=:&]+|)"\]((?:[^[]|(?R))*)\[\/item\]/Usi',
+			'replace' => '<a href="{4}" class="bml-link-url2">{4}</a>',
+			'values' => array(1,2,3),
+			'escapes' => false,
+		),
 	);
 
-	// Шаблоны ББ-кодов с опциями и тонкими настройками регулярок (не рекурсивные)
+	// РЁР°Р±Р»РѕРЅС‹ Р‘Р‘-РєРѕРґРѕРІ СЃ РѕРїС†РёСЏРјРё Рё С‚РѕРЅРєРёРјРё РЅР°СЃС‚СЂРѕР№РєР°РјРё СЂРµРіСѓР»СЏСЂРѕРє (РЅРµ СЂРµРєСѓСЂСЃРёРІРЅС‹Рµ)
 	private $codes_once = array(
 		'img' => array(
 			'pattern' => '/\[img\](http(s)?\:\/\/[\w\.\/\?\=\&\%\+\~\*\-]+)\[\/img\]/Usi',
@@ -136,10 +142,14 @@ class ParserText {
 		'line' => array(
 			'pattern' => '/\[line\]/Usi',
 			'replace' => '<hr class="qxbb-line">',
-		),
+		),               
 		'url' => array(
 			'pattern' => '/\[url\](http(s)?\:\/\/[\w\.\/\?\=\&\%\+\~\*\-]+)\[\/url\]/Usi',
 			'replace' => '<a href="$1" class="bml-link-url2">$1</a>',
+		),
+		'item' => array(
+			'pattern' => '/\[item\](?:https?:)?\/\/ru\.?(?:wowhead)\.com\/\item=(?<id>[0-9\.-]+)\[\/item\]/Usi',
+			'replace' => '<a href="http://ru.wowhead.com/item=$1" class="bml-link-url2">http://ru.wowhead.com/item=$1</a>',
 		),
 		'email' => array(
 			'pattern' => '/\[email\]([\w\.\-]+\@[a-z0-9\.\-]+)\[\/email\]/Usi',
@@ -147,7 +157,7 @@ class ParserText {
 		),
 	);
 
-	// Шаблоны ББ-кодов для обработки тегов видео ([video]) с тонкими настройками регулярок (не рекурсивные)
+	// РЁР°Р±Р»РѕРЅС‹ Р‘Р‘-РєРѕРґРѕРІ РґР»СЏ РѕР±СЂР°Р±РѕС‚РєРё С‚РµРіРѕРІ РІРёРґРµРѕ ([video]) СЃ С‚РѕРЅРєРёРјРё РЅР°СЃС‚СЂРѕР№РєР°РјРё СЂРµРіСѓР»СЏСЂРѕРє (РЅРµ СЂРµРєСѓСЂСЃРёРІРЅС‹Рµ)
 	private $codes_video = array(
 		'youtube' => array(
 			'pattern' => '((youtube\.com\/watch\?v\=([\w\-]+))|(youtu\.be\/([\w\-]+))|(youtube.com\/embed\/([\w\-]+)))',
@@ -175,7 +185,7 @@ class ParserText {
 		),
 	);
 
-	// Обработчик смайликов
+	// РћР±СЂР°Р±РѕС‚С‡РёРє СЃРјР°Р№Р»РёРєРѕРІ
 	private function parse_smiles($text){
 		$smile_list = array(
 			'[:)]',
@@ -212,7 +222,7 @@ class ParserText {
 		return str_replace($smile_list, $smile_replace, $text);
 	}
 
-	// Обработчик единичных тегов
+	// РћР±СЂР°Р±РѕС‚С‡РёРє РµРґРёРЅРёС‡РЅС‹С… С‚РµРіРѕРІ
 	private function parse_once($text){
 		$replace = $pattern = array();
 		foreach($this->codes_once as $key => $value){
@@ -222,7 +232,7 @@ class ParserText {
 		return preg_replace($pattern, $replace, $text);
 	}
 
-	// Обработчик обычных тегов с открывающими и загрывающими тегами
+	// РћР±СЂР°Р±РѕС‚С‡РёРє РѕР±С‹С‡РЅС‹С… С‚РµРіРѕРІ СЃ РѕС‚РєСЂС‹РІР°СЋС‰РёРјРё Рё Р·Р°РіСЂС‹РІР°СЋС‰РёРјРё С‚РµРіР°РјРё
 	private function parse_simple_tags($text){
 		$pattern = '/\[('.implode('|', array_keys($this->codes)).')\]((?:[^[]|\[(?!\/?(\\1)\])|(?R))+)\[\/\\1\]/Usi';
 		if(is_array($text)){
@@ -239,7 +249,7 @@ class ParserText {
 		return preg_replace_callback($pattern, array($this, 'parse_simple_tags'), $text);
 	}
 
-	// Обработчик тегов с опциями
+	// РћР±СЂР°Р±РѕС‚С‡РёРє С‚РµРіРѕРІ СЃ РѕРїС†РёСЏРјРё
 	private function parse_with_options($text){
 		if(is_array($text)){
 			$codes = $this->codes_options;
@@ -264,7 +274,7 @@ class ParserText {
 		return preg_replace_callback($patterns, array($this, 'parse_with_options'), $text);
 	}
 
-	// Обработчик видео тегов
+	// РћР±СЂР°Р±РѕС‚С‡РёРє РІРёРґРµРѕ С‚РµРіРѕРІ
 	private function parse_video($text){
 		$pattern = $replace = array();
 		foreach($this->codes_video as $name => $value){
@@ -274,7 +284,7 @@ class ParserText {
 		return preg_replace($pattern, $replace, $text);
 	}
 
-	// Обработчик списковых тегов
+	// РћР±СЂР°Р±РѕС‚С‡РёРє СЃРїРёСЃРєРѕРІС‹С… С‚РµРіРѕРІ
 	private function parse_list_line($text){
 		if(is_array($text)){
 			$text = '<li>'.$text[1].'</li>';

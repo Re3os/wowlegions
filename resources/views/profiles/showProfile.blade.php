@@ -1,15 +1,15 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/lobby.3s2q1.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/lobby-ie.3i6Ai.css" />
+<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby.24rnt.css" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie.2vTEB.css" />
 <![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/lobby-ie6.1kFY8.css" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/management/lobby-ie6.2nZ0A.css" />
 <![endif]-->
 @endsection
 
 @section('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/lobby.1hRaj.js"></script>
+<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/management/lobby.2ePKQ.js"></script>
 @endsection
 
 @section('content')

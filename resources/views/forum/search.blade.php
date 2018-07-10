@@ -30,11 +30,11 @@
     <aside class="TopicPost-author">
     <div class="Author">
     <div class="Author" id="" data-topic-post-body-content="true">
-        <a href="{{ route('characters-simple', [$item->characters->name]) }}" class="Author-avatar " >
+        <a href="{{ route('characters', [$item->characters->name]) }}" class="Author-avatar " >
             <img src="/images/avatars/wow/{{ $item->characters->class }}-{{ $item->characters->gender }}.jpg" alt="" /></a>
             <div class="Author-details">
     <span class="Author-name">
-        <a class="Author-name--profileLink" href="{{ route('characters-simple', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
+        <a class="Author-name--profileLink" href="{{ route('characters', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
     </span>
     <span class="Author-posts">
         <a class="Author-posts" href="/forum/search?a={{ $item->user->name }}" data-toggle="tooltip" data-tooltip-content="Просмотреть историю сообщений"> Сообщений: {{ $item->user->posts_count }} </a>
@@ -43,15 +43,15 @@
 </div>
 <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
 <span class="Author-name">
-    <a class="Author-name--profileLink" href="{{ route('characters-simple', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
+    <a class="Author-name--profileLink" href="{{ route('characters', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
 </span>
 <div class="Author-posts Author-posts--ignored">проигнорировано</div></div> </div> </aside>
 <div class="Post-body Post-body--searchPage">
 <div class="Post-body Post-body--topicTitle">{{ $item->title }} </div>
 <span class="Post-body Post-body--forumName"> {{ $item->category->name }} </span>
 <span class="Post-timestamp Post-timestamp--searchPage"> {{ $item->created_at->diffForHumans() }}
-<span class="TopicPost-rank TopicPost-rank--down" data-topic-post-rank="true">-16</span>
-<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">20</span> </span>
+<!--span class="TopicPost-rank TopicPost-rank--down" data-topic-post-rank="true">-16</span>
+<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">20</span--> </span>
 <div class="Post-body--postContent"> {{ $item->content }} </div>
 </div>
 </div>
