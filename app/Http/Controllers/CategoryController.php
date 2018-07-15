@@ -11,19 +11,13 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = Cache::remember('category', "300", function () {
-            return Category::whereNull('parent_id')->with('forums')->get();
-        });
-
+        $categories = Category::where('lang', '=', app()->getLocale())->whereNull('parent_id')->with('forums')->get();
         return view('forum.categories.index', compact('categories'));
     }
 
     public function show($slug)
     {
-        $categories = Cache::remember('category', "300", function () {
-            return Category::whereNull('parent_id')->with('forums')->get();
-        });
-
+        $categories = Category::where('lang', '=', app()->getLocale())->whereNull('parent_id')->with('forums')->get();
         $category = Category::where('id', $slug)->whereNotNull('parent_id')->firstOrFail();
         $topics = Topic::whereCategoryId($category->id)->orderBy('sticky', 'DESC')->orderBy('created_at', 'DESC')->with(['user' => function($query) {
           $query->select('id', 'name', 'role');

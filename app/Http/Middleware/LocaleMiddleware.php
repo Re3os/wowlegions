@@ -16,7 +16,7 @@ class LocaleMiddleware
             return $segmentsURI[0];
 
         } else {
-            return $_COOKIE['locale'] . '/';
+            return 'ru-ru';
         }
     }
 

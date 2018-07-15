@@ -62,7 +62,6 @@
                                     $user->charactersActive = \App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)[0]->guid;
                                     $user->save();
                                     @endphp
-
                                 @else
     							    @include('layouts.navbar.characters', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
                                 @endif

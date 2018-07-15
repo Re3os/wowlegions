@@ -359,11 +359,14 @@ storefront-browsing-card-group:first-of-type {
 
 storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
   margin-top: 40px;
-}</style><meta name="og:title" content="World of Warcraft&nbsp;| магазин Blizzard"><meta name="og:description" content="Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences awaits. Join us."><meta name="description" content="Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences awaits. Join us."><meta name="og:keywords" content="Buy, Digital Games, In-game items, WoW, World of Warcraft, WoW Pets, WoW Mounts, WoW Helms, WoW Subscription, WoW Game Time, Blizzard, Shop, Store, Battlet for Azeroth, MMORPG, role playing game, massively multiplayer, rpg, game"><meta name="keywords" content="Buy, Digital Games, In-game items, WoW, World of Warcraft, WoW Pets, WoW Mounts, WoW Helms, WoW Subscription, WoW Game Time, Blizzard, Shop, Store, Battlet for Azeroth, MMORPG, role playing game, massively multiplayer, rpg, game"><style>.desktop-nav ul,   .mobile-nav ul{padding:0;margin:0}  .desktop-nav ul li,   .mobile-nav ul li{list-style:none}[_nghost-c28]{display:block;background:rgba(0,0,0,.15);border-bottom:1px solid hsla(0,0%,100%,.15);border-top:1px solid hsla(0,0%,100%,.15)}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;-webkit-transition:.3s ease;transition:.3s ease}@media screen and (min-width:1280px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{display:none;-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative;-webkit-transition:margin-left .3s ease;transition:margin-left .3s ease;min-height:50px;border-bottom:1px solid hsla(0,0%,100%,.15)}@media screen and (min-width:1024px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex}}@media screen and (min-width:1280px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{border-bottom:0}}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;cursor:pointer;margin:0 10px}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]:first-of-type{margin-left:0}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]:hover   .group-name[_ngcontent-c28]{opacity:1}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]   .group-name[_ngcontent-c28]{white-space:nowrap;text-align:center;-webkit-transition:.3s ease;transition:.3s ease;opacity:.6;color:#fff}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-filter-container[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1 1 initial;flex:1 1 initial;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:50px}</style><style>@media (max-width:480px){.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]{width:100%}}.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]:first-of-type{margin-right:18px}@media screen and (max-width:480px){.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]:first-of-type{margin-right:0}}</style>@yield('css')</head><body><storefront-root _nghost-c0="" class="ng-tns-c0-0" ng-version="5.2.10"><nav _ngcontent-c0="" class="ng-tns-c0-0">
+}</style><meta name="og:title" content="World of Warcraft&nbsp;| магазин Blizzard"><meta name="og:description" content="Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences awaits. Join us."><meta name="description" content="Descend into World of Warcraft and join millions of mighty heroes in an online world of myth, magic and limitless adventure. An infinity of experiences awaits. Join us."><meta name="og:keywords" content="Buy, Digital Games, In-game items, WoW, World of Warcraft, WoW Pets, WoW Mounts, WoW Helms, WoW Subscription, WoW Game Time, Blizzard, Shop, Store, Battlet for Azeroth, MMORPG, role playing game, massively multiplayer, rpg, game"><meta name="keywords" content="Buy, Digital Games, In-game items, WoW, World of Warcraft, WoW Pets, WoW Mounts, WoW Helms, WoW Subscription, WoW Game Time, Blizzard, Shop, Store, Battlet for Azeroth, MMORPG, role playing game, massively multiplayer, rpg, game"><style>.desktop-nav ul,   .mobile-nav ul{padding:0;margin:0}  .desktop-nav ul li,   .mobile-nav ul li{list-style:none}[_nghost-c28]{display:block;background:rgba(0,0,0,.15);border-bottom:1px solid hsla(0,0%,100%,.15);border-top:1px solid hsla(0,0%,100%,.15)}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;-webkit-transition:.3s ease;transition:.3s ease}@media screen and (min-width:1280px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{display:none;-webkit-box-flex:1;-ms-flex:1;flex:1;position:relative;-webkit-transition:margin-left .3s ease;transition:margin-left .3s ease;min-height:50px;border-bottom:1px solid hsla(0,0%,100%,.15)}@media screen and (min-width:1024px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex}}@media screen and (min-width:1280px){[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]{border-bottom:0}}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:relative;cursor:pointer;margin:0 10px}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]:first-of-type{margin-left:0}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]:hover   .group-name[_ngcontent-c28]{opacity:1}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-link-container[_ngcontent-c28]   .group-link[_ngcontent-c28]   .group-name[_ngcontent-c28]{white-space:nowrap;text-align:center;-webkit-transition:.3s ease;transition:.3s ease;opacity:.6;color:#fff}[_nghost-c28]   .browsing-card-group-nav[_ngcontent-c28]   .group-filter-container[_ngcontent-c28]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:1;-ms-flex:1 1 initial;flex:1 1 initial;-webkit-box-align:center;-ms-flex-align:center;align-items:center;min-height:50px}</style><style>@media (max-width:480px){.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]{width:100%}}.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]:first-of-type{margin-right:18px}@media screen and (max-width:480px){.browse-page-filter[_ngcontent-c29]   .form-group[_ngcontent-c29]:first-of-type{margin-right:0}}</style>@yield('css')</head>
+<body>
+    <storefront-root _nghost-c0="" class="ng-tns-c0-0" ng-version="5.2.10">
+        <nav _ngcontent-c0="" class="ng-tns-c0-0">
 	<div _ngcontent-c0="" class="ng-tns-c0-0" id="navbar">
-    @include('layouts.navbar.shop')
-</div>
-	<!----><storefront-navigation _ngcontent-c0="" _nghost-c1="" class="ng-tns-c0-0 ng-star-inserted"><div _ngcontent-c1="" class="navigation">
+        @include('layouts.navbar.shop')
+    </div>
+	<storefront-navigation _ngcontent-c0="" _nghost-c1="" class="ng-tns-c0-0 ng-star-inserted"><div _ngcontent-c1="" class="navigation">
 	<storefront-desktop-nav _ngcontent-c1="" _nghost-c2=""><!----><div _ngcontent-c2="" class="desktop-nav ng-star-inserted">
 	<div _ngcontent-c2="" class="nav-container app-container">
 		<ul _ngcontent-c2="" class="menu-container">
@@ -384,44 +387,6 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 </a>
 </storefront-link>
 			</li>
-
-			<li _ngcontent-c2="" class="menu-item games" storefront-desktop-nav-menu="">
-				<h5 _ngcontent-c2="" class="menu-item-title">
-					<span _ngcontent-c2="">Игры</span>
-					<svg _ngcontent-c2="" class="svg-inline--fa fa-chevron-down fa-w-14" aria-hidden="true" data-prefix="fa" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"></path></svg><!-- <i _ngcontent-c2="" class="fa fa-chevron-down"></i> -->
-				</h5>
-
-				<div _ngcontent-c2="" class="subnav-container">
-					<div _ngcontent-c2="" class="subnav-content">
-						<storefront-navigation-links _ngcontent-c2="" _nghost-c4=""><!----><div _ngcontent-c4="" class="navigation-links ng-star-inserted">
-	<div _ngcontent-c4="" class="links-header">
-
-	</div>
-	<ul _ngcontent-c4="" class="links-container">
-		<!----><span _ngcontent-c4="" class="links-title ng-star-inserted">Игры Blizzard</span>
-		<!----><li _ngcontent-c4="" class="links-item ng-star-inserted">
-			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
-
-<!---->
-
-<!----><a _ngcontent-c3="" title="" href="/ru-ru/family/world-of-warcraft" class="ng-star-inserted">
-
-	<!---->
-
-				<!----><img _ngcontent-c4="" class="links-item-icon img ng-star-inserted" src="/static/2.4.0/images/family-icons/world-of-warcraft.svg">
-				<!----> <span _ngcontent-c4="" class="ng-star-inserted">World of Warcraft</span>
-
-
-</a>
-</storefront-link>
-		</li>
-	</ul>
-</div>
-</storefront-navigation-links>
-					</div>
-				</div>
-			</li>
-
 			<li _ngcontent-c2="" class="menu-item services" storefront-desktop-nav-menu="">
 				<h5 _ngcontent-c2="" class="menu-item-title">
 					<span _ngcontent-c2="">Услуги</span>

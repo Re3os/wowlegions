@@ -24,6 +24,10 @@ class DiscussionController extends Controller {
         echo '""';
     }
 
+    public function notificationsList() {
+        echo '{}';
+    }
+
     public function notifications() {
         echo '{"totalNotifications":1,"notifications":[{"id":1894440545,"title":"Добро пожаловать","content":"Join the fight for the future now! Play Overwatch&#174; Free May 25-28 on PC, PlayStation&#174;4, or Xbox One! A PS Plus account is not required for PlayStation&#174;4 players.","httpLink":{"link":"https://playoverwatch.com/free-trial","content":"Learn More"},"img":{"mediaId":20817995,"url":"//bnetcmsus-a.akamaihd.net/cms/content_entry_media/po/PODTB474PHM81495814269940.PNG","mimeType":"image/png","type":"fullsize","size":4348,"width":100,"height":50,"originalFileName":"FreeWeekend-May2017_OW_WebNavIcon_JP.PNG","mediaType":13}}]}';
     }

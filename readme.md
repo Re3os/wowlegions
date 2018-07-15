@@ -8,6 +8,18 @@
 <li>To load the database dump of the site</li>
 </ul>
 
+## Server Requirements
+<ul>
+<li>PHP >= 7.1.3
+<li>OpenSSL PHP Extension
+<li>PDO PHP Extension
+<li>Mbstring PHP Extension
+<li>Tokenizer PHP Extension
+<li>XML PHP Extension
+<li>Ctype PHP Extension
+<li>JSON PHP Extension
+</ul>
+
 ## Server version
 <ul>
 <li>Legion 7.*</li>

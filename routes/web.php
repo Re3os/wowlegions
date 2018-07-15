@@ -29,14 +29,16 @@ Route::get('account/management/services/is-character-eligible', 'DiscussionContr
 
 Route::get('version', 'DiscussionController@version');
 Route::get('navbar/notifications', 'DiscussionController@notifications');
+Route::get('notification/list', 'DiscussionController@notificationsList');
 Route::get('api/locales', 'DiscussionController@locales');
 Route::get('api/localized-strings', 'DiscussionController@localized');
 Route::get('api/user', 'DiscussionController@user');
+Route::get('navbar', 'DiscussionController@navbar');
 Route::post('account/pin/{characters}', 'DiscussionController@pin');
 
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], function(){
     /// Auth route
-    Auth::routes();     
+    Auth::routes();
     Route::get('logout','Auth\LoginController@logout');
     // Password Reset Routes...
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password-reset');
