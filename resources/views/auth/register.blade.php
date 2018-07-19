@@ -110,7 +110,7 @@ document.body.className += " js-enabled";
 <h1>Создать запись</h1>
 </div>
 <div class="grid-parent" id="form-container">
-<form action="{{ route('register') }}" id="account-creation" method="post" name="account-creation" novalidate="novalidate" enctype="multipart/form-data">
+<form action="{{ route('register') }}" id="account-creation" method="post" name="account-creation" novalidate="novalidate">
 {{ csrf_field() }}
 <fieldset>
 <div class="control-group row-emailAddress {{ $errors->has('email') ? 'control-error text-error' : '' }}">
@@ -142,13 +142,6 @@ document.body.className += " js-enabled";
 <div class="control-group row-answer1 ">
 <input type="text" id="answer1" name="answer1" value="" placeholder="Секретный ответ" maxlength="99" autocapitalize="off" autocomplete="off" autocorrect="off" class="grid-100" spellcheck="false" required="true" /> <span id="answer1-error-inline" class="help-block"></span>
 </div>
-</fieldset>
-<fieldset>
-<label class="uploadbutton">
-    <div class="button" >Выбрать</div>
-    <div class='input'>Выберите файл</div>
-    <input type="file" name="avatar" onchange="this.previousSibling.previousSibling.innerHTML = this.value"/>
-</label>
 </fieldset>
 <fieldset>
 <div class="control-group">
