@@ -13,7 +13,7 @@
 		</h2>
 
 		<div style="padding: 15px 0;">
-			Вы сделали запрос на получение забытого пароля на сайте {{ route('home') }}.<br><br><br> Чтобы получить новый пароль, пройдите по ссылке ниже:
+			Вы сделали запрос на получение забытого пароля на сайте {{ route('home') }}.<br><br><br> Что бы получить новый пароль, пройдите по ссылке ниже:
 		</div>
 		<a href="{{ route('password-reset', [$token]) }}" style="width: 400px;margin:0 auto;display: block;background: #4CAF50 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAwCAIAAABfUYfWAAAAH0lEQVQImWMw6DdgYmBgYGJkZESlmZiwijPhEB8g9QD08gGkFcH1FgAAAABJRU5ErkJggg==) repeat-x 0 0;color: #fff;font-weight:bold; line-height: 44px;text-align: center;text-transform: uppercase;text-decoration: none;border-radius: 3px;text-shadow: 0 1px 3px rgba(0,0,0,.35);border: 1px solid #388E3C;box-shadow: inset 0 1px rgba(255,255,255,.4);">
 			Восстановить пароль

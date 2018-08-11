@@ -162,7 +162,7 @@
         @guest
         <div class="Navbar-label Navbar-accountAuthenticated">@lang('navbar.Navbar-accountAuthenticated')</div>
         @else
-        <div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name){{ Auth::user()->name }} @else @lang('navbar.Navbar-accountAuthenticated') @endif</div>
+        <div class="Navbar-label Navbar-accountAuthenticated">{{ Auth::user()->name }}</div>
         @endguest
         <div class="Navbar-icon Navbar-dropdownIcon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -211,12 +211,10 @@
             @else
             <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -292,12 +290,10 @@
         @else
         <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -350,29 +346,13 @@
 
 	<i class="Icon" data-hamburger-close="data-hamburger-close"></i><div class="nav-mobile-menu-title">@lang('navbar.Navbar-forums')</div>
 	<div class="menu-content">
-	    @guest
-        @else
-        @php
-            $active = \App\Characters::activeUserCharacters(Auth::user()->charactersActive);
-        @endphp
-		<div class="menu-userDetails">
-            <a href="{{ route('characters', [$active->name]) }}" class="menu-item menu-item--profileLink">@lang('navbar.Navbar-forums-1')<i class="Icon-profileLink"></i></a>
-            <span class="menu-item" data-select-character="true">@lang('navbar.Navbar-forums-2')</span>
-		</div>
-        @endguest
 
 		<a href="{{ route('forums')}}" class="Community-banner">
 			<div class="Community-header-menu">
-				<img class="Community-logo" src="/images/game-logos/game-logo-wow.png"/>
+				<img class="Community-logo" src="{{ asset_media('/images/game-logos/game-logo-wow.png') }}"/>
 			</div>
 		</a>
-                @foreach ($categories as $category)
-				<div class="menu-divider"></div>
-				<span class="menu-item menu-item-disabled">{{ $category->name }}</span>
-                        @foreach ($category->forums as $forum)
-						<a href="{{ route('forum', [$forum->id])}}" class="menu-item "><i class="Forum-icon" style="background-image: url('/cms/forum_icon/{{$forum->icons}}')"></i>{{$forum->name}}</a>
-                        @endforeach
-                @endforeach
+
 	</div>
 
 							<div class="Navbar-siteMenuLogo">
@@ -392,5 +372,5 @@
 
 			<div class="Navbar-toast Navbar-promotion"><div class="Navbar-toastContainer Navbar-promotionContainer"><img src="" alt="" class="Navbar-toastImage Navbar-promotionImage"/><div class="Navbar-toastContent Navbar-promotionContent"><div class="Navbar-toastLabel Navbar-promotionLabel">%PROMO_LABEL%</div><div class="Navbar-toastText Navbar-promotionText">%PROMO_TEXT%</div><a href="%PROMO_LINK_URL" class="Navbar-toastLink Navbar-promotionLink">%PROMO_LINK_TEXT%</a></div><div class="Navbar-icon Navbar-toastClose"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div></div>
 
-				<div class="Navbar-toast Navbar-cookieCompliance"><div class="Navbar-toastContainer"><div class="Navbar-toastContent"><div class="Navbar-toastLabel Navbar-desktopOnly">Cookie-файлы</div><div class="Navbar-toastText"><div class="Navbar-desktopOnly">На сайтах Blizzard Entertainment используются cookie-файлы и другие аналогичные технологии. Если, прочитав это сообщение, вы остаетесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.</div><div class="Navbar-mobileOnly">На этом сайте используются cookie-файлы. Если вы сейчас остаетесь на сайте, это означает, что вы не возражаете против использования этих технологий.</div></div><button id="cookie-compliance-agree" class="Navbar-button">Хорошо</button><a href="https://www.blizzard.com/company/about/privacy.html" target="_blank"><button class="Navbar-button is-tertiary"><span>Подробнее</span><div class="Navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-new_window"></use></svg></div></button></a></div><div class="Navbar-icon Navbar-toastClose"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div></div>
+				<div class="Navbar-toast Navbar-cookieCompliance"><div class="Navbar-toastContainer"><div class="Navbar-toastContent"><div class="Navbar-toastLabel Navbar-desktopOnly">Cookie-файлы</div><div class="Navbar-toastText"><div class="Navbar-desktopOnly">На сайтах {{ config('app.name') }} используются cookie-файлы и другие аналогичные технологии. Если, прочитав это сообщение, вы остаетесь на нашем сайте, это означает, что вы не возражаете против использования этих технологий.</div><div class="Navbar-mobileOnly">На этом сайте используются cookie-файлы. Если вы сейчас остаетесь на сайте, это означает, что вы не возражаете против использования этих технологий.</div></div><button id="cookie-compliance-agree" class="Navbar-button">Хорошо</button><a href="https://www.blizzard.com/company/about/privacy.html" target="_blank"><button class="Navbar-button is-tertiary"><span>Подробнее</span><div class="Navbar-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-new_window"></use></svg></div></button></a></div><div class="Navbar-icon Navbar-toastClose"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false"><use xlink:href="#Navbar-icon-close"></use></svg></div></div></div>
 </div>

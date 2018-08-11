@@ -150,7 +150,7 @@
         @guest
         <div class="Navbar-label Navbar-accountAuthenticated">@lang('navbar.Navbar-accountAuthenticated')</div>
         @else
-        <div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name){{ Auth::user()->name }} @else @lang('navbar.Navbar-accountAuthenticated') @endif</div>
+        <div class="Navbar-label Navbar-accountAuthenticated">{{ Auth::user()->name }}</div>
         @endguest
         <div class="Navbar-icon Navbar-dropdownIcon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -199,12 +199,10 @@
             @else
             <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -281,12 +279,10 @@
         @else
         <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -475,26 +471,6 @@
 <div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item align-center"><div class="BnetNav-mobileSiteMenuListItemWrap"><a class="Link Link--block BnetNav-mobileSiteMenuLink BnetNav-mobileSiteMenuLink--signup text-upper" href="{{ route('register') }}" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="BnetNav-mobileSiteMenuLinkText" data-text="@lang('navbar.Navbar-register')">@lang('navbar.Navbar-register')</span></a></div></div>
 @else
 <div class="BnetNav-mobileSiteMenuListItem BnetNav-mobileSiteMenuListItem--user List-item">
-    @if(count(\App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)))
-        @if(Auth::user()->charactersActive === NULL)
-            @php
-            $user = \Auth::user();
-            $user->charactersActive = \App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)[0]->guid;
-            $user->save();
-            @endphp
-
-        @elseif(\App\Characters::ifCharacters(Auth::user()->charactersActive))
-            @php
-            $user = \Auth::user();
-            $user->charactersActive = \App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)[0]->guid;
-            $user->save();
-            @endphp
-        @else
-            @include('layouts.navbar.CharMobile', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
-        @endif
-    @else
-
-    @endif
     <div class="Dropdown" name="BnetNav-mobileSiteMenuCharacter" data-dropdown-group="BnetNav-mobileSiteMenuSections">
         <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">
             <div class="BnetNav-mobileSiteMenuListItem List-item">
@@ -509,7 +485,7 @@
                     </div>
                 </a>
                 @php
-                    $all = \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id);
+                    $all = \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id ?? '5');
                 @endphp
                 <div class="Dropdown" name="BnetNav-mobileSiteMenuCharacters" data-dropdown-group="BnetNav-mobileSiteMenuSubections">
                     <div class="BnetNav-mobileSiteMenuList List List--full List--vertical">

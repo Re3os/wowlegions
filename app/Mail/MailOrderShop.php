@@ -24,7 +24,7 @@ class MailOrderShop extends Mailable
 
     public function build()
     {
-        return $this->from('robot@wowlegions.ru')->view('mail.order')->with([
+        return $this->from(config('app.email_robot'))->view('mail.order')->with([
         'product' => $this->product,
         'price' => $this->price,
         'code' => $this->code

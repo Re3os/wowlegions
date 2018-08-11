@@ -12,7 +12,7 @@
     </div>
     <div class="CharacterHeader-info">
         <div class="CharacterHeader-links">
-            <a class="Link CharacterHeader-achievement" href="/ru-ru/character/deathguard/людейел/achievements">
+            <a class="Link CharacterHeader-achievement" href="{{ route('achievements', [$char->name ]) }}">
                 <div class="Media Media--flush Media--tiny CharacterHeader-media">
                     <div class="Media-image">
                         <span class="Icon Icon--achievement-shield Media-icon">

@@ -101,6 +101,6 @@ class Text {
         $str = preg_replace('/[^\p{L}\p{Nd}]+/u', '-', $str);
         $str = preg_replace('/(' . preg_quote('-', '/') . '){2,}/', '$1', $str);
         $str = trim($str, '-');
-        return mb_strtolower(strtolower(strtr($str, $table)), 'UTF-8') ?? strtolower(strtr($str, $table)); ;
+        return mb_strtolower(strtolower(strtr($str, $table)), 'UTF-8') ?? strtolower(strtr($str, $table));
     }
 }

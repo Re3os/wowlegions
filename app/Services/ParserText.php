@@ -4,7 +4,6 @@ namespace App\Services;
 
 class ParserText {
 
-	// URL до папки со смайликами
 	private $smiles_url = '/qx_upload/api/smiles/';
 
 	// Шаблоны обычных ББ-кодов (рекурсивные)
@@ -19,7 +18,7 @@ class ParserText {
 			'right_tag' => '</i>'
 		),
 
-		'u' => array(
+		'ul' => array(
 			'left_tag' => '<ul>',
 			'right_tag' => '</ul>'
 		),
@@ -36,36 +35,6 @@ class ParserText {
 
 		'quote' => array(
 			'left_tag' => '<div class="qxbb-quote">',
-			'right_tag' => '</div>'
-		),
-
-		'offtop' => array(
-			'left_tag' => '<span class="qxbb-offtop" title="Offtop">',
-			'right_tag' => '</span>'
-		),
-
-		'spoiler' => array(
-			'left_tag' => '<div class="qxbb-spoiler"><button type="button" class="qxbb-spoiler-btn">Спойлер</button><div class="qxbb-spoiler-body">',
-			'right_tag' => '</div></div>'
-		),
-
-		'reverse' => array(
-			'left_tag' => '<bdo class="qxbb-reverse" dir="rtl">',
-			'right_tag' => '</bdo>'
-		),
-
-		'left' => array(
-			'left_tag' => '<div class="qxbb-left">',
-			'right_tag' => '</div>'
-		),
-
-		'center' => array(
-			'left_tag' => '<div class="qxbb-center">',
-			'right_tag' => '</div>'
-		),
-
-		'right' => array(
-			'left_tag' => '<div class="qxbb-right">',
 			'right_tag' => '</div>'
 		),
 

@@ -156,11 +156,7 @@ class Item {
             return false;
         }
         $dat = DB::connection('mysql')->table('icons')->where('id', $displayid)->get(['iconname']);
-        if(empty($dat)) {
-            return $dat[0]->iconname;
-        } else {
-            return "inv_shoulder_plate_raidpaladin_s_01";
-        }
+        return $dat[0]->iconname ?? 'no_item';
     }
 
     public static function AllowableClasses($mask) {

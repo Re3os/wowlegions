@@ -55,39 +55,27 @@
                             <div class="SiteNav-menuListItem List-item"><a class="Link Link--block SiteNav-menuListLink text-upper" href="{{ route('login') }}" data-analytics="main-nav" data-analytics-placement="Community - Log In"><span class="SiteNav-menuListLinkText" data-text="@lang('navbar.Navbar-accountDropdownButtonLink')">@lang('navbar.Navbar-accountDropdownButtonLink')</span></a></div>
                             <div class="SiteNav-menuListItem SiteNav-menuListItem--user List-item"><div class="SiteNav-menuListItemWrap"><a class="Link Link--block SiteNav-menuListLink text-upper" href="{{ route('register') }}" data-analytics="account-creation-link" data-analytics-placement="Nav"><span class="SiteNav-menuListLinkText" data-text="@lang('navbar.Navbar-accountCreateLinkLabel')">@lang('navbar.Navbar-accountCreateLinkLabel')</span></a></div></div>
                             @else
-                            @if(count(\App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)))
-                                @if(Auth::user()->charactersActive === NULL)
-                                    @php
-                                    $user = \Auth::user();
-                                    $user->charactersActive = \App\Account::userGameCharacters(\App\Account::userGameAccount()[0]->id)[0]->guid;
-                                    $user->save();
-                                    @endphp
-                                @else
-    							    @include('layouts.navbar.characters', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
-                                @endif
-                            @else
                             <div class="SiteNav-menuListItem SiteNav-menuListItem--user SiteNav-menuListItem--userLoggedIn List-item">
                                 <div class="SiteNav-menuListItemWrap">
                                     <div class="List">
                                         <div class="List-item">
-                                            <a class="Link Link--block" href="/">
+                                            <a class="Link Link--block" href="">
                                                 <div class="Avatar Avatar--goldLarge SiteNav-avatar">
-                        <div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div>
-                    </div>
+                                                    <div class="Avatar-image" style="background-image:url(&quot;{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}&quot;);"></div>
+                                                </div>
                                             </a>
                                         </div>
                                         <div class="List-item">
-                                            <a class="Link SiteNav-menuListLink" data-dropdown="SiteNav-user" tabIndex="2">
-                                                <div class="DropdownLink DropdownLink--gold DropdownLink--goldWithHover">
-                                                    <span class="SiteNav-menuListLinkText" data-text="{{ Auth::user()->email }}">{{ Auth::user()->email }}</span>
-                                                    <span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span>
-                                                </div>
+                                            <a class="Link DropdownLink--gold DropdownLink--goldWithHover SiteNav-menuListLink" data-dropdown="SiteNav-character" tabIndex="2">
+                                                <span class="SiteNav-menuListLinkText" data-text="{{ Auth::user()->name }}">{{ Auth::user()->name }}</span>
+                                                <span class="SiteNav-dropdownIndicator DropdownLink-indicator"></span>
+                                                <span class="SiteNav-menuListUserInfo">
+                                                    <span class="SiteNav-characterLevelLabel">{{ Auth::user()->email }}</span></span>
                                             </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            @endif
                         @endguest
                     </div>
                 </div>
@@ -194,7 +182,7 @@
             </div>
         </div>
         @php
-            $all = \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id);
+            $all = \App\Characters::userGameCharacters(\App\Account::userGameAccount()[0]->id ?? '5');
         @endphp
         <div class="Grid Grid--gutters SyncHeight">
         @foreach($all as $item)

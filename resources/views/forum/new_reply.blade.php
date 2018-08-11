@@ -1,13 +1,12 @@
 <section class="Section Section--secondary">
 <div data-topic-post="true" tabindex="0" class="TopicForm is-editing" id="topic-reply">
-
 <header class="TopicForm-header">
-<h1 class="TopicForm-heading">@if($topic->closed) @lang('forum.TopicFormHeadingClosed') @else @lang('forum.TopicFormHeading') @endif</h1>
+<h1 class="TopicForm-heading">@lang('forum.TopicFormHeading')</h1>
 </header>
 <div class="TopicForm-content">
 <aside class="TopicForm-author" data-topic-form="{'userId': {{ Auth::user()->id }}}">
-<div class="Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$active->name]) }}" class="Author-avatar "><img src="{{ Auth::user()->avatar }}/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></a><div class="Author-details"> <span class="Author-name">
-<a class="Author-name--profileLink" href="{{ route('characters', [$active->name]) }}">{{ $active->name }}</a>
+<div class="Author" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [Auth::user()->name]) }}" class="Author-avatar "><img src="{{asset('/uploads/avatar/'. Auth::user()->avatar) }}" alt="" /></a><div class="Author-details"> <span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('characters', [Auth::user()->name]) }}">{{ Auth::user()->name }}</a>
 </span>
 <span class="Author-posts">
 <a class="Author-posts" href="/search?a={{ Auth::user()->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
@@ -16,19 +15,11 @@
 </span></div></div>
 <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
 <span class="Author-name">
-<a class="Author-name--profileLink" href="{{ route('characters', [$active->name]) }}">{{ $active->name }}</a>
+<a class="Author-name--profileLink" href="{{ route('characters', [Auth::user()->name]) }}">{{ Auth::user()->name }}</a>
 </span>
 <div class="Author-posts Author-posts--ignored">@lang('forum.ignored')</div></div>
-<div class="SelectCharacter-button--container">
-                <button class="TopicForm-button TopicForm-button--selectCharacter" type="button">
-                  <span class="Button-content">@lang('forum.data-select-character')</span>
-                </button>
-              </div>
 </aside>
-@if(!Auth::user()->role > 2 && $topic->closed)
-<div class="LoginPlaceholder-details"> <div class="LogIn-message LogIn-message--center"> @lang('forum.thread_is_locked')</div> </div>
-@else
-<form class="Form" action="{{ route('forum.topic.reply.create', [$topic->category->id, $topic->id])}}" id="topic-reply-form" method="post" data-post-form="true">
+<form class="Form" action="{{ route('forum.topic.reply.create', [$thread->id])}}" id="topic-reply-form" method="post" data-post-form="true">
 <fieldset>
 {{ csrf_field() }}
 <input type="hidden" name="sessionPersist" value="forum.topic.post"/>
@@ -66,17 +57,12 @@
 </div>
 <div class="PostForm-errors"></div>
 </div>
-<span class="TopicForm-link">
-<a href="/code-of-conduct" class="TopicForm-link--conduct">@lang('forum.Code_of_Conduct')</a>
-</span>
-
 <div class="TopicForm-action--buttons">
 <button type="submit" class="TopicForm-button TopicForm-button--reply" id="submit-button"><span class="Button-content">@lang('forum.TopicFormReply')</span></button>
 <button type="button" data-topic-button="true" data-trigger="edit.topic.reply" class="TopicForm-button TopicForm-button--edit">
 <span class="Button-content">@lang('forum.TopicFormEdit')</span></button>
 </div>
 </form>
-@endif
 </div>
 </div>
 </section>

@@ -8,10 +8,10 @@ use Illuminate\Support\Debug\Dumper;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\HigherOrderTapProxy;
 
-    function getNotLicense() {
-        $data = file_get_contents("https://forum.wowlegions.ru/extras/notlicense.php?domain=". env('APP_URL') ."&version=" . env('APP_VERSION'));
-        return "";
-    }
+function getNotLicense() {
+    $data = file_get_contents("https://forum.wowlegions.ru/extras/notlicense.php?domain=". env('APP_URL') ."&version=" . env('APP_VERSION'));
+    return "";
+}
 
 if (! function_exists('append_config')) {
 

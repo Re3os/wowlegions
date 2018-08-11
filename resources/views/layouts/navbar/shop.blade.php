@@ -147,7 +147,7 @@
         @guest
         <div class="Navbar-label Navbar-accountAuthenticated">@lang('navbar.Navbar-accountAuthenticated')</div>
         @else
-        <div class="Navbar-label Navbar-accountAuthenticated">@if(Auth::user()->name){{ Auth::user()->name }} @else @lang('navbar.Navbar-accountAuthenticated') @endif</div>
+        <div class="Navbar-label Navbar-accountAuthenticated">{{ Auth::user()->name }}</div>
         @endguest
         <div class="Navbar-icon Navbar-dropdownIcon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" focusable="false">
@@ -196,12 +196,10 @@
             @else
             <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">
@@ -278,12 +276,10 @@
         @else
         <div class="Navbar-accountDropdownLoggedIn">
             <div class="Navbar-modalSection">
-                @if(Auth::user()->name)
                 <div class="Navbar-accountDropdownProfileInfo">
                     <div class="Navbar-accountDropdownBattleTag">{{ Auth::user()->name }}</div>
-                    <div class="Navbar-accountDropdownBattleTagNumber">#{{ Auth::user()->name_id }}</div>
+                    <div class="Navbar-accountDropdownBattleTagNumber"></div>
                 </div>
-                @endif
                 <div class="Navbar-accountDropdownEmail">{{ Auth::user()->email }}</div>
             </div>
             <a href="{{ route('account') }}" class="Navbar-accountDropdownLink Navbar-accountDropdownSettings" data-analytics="global-nav" data-analytics-placement="Nav - Account - Settings">

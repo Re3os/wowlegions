@@ -1,7 +1,0 @@
-Header set Access-Control-Allow-Origin "*"
-
-RewriteEngine On
-
-RewriteRule ^(.*)$ public/$1
-php_value default_charset utf-8
-AddType 'text/html; charset=utf-8' .html .htm .shtml

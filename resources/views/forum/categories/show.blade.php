@@ -1,7 +1,13 @@
 @extends('layouts.forum')
 
-@section('title')
-{{ $category->name }} -
+@section('title'){{ $category->name }} -@endsection
+
+@section('og')
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ route('forum', [$category->id])}}" />
+<meta property="og:title" content="{{ $category->name }} - {{ config('app.name_forum') }}" />
+<meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
+<meta property="og:description" content="{!! $category->category_description !!}" />
 @endsection
 
 @section('sidebar')
@@ -44,11 +50,11 @@
                 <button class="Forum-button Forum-button--new" id="toggle-create-topic" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element"></span>
                 <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
             @else
-                @if(Auth::user()->charactersActive)
+                @if(Auth::user()->confirmed)
                 <button class="Forum-button Forum-button--new" id="toggle-create-topic" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element"></span>
             <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
                 @else
-                <button class="Forum-button Forum-button--new" id="toggle-create-topic" disabled="disabled" data-toggle="tooltip" data-tooltip-content="На вашей учетной записи нет персонажа. Создайте персонажа в игре и авторизуйтесь заново." data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element" disabled="disabled" data-toggle="tooltip" data-tooltip-content="На вашей учетной записи нет персонажа. Создайте персонажа в игре и авторизуйтесь заново."></span>
+                <button class="Forum-button Forum-button--new" id="toggle-create-topic" disabled="disabled" data-toggle="tooltip" data-tooltip-content="Учетная запись не подтверждена!" data-forum-button="true" data-trigger="create.topicpost.forum" type="button">							<span class="Overlay-element" disabled="disabled" data-toggle="tooltip" data-tooltip-content="Учетная запись не подтверждена!"></span>
             <span class="Button-content"><i class="Icon"></i>@lang('forum.create_topic')</span></button>
                 @endif
             @endif
@@ -59,12 +65,8 @@
 				<div class="CreateTopic-container">
 <div class="LoginPlaceholder" id="create-topic"> <header class="LoginPlaceholder-header"><h1 class="LoginPlaceholder-heading">Обсудить</h1><a class="TopicForm-button--close" data-trigger="create.topicpost.forum" data-forum-button="true"></a> </header> <div class="LoginPlaceholder-content"> <aside class="LoginPlaceholder-author"> <div class="Author" id="" data-topic-post-body-content="true"><div class="Author-avatar Author-avatar--default"></div><div class="Author-details"><span class="Author-name is-blank"></span> <span class="Author-posts is-blank"></span></div></div> <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true"> <span class="Author-name"> </span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div> </aside> <div class="LoginPlaceholder-details"> <div class="LogIn-message">Вам есть что сказать? Авторизуйтесь, чтобы создать тему.</div> <a class="LogIn-button" href="?login"> <span class="LogIn-button-content" >Авторизация</span> </a> </div> </div> </div>				</div>
 			</div>
-                @else
-                @if(Auth::user()->charactersActive)
-                    @include('forum.new_topic', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
-                @else
-                    @include('forum.new_topic_no_characters')
-                @endif
+            @else
+                @include('forum.new_topic')
             @endguest
         </header>
 
@@ -78,13 +80,13 @@
 <div data-topics-container="sticky">
 @foreach ($topics as $topic)
 @if($topic->sticky == 1)
-<a class="ForumTopic ForumTopic--sticky @if($topic->user->role >= 2) ForumTopic--featured has-blizzard-post @endif @if($topic->user->role == 1) has-mvp-post @endif @if($topic->closed) is-locked @endif" href="{{ route('forum.topic', [$category->id, $topic])}}" data-forum-topic="{'id':29,'lastPosition':0,'isSticky':false,'isFeatured':false,'isLocked':@if($topic->closed) true @esle false @endif,'isHidden':false,'isSpam':false}">
+<a class="ForumTopic ForumTopic--sticky @if($topic->creator->role >= 2) ForumTopic--featured has-blizzard-post @endif @if($topic->creator->role == 1) has-mvp-post @endif @if($topic->locked) is-locked @endif @if(auth()->check() && $topic->hasUpdatesFor(auth()->user())) @else is-read @endif" href="{{ route('forum.topic', [$topic])}}" data-forum-topic="{'id':{{ $topic }},'lastPosition':0,'isSticky':false,'isFeatured':false,'isLocked':@if($topic->locked) true @esle false @endif,'isHidden':false,'isSpam':false}">
 <span class="ForumTopic-type">
 <i class="Icon"></i>
-@if($topic->user->role >= 2)
+@if($topic->creator->role >= 2)
 <i class="BlizzIcon" data-toggle="tooltip" data-tooltip-content="@lang('forum.messages_gm')" data-original-title="" title=""></i>
 @endif
-@if($topic->user->role == 1)
+@if($topic->creator->role == 1)
 <i class="MvpIcon" data-toggle="tooltip" data-tooltip-content="@lang('forum.messages_cuf')"></i>
 @endif
 </span>
@@ -93,26 +95,30 @@
 <span class="ForumTopic-title--wrapper">
 
 <span class="ForumTopic-timestamp on-mobile">
-<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$category->id, $topic])}}" >
+<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$topic])}}" >
 </span>
 </span>
 
-<span class="ForumTopic-title" data-toggle="tooltip" data-tooltip-content="" data-original-title="" title="">{{ $topic->title }} <i class="statusIcon statusIcon-desktop" data-toggle="tooltip" data-tooltip-content="Закрыто" data-original-title="" title=""></i>
+<span class="ForumTopic-title" data-toggle="tooltip" data-tooltip-content="" data-original-title="" title="">
+{{ $topic->title }}
+</span>@if($topic->locked) <i class="statusIcon statusIcon-mobile" data-toggle="tooltip" data-tooltip-content="Закрыто" data-original-title="" title=""></i>@endif
 </span>
+@if($topic->locked)
+<i class="statusIcon statusIcon-desktop" data-toggle="tooltip" data-tooltip-content="Закрыто" data-original-title="" title=""></i>
+@endif
 </span>
-</span>
-<span class="ForumTopic--preview">{!! $topic->content !!}</span>
-<span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">
-    {{ $topic->characters->name }}
+<span class="ForumTopic--preview">{{ $topic->content }}</span>
+<span class="ForumTopic-author @if($topic->creator->role >= 2) ForumTopic-author--blizzard @endif @if($topic->creator->role == 1) ForumTopic-author--mvp @endif">
+    {{ $topic->creator->name }}
 </span>
 
 <span class="ForumTopic-replies">
 <i class="Icon"></i>
-<span>{{ $topic->replies->count() }}</span>
+<span>{{ $topic->replies_count }}</span>
 </span>
 
 <span class="ForumTopic-timestamp">
-<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$category->id, $topic])}}">{{ $topic->updated_at->diffForHumans() }}</span>
+<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$topic])}}">{{ $topic->created_at->diffForHumans() }}</span>
 </span>
 </div>
 </a>
@@ -122,7 +128,7 @@
 @endif
 @foreach ($topics as $topic)
 @if($topic->sticky != 1)
-<a class="ForumTopic @if($topic->user->role >= 2) has-blizzard-post @endif @if($topic->user->role == 1) has-mvp-post @endif @if($topic->closed) is-locked @endif" href="{{ route('forum.topic', [$category->id, $topic])}}" data-forum-topic="{'id':29,'lastPosition':0,'isSticky':false,'isFeatured':false,'isLocked':@if($topic->closed) true @esle false @endif,'isHidden':false,'isSpam':false}">
+<a class="ForumTopic @if($topic->user->role >= 2) has-blizzard-post @endif @if($topic->user->role == 1) has-mvp-post @endif @if($topic->locked) is-locked @endif @if(auth()->check() && $topic->hasUpdatesFor(auth()->user())) @else is-read @endif" href="{{ route('forum.topic', [$topic])}}" data-forum-topic="{'id':{{ $topic }},'lastPosition':0,'isSticky':false,'isFeatured':false,'isLocked':@if($topic->locked) true @esle false @endif,'isHidden':false,'isSpam':false}">
 <span class="ForumTopic-type">
 <i class="Icon"></i>
 @if($topic->user->role >= 2)
@@ -137,26 +143,28 @@
 <span class="ForumTopic-title--wrapper">
 
 <span class="ForumTopic-timestamp on-mobile">
-<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$category->id, $topic])}}" >
+<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$topic])}}" >
 </span>
 </span>
 
 <span class="ForumTopic-title" data-toggle="tooltip" data-tooltip-content="" data-original-title="" title="">{{ $topic->title }}</span>
-<i class="statusIcon statusIcon-desktop" data-toggle="tooltip" data-tooltip-content="@lang('forum.topic_closed')" data-original-title="" title=""></i>
+@if($topic->locked) <i class="statusIcon statusIcon-mobile" data-toggle="tooltip" data-tooltip-content="Закрыто" data-original-title="" title=""></i>@endif</span>
+@if($topic->locked)
+<i class="statusIcon statusIcon-desktop" data-toggle="tooltip" data-tooltip-content="Закрыто" data-original-title="" title=""></i>
+@endif
 </span>
-</span>
-<span class="ForumTopic--preview">{!! $topic->content !!}</span>
+<span class="ForumTopic--preview">{{ $topic->content }}</span>
 <span class="ForumTopic-author @if($topic->user->role >= 2) ForumTopic-author--blizzard @endif @if($topic->user->role == 1) ForumTopic-author--mvp @endif">
-    {{ $topic->characters->name }}
+    {{ $topic->creator->name }}
 </span>
 
 <span class="ForumTopic-replies">
 <i class="Icon"></i>
-<span>{{ $topic->replies->count() }}</span>
+<span>{{ $topic->replies_count }}</span>
 </span>
 
 <span class="ForumTopic-timestamp">
-<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$category->id, $topic])}}">{{ $topic->updated_at->diffForHumans() }}</span>
+<span class="ForumTopic-timestamp--lastPost" href="{{ route('forum.topic', [$topic])}}">{{ $topic->created_at->diffForHumans() }}</span>
 </span>
 </div>
 </a>

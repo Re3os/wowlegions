@@ -1,32 +1,38 @@
 @extends('layouts.forum')
 
-@section('title')
-{{ $topic->title }} -
+@section('title'){{ $thread->title }} -@endsection
+
+@section('og')
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ route('forum.topic', [$thread->id])}}" />
+<meta property="og:title" content="{{ $thread->title }} - {{ config('app.name_forum') }}" />
+<meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
+<meta property="og:description" content="{!! $thread->body !!}" />
 @endsection
 
 @section('sidebar')
 <div class="Breadcrumbs"> <span class="Breadcrumb"> <a href="{{ route('forums') }}" class="Breadcrumb-content">
 <span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span>@lang('navbar.Navbar-forums')</a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
-<a href="{{ route('forum', [$topic->category->id])}}" class="Breadcrumb-content"> {{ $topic->category->name }} </a> </span>
+<a href="{{ route('forum', [$thread->channel->id])}}" class="Breadcrumb-content"> {{ $thread->channel->name }} </a> </span>
 <span class="Breadcrumb"> <span class="Breadcrumb-divider"> <i class="Icon"></i> </span>
-<a href="{{ route('forum.topic', [$topic->category->id, $topic->id])}}" class="Breadcrumb-content is-active"> {{ $topic->title }} </a> </span> </div>
+<a href="{{ route('forum.topic', [$thread->id])}}" class="Breadcrumb-content is-active"> {{ $thread->title }} </a> </span> </div>
 @endsection
 
 @section('content')
-<section class="Topic" data-topic='{ "id":{{ $topic->category->id }}, "lastPosition":2,"forum":{"id":{{ $topic->id }} },"isSticky":false,"isFeatured":false,"isLocked":false,"isHidden":false,"isFrozen":false, "isSpam":false, "pollId":0 }' data-user='{"id":{{ $topic->user->id }} }'>
+<section class="Topic" data-topic='{ "id":{{ $thread->channel->id }}, "lastPosition":2,"forum":{"id":{{ $thread->id }} },"isSticky":false,"isFeatured":false,"isLocked":false,"isHidden":false,"isFrozen":false, "isSpam":false, "pollId":0 }' data-user='{"id":{{ $thread->user->id }} }'>
 <header class="Topic-header">
 <div class="Container Container--content">
 <h1 class="Topic-heading">
 <a class="Game-logo" href="/"></a>
-<span class="Topic-title" data-topic-heading="true">{{ $topic->title }}</span>
+<span class="Topic-title" data-topic-heading="true">{{ $thread->title }}</span>
 </h1>
 <span class="Topic-subheading">
-<a class="Topic-subheading--link" href="{{ route('forum', $topic->category->id)}}">{{ $topic->category->name }} </a>
+<a class="Topic-subheading--link" href="{{ route('forum', $thread->channel->id)}}">{{ $thread->channel->name }} </a>
 </span>
 
 <div class="Topic-controls">
-@if(Auth::user() && $topic->closed)
+@if(Auth::user() && $thread->locked)
 <button class="Topic-button Topic-button--reply" id="Button-reply" disabled="disabled" data-toggle="tooltip" data-tooltip-content="@lang('forum.thread_is_locked')">
 <span class="Overlay-element" disabled="disabled" data-toggle="tooltip" data-tooltip-content="@lang('forum.thread_is_locked')"></span>
 <span class="Button-content"><i class="Icon"></i>@lang('forum.TopicFormReplyTopic')</span></button>
@@ -39,89 +45,49 @@
 </div>
 </header>
 
-<div class="Container Container--content Topic-container">
-<div class="Topic-pagination--header">
-    {{ $replies->links('forum.categories.paginatepost') }}
-</div>
-<div class="Topic-pagination--mobile">
-</div>
-</div>
+{{ $topics->links('forum.categories.paginateposthead') }}
 <div class="Topic-content">
-        <div class="TopicPost @if($topic->user->role > 1) TopicPost--blizzard @endif @if($topic->user->role == 1) TopicPost--mvp @endif" id="post-1" data-topic-post='{"id":"{{ $topic->id }}","valueVoted":0,"rank":{"voteUp":0,"voteDown":0},"author":{"id":"{{ $topic->user->id }}","name":"{{ $topic->user->name }}"}}" data-topic="{"sticky":"false","featured":"false","locked":"false","frozen":"false","hidden":"false","pollId":"0"}'>
-<span id="1"></span>
+<div class="TopicPost @if($thread->creator->role == 2) TopicPost--blizzard @endif @if($thread->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $thread->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $thread->id }}&quot;,&quot;valueVoted&quot;:{{ $thread->up }},&quot;rank&quot;:{&quot;voteUp&quot;:{{ $thread->up }},&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $thread->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $thread->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
+<span id="{{ $thread->id }}"></span>
 <div class="TopicPost-content">
-<div class="TopicPost-authorIcon @if($topic->user->role > 1) TopicPost-authorIcon--blizzard @endif">
+<div class="TopicPost-authorIcon @if($thread->creator->role == 2) TopicPost-authorIcon--blizzard @endif">
 <svg xmlns="http://www.w3.org/2000/svg">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-blizzard"/>
 </svg>
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($topic->user->role > 1) Author--blizzard @endif @if($topic->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$topic->user->avatar) }}" alt="" /></a>
+<div class="Author @if($thread->creator->role == 2) Author--blizzard @endif @if($thread->creator->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('profiles', [$thread->creator->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$thread->creator->avatar) }}" alt="" /></a>
 <div class="Author-details">
-    @if($topic->user->role > 1)
-    <span class="Author-name">{{ $topic->characters->name }}</span>
-    @else
-    <a class="Author-name--profileLink" href="{{ route('characters', [$topic->characters->name]) }}">{{ $topic->characters->name }}</a>
-    @endif
-    @if($topic->user->role == 6)
-    <span class="Author-job">Curator</span>
-    @elseif($topic->user->role == 5)
-    <span class="Author-job">Developer</span>
-    @elseif($topic->user->role == 4)
-    <span class="Author-job">Game Master</span>
-    @elseif($topic->user->role == 3)
-    <span class="Author-job">Moderator</span>
-    @elseif($topic->user->role == 2)
-    <span class="Author-job">Customer Service</span>
-    @elseif($topic->user->role == 1)
-    <span class="Author-job">MVP</span>
-    @endif
-@if($topic->user->role <= 1)
-<!--span class="Author-guild">
-<a class="Author-guild--link" href="{{ route('characters', [$topic->characters->name]) }}" data-toggle="tooltip" data-tooltip-content="Гильдия">&lt;Лутоморье&gt;</a>
-</span-->
-<span class="Author-class @lang('forum.class_key_'.$topic->characters->class)">
-{{ $topic->characters->level }} @lang('forum.race_'.$topic->characters->race) @lang('forum.class_'.$topic->characters->class)
-</span>
-<!--span class="Author-achievements">
-<a href="{{ route('characters', [$topic->characters->name]) }}" class="Author-achievements--link" data-toggle="tooltip" data-tooltip-content="Достижения">
-<i class="Icon"></i>9800</a>
-</span-->
+@if($thread->creator->role == 2)
+<span class="Author-name">{{ $thread->creator->name }}</span>
+@else
+<a class="Author-name--profileLink" href="{{ route('profiles', [$thread->creator->name]) }}">{{ $thread->creator->name }}</a>
+@endif
+@if($thread->creator->role == 2)
+<span class="Author-job">Customer Service</span>
+@elseif($thread->creator->role == 1)
+<span class="Author-job">MVP</span>
 @endif
 <span class="Author-posts">
-<a class="Author-posts" href="/forum/search?a={{ $topic->characters->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
- @lang('forum.count_messages', ['count' => $topic->user->posts_count])</a>
+<a class="Author-posts" href="/forum/search?a={{ $thread->creator->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
+ @lang('forum.count_messages', ['count' => $thread->creator->posts_count])</a>
 </span></div></div>
 </div>
 </aside>
-<script>
-    var TOPIC_POST = {{ $topic->id }};
-</script>
-            <div class="TopicPost-body" data-topic-post-body="true">
-                <div class="TopicPost-details">
-                    <div class="Timestamp-details">
-                    <a class="TopicPost-timestamp" href="#post-{{ $topic->id }}" data-toggle="tooltip" data-tooltip-content="{{ $topic->created_at->format('m/d/Y H:i') }}" data-original-title="" title="">{{ $topic->created_at->diffForHumans() }}</a>
-                        <!--a class="TopicPost-timestamp" href="#post-{{ $topic->id }}" data-toggle="tooltip" data-tooltip-content="Гринфайр {{ $topic->updated_at->format('m/d/Y H:i') }}">
-                            &#160;(Отредактировано)
-                        </a>
-                        <span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true"
-data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нравится: 0.">1</span>
-                        <span class="TopicPost-rank TopicPost-rank--none" data-topic-post-rank="true"></span>
-                        <span class="TopicPost-rank TopicPost-rank--down" data-topic-post-rank="true"
-data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нравится: 0.">1</span-->
-                </div>
+<div class="TopicPost-body" data-topic-post-body="true">
+    <div class="TopicPost-details">
+        <div class="Timestamp-details">
+        <a class="TopicPost-timestamp" href="#post-{{ $thread->id }}" data-toggle="tooltip" data-tooltip-content="{{ $thread->created_at->format('m/d/Y H:i') }}" data-original-title="" title="">{{ $thread->created_at->diffForHumans() }}</a>
+        <!--a class="TopicPost-timestamp" href="#post-{{ $thread->id }}" data-toggle="tooltip" data-tooltip-content="Гринфайр {{ $thread->updated_at->format('m/d/Y H:i') }}"> &#160;(Отредактировано) </a-->
+            @if($thread->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">{{ $thread->up }}</span>@endif
+            <span class="TopicPost-rank TopicPost-rank--none" data-topic-post-rank="true"></span>
+    </div>
 @guest
 @else
 <aside class="TopicPost-control">
 <div class="TopicPost-menu Dropdown"><button class="Button-dropdown Button--secondary Button--icon" data-trigger="toggle.dropdown.menu" data-toggle="tooltip" data-tooltip-content="@lang('forum.dropdown')" type="button" data-original-title="" title=""><span class="Button-content"><i class="Icon Icon--16 Icon--blue Icon--button Icon--caretdown"></i></span></button><div class="Dropdown-menu"><span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span><div class="Dropdown-items">
-@if(Auth::user()->admin)
-<a class="Dropdown-item" href="{{ route('forum.topic.closed', ['id' => $topic->id]) }}">Закрыть тему</a>
-<a class="Dropdown-item" href="{{ route('forum.topic.sticky', ['id' => $topic->id]) }}">Закрепить тему</a>
-<a class="Dropdown-item" href="{{ route('forum.topic.delete', ['id' => $topic->id, 'fid' => $topic->category->id]) }}">Удалить</a>
-<div class="Dropdown-divider"></div>
-@endif
-@if(Auth::user()->name == $topic->user->name)
+@if(Auth::user()->name == $thread->creator->name)
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="edit.topicpost">@lang('forum.edit_topicpost')</span>
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="delete.topicpost">@lang('forum.delete_topicpost')</span>
 @else
@@ -137,64 +103,39 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
                 <button class="TopicPost-button TopicPost-button--viewPost is-hidden" data-topic-post-button="true" data-topic-viewpost-button="true" data-trigger="view.post.topicpost">
                     <span class="Button-content">@lang('forum.view_post_topicpost')</span>
                 </button>
-<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $topic->content !!}</b></div>
+<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $thread->body !!}</b></div>
 @guest
-@else
-<!--footer class="TopicPost-actions" data-topic-post-body-content="true">
-<button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button>						<button class="TopicPost-button TopicPost-button--dislike only-icon" data-topic-post-button="true" data-toggle="tooltip" data-tooltip-content="Не нравитсяНе нравится" data-trigger="vote.down.topicpost" type="button" data-original-title="" title=""><span class="Button-content"><i class="Icon"></i></span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button">							<span class="Button-content">
-<svg xmlns="http://www.w3.org/2000/svg">
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/>
-</svg>
-Цитирование</span></a>					</footer--> @endguest
+@else<footer class="TopicPost-actions" data-topic-post-body-content="true"><button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button"><span class="Button-content"><svg xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/></svg>Цитирование</span></a></footer>@endguest
             </div>
         </div>
     </div>
-    @foreach ($replies as $reply)
-<div class="TopicPost @if($reply->user->role > 1) TopicPost--blizzard @endif @if($reply->user->role == 1) TopicPost--mvp @endif" id="post-{{ $reply->id }}" data-topic-post="{'id':'{{ $reply->id }}','valueVoted':0,'rank':{'voteUp':0,'voteDown':0},'author':{'id':'{{ $reply->user->id }}','name':'{{ $reply->user->name }}'}}" data-topic="{'sticky':'false','featured':'false','locked':'false','frozen':'false','hidden':'false','pollId':'0'}">
-<span id="1"></span>
+    @foreach ($topics as $reply)
+
+<div class="TopicPost @if($reply->creator->role == 2) TopicPost--blizzard @endif @if($reply->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $reply->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $reply->id }}&quot;,&quot;valueVoted&quot;:{{ $reply->up }},&quot;rank&quot;:{&quot;voteUp&quot;:{{ $reply->up }},&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $reply->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $reply->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
+<span id="{{ $reply->id }}"></span>
 <div class="TopicPost-content">
-<div class="TopicPost-authorIcon @if($reply->user->role > 1) TopicPost-authorIcon--blizzard @endif">
+<div class="TopicPost-authorIcon @if($reply->creator->role == 2) TopicPost-authorIcon--blizzard @endif">
 <svg xmlns="http://www.w3.org/2000/svg">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-blizzard"/>
 </svg>
 </div>
 <aside class="TopicPost-author">
 <div class="Author-block">
-<div class="Author @if($reply->user->role > 1) Author--blizzard @endif @if($reply->user->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$reply->user->avatar) }}" alt="" /></a>
+<div class="Author @if($reply->creator->role == 2) Author--blizzard @endif @if($reply->creator->role == 1) Author--mvp @endif" id="" data-topic-post-body-content="true"><a href="{{ route('profiles', [$reply->creator->name]) }}" class="Author-avatar hasNoProfile"><img src="{{ asset('/uploads/avatar/'.$reply->creator->avatar) }}" alt="" /></a>
 <div class="Author-details">
-    @if($reply->user->role > 1)
-    <span class="Author-name">{{ $reply->characters->name }}</span>
+    @if($reply->creator->role == 2)
+    <span class="Author-name">{{ $reply->creator->name }}</span>
     @else
-    <a class="Author-name--profileLink" href="{{ route('characters', [$reply->characters->name]) }}">{{ $reply->characters->name }}</a>
+    <a class="Author-name--profileLink" href="{{ route('profiles', [$reply->creator->name]) }}">{{ $reply->creator->name }}</a>
     @endif
-    @if($reply->user->role == 6)
-    <span class="Author-job">Curator</span>
-    @elseif($reply->user->role == 5)
-    <span class="Author-job">Developer</span>
-    @elseif($reply->user->role == 4)
-    <span class="Author-job">Game Master</span>
-    @elseif($reply->user->role == 3)
-    <span class="Author-job">Moderator</span>
-    @elseif($reply->user->role == 2)
+    @if($reply->creator->role == 2)
     <span class="Author-job">Customer Service</span>
-    @elseif($reply->user->role == 1)
+    @elseif($reply->creator->role == 1)
     <span class="Author-job">MVP</span>
     @endif
-    @if($reply->user->role <= 1)
-    <!--span class="Author-guild">
-    <a class="Author-guild--link" href="{{ route('characters', [$reply->characters->name]) }}" data-toggle="tooltip" data-tooltip-content="Гильдия">&lt;Лутоморье&gt;</a>
-    </span-->
-    <span class="Author-class @lang('forum.class_key_'.$reply->characters->class)">
-    {{ $reply->characters->level }} @lang('forum.race_'.$reply->characters->race) @lang('forum.class_'.$reply->characters->class)
-    </span>
-    <!--span class="Author-achievements">
-    <a href="{{ route('characters', [$reply->characters->name]) }}" class="Author-achievements--link" data-toggle="tooltip" data-tooltip-content="Достижения">
-    <i class="Icon"></i>9800</a>
-    </span-->
-    @endif
 <span class="Author-posts">
-<a class="Author-posts" href="/forum/search?a={{ $reply->characters->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
-@lang('forum.count_messages', ['count' => $reply->user->posts_count])</a>
+<a class="Author-posts" href="/forum/search?a={{ $reply->creator->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
+@lang('forum.count_messages', ['count' => $reply->creator->posts_count])</a>
 </span></div></div>
 </div>
 </aside>
@@ -202,21 +143,18 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
             <div class="TopicPost-body" data-topic-post-body="true">
                 <div class="TopicPost-details">
                     <div class="Timestamp-details">
-                    <a class="TopicPost-timestamp" href="#post-1" data-toggle="tooltip" data-tooltip-content="{{ $reply->created_at->diffForHumans() }}" data-original-title="" title="">{{ $reply->created_at->diffForHumans() }}</a>
-                     <!--a class="TopicPost-timestamp" href="#post-1" data-toggle="tooltip" data-tooltip-content="Гринфайр 11/03/2017 15:16">
+                    <a class="TopicPost-timestamp" data-toggle="tooltip" data-tooltip-content="{{ $reply->created_at->diffForHumans() }}" data-original-title="" title="">{{ $reply->created_at->diffForHumans() }}</a>
+                     <!--a class="TopicPost-timestamp" href="#post-1" data-toggle="tooltip" data-tooltip-content="Ник 11/03/2017 15:16">
                             &#160;(Отредактировано)
-</a>
-                        <span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true"
-data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нравится: 0.">1</span>
+</a-->
+                        @if($reply->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">{{ $reply->up }}</span>@endif
                         <span class="TopicPost-rank TopicPost-rank--none" data-topic-post-rank="true"></span>
-                        <span class="TopicPost-rank TopicPost-rank--down" data-topic-post-rank="true"
-data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нравится: 0.">1</span-->
                 </div>
 @guest
 @else
 <aside class="TopicPost-control">
 <div class="TopicPost-menu Dropdown"><button class="Button-dropdown Button--secondary Button--icon" data-trigger="toggle.dropdown.menu" data-toggle="tooltip" data-tooltip-content="@lang('forum.dropdown')" type="button" data-original-title="" title=""><span class="Button-content"><i class="Icon Icon--16 Icon--blue Icon--button Icon--caretdown"></i></span></button><div class="Dropdown-menu"><span class="Dropdown-arrow Dropdown-arrow--up" data-attachment="top right" data-target-attachment="bottom center"></span><div class="Dropdown-items">
-@if(Auth::user()->name == $reply->user->name)
+@if(Auth::user()->name == $reply->creator->name)
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="edit.topicpost">@lang('forum.edit_topicpost')</span>
 <span class="Dropdown-item" data-topic-post-button="true" data-trigger="delete.topicpost">@lang('forum.delete_topicpost')</span>
 @else
@@ -232,21 +170,16 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
                 <button class="TopicPost-button TopicPost-button--viewPost is-hidden" data-topic-post-button="true" data-topic-viewpost-button="true" data-trigger="view.post.topicpost">
                     <span class="Button-content">@lang('forum.view_post_topicpost')</span>
                 </button>
-<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $reply->content !!}</b></div>
+<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $reply->body !!}</b></div>
 @guest
-@else<!--footer class="TopicPost-actions" data-topic-post-body-content="true">
-<button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button>						<button class="TopicPost-button TopicPost-button--dislike only-icon" data-topic-post-button="true" data-toggle="tooltip" data-tooltip-content="Не нравитсяНе нравится" data-trigger="vote.down.topicpost" type="button" data-original-title="" title=""><span class="Button-content"><i class="Icon"></i></span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button">							<span class="Button-content">
-<svg xmlns="http://www.w3.org/2000/svg">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/>
-</svg>
-Цитирование</span></a>					</footer-->   @endguest
-            </div>
-        </div>
-    </div>
-    @endforeach
+@else<footer class="TopicPost-actions" data-topic-post-body-content="true"><button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button"><span class="Button-content"><svg xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/></svg>Цитирование</span></a></footer>@endguest
 </div>
+</div>
+</div>
+@endforeach
+</div>
+    {{ $topics->links('forum.categories.paginatepost') }}
 
-{{ $replies->links('forum.categories.paginatepost') }}
 
     </section>
     @guest
@@ -258,14 +191,18 @@ data-toggle="tooltip" data-tooltip-content="Нравится: 0. Не нрави
         </div>
         </section>
     @else
-        @if(Auth::user()->charactersActive)
-            @include('forum.new_reply', ['active' => \App\Characters::activeUserCharacters(Auth::user()->charactersActive)])
+        @if(Auth::user()->confirmed)
+            @if($thread->locked)
+                @include('forum.new_reply_topic_closed')
+            @else
+                @include('forum.new_reply')
+            @endif
         @else
-            @include('forum.new_reply_no_characters')
+            @include('forum.new_reply_no_confirmed')
         @endif
     @endguest
   <div class="Topic-container--bottomNav">
-    <a class="Topic-button--parentForum" href="{{ route('forum', [$topic->category->id])}}" type="button">
+    <a class="Topic-button--parentForum" href="{{ route('forum', [$thread->channel->id])}}" type="button">
       <span class="Button-content"><i class="Icon"></i>@lang('forum.parentForum')</span>
     </a>
   </div>

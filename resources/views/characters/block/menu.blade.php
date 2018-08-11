@@ -35,19 +35,19 @@
                     <a class="Link SelectMenu-link" href="{{ route('characters', [$char->name ]) }}">Персонаж</a>
                 </div>
                 <div class="SelectMenu-item">
-                    <a class="Link SelectMenu-link" href="/achievements">Достижения</a>
+                    <a class="Link SelectMenu-link" href="{{ route('achievements', [$char->name ]) }}">Достижения</a>
                 </div>
                 <div class="SelectMenu-item">
-                    <a class="Link SelectMenu-link" href="/collections">Коллекции</a>
+                    <a class="Link SelectMenu-link" href="{{ route('collections', [$char->name ]) }}">Коллекции</a>
                 </div>
                 <div class="SelectMenu-item">
-                    <a class="Link SelectMenu-link" href="/pve">Рейдовый прогресс</a>
+                    <a class="Link SelectMenu-link" href="{{ route('characters-pve', [$char->name ]) }}">Рейдовый прогресс</a>
                 </div>
                 <div class="SelectMenu-item">
                     <a class="Link SelectMenu-link" href="{{ route('characters-pvp', [$char->name ]) }}">PvP</a>
                 </div>
                 <div class="SelectMenu-item">
-                    <a class="Link SelectMenu-link" href="/reputation">Репутация</a>
+                    <a class="Link SelectMenu-link" href="/{{ route('reputation', [$char->name ]) }}">Репутация</a>
                 </div>
                 <div class="SelectMenu-exception">Результатов не найдено.</div>
             </div>

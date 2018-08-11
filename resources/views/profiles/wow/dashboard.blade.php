@@ -1,19 +1,19 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard.0eBg2.css" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard.3qBrx.css" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/wow/dashboard-ie.1muX5.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/dashboard.0eBg2.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/wow/dashboard.3qBrx.css') }}" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/wow/dashboard-ie.1muX5.css') }}" />
 <![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/dashboard-ie6.2v0KO.css" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/dashboard-ie6.2v0KO.css') }}" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/compiled/wow/full-page-upsell.0VWHy.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/compiled/wow/full-page-upsell.0VWHy.css') }}" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/dashboard.1OOFS.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/wow/dashboard.3697j.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/inputs.2gjKG.js"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/management/dashboard.1OOFS.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/management/wow/dashboard.3697j.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/inputs.2gjKG.js') }}"></script>
 @endsection
 
 @section('content')
@@ -25,12 +25,12 @@
 <div class="header">
 <h2 class="subcategory">Управление игрой</h2>
 <h3 class="headline">World of Warcraft®: Legion™</h3>
-<a href="{{ route('dashboard') }}?region=EU&amp;accountName=WoW1"><img src="//bneteu-a.akamaihd.net/account/static/local-common/images/game-icons/wowx6.1S2j7.png" title="" width="48" height="48" /></a>
+<a href="{{ route('dashboard') }}?region=EU&amp;accountName=WoW1"><img src="{{ asset_media('/account/static/local-common/images/game-icons/wowx6.1S2j7.png') }}" title="" width="48" height="48" /></a>
 </div>
 <div class="account-summary">
 <div class="account-management">
 <div class="section box-art" id="box-art">
-<img src="//bneteu-a.akamaihd.net/account/static/images/products/box-art/games/world-of-warcraft-legion/e88a0714-3c3f-11e5-a151-feff819cdc9f/default/3d.2mYed.png" alt="World of Warcraft" title="" width="242" height="288" id="box-img" />
+<img src="{{ asset_media('/account/static/images/products/box-art/games/world-of-warcraft/a9d740a4-7c18-4331-af1e-617492905888/default/3d.2mYed.png') }}" alt="World of Warcraft" title="" width="242" height="288" id="box-img" />
 <span class="upgrade-available" data-tooltip="Можно конвертировать" data-tooltip-options='{"location": "mouse"}'></span>
 </div>
 <div class="section account-details">

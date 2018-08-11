@@ -1,12 +1,12 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/add-game.1y5GJ.css" />
-<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/add-game-ie7.3qZni.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/add-game.1y5GJ.css') }}" />
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/add-game-ie7.3qZni.css') }}" /><![endif]-->
 @endsection
 
 @section('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/management/add-game.4G4gU.js"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/management/add-game.4G4gU.js') }}"></script>
 @endsection
 
 @section('content')
@@ -24,7 +24,18 @@
 				<a class="alert-close" href="#" onclick="$(this).parent().fadeOut(250, function() { $(this).css({opacity:0}).animate({height: 0}, 100, function() { $(this).remove(); }); }); return false;">Закрыть</a>
 	<span class="clear"><!-- --></span>
 		</div> @endif
+         @if (session('success'))
+				    <div class="alert success border-4 glow-shadow closeable">
+			<div class="alert-inner">
+				<div class="alert-message">
+						<p class="title"><strong>Код успешно использован</strong></p>
 
+						<p class="success.addGame.gameKey.invalid">{{ session('success') }}</p>
+				</div>
+			</div>
+				<a class="alert-close" href="#" onclick="$(this).parent().fadeOut(250, function() { $(this).css({opacity:0}).animate({height: 0}, 100, function() { $(this).remove(); }); }); return false;">Закрыть</a>
+	<span class="clear"><!-- --></span>
+		</div> @endif
 	<div class="add-game">
 		<div id="page-header">
 			<h2 class="subcategory">Управление игрой</h2>

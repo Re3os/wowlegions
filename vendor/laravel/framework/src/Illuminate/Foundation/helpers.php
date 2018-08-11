@@ -18,6 +18,205 @@ use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use Illuminate\Contracts\Validation\Factory as ValidationFactory;
 use Illuminate\Contracts\Broadcasting\Factory as BroadcastFactory;
 
+function asset_media($path) {
+    return sprintf("%s", config('app.url_asset').$path);
+}
+
+function printCssHome() {
+        $route = Route::currentRouteName();
+        //dd($route);
+        switch($route) {
+
+            case 'forum.topic':
+            $css_data_page = array(
+                array(
+                    'path' => '/forums/static/css/navbar.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/main-9296f9fec4.css'
+                )
+            );
+            break;
+
+            case 'forum':
+            $css_data_page = array(
+                array(
+                    'path' => '/forums/static/css/navbar.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/main-9296f9fec4.css'
+                )
+            );
+            break;
+
+            case 'forums':
+            $css_data_page = array(
+                array(
+                    'path' => '/forums/static/css/navbar.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/main-9296f9fec4.css'
+                )
+            );
+            break;
+
+            case 'news.show':
+            $css_data_page = array(
+                array(
+                    'path' => '/static/styles/navbar.css'
+                ),
+                array(
+                    'path' => '/static/styles/photoswipe.css'
+                ),
+                array(
+                    'path' => '/static/styles/izimodal.css'
+                ),
+                array(
+                    'path' => '/static/styles/wow.css'
+                ),
+                array(
+                    'path' => '/static/styles/blog.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/comments.css'
+                )
+            );
+            break;
+
+            default:
+            $css_data_page = array(
+                array(
+                    'path' => '/static/styles/navbar.css'
+                ),
+                array(
+                    'path' => '/static/styles/photoswipe.css'
+                ),
+                array(
+                    'path' => '/static/styles/izimodal.css'
+                ),
+                array(
+                    'path' => '/static/styles/wow.css'
+                ),
+            );
+            break;
+        }
+
+        $css_str = '';
+        foreach($css_data_page as &$js) {
+            $css_str .= printCSSPage(config('app.url_asset') . $js['path']);
+        }
+        return $css_str;
+}
+
+if(! function_exists('printCSSPage')) {
+    function printCSSPage($path) {
+        return sprintf("<link rel=\"stylesheet\" href=\"%s\">\n", $path);
+    }
+}
+
+function printJsHome() {
+        $route = Route::currentRouteName();
+        switch($route) {
+
+            case 'forum.topic':
+            $js_data_page = array(
+                array(
+                    'path' => '/forums/static/js/vendor/tether/dist/js/tether.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/jquery.waypoints.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/shortcuts/sticky.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/instanttouch.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/clipboard.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/d3/tooltips.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/navbar.js'
+                )
+            );
+            break;
+
+            case 'forum':
+            $js_data_page = array(
+                array(
+                    'path' => '/forums/static/js/vendor/tether/dist/js/tether.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/jquery.waypoints.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/shortcuts/sticky.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/instanttouch.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/clipboard.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/d3/tooltips.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/navbar.js'
+                )
+            );
+            break;
+
+            case 'forums':
+            $js_data_page = array(
+                array(
+                    'path' => '/forums/static/js/vendor/tether/dist/js/tether.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/jquery.waypoints.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/waypoints/lib/shortcuts/sticky.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/instanttouch.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/clipboard.min.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/vendor/d3/tooltips.js'
+                ),
+                array(
+                    'path' => '/forums/static/js/navbar.js'
+                )
+            );
+            break;
+
+            default:
+            $js_data_page = array(
+                array(
+                    'path' => '/static/scripts/core.js'
+                ),
+            );
+            break;
+        }
+
+        $js_str = '';
+        foreach($js_data_page as &$js) {
+            $js_str .= printJSPage(config('app.url_asset') . $js['path']);
+        }
+        return $js_str;
+}
+
+if(! function_exists('printJSPage')) {
+    function printJSPage($path) {
+        return sprintf("<script src=\"%s\"></script>\n", $path);
+    }
+}
 if (! function_exists('abort')) {
     /**
      * Throw an HttpException with the given data.
@@ -121,6 +320,20 @@ if (! function_exists('app_path')) {
     function app_path($path = '')
     {
         return app('path').($path ? DIRECTORY_SEPARATOR.$path : $path);
+    }
+}
+
+if (! function_exists('asset_wow')) {
+    /**
+     * Generate an asset path for the application.
+     *
+     * @param  string  $path
+     * @param  bool    $secure
+     * @return string
+     */
+    function asset_wow($path, $secure = null)
+    {
+        return app('url')->asset($path, $secure);
     }
 }
 

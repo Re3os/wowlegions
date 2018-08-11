@@ -22,7 +22,7 @@ class Account extends Authenticatable {
         $accountBnet = \DB::connection('auth')->table('battlenet_accounts')->insert(['email' => $data['email'], 'sha_pass_hash' => $passwordHash, 'last_login' => date("Y-m-d H:i:s")]);
         $bnetInfo = \DB::connection('auth')->table('battlenet_accounts')->where('email', $data['email'])->first();
         $passwordHashAccount = sha1(strtoupper($bnetInfo->id) . '#1'.  ":" . strtoupper($data['password']));
-        $accountGame = \DB::connection('auth')->table('account')->insert(['username' => $bnetInfo->id.'#1', 'sha_pass_hash' => $passwordHashAccount, 'email' => $data['email'], 'reg_mail' => $data['email'], 'last_login' => date("Y-m-d H:i:s"), 'expansion' => '6', 'battlenet_account' => $bnetInfo->id, 'battlenet_index' => '1']);
+        $accountGame = \DB::connection('auth')->table('account')->insert(['username' => $bnetInfo->id.'#1', 'sha_pass_hash' => $passwordHashAccount, 'email' => $data['email'], 'reg_mail' => $data['email'], 'last_login' => date("Y-m-d H:i:s"), 'expansion' => '7', 'battlenet_account' => $bnetInfo->id, 'battlenet_index' => '1']);
     }
 
     public static function newPassword($user, $password) {
@@ -38,6 +38,10 @@ class Account extends Authenticatable {
         $accountBnet = \DB::connection('auth')->table('battlenet_accounts')->where('email', $user)->update(['email' => $email]);
         $accountGame = \DB::connection('auth')->table('account')->where('email', $user)->update(['email' => $email]);
         return true;
+    }
+
+    public static function userGameID($email) {
+        return \DB::connection('auth')->table('account')->where('email', '=', $email)->get();
     }
 
     public static function userGameAccount() {

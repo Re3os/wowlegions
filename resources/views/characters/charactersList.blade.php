@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="Pane Pane--underSiteNav Pane--cropMax" data-url="//bnetcmsus-a.akamaihd.net/cms/template_resource/hf/HFUOF413X1O21459870154507.jpg">
-    <div class="Pane-bg" style="background-color:#180906;background-image:url(&quot;//bnetcmsus-a.akamaihd.net/cms/template_resource/hf/HFUOF413X1O21459870154507.jpg&quot;);">
+<div class="Pane Pane--underSiteNav Pane--cropMax" data-url="{{ asset_media('/cms/template_resource/hf/HFUOF413X1O21459870154507.jpg') }}">
+    <div class="Pane-bg" style="background-color:#180906;background-image:url(&quot;{{ asset_media('/cms/template_resource/hf/HFUOF413X1O21459870154507.jpg') }}&quot;);">
         <div class="Pane-overlay"></div>
     </div>
 <div class="Pane-content">

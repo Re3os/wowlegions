@@ -4,11 +4,11 @@
         <meta http-equiv="imagetoolbar" content="false" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Авторизация учетной записи -  World of Warcraft</title>
-        <link rel="shortcut icon" href="{{ asset('images/meta/favicon.ico') }}" />
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/toolkit/freedomnet-web.min.css') }}" />
-        <link rel="stylesheet" type="text/css" media="all" href="{{ asset('css/login/global.min.css') }}" />
-        <script type="text/javascript" src="{{ asset('js/third-party/jquery-1.11.0.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/core.min.js') }}"></script>
+        <link rel="shortcut icon" href="{{ asset_media('images/meta/favicon.ico') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('css/toolkit/freedomnet-web.min.css') }}" />
+        <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('css/login/global.min.css') }}" />
+        <script type="text/javascript" src="{{ asset_media('js/third-party/jquery-1.11.0.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset_media('js/core.min.js') }}"></script>
         <meta name="viewport" content="width=device-width" />
 
     </head>
@@ -89,9 +89,9 @@
                 </div>
             </footer>
         </div>
-    <script type="text/javascript" src="{{ asset('js/embed-0.1.5.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/login/toolkit.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/login/global.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/login/login.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset_media('js/embed-0.1.5.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset_media('js/login/toolkit.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset_media('js/login/global.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset_media('js/login/login.min.js') }}"></script>
     </body>
 </html>

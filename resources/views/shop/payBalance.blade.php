@@ -18,7 +18,7 @@ document.createElement("section");
 document.createElement("summary");
 document.createElement("template");
 </script>
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/global/ie8.min-68218abd52.css}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/shop/static/css/global/ie8.min-68218abd52.css') }}}" />
 <![endif]-->
 <!--[if IE 6]> <script type="text/javascript">
 //<![CDATA[
@@ -26,31 +26,32 @@ try { document.execCommand('BackgroundImageCache', false, true) } catch(e) {}
 //]]>
 </script>
 <![endif]-->
-<title>Магазин Blizzard</title>
-<link rel="shortcut icon" href="//bneteu-a.akamaihd.net/shop/static/images/meta/favicon-dc50e9bcb8.ico" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/navbar-8ac94ec6b4.css?v=11.5.4" />
-<!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/toolkit/checkout-responsive.min-d0829c2dd2.css" /><!-- <![endif]-->
-<!--[if IE 8]><link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/toolkit/checkout-web-ie8.min.css?v=58-11.5.4" /><![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/global/global.min-c76b5bef17.css" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/shop/static/css/purchase/purchase.min-722a3810db.css" />
-<script src="//bneteu-a.akamaihd.net/shop/static/local-common/js/third-party/jquery-1.11.0.min-8fc25e27d4.js"></script>
-<script src="//bneteu-a.akamaihd.net/shop/static/local-common/js/core.min-e41a582124.js"></script>
+<title>Магазин {{ config('app.name', 'WoWLegions') }}</title>
+<link rel="shortcut icon" href="{{ asset_media('/shop/static/images/meta/favicon-dc50e9bcb8.ico') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/static/styles/navbar.css') }}" />
+<!--[if gt IE 8]><!--><link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/shop/static/css/toolkit/checkout-responsive.min-666f75ac04.css') }}" /><!-- <![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/shop/static/css/toolkit/checkout-web-ie8.min.css') }}" /><![endif]-->
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/shop/static/css/global/global.min-c76b5bef17.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/shop/static/css/purchase/purchase.min-2db9a42c2c.css') }}" />
+
+<script src="{{ asset_media('/shop/static/local-common/js/third-party/jquery-1.11.0.min-8fc25e27d4.js') }}"></script>
+<script src="{{ asset_media('/shop/static/local-common/js/core.min-e41a582124.js') }}"></script>
 <style>
 body {
-background: #002650 url(//bneteu-a.akamaihd.net/shop/static/images/backgrounds/v2/bg_bottom_mobile-c2cc1fa8b7.png) no-repeat bottom;
+background: #002650 url({{ asset_media('/shop/static/images/backgrounds/v2/bg_bottom_mobile-c2cc1fa8b7.png')}}) no-repeat bottom;
 background-size: contain;
 }
 @media screen and (min-width: 1280px) {
 body {
 background-color: #002650;
-background-image: url(//bneteu-a.akamaihd.net/shop/static/images/backgrounds/v2/bg_bottom_left-6c1522731b.png), url(//bneteu-a.akamaihd.net/shop/static/images/backgrounds/v2/bg_bottom_right-ed141418a7.png);
+background-image: url({{ asset_media('/shop/static/images/backgrounds/v2/bg_bottom_left-6c1522731b.png')}}), url({{ asset_media('/shop/static/images/backgrounds/v2/bg_bottom_right-ed141418a7.png') }});
 background-repeat: no-repeat, no-repeat;
 background-position: 0 100%, 100% 100%;
 background-size: auto;
 }
 }
 .background-wrapper {
-background: url(//bneteu-a.akamaihd.net/shop/static/images/backgrounds/v2/bg_top-c571367918.png) no-repeat top;
+background: url({{ asset_media('/shop/static/images/backgrounds/v2/bg_top-c571367918.png') }}) no-repeat top;
 min-height: 400px;
 }
 .body-content {
@@ -98,7 +99,6 @@ Flash.expressInstall = 'http://media.blizzard.com/global-video-player/expressIns
 //]]>
 </script>
 <meta name="viewport" content="width=device-width" />
-<script src="https://cdn.optimizely.com/js/10092642028.js"></script>
 </head>
 <body class="payment purchase-template ua-web js-enabled">
 <div class="background-wrapper">
@@ -106,9 +106,6 @@ Flash.expressInstall = 'http://media.blizzard.com/global-video-player/expressIns
 //<![CDATA[
 var dataLayer = [{
 "userAgent": "web" , "currencyCode": "RUB" , "region": "eu" , "productName": "Grinning Reaver" , "userId": "135198324" , "authenticated": "1" , "analyticsViewName": "\/shop/ru/checkout/select-payment/15163" }];
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!="dataLayer"?"&amp;l="+l:"";j.async=true;j.src=
-"//www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})
-(window,document,"script","dataLayer","GTM-NGRWG2");
 //]]>
 </script>
 <!--[if lt IE 11]>
@@ -257,7 +254,7 @@ var Msg = {};
 Msg.userCurrency = "RUB";
 //]]>
 </script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/third-party/hammer-mod-min-aec019a8e3.js"></script>
+<script src="{{ asset_media('/shop/static/js/third-party/hammer-mod-min-aec019a8e3.js') }}"></script>
 <script>
 //<![CDATA[
 var xsToken = '67e4bf31-29d9-4d14-b631-a11df3679aef';
@@ -321,17 +318,17 @@ other: 'Другое'
 };
 //]]>
 </script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/toolkit/toolkit.min-3a37a2702f.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/global/global.min-973fe822ae.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/purchase/purchase.min-71fee2c8c2.js"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/wallet-sdk/wallet-sdk.min-5cb2be8751.js?v=11.5.4"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/payment/payment.min-4dbc84fb79.js?v=11.5.4"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/third-party/kr/pay40_sec-ff0c17c2c0.js?v=11.5.4"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/shop/static/js/navbar-1050a7d3cb.js"></script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/legal/legal.min-1ec7ee2d0b.js"></script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/third-party/q.min-996165a84f.js"></script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/third-party/hashtable-224698bf70.js"></script>
-<script src="//bneteu-a.akamaihd.net/shop/static/js/third-party/jquery-numberformatter.min-03e030e913.js"></script>
+<script src="{{ asset_media('/shop/static/js/toolkit/toolkit.min-26864331d3.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/global/global.min-f61c50a4b6.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/purchase/purchase.min-71fee2c8c2.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/wallet-sdk/wallet-sdk.min-c0dff07ead.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/payment/payment.min-28077a5c29.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/third-party/kr/pay40_sec-ff0c17c2c0.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/shop/static/js/navbar-1050a7d3cb.js') }}"></script>
+<script src="{{ asset_media('/shop/static/js/legal/legal.min-1ec7ee2d0b.js') }}"></script>
+<script src="{{ asset_media('/shop/static/js/third-party/q.min-996165a84f.js') }}"></script>
+<script src="{{ asset_media('/shop/static/js/third-party/hashtable-224698bf70.js') }}"></script>
+<script src="{{ asset_media('/shop/static/js/third-party/jquery-numberformatter.min-03e030e913.js') }}"></script>
 <div id="ajax-indicator" class="ajax-indicator"></div>
 </div>
 </body>

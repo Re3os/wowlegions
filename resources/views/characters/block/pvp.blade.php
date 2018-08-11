@@ -5,14 +5,14 @@
             <div class="contain-center" style="max-width:100px;" media-medium="hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/03/03FRAF878XNR1487976145561.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/03/03FRAF878XNR1487976145561.png') }});"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>
             <div class="contain-center hide" style="max-width:128px;" media-medium="!hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/03/03FRAF878XNR1487976145561.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/03/03FRAF878XNR1487976145561.png') }});"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>
@@ -28,14 +28,14 @@
             <div class="contain-center" style="max-width:100px;" media-medium="hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/RLPMIYZ1KPMB1485566658000.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/RLPMIYZ1KPMB1485566658000.png') }});"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>
             <div class="contain-center hide" style="max-width:128px;" media-medium="!hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/{{ $char->side }}.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/'.$char->side) }}.png);"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>
@@ -51,14 +51,14 @@
             <div class="contain-center" style="max-width:100px;" media-medium="hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/8T1RRX8QDSII1488401955399.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/8T1RRX8QDSII1488401955399.png') }});"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>
             <div class="contain-center hide" style="max-width:128px;" media-medium="!hide">
                 <div class="Art Art--above">
                     <div class="Art-size" style="padding-top:100%"></div>
-                    <div class="Art-image" style="background-image:url(/cms/template_resource/8T1RRX8QDSII1488401955399.png);"></div>
+                    <div class="Art-image" style="background-image:url({{ asset_media('/cms/template_resource/8T1RRX8QDSII1488401955399.png') }});"></div>
                     <div class="Art-overlay"></div>
                 </div>
             </div>

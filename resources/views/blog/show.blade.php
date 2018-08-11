@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-@section('css')
-<link rel="stylesheet" href="https://worldofwarcraft.akamaized.net/static/styles/blog.css?v=4.23.0">
-<link type="text/css" rel="stylesheet" href="//eu.battle.net/forums/static/css/comments.css"/>
-@endsection
-
 @section('js')
 <script src="{{ asset('static/scripts/blog.js') }}"></script>
 <script type="text/javascript" src="//eu.battle.net/forums/static/js/vendor/jquery/dist/jquery.min.js"></script>
@@ -15,11 +10,13 @@
 });
 </script>
 @endsection
+
 @section('blogjs')
 <script>var dataLayer = dataLayer || [];
 dataLayer.push({"blog":{"author":"TheRock","id":{{ $blog->id }},"publishDate":"{{ $blog->created_at->format('Y-M-d') }}","title":"{{ $blog->title }}"}});
 </script>
 @endsection
+
 @section('content')
 <div class="Pane Pane--underSiteNav Pane--fadeBottom bordered" data-url="{{ asset('uploads/images/'.$blog->images) }}">
     <div class="Pane-bg" style="background-color:#000000;background-image:url(&quot;{{ asset('uploads/images/'.$blog->images) }}&quot;);">

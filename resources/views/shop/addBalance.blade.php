@@ -22,7 +22,7 @@
 				<storefront-product-selection _ngcontent-c2="" _nghost-c4=""><div _ngcontent-c4="" class="product-selection">
 	<div _ngcontent-c4="" class="header">
 		<storefront-product-header _ngcontent-c4="" _nghost-c12=""><div _ngcontent-c12="" class="product-header">
-	<img _ngcontent-c12="" class="franchise-icon" src="/static/2.4.0/images/family-icons/battle-net.svg">
+	<img _ngcontent-c12="" class="franchise-icon" src="{{ asset_media('/static/2.4.0/images/family-icons/battle-net.svg') }}">
 	<div _ngcontent-c12="" class="name-category-container">
 		<h1 _ngcontent-c12="" class="h4 name"><strong _ngcontent-c12="" class="font-weight-light">Кошелек {{ config('app.name', 'WoWLegions') }}<!----></strong></h1>
 		<!----><h2 _ngcontent-c12="" class="h6 font-weight-normal category ng-star-inserted">Услуги {{ config('app.name', 'WoWLegions') }}: Игровые услуги</h2>

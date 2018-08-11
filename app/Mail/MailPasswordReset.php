@@ -20,6 +20,6 @@ class MailPasswordReset extends Mailable
 
     public function build()
     {
-        return $this->from('robot@wowlegions.ru')->view('mail.passwordReset')->with(['token' => $this->token])->subject('Сброс пароля');
+        return $this->from(config('app.email_robot'))->view('mail.passwordReset')->with(['token' => $this->token])->subject('Сброс пароля');
     }
 }

@@ -25,12 +25,12 @@
     <div class="CharacterProfile-render">
         <div class="Art CharacterProfile-bg" style="margin-top:-48.93617021276596%;margin-right:-77.6595744680851%;margin-bottom:-21.27659574468085%;margin-left:-77.6595744680851%;width:255.31914893617022%;">
             <div class="Art-size" style="padding-top:77.5%"></div>
-            <div class="Art-image" style="background-image:url({{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
+            <div class="Art-image" style="background-image:url({{ asset_media('/cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
             <div class="Art-overlay"></div>
         </div>
-        <div class="Art CharacterProfile-image" style="margin-right:-35.1063829787234%;margin-left:-35.1063829787234%;width:170.2127659574468%;" data-fallback="{{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }}">
+        <div class="Art CharacterProfile-image" style="margin-right:-35.1063829787234%;margin-left:-35.1063829787234%;width:170.2127659574468%;" data-fallback="{{ asset_media('/cms/shadow/demonhunter-nightelf-male.jpg') }}">
             <div class="Art-size" style="padding-top:75%"></div>
-            <div class="Art-image" style="background-image:url({{ asset('cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
+            <div class="Art-image" style="background-image:url({{ asset_media('/cms/shadow/demonhunter-nightelf-male.jpg') }});"></div>
             <div class="Art-overlay"></div>
         </div>
     </div>

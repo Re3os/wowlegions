@@ -42,7 +42,7 @@ return [
     'Navbar-login' => 'Авторизация',
     'Navbar-register' => 'Играть бесплатно',
 
-    'Navbar-choose-another-character' => 'Выбрать другого персонажа',
+    'Navbar-choose-another-character' => 'Список ваших персонажей',
     'Navbar-characters-list' => 'Все ваши персонажи',
 
 ];

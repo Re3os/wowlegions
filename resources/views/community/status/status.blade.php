@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="Pane Pane--underSiteNav Pane--cropEdge" data-url="/cms/template_resource/90/90GADAMBLMYV1466177710309.jpg" queryselectoralways="33">
-    <div class="Pane-bg" style="background-color:#090c1d;background-image:url(&quot;/cms/template_resource/90/90GADAMBLMYV1466177710309.jpg&quot;);">
+<div class="Pane Pane--underSiteNav Pane--cropEdge" data-url="{{ asset_media('/cms/template_resource/90/90GADAMBLMYV1466177710309.jpg') }}" queryselectoralways="33">
+    <div class="Pane-bg" style="background-color:#090c1d;background-image:url(&quot;{{ asset_media('/cms/template_resource/90/90GADAMBLMYV1466177710309.jpg') }}&quot;);">
         <div class="Pane-overlay"></div>
     </div>
         <div class="Pane-content">

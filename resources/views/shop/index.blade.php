@@ -135,7 +135,7 @@
 		<div _ngcontent-c21="" class="content ng-star-inserted">
 			<div _ngcontent-c21="" class="family-img-container">
 				<!----><div _ngcontent-c21="" class="family-icon-container ng-star-inserted">
-					<img _ngcontent-c21="" src="/static/2.4.0/images/family-icons/world-of-warcraft.svg">
+					<img _ngcontent-c21="" src="{{ asset_media('/static/2.4.0/images/family-icons/world-of-warcraft.svg') }}">
 				</div>
 			</div>
 

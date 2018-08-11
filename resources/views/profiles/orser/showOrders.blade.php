@@ -1,16 +1,16 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/order-history.4VXui.css" />
-<link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/services.0qEDE.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/order-history.4HmUU.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/services.263qz.css') }}" />
 <!--[if IE 6]>
-    <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/services-ie6.1lRdS.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/services-ie6.16uAc.css') }}" />
 <![endif]-->
 @endsection
 
 @section('js')
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/utility/dropdown.28tgo.js?v=58-29"></script>
-<script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/local-common/js/utility/dataset.4NBTd.js?v=58-29"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/utility/dropdown.28tgo.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/utility/dataset.4NBTd.js') }}"></script>
 @endsection
 
 @section('content')

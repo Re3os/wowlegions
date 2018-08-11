@@ -3,45 +3,44 @@
 <head xmlns:og="http://ogp.me/ns#">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <title>@lang('account.title')</title>
-<link rel="shortcut icon" href="//bnetus-a.akamaihd.net/account/static/images/meta/favicon.0gxnz.ico" />
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/polyfills.min.1SYUs.js"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/core.min.3qhIh.js"></script>
-<link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/static/css/navbar.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="https://us.battle.net/account/static/css/nav-client/nav-client-desktop.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/local-common/css/common.1XvaP.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet.0a1kC.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="print" href="//bnetus-a.akamaihd.net/account/static/css/bnet-print.3pMth.css?v=58-29" />
-<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/legal/ratings.2wHIl.css?v=58-29" />
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie.0LazC.css?v=58-29" />
+<link rel="shortcut icon" href="{{ asset_media('/account/static/images/meta/favicon.0gxnz.ico') }}" />
+<script type="text/javascript" src="{{ asset_media('/account/static/js/polyfills.min.1SYUs.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/core.min.3qhIh.js') }}"></script>
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/navbar.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/local-common/css/common.1XvaP.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/bnet.0a1kC.css') }}" />
+<link rel="stylesheet" type="text/css" media="print" href="{{ asset_media('/account/static/css/bnet-print.3pMth.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/legal/ratings.2wHIl.css') }}" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/bnet-ie.0LazC.css') }}" />
 <![endif]-->
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie6.2HMHf.css?v=58-29" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/bnet-ie6.2HMHf.css') }}" />
 <![endif]-->
-<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/bnet-ie7.2DMRT.css?v=58-29" />
+<!--[if IE 7]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/bnet-ie7.2DMRT.css') }}" />
 <![endif]-->
-<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs.039RX.css" />
-<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs-ie6.0HfAf.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/inputs.039RX.css') }}" />
+<!--[if IE 6]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/inputs-ie6.0HfAf.css') }}" />
 <![endif]-->
-<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/inputs-ie.4VZxb.css" />
+<!--[if IE]> <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/inputs-ie.4VZxb.css') }}" />
 <![endif]-->
 @yield('css')
-<link rel="stylesheet" type="text/css" media="all" href="//bnetus-a.akamaihd.net/account/static/css/locale/ru-ru.19tBQ.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/locale/ru-ru.19tBQ.css') }}" />
 <script type="text/javascript">
 //<![CDATA[
 var _gaq = _gaq || [];
 //]]>
 </script>
-<og:image content="https:////bnetus-a.akamaihd.net/account/static/images/logos/bnet-logo.2IBt1.png" />
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/jquery-1.7.1.min.0vCiz.js?v=58-29"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common/bootstrap.3Pnh6.js?v=58-29"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/class-inheritance.4V7WX.js?v=58-29"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/swfobject-2.2.1.min.0INo9.js?v=58-29"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common.16hIS.js?v=58-29"></script>
+<og:image content="{{ asset_media('/account/static/images/logos/bnet-logo.2IBt1.png') }}" />
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/jquery-1.7.1.min.0vCiz.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/common/bootstrap.3Pnh6.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/class-inheritance.4V7WX.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/swfobject-2.2.1.min.0INo9.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/common.16hIS.js') }}"></script>
 <script type="text/javascript">
 //<![CDATA[
 var Core = Core || {},
 Login = Login || {};
-Core.staticUrl = '/account/static';
-Core.sharedStaticUrl = '/account/static/local-common';
+Core.staticUrl = '{{ asset_media("/account/static") }};
+Core.sharedStaticUrl = '{{ asset_media("/account/static/local-common") }};
 Core.baseUrl = '/account';
 Core.projectUrl = '/account';
 Core.cdnUrl = 'http://media.blizzard.com';
@@ -65,7 +64,7 @@ var _gaq = _gaq || [];
 //]]>
 </script>
 <!--[if lt IE 9]>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/third-party/jquery.placeholder-enhanced.min.2BSUS.js"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/third-party/jquery.placeholder-enhanced.min.2BSUS.js') }}"></script>
 <![endif]-->
 </head>
 <body class="ru-ru web" data-analytics-view="/management/lobby">
@@ -79,8 +78,8 @@ data-service-endpoint="P"
 data-service-version="3.2.1"
 data-middleware-version="3.2.0"
 data-ui-version="3.2.0"
-data-notification-url="//bneteu-a.akamaihd.net/account/static/js/nav-notification.3fHks.json"
-data-support-url="https://eu.battle.net/support/update/json?callback="
+data-notification-url="/account/static/js/nav-notification.3fHks.json"
+data-support-url="/support/update/json?callback="
 >
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64" class="Navbar-embedded"><g id="Navbar-icon-new_window">
 <path d="M21.737,39.117c3.938-6.052,8.981-10.014,19.089-10.014v7.024L53.708,24.95 L40.826,13.77v6.72C26.135,20.489,21.737,32.97,21.737,39.117L21.737,39.117z"/>
@@ -158,11 +157,6 @@ data-support-url="https://eu.battle.net/support/update/json?callback="
 <g id="Navbar-icon-selector">
 <path d="M32.027,9.583L32.027,9.583c0.873,0,1.702,0.38,2.272,1.041l12.264,11.78 c1.082,1.255,0.942,3.149-0.313,4.231c-1.254,1.083-3.149,0.941-4.231-0.313l-9.993-9.146L22,26.375 c-1.081,1.255-2.976,1.396-4.231,0.312c-1.255-1.082-1.395-2.977-0.312-4.231l12.298-11.832 C30.325,9.963,31.154,9.583,32.027,9.583z"/>
 <path d="M31.992,54.166L31.992,54.166c-0.873,0-1.702-0.38-2.272-1.041l-12.264-11.78 c-1.082-1.255-0.942-3.149,0.313-4.231c1.254-1.083,3.149-0.941,4.231,0.313l9.993,9.146l10.026-9.198 c1.081-1.255,2.976-1.396,4.231-0.312c1.255,1.082,1.395,2.977,0.312,4.231L34.264,53.125 C33.694,53.786,32.865,54.166,31.992,54.166z"/>
-</g>
-<g id="Navbar-icon-esports">
-<path d="M19.635,32.049c-2.812,0-5.292-0.875-7.389-2.61C6.744,24.885,6.033,15.96,6.005,15.583 l-0.157-2.146h9.901v4h-5.434c0.496,2.515,1.703,6.628,4.49,8.928c1.653,1.363,3.629,1.893,6.044,1.611l0.46,3.974 C20.74,32.016,20.181,32.049,19.635,32.049z"/>
-<path d="M44.279,32.049c-0.546,0-1.104-0.033-1.675-0.099l0.46-3.974c2.417,0.28,4.399-0.25,6.054-1.619 c2.636-2.182,3.943-6.188,4.49-8.92h-5.443v-4h9.901l-0.157,2.146c-0.027,0.378-0.738,9.302-6.241,13.856 C49.57,31.174,47.091,32.049,44.279,32.049z"/>
-<path d="M23.437,54.334c-1.889,0-3.758-0.016-5.095-0.062c-0.852-0.03-1.592-0.597-1.843-1.412 c-0.25-0.815,0.044-1.7,0.733-2.203c8.173-5.964,8.631-8.358,8.64-8.778c0.001-0.039,0.001-0.069-0.018-0.104 c-11.374-4.94-10.558-28.909-10.517-29.938c0.042-1.073,0.925-1.921,1.999-1.921h29.33c1.074,0,1.956,0.848,1.999,1.921 c0.041,1.029,0.857,25.025-10.537,29.947c-0.049,0.063-0.049,0.1-0.049,0.126c-0.004,1.736,4.844,5.637,7.174,7.512 c0.579,0.465,1.126,0.906,1.616,1.313c0.639,0.53,0.883,1.4,0.615,2.185c-0.269,0.786-0.994,1.324-1.823,1.353 c-3.527,0.121-13.201,0.029-14.959,0.005C29.83,54.291,26.604,54.334,23.437,54.334z M30.698,50.278 c1.151,0.015,5.496,0.047,9.368,0.056c-3.539-3.015-5.995-5.694-5.989-8.434c0.002-0.928,0.302-2.27,1.715-3.396 c0.158-0.126,0.335-0.228,0.524-0.301c6.91-2.675,8.367-16.999,8.384-24.287H19.302c0.021,7.291,1.484,21.616,8.382,24.287 c0.189,0.073,0.366,0.175,0.524,0.301c1.117,0.89,1.691,2.086,1.662,3.46c-0.049,2.339-1.859,5.001-5.758,8.369 C27.024,50.328,29.863,50.29,30.698,50.278z"/>
 </g>
 </svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" class="Navbar-embedded"><g id="Navbar-icon-menu">
 <rect x="15" y="16" width="18" height="2"/>
@@ -375,10 +369,10 @@ Locale.dataPath = "data/i18n.frag.xml";
 var fullTimeDisplay = true;
 //]]>
 </script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/js/bam.3pD7s.js?v=58-29"></script>
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/common/menu.2LSka.js?v=58-29"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/bam.3pD7s.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/common/menu.2LSka.js') }}"></script>
 @yield('js')
-<script type="text/javascript" src="//bnetus-a.akamaihd.net/account/static/local-common/js/third-party/jquery-ui-1.10.2.custom.min.4DFLs.js?v=58-29"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/jquery-ui-1.10.2.custom.min.4DFLs.js') }}"></script>
 
 <script>
 //<![CDATA[
@@ -492,6 +486,6 @@ other: 'Другое'
 };
 //]]>
 </script>
-<script type="text/javascript" src="https://eu.battle.net/account/static/js/navbar.js?v=29"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/navbar.js') }}"></script>
 </body>
 </html>

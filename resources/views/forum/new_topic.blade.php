@@ -6,14 +6,14 @@
 <div class="TopicForm-content">
 <aside class="TopicForm-author" data-topic-form="{'userId': {{ Auth::user()->id }}  }">
 <div class="Author" id="" data-topic-post-body-content="true">
-<a href="{{ route('characters', [$active->name]) }}" class="Author-avatar ">
-<img src="{{ Auth::user()->avatar }}/images/avatars/wow/{{ $active->race }}-{{ $active->gender }}.jpg" alt="" /></a>
+<a href="{{ route('characters', [Auth::user()->name]) }}" class="Author-avatar ">
+<img src="{{asset('/uploads/avatar/'. Auth::user()->avatar) }}" alt="" /></a>
 <div class="Author-details">
 <span class="Author-name">
-<a class="Author-name--profileLink" href="{{ route('characters', [$active->name]) }}">{{ $active->name }}</a>
+<a class="Author-name--profileLink" href="{{ route('characters', [Auth::user()->name]) }}">{{ Auth::user()->name }}</a>
 </span>
 <span class="Author-posts">
-<a class="Author-posts" href="/search?a={{ $active->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
+<a class="Author-posts" href="/search?a={{ Auth::user()->name }}" data-toggle="tooltip" data-tooltip-content="@lang('forum.view_message_history')" data-original-title="" title="">
 @lang('forum.count_messages', ['count' => Auth::user()->posts_count])
 </a>
 </span>
@@ -23,7 +23,7 @@
 <form class="Form" action="{{ route('forum.topic.store', $category) }}" method="post" id="create-topic-form" data-post-form="true">
 <fieldset>
 {{ csrf_field() }}
-<input type="hidden" name="sessionPersist" value="" />
+<input type="hidden" name="channel_id" value="{{ $category->id }}" />
 </fieldset>
 <div class="TopicForm-group">	<i class="Icon Icon-compose"></i>
 <input type="text" id="subject" name="subject" autocomplete="off" class="TopicForm-control TopicForm-control--subject TopicForm-subject" data-topic-form-subject="true" placeholder="@lang('forum.TopicFormSubject')" required="required" tabindex="1" fieldType="text" />
@@ -56,15 +56,22 @@
 </span>
 </div>
 </div>
-</div>				<div class="CoolDownTimer-message" data-time-left="0" id="post-countdown">@lang('forum.CoolDownTimerMessage')</div>
-<div class="TopicForm-link">
-<a class="TopicForm-link--conduct" href="/forum/code-of-conduct/" target="_blank">@lang('forum.Code_of_Conduct')</a></div>
+</div>
+<div class="CoolDownTimer-message" data-time-left="0" id="post-countdown">@lang('forum.CoolDownTimerMessage')</div>
 <div class="TopicForm-action--buttons">
 <button type="submit" id="submit-button" class="TopicForm-button TopicForm-button--create" data-topic-post-button="true">
 <span class="Button-content">@lang('forum.TopicFormButtonCreate')</span>
 </button>
 </div>
-</form></div></div>
+</form>
+</div></div>
 </div>
+@if (count($errors))
+<ul class="alert alert-danger">
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+@endif
 </div>
 @endguest

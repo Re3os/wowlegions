@@ -33,13 +33,22 @@ Route::get('notification/list', 'DiscussionController@notificationsList');
 Route::get('api/locales', 'DiscussionController@locales');
 Route::get('api/localized-strings', 'DiscussionController@localized');
 Route::get('api/user', 'DiscussionController@user');
+Route::get('api/time/now', 'Api\ApiController@time');
 Route::get('navbar', 'DiscussionController@navbar');
 Route::post('account/pin/{characters}', 'DiscussionController@pin');
+
+Route::get('forums/topic/post/{topic}/frag', 'Forum\ThreadsController@frag');
+Route::post('forums/topic/post/{topic}/edit', 'Forum\ThreadsController@edit');
+Route::post('forums/topic/post/{topic}/up', 'Forum\ThreadsController@up');
+Route::post('forums/topic/post/{topic}/down', 'Forum\ThreadsController@down');
+Route::post('forums/topic/post/{topic}/delete', 'Forum\ThreadsController@delete');
+//Route::delete('forums/{channel}/topic/{thread}', 'Forum\ThreadsController@destroy');
 
 Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], function(){
     /// Auth route
     Auth::routes();
     Route::get('logout','Auth\LoginController@logout');
+    Route::get('/register/confirm', 'Auth\RegisterConfirmationController@index')->name('register.confirm');
     // Password Reset Routes...
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password-reset');
     /// Auth route end
@@ -52,6 +61,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
       }
     }); */
     Route::get('/', 'HomeController@index')->name('home');
+
+    Route::get('/bugtracker', 'BugtrackerController@index')->name('bugtracker');
     //// Blog route
     Route::resource('news', 'BlogController', ['parameters' => ['id' => 'id']]);
     Route::get('news.frag', 'BlogController@frag');
@@ -66,21 +77,33 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::post('shop/checkout/pay', 'ShopController@payBalanceAction')->name('pay-balanceAction');
     Route::get('shop/checkout/pay', 'ShopController@payBalance')->name('pay-balance');
     Route::get('shop/checkout/paypal', 'ShopController@payPaypal')->name('pay-paypal');
-    
+
     /// Forum route
-    Route::post('forums/pref/character/{characters}', 'DiscussionController@pin');
-    Route::get('forums/', 'CategoryController@index')->name('forums');
-    Route::get('forums/{category}', 'CategoryController@show')->name('forum')->where('category', '[0-9]+');
-    Route::get('forums/search', 'TopicsController@search')->name('forum.search');
-    Route::get('forums/{category}/topic/{topic}/undefined/frag', 'TopicsController@edit')->name('forum.edit-topic')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
-    Route::post('forums/{category}/create', 'TopicsController@store')->name('forum.topic.store')->where('category', '[0-9]+');
-    Route::get('forums/{category}/topic/{topic}', 'TopicsController@show')->name('forum.topic')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
-    Route::post('forums/{category}/{topic}/create', 'TopicsController@store_reply')->name('forum.topic.reply.create')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
-    Route::patch('forums/{category}/{topic}', 'TopicsController@update_reply')->name('forum.topic.reply.update')->where(['category' => '[0-9]+', 'topic' => '[0-9]+']);
-    Route::delete('forums/{category}/{topic}/{reply}', 'TopicsController@delete_reply')->name('forum.topic.reply.destroy')->where(['category' => '[0-9]+', 'topic' => '[0-9]+', 'reply' => '[0-9]+']);
-    Route::get('forums/delete/topic/{topic}/{fid}', 'TopicsController@delete')->name('forum.topic.delete')->where(['topic' => '[0-9]+']);
-    Route::get('forums/closed/topic/{topic}', 'TopicsController@closed_topic')->name('forum.topic.closed')->where(['topic' => '[0-9]+']);
-    Route::get('forums/sticky/topic/{topic}', 'TopicsController@sticky_topic')->name('forum.topic.sticky')->where(['topic' => '[0-9]+']);
+    Route::get('forums', 'Forum\HomeController@index')->name('forums');
+    Route::get('forums/create', 'Forum\ThreadsController@create');
+    Route::get('forums/search', 'Forum\SearchController@show');
+    Route::get('forums/{category}', 'Forum\HomeController@show')->name('forum')->where('category', '[0-9]+');
+    Route::get('forums/topic/{thread}', 'Forum\ThreadsController@show')->name('forum.topic');
+    Route::patch('forums/{channel}/topic/{thread}', 'Forum\ThreadsController@update');
+    Route::delete('forums/{channel}/topic/{thread}', 'Forum\ThreadsController@destroy');
+    Route::post('forums/{category}/create', 'Forum\ThreadsController@store')->name('forum.topic.store')->middleware('must-be-confirmed');
+    Route::get('forums/{channel}', 'Forum\ThreadsController@index')->name('forum');
+    Route::get('forums/search', 'Forum\SearchController@search')->name('forum.search');
+    Route::post('locked-threads/{thread}', 'Forum\LockedThreadsController@store')->name('locked-threads.store')->middleware('admin');
+    Route::delete('locked-threads/{thread}', 'Forum\LockedThreadsController@destroy')->name('locked-threads.destroy')->middleware('admin');
+
+    Route::get('/forums/{channel}/{thread}/replies', 'Forum\RepliesController@index');
+    Route::post('/forums/replies/{thread}', 'Forum\RepliesController@store')->name('forum.topic.reply.create');
+    Route::patch('/replies/{reply}', 'Forum\RepliesController@update');
+    Route::delete('/replies/{reply}', 'Forum\RepliesController@destroy')->name('replies.destroy');
+
+    Route::post('/replies/{reply}/best', 'Forum\BestRepliesController@store')->name('best-replies.store');
+
+    Route::post('/forums/{channel}/{thread}/subscriptions', 'Forum\ThreadSubscriptionsController@store')->middleware('auth');
+    Route::delete('/forums/{channel}/{thread}/subscriptions', 'Forum\ThreadSubscriptionsController@destroy')->middleware('auth');
+
+    Route::post('/replies/{reply}/favorites', 'Forum\FavoritesController@store');
+    Route::delete('/replies/{reply}/favorites', 'Forum\FavoritesController@destroy');
 
     /// Account route
     Route::get('account/management', 'UserController@showProfile')->name('account');
@@ -101,6 +124,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
 
     Route::get('account/management/claim-code.html', 'UserController@claimCode')->name('claim-code');
     Route::get('account/management/claim-code-item.html', 'UserController@claimCodeSendAction')->name('claim-code-send');
+    Route::get('account/management/claim-code-level.html', 'UserController@claimCodeLevelAction')->name('claim-code-level');
     Route::post('account/management/claim-code.html', 'UserController@claimCodeAction')->name('claim-code-action');
 
     Route::get('account/management/get-a-game.html', 'UserController@showProfile')->name('get-a-game');
@@ -116,6 +140,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::get('return', 'CommunityController@CommunityReturn')->name('community-return');
 
     Route::get('characters/elisgrimm/{characters}', 'CharactersController@characters')->name('characters');
+    Route::get('profiles/{user}', 'ProfilesController@show')->name('profiles');
+    Route::get('profiles/{user}/activity', 'ProfilesController@activity')->name('profiles-activity');
     Route::get('characters/elisgrimm/{characters}/achievements', 'CharactersController@charactersAchi')->name('achievements');
     Route::get('characters/elisgrimm/{characters}/collections', 'CharactersController@characters')->name('collections');
     Route::get('characters/elisgrimm/{characters}/pve', 'CharactersController@characters')->name('characters-pve');

@@ -1,15 +1,15 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/guild_services.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/payment_history.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/services.css') }}" />
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset('account/management/css/ui.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/management/css/guild_services.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/management/css/payment_history.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/management/css/services.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/management/css/ui.css') }}" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="{{ asset('account/management/js/services.js') }}"></script>
-<script type="text/javascript" src="{{ asset('account/management/js/realm-select.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/management/js/services.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/management/js/realm-select.js') }}"></script>
 @endsection
 
 @section('content')

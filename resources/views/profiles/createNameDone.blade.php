@@ -1,15 +1,15 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="/css/account/freedomnet.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/css/account/freedomnet-print.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/css/account/freedomtag.css" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/css/account/freedomnet.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/css/account/freedomnet-print.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/css/account/freedomtag.css') }}" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="/js/inputs.js"></script>
-<script type="text/javascript" src="/js/freedomtag/freedomtag-validator.js"></script>
-<script type="text/javascript" src="/js/freedomtag/freedomtag-randomize.js"></script>
+<script type="text/javascript" src="{{ asset_media('/js/inputs.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/js/freedomtag/freedomtag-validator.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/js/freedomtag/freedomtag-randomize.js') }}"></script>
 @endsection
 
 @section('content')

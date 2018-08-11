@@ -22,7 +22,7 @@
 				<storefront-product-selection _ngcontent-c30="" _nghost-c32=""><div _ngcontent-c32="" class="product-selection">
 	<div _ngcontent-c32="" class="header">
 		<storefront-product-header _ngcontent-c32="" _nghost-c40=""><div _ngcontent-c40="" class="product-header">
-	<img _ngcontent-c40="" class="franchise-icon" src="/static/2.4.0/images/family-icons/world-of-warcraft.svg">
+	<img _ngcontent-c40="" class="franchise-icon" src="{{ asset_media('/static/2.4.0/images/family-icons/world-of-warcraft.svg') }}">
 	<div _ngcontent-c40="" class="name-category-container">
 		<h1 _ngcontent-c40="" class="h4 name"><strong _ngcontent-c40="" class="font-weight-light">{{ $item->title }}<!----></strong></h1>
 		<!----><h2 _ngcontent-c40="" class="h6 font-weight-normal category ng-star-inserted">World of Warcraft®: {{ $item->title_cat }}</h2>

@@ -5,22 +5,30 @@
 <span class="Breadcrumb-divider Home"> <i class="Icon"></i> </span> @lang('navbar.Navbar-forums') </a> </span> </div>
 @endsection
 
+@section('og')
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ route('forums') }}" />
+<meta property="og:title" content="@yield('title') {{ config('app.name_forum', __('forum.title')) }}" />
+<meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
+<meta property="og:description" content="@lang('forum.description')" />
+@endsection
+
 @section('content')
 <section class="Community">
  <header class="Community-header">
     <div class="Community-wrapper">
     <div class="Welcome">
         <div class="Welcome-logo--container">
-            <img class="Welcome-logo" src="/images/game-logos/game-logo-wow.png"/>
+            <img class="Welcome-logo" src="{{ asset_media('/images/game-logos/game-logo-wow.png') }}"/>
             <p class="Welcome-text">@lang('navbar.Navbar-forums-3')</p>
         </div>
     </div>
 </div>
 </header>
-@foreach ($categories as $category)
+@forelse ($threads as $category)
 <div class="ForumCategory ">
         <header class="ForumCategory-header">
-            <h1 class="ForumCategory-heading">{{$category->name}}</h1>@if($category->id == 37 || $category->id == 60)<button class="Community-button--search" id="toggle-search-field" data-trigger="toggle.search.field" type="button"><span class="Button-content"><i class="Icon"></i></span></button><form action="{{ route('forum.search') }}" class="Form Form--search" data-search-all="true" id="forum-search-form">
+            <h1 class="ForumCategory-heading">{{$category->name}}</h1>@if($category->id == 1)<button class="Community-button--search" id="toggle-search-field" data-trigger="toggle.search.field" type="button"><span class="Button-content"><i class="Icon"></i></span></button><form action="{{ route('forum.search') }}" class="Form Form--search" data-search-all="true" id="forum-search-form">
                     <div class="Form-group">
                         <div class="Input Input--iconPrefix Input--search">
                             <input name="q" placeholder="Поиск по всем форумам" type="search" autocomplete='off' />

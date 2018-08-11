@@ -58,11 +58,8 @@ class ItemPrototype {
             }
         }
         $iconName = DB::connection('mysql')->table('icons')->where('id', $this->entry)->get(['iconname']);
-        if(empty($iconName)) {
-            $this->icon = $iconName[0]->iconname;
-        } else {
-           $this->icon = "inv_shoulder_plate_raidpaladin_s_01";
-        }
+        $this->icon = $iconName[0]->iconname ?? 'no_item';  
+
         $this->sub = DB::connection('mysql')->table('item_subclass')->where('ID', $this->entry)->get()[0];
         $itemsublcass = DB::connection('mysql')
         ->table('item_subclass_name')

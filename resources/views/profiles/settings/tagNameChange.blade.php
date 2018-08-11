@@ -1,12 +1,12 @@
 @extends('layouts.account')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" media="all" href="//bneteu-a.akamaihd.net/account/static/css/management/settings.35TLB.css?v=58-29" />
+    <link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/settings.35TLB.css') }}" />
 @endsection
 
 @section('js')
-    <script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/inputs.0VDAS.js"></script>
-    <script type="text/javascript" src="//bneteu-a.akamaihd.net/account/static/js/settings/password.1pKXz.js"></script>
+    <script type="text/javascript" src="{{ asset_media('/account/static/js/inputs.0VDAS.js') }}"></script>
+    <script type="text/javascript" src="{{ asset_media('/account/static/js/settings/password.1pKXz.js') }}"></script>
 @endsection
 
 @section('content')
