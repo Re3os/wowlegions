@@ -23,7 +23,8 @@ class RegisterConfirmationController extends Controller
 
         $user->confirm();
         Account::createBattleNet($user);
-
+        $user->password_game = $user['password'];
+        $user->save();
         return redirect(route('home'))
             ->with('flash', 'Your account is now confirmed! You may post to the forum.');
     }

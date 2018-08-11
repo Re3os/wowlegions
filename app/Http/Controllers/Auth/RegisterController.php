@@ -37,6 +37,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => $passwordHash,
+            'password_game' => $data['password'],
             'balance' => '0',
             'question' => $data['question1'],
             'answer' => $data['answer1'],

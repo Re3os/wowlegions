@@ -18,10 +18,9 @@ class Account extends Authenticatable {
     use Notifiable;
 
     public static function createBattleNet($data) {
-        $passwordHash = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper($data['email'])).":".strtoupper($data['password']))))))));
-        $accountBnet = \DB::connection('auth')->table('battlenet_accounts')->insert(['email' => $data['email'], 'sha_pass_hash' => $passwordHash, 'last_login' => date("Y-m-d H:i:s")]);
+        $accountBnet = \DB::connection('auth')->table('battlenet_accounts')->insert(['email' => $data['email'], 'sha_pass_hash' => $data['password'], 'last_login' => date("Y-m-d H:i:s")]);
         $bnetInfo = \DB::connection('auth')->table('battlenet_accounts')->where('email', $data['email'])->first();
-        $passwordHashAccount = sha1(strtoupper($bnetInfo->id) . '#1'.  ":" . strtoupper($data['password']));
+        $passwordHashAccount = sha1(strtoupper($bnetInfo->id) . '#1'.  ":" . strtoupper($data['password_game']));
         $accountGame = \DB::connection('auth')->table('account')->insert(['username' => $bnetInfo->id.'#1', 'sha_pass_hash' => $passwordHashAccount, 'email' => $data['email'], 'reg_mail' => $data['email'], 'last_login' => date("Y-m-d H:i:s"), 'expansion' => '7', 'battlenet_account' => $bnetInfo->id, 'battlenet_index' => '1']);
     }
 
