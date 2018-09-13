@@ -10,6 +10,7 @@ use App\Mail\MailPasswordReset;
 use DB;
 use App\Forum\Thread;
 use App\Forum\Reply;
+use App\Comment;
 
 class User extends Authenticatable {
 
@@ -56,7 +57,7 @@ class User extends Authenticatable {
     }
 
     public function comments() {
-        return $this->belongsTo(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 
     public function topics() {

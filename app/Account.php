@@ -15,7 +15,7 @@ class Account extends Authenticatable {
         'username', 'password', 'email', 'expansion'
     ];
 
-    use Notifiable;
+    use Notifiable;                          
 
     public static function createBattleNet($data) {
         $accountBnet = \DB::connection('auth')->table('battlenet_accounts')->insert(['email' => $data['email'], 'sha_pass_hash' => $data['password'], 'last_login' => date("Y-m-d H:i:s")]);

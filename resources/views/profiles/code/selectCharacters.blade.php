@@ -40,7 +40,7 @@
                                         @foreach($userCharacters as $characters)
                                         <li class="character border-4" id="WoW9:{{ $characters->guid }}:{{ $characters->name }}">
                                             <div class="character-icon wow-portrait-64-80 wow-{{ $characters->gender }}-{{ $characters->race }}-{{ $characters->class }} glow-shadow-3">
-                                                <img src="{{ Auth::user()->avatar }}" width="64" height="64" alt="" />
+                                                <img src="{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}" width="64" height="64" alt="" />
                                             </div>
                                             <div class="character-description">
                                             <span class="character-name caption">

@@ -78,6 +78,30 @@
 </span>
 </span>
 </div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="input-row input-row-note-top" id="secret-question">
+<div class="input-note input-text-small border-5 glow-shadow">
+<div class="input-note-content">
+<p>@lang('account.question_'.Auth::user()->question)</p>
+</div>
+<div class="input-note-arrow-down input-note-arrow-submit"></div>
+</div>
+</div>
+<div xmlns="http://www.w3.org/1999/xhtml" class="input-row input-row-text">
+<span class="input-left">
+<label for="answer">
+<span class="label-text">
+Секретный ответ:
+</span>
+<span class="input-required">*</span>
+</label>
+</span><!--
+--><span class="input-right">
+<span class="input-text input-text-small">
+<input type="text" name="answer" value="" id="answer" class="small border-5 glow-shadow-2" autocomplete="off" onpaste="return false;" maxlength="100" tabindex="1" required="required" placeholder="Ответ" />
+<span class="inline-message " id="answer-message"> </span>
+</span>
+</span>
+</div>
 <div class="input-row input-row-text">
 <span class="input-left">
 <label for="password">

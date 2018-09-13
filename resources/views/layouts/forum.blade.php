@@ -122,7 +122,7 @@
 <div role="main">
 	@yield('content')
 </div>
-<footer class="Forums-footer"> @lang('forum.Forums-footer') <a href="{{ route('forums') }}">{{ config('app.name_forum', __('forum.title')) }}</a> ({{ config('app.forum_version') }}) · <a href="{{ route('forums') }}">@lang('forum.Forums-footer-2')</a> </footer>
+<footer class="Forums-footer"> @lang('forum.Forums-footer') <a href="{{ route('forums') }}">{{ config('app.name_forum', __('forum.title')) }}</a> ({{ config('app.forum_version') }}) · <a href="{{ route('patch-notes') }}">@lang('forum.Forums-footer-2')</a> </footer>
 @include('layouts.footer')
 {!! printJsHome() !!}
 <script type="text/javascript" src="{{ asset_media('/forums/static/js/main.js') }}"></script>

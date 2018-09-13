@@ -48,6 +48,14 @@ class Soap {
         Soap::$ItemsArray = array();
     }
 
+    public static function levelUp($characters) {
+        $Command = '.character level '.$characters .' 50';
+        if(Soap::Execute($Command))
+            return true;
+        else
+            return false;
+    }
+
     public static function SendItem($PlayerName, $Subject)
     {
         $Command = '.send items '.$PlayerName.' "'.$Subject.'" "'.Soap::BuildMessageBody($PlayerName, $Subject).'" ';

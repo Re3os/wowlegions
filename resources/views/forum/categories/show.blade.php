@@ -7,7 +7,7 @@
 <meta property="og:url" content="{{ route('forum', [$category->id])}}" />
 <meta property="og:title" content="{{ $category->name }} - {{ config('app.name_forum') }}" />
 <meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
-<meta property="og:description" content="{!! $category->category_description !!}" />
+<meta property="og:description" content="{{ $category->category_description }}" />
 @endsection
 
 @section('sidebar')

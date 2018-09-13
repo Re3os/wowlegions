@@ -7,7 +7,7 @@
 <meta property="og:url" content="{{ route('forum.topic', [$thread->id])}}" />
 <meta property="og:title" content="{{ $thread->title }} - {{ config('app.name_forum') }}" />
 <meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
-<meta property="og:description" content="{!! $thread->body !!}" />
+<meta property="og:description" content="{{ $thread->body }}" />
 @endsection
 
 @section('sidebar')
@@ -47,7 +47,7 @@
 
 {{ $topics->links('forum.categories.paginateposthead') }}
 <div class="Topic-content">
-<div class="TopicPost @if($thread->creator->role == 2) TopicPost--blizzard @endif @if($thread->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $thread->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $thread->id }}&quot;,&quot;valueVoted&quot;:{{ $thread->up }},&quot;rank&quot;:{&quot;voteUp&quot;:{{ $thread->up }},&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $thread->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $thread->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
+<div class="TopicPost @if($thread->creator->role == 2) TopicPost--blizzard @endif @if($thread->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $thread->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $thread->id }}&quot;,&quot;valueVoted&quot;:0,&quot;rank&quot;:{&quot;voteUp&quot;:0,&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $thread->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $thread->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
 <span id="{{ $thread->id }}"></span>
 <div class="TopicPost-content">
 <div class="TopicPost-authorIcon @if($thread->creator->role == 2) TopicPost-authorIcon--blizzard @endif">
@@ -80,7 +80,7 @@
         <div class="Timestamp-details">
         <a class="TopicPost-timestamp" href="#post-{{ $thread->id }}" data-toggle="tooltip" data-tooltip-content="{{ $thread->created_at->format('m/d/Y H:i') }}" data-original-title="" title="">{{ $thread->created_at->diffForHumans() }}</a>
         <!--a class="TopicPost-timestamp" href="#post-{{ $thread->id }}" data-toggle="tooltip" data-tooltip-content="Гринфайр {{ $thread->updated_at->format('m/d/Y H:i') }}"> &#160;(Отредактировано) </a-->
-            @if($thread->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">{{ $thread->up }}</span>@endif
+            @if($thread->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true" data-toggle="tooltip" data-tooltip-content="Нравится: {{ $thread->up }}.">{{ $thread->up }}</span>@endif
             <span class="TopicPost-rank TopicPost-rank--none" data-topic-post-rank="true"></span>
     </div>
 @guest
@@ -111,7 +111,7 @@
     </div>
     @foreach ($topics as $reply)
 
-<div class="TopicPost @if($reply->creator->role == 2) TopicPost--blizzard @endif @if($reply->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $reply->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $reply->id }}&quot;,&quot;valueVoted&quot;:{{ $reply->up }},&quot;rank&quot;:{&quot;voteUp&quot;:{{ $reply->up }},&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $reply->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $reply->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
+<div class="TopicPost @if($reply->creator->role == 2) TopicPost--blizzard @endif @if($reply->creator->role == 1) TopicPost--mvp @endif" id="post-{{ $reply->id }}" data-topic-post="{&quot;id&quot;:&quot;{{ $reply->id }}&quot;,&quot;valueVoted&quot;:0,&quot;rank&quot;:{&quot;voteUp&quot;:0,&quot;voteDown&quot;:0},&quot;author&quot;:{&quot;id&quot;:&quot;{{ $reply->creator->id }}&quot;,&quot;name&quot;:&quot;{{ $reply->creator->name }}&quot;}}" data-topic="{ &quot;sticky&quot;:&quot;false&quot;,&quot;featured&quot;:&quot;false&quot;,&quot;locked&quot;:&quot;false&quot;,&quot;frozen&quot;:&quot;false&quot;,&quot;hidden&quot;:&quot;false&quot;,&quot;pollId&quot;:&quot;0&quot;}">
 <span id="{{ $reply->id }}"></span>
 <div class="TopicPost-content">
 <div class="TopicPost-authorIcon @if($reply->creator->role == 2) TopicPost-authorIcon--blizzard @endif">
@@ -147,7 +147,8 @@
                      <!--a class="TopicPost-timestamp" href="#post-1" data-toggle="tooltip" data-tooltip-content="Ник 11/03/2017 15:16">
                             &#160;(Отредактировано)
 </a-->
-                        @if($reply->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">{{ $reply->up }}</span>@endif
+                        @if($reply->up)<span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true"
+data-toggle="tooltip" data-tooltip-content="Нравится: {{ $reply->up }}.">{{ $reply->up }}</span>@endif
                         <span class="TopicPost-rank TopicPost-rank--none" data-topic-post-rank="true"></span>
                 </div>
 @guest

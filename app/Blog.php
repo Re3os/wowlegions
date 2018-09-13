@@ -15,13 +15,8 @@ class Blog extends Model
 
     protected $dateFormat = 'Y-m-d H:i:s';
 
-    public function comments()
-    {
-     return $this->hasMany(Comment::class );
-    }
-
-    public function characters() {
-        return $this->belongsTo(Characters::class, 'user_id', 'guid');
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
 
     public function user() {

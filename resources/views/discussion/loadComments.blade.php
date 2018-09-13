@@ -13,17 +13,57 @@ Msg.cms.throttleError = "Вы должны подождать некоторое
 			<span class="pull-multiple" style="display: none">Новые комментарии: <span>{0}</span>. <strong>Обновить?</strong></span>
 		</a>
 
+@guest
+@else
+<div class="comments-form-wrapper">
+    <form id="comments-add-form" class="comments-form" action="" method="post">
+        {{ csrf_field() }}
+        <div class="character-info user ajax-update">
+<div class="CommentAuthor Author" id="" data-topic-post-body-content="true"><a href="{{ route('profiles', [Auth::user()->name]) }}" class="Author-avatar "><img src="{{ asset('/uploads/avatar/'.Auth::user()->avatar) }}" alt=""></a>
+<div class="Author-details">
+<span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('profiles', [Auth::user()->name]) }}">{{ Auth::user()->name }}</a>
+</span>
+<span class="Author-realm">
+ElisGrimm
+</span>
+<span class="Author-posts is-blank"></span></div></div>
+<div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
+<span class="Author-name">
+<a class="Author-name--profileLink" href="{{ route('profiles', [Auth::user()->name]) }}">{{ Auth::user()->name }}</a>
+</span><div class="Author-posts Author-posts--ignored">проигнорировано</div></div>
+		</div>
 
-	<div class="comments-form-wrapper">
-    <div class="comments-error-gate">
-    <p></p>
-    <ul>
-        <li>Срок действия игровой лицензии истек или нет текущей подписки.</li>
-    </ul>
-    <p></p>
-    </div>
+		<div class="text-wrapper">
+			<div class="input-wrapper">
+					<textarea name="detail" class="input textarea"></textarea>
+			</div>
+
+			<ul class="comments-error-form">
+				<li class="error-required">Обязательное для заполнения поле</li>
+				<li class="error-throttled">Вы сейчас не можете размещать сообщения</li>
+				<li class="error-length">Превышено максимальное количество символов</li>
+				<li class="error-title">Учетная запись заблокирована на форумах</li>
+				<li class="error-frozen">Срок действия игровой лицензии истек или нет текущей подписки.</li>
+				<li class="error-locked">Возможность размещения сообщения с этой учетной записи была отключена.</li>
+				<li class="error-cancelled">Срок действия игровой лицензии истек или лицензия была отменена.</li>
+				<li class="error-trial">На этом форуме нельзя размещать и оценивать сообщения со стартовой учетной записи. Конвертируйте учетную запись в полную, чтобы активировать эти функции.</li>
+				<li class="error-unknown">Произошла ошибка. Попробуйте, пожалуйста, еще раз. Но сначала выйдите из системы и авторизуйтесь заново.</li>
+			</ul>
+
+			<div class="comments-action">
+
+<button class="ui-button btn button1 comment-submit" type="button" onclick="return Comments.add(this);"><span class="button-left"><span class="button-right"> Сообщение
+</span></span></button>			</div>
+
+				<div class="comments-throttler">
+					До следующего сообщения осталось <span class="throttle-time">60</span>
+				</div>
+
+		</div>
+	</form>
 	</div>
-
+@endguest
 
 		<div id="comments-pages-wrapper">
 			<div class="comments-pages">
@@ -35,12 +75,12 @@ Msg.cms.throttleError = "Вы должны подождать некоторое
 
 
 	<ul class="comments-list" id="comments-1">
-        @foreach($com as $k => $comments)
-        @if($k)
-        @break
-        @endif
-        @include('discussion.comment', ['items' => $comments])
-        @endforeach
+	@foreach($com as $k => $comments)
+    @if($k)
+    @break
+    @endif
+    @include('discussion.comment', ['items' => $comments])
+    @endforeach
 	</ul>
 
 

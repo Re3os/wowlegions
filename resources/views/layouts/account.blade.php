@@ -35,12 +35,13 @@ var _gaq = _gaq || [];
 <script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/class-inheritance.4V7WX.js') }}"></script>
 <script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/third-party/swfobject-2.2.1.min.0INo9.js') }}"></script>
 <script type="text/javascript" src="{{ asset_media('/account/static/local-common/js/common.16hIS.js') }}"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <script type="text/javascript">
 //<![CDATA[
 var Core = Core || {},
 Login = Login || {};
-Core.staticUrl = '{{ asset_media("/account/static") }};
-Core.sharedStaticUrl = '{{ asset_media("/account/static/local-common") }};
+Core.staticUrl = '{{ asset_media("/account/static") }}';
+Core.sharedStaticUrl = '{{ asset_media("/account/static/local-common") }}';
 Core.baseUrl = '/account';
 Core.projectUrl = '/account';
 Core.cdnUrl = 'http://media.blizzard.com';
@@ -68,7 +69,7 @@ var _gaq = _gaq || [];
 <![endif]-->
 </head>
 <body class="ru-ru web" data-analytics-view="/management/lobby">
-<div class="Navbar is-desktop is-authenticated"
+<div class="Navbar is-compact is-auto is-authenticated"
 data-region="eu"
 data-locale="ru-ru"
 data-timestamp="1513719398421"
@@ -197,7 +198,7 @@ data-support-url="/support/update/json?callback="
 </g></svg>
 <div class="Navbar-overlay"></div>
 <div class="Navbar-container">
-<nav class="Navbar-desktop"><div class="Navbar-desktopOverlay Navbar-overlay"></div><a href="/" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Blizzard.com Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a><div class="Navbar-collapsedItems is-hidden"><a data-target="Navbar-siteMenu" class="Navbar-menu Navbar-item Navbar-link Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-collapsedIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div><div class="Navbar-label">@lang('account.menu')</div></a></div>
+<nav class="Navbar-desktop"><div class="Navbar-desktopOverlay Navbar-overlay"></div><a href="/" class="Navbar-logo" data-analytics="global-nav" data-analytics-placement="Nav - Icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 151.15 68.46" focusable="false"><use xlink:href="#Navbar-logo-blizzard"></use></svg></a><div class="Navbar-collapsedItems is-hidden"><a data-target="Navbar-siteMenu" class="Navbar-menu Navbar-item Navbar-link Navbar-modalToggle is-noSelect"><div class="Navbar-icon Navbar-collapsedIcon Navbar-siteMenuIcon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48" focusable="false"><use xlink:href="#Navbar-icon-menu"></use></svg></div><div class="Navbar-label">@lang('account.menu')</div></a></div>
 <div class="Navbar-items">
 <a href="{{ route('shop') }}" class="Navbar-item Navbar-link is-noSelect Navbar-shop" data-index='1' data-name="shop" data-analytics="global-nav" data-analytics-placement="Nav - Shop"><div class="Navbar-label">@lang('account.shop')</div></a>
 
@@ -275,6 +276,7 @@ ChargebackCall.initialize(true);
 <li><a href="{{ route('orders') }}">@lang('account.orders')</a></li>
 <li><a href="{{ route('transaction-history') }}">@lang('account.transaction-history')</a></li>
 <li><a href="{{ route('gift-claim-history') }}">@lang('account.gift-claim-history')</a></li>
+<li><a href="{{ route('invite-history') }}">Список приглашённых</a></li>
 </ul>
 </div>
 </li>

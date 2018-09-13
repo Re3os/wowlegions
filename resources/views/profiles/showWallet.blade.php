@@ -1,12 +1,12 @@
 @extends('layouts.account')
 
 @section('css')
-<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/wallet.4BCfm.css') }}" />
+<link rel="stylesheet" type="text/css" media="all" href="{{ asset_media('/account/static/css/management/wallet.2HJc9.css') }}" />
 @endsection
 
 @section('js')
-<script type="text/javascript" src="{{ asset_media('/account/static/js/inputs.0VDAS.js') }}"></script>
-<script type="text/javascript" src="{{ asset_media('/account/static/js/management/wallet.22EU8.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/inputs.2gjKG.js') }}"></script>
+<script type="text/javascript" src="{{ asset_media('/account/static/js/management/wallet.0jDRy.js') }}"></script>
 @endsection
 
 @section('content')

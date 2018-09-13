@@ -32,15 +32,9 @@ Blizzard Mobile Authenticator — бесплатный способ защити
 <h3 class="section-title">Информация о записи</h3>
 <div class="lobby-box">
 <h4 class="subcategory">Название учетной записи</h4>
-<p class="account-name">{{ $profileUser->email }}
-<span class="edit">[<a href="{{ route('change-email') }}">Редактировать</a>]</span>
-</p>
-<h4 class="subcategory help-link-right" data-tooltip="Это имя, под которым вас будут знать на " data-tooltip-options='{"location": "mouse"}'>Имя</h4>
-@if($profileUser->name)
+<p class="account-name">{{ $profileUser->email }}<span class="edit">[<a href="{{ route('change-email') }}">Редактировать</a>]</span></p>
+<h4 class="subcategory help-link-right" data-tooltip="Это имя, под которым вас будут знать на {{ config('app.name') }}" data-tooltip-options='{"location": "mouse"}'>Имя</h4>
 <p>{{ $profileUser->name }} <span class="edit">[<a href="{{ route('tag-name-change') }}" id="battletag-purchase">Платная смена имени</a>]</span></p>
-@else
-<p>{{ $profileUser->name }} <span class="edit"><a href="{{ route('create-name') }}">Создать</a></span></p>
-@endif
 </div>
 <h3 class="section-title">Защита записи</h3>
 <div class="lobby-box security-box">
@@ -79,7 +73,7 @@ Blizzard Mobile Authenticator — бесплатный способ защити
 </ul>
 </div>
 <div id="games-tools">
-<a href="{{ route('claim-code') }}" id="add-game" class="border-5">Прикрепить ключ игры</a>
+<a href="{{ route('invite') }}" id="add-game" class="border-5">Пригласить друзей</a>
 <p>
 <a href="{{ route('get-a-game') }}" class="" onclick="">
 <span class="icon-16 icon-account-buy"></span>

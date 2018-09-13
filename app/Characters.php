@@ -13,10 +13,6 @@ class Characters extends Model {
 
     public $timestamps = false;
 
-    public function comments() {
-        return $this->belongsTo(Comment::class);
-    }
-
     public static function verifyEligibility($character, $service) {
         $Eligible = false;
         $HasMail = false;

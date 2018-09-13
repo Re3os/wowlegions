@@ -23,7 +23,7 @@ Route::get('lang/{lang}/', function ($lang) {
 //// Comments route
 Route::get('/wow/discussion/{id}/load.json', 'DiscussionController@loadComments');
 Route::get('/noop', 'DiscussionController@loadNoop');
-Route::post('/discussion/{id}/comment.json', 'DiscussionController@commentJson');
+Route::post('/wow/discussion/{id}/comment.json', 'DiscussionController@commentJson');
 
 Route::get('account/management/services/is-character-eligible', 'DiscussionController@isCharacterEligible');
 
@@ -31,8 +31,8 @@ Route::get('version', 'DiscussionController@version');
 Route::get('navbar/notifications', 'DiscussionController@notifications');
 Route::get('notification/list', 'DiscussionController@notificationsList');
 Route::get('api/locales', 'DiscussionController@locales');
-Route::get('api/localized-strings', 'DiscussionController@localized');
-Route::get('api/user', 'DiscussionController@user');
+Route::get('api/localized-strings', 'Api\ApiController@localized');
+Route::get('api/user', 'Api\ApiController@user');
 Route::get('api/time/now', 'Api\ApiController@time');
 Route::get('navbar', 'DiscussionController@navbar');
 Route::post('account/pin/{characters}', 'DiscussionController@pin');
@@ -79,6 +79,7 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::get('shop/checkout/paypal', 'ShopController@payPaypal')->name('pay-paypal');
 
     /// Forum route
+    Route::get('forums/patch-notes', 'Forum\HomeController@patchNotes')->name('patch-notes');
     Route::get('forums', 'Forum\HomeController@index')->name('forums');
     Route::get('forums/create', 'Forum\ThreadsController@create');
     Route::get('forums/search', 'Forum\SearchController@show');
@@ -106,6 +107,11 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::delete('/replies/{reply}/favorites', 'Forum\FavoritesController@destroy');
 
     /// Account route
+    Route::get('account/management/invite.html', 'InviteController@invite')->name('invite');
+    Route::post('account/management/invite-send.html', 'InviteController@process')->name('process');
+    Route::get('account/management/invite-register.html', 'InviteController@accept')->name('accept');
+
+    Route::get('account/management/test-level', 'UserController@levelup')->name('test-level');
     Route::get('account/management', 'UserController@showProfile')->name('account');
     Route::get('account/management/settings/change-email.html', 'UserController@changeEmail');
     Route::post('account/management/settings/change-email.html', 'UserController@changeEmailActoin')->name('change-email');
@@ -134,6 +140,10 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::get('account/management/orders.html', 'UserController@showOrders')->name('orders');
     Route::get('account/management/transaction-history.html', 'UserController@showProfile')->name('transaction-history');
     Route::get('account/management/gift-claim-history.html', 'UserController@showProfile')->name('gift-claim-history');
+
+    Route::get('account/management/invite-history.html', 'UserController@showInvite')->name('invite-history');
+    Route::get('account/management/invite-bonus.html', 'UserController@inviteSelectCharacters')->name('invite-select-characters');
+    Route::get('account/management/invite-bonus-send.html', 'UserController@inviteAction')->name('invite-send');
 
     Route::get('game/status', 'CommunityController@CommunityStatus')->name('community-status');
     Route::get('start', 'CommunityController@CommunityStart')->name('community-start');

@@ -8,14 +8,6 @@ use App\{Comment, Blog, Characters};
 
 class DiscussionController extends Controller {
 
-    public function user() {
-        return view('discussion.user');
-    }
-
-    public function localized() {
-        return view('discussion.localizedStrings');
-    }
-
     public function locales() {
         echo '{"locales":["ru-ru","en-gb","de-de","en-us","es-es","es-mx","fr-fr","it-it","pt-br","pl-pl","ko-kr","th-th","ja-jp","zh-tw"]}';
     }
@@ -35,12 +27,6 @@ class DiscussionController extends Controller {
     public function isCharacterEligible() {
         $response = Characters::verifyEligibility($_REQUEST['character'], $_REQUEST['service']);
         return response()->json($response);
-    }
-
-    public function pin($characters) {
-        $user = \Auth::user();
-        $user->charactersActive = $characters;
-        $user->save();
     }
 
     public function version() {

@@ -13,6 +13,11 @@ class HomeController extends Controller {
         return view('forum.categories.index', compact('threads'));
     }
 
+    public function patchNotes() {
+        $threads = Channel::where('lang', '=', app()->getLocale())->whereNull('parent_id')->with('forums')->get();
+        return view('forum.patch_notes', compact('threads'));
+    }
+
     public function show($slug)
     {
         $threads = Channel::where('lang', '=', app()->getLocale())->whereNull('parent_id')->with('forums')->get();

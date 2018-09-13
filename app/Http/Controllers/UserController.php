@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\{Category, Topic, Account, User, CodesShop, PaymentDetails, Characters};
+use App\{Account, User, CodesShop, PaymentDetails, Characters, Invite};
 
 use App\Services\Soap;
 
@@ -30,6 +30,42 @@ class UserController extends Controller
         ]);
     }
 
+    public function levelup() {
+        $test = Soap::levelUp('Танос');
+        dd($test);
+    }
+
+    public function inviteAction(Request $request) {
+        $invide = Invite::where('token', $request->get('token'))->get();
+        if($invide[0]->complete) {
+            return redirect(route('invite-history'))->with("error","Вы уже получили награду!");
+        } else {
+
+        }
+    }
+
+    public function inviteSelectCharacters(Request $request) {
+        $invide = Invite::where('id', $request->get('id'))->where('token', $request->get('token'))->get();
+        if(!$invide[0]->complete) {
+            $accountID = Account::userGameAccount();
+            return view('profiles.invite.selectCharacters', [
+                'profileUser' => \Auth::user(),
+                'userGamrAccount' => $accountID,
+                'userCharacters' => Account::userGameCharacters($accountID[0]->id),
+                'token' => $request->get('token')
+            ]);
+        } else {
+            return redirect(route('invite-history'))->with("error","Вы уже получили награду!");
+        }
+    }
+
+    public function showInvite() {
+        return view('profiles.invite.invite_history', [
+            'profileUser' => \Auth::user(),
+            'history' => Invite::where('invite_user', \Auth::user()->name)->get(),
+        ]);
+    }
+
     public function showOrders() {
         return view('profiles.orser.showOrders', [
             'profileUser' => \Auth::user(),
@@ -40,7 +76,7 @@ class UserController extends Controller
     public function claimCodeLevelAction(Request $request) {
         $infoKey = CodesShop::where('purchase_code', $request->get('key'))->get();
         if($infoKey[0]->code_activated == 1) {
-            return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.");
+            return redirect(route('claim-code'))->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.");
         } else {
             Characters::where('name', $request->get('character'))->update(['level' => '110']);
             CodesShop::where('purchase_code', $request->get('key'))->update(['purchased_for_account' => \Auth::user()->id, 'code_activated' => '1']);
@@ -51,14 +87,14 @@ class UserController extends Controller
     public function claimCodeSendAction(Request $request) {
         $infoKey = CodesShop::where('purchase_code', $request->get('key'))->get();
         if($infoKey[0]->code_activated == 1) {
-            return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.");
+            return redirect(route('claim-code'))->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, на сайте сейчас проводится техническое обслуживание.");
         } else {
             Soap::AddItemToList($infoKey[0]->item_id, 1);
             if(Soap::SendItem($request->get('character'), $infoKey[0]->item_name)) {
                 CodesShop::where('purchase_code', $request->get('key'))->update(['purchased_for_account' => \Auth::user()->id, 'code_activated' => '1']);
                 return redirect(route('claim-code'))->with("success","Код был успешно использован, товар был отправлен вам на внутреигровую почту.");
             } else {
-                return redirect()->back()->with("error","Ошибка отправки итема");
+                return redirect(route('claim-code'))->with("error","Ошибка отправки итема");
             }
         }
     }
@@ -76,7 +112,7 @@ class UserController extends Controller
                 ]);
             }elseif($infoKey[0]->type == 2) {
                 if($infoKey[0]->code_activated == 1) {
-                    return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
+                    return redirect(route('claim-code'))->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
                 } else {
                     $user = \Auth::user();
                     $user->balance += $infoKey[0]->money;
@@ -88,7 +124,7 @@ class UserController extends Controller
                 }
             }elseif($infoKey[0]->type == 3) {
                 if($infoKey[0]->code_activated == 1) {
-                    return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
+                    return redirect(route('claim-code'))->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
                 } else {
                     $accountID = Account::userGameAccount();
                     return view('profiles.code.selectCharactersLevel', [
@@ -100,7 +136,7 @@ class UserController extends Controller
                 }
             }
         } else {
-            return redirect()->back()->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
+            return redirect(route('claim-code'))->with("error","Этот код не подходит. Проверьте, правилен ли он, и введите его заново. Если вы все равно видите это сообщение, то попробуйте, пожалуйста, попозже еще раз: вероятно, в игре или на сайте сейчас проводится техническое обслуживание.");
         }
     }
 
@@ -171,11 +207,15 @@ class UserController extends Controller
     }
 
     public function changeEmailActoin(Request $request){
-        if (!(\Hash::check($request->get('password'), \Auth::user()->password))) {
+        $passwordHash = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper(\Auth::user()->email)).":".strtoupper($request->get('password')))))))));
+        if ($passwordHash != \Auth::user()->password) {
             return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
         }
         if($request->get('email') != $request->get('newEmailVerify')){
             return redirect()->back()->with("error","Mail does not match");
+        }
+        if($request->get('answer') != \Auth::user()->question){
+            return redirect()->back()->with("error","Question error");
         }
 
         $validatedData = $request->validate([
@@ -202,7 +242,8 @@ class UserController extends Controller
     }
 
     public function changePasswordActoin(Request $request){
-        if (!(\Hash::check($request->get('oldPassword'), \Auth::user()->password))) {
+        $passwordHash = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper(\Auth::user()->email)).":".strtoupper($request->get('oldPassword')))))))));
+        if ($passwordHash != \Auth::user()->password) {
             return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
         }
         if(strcmp($request->get('oldPassword'), $request->get('newPassword')) == 0){
@@ -220,9 +261,9 @@ class UserController extends Controller
         $user = \Auth::user();
 
         $account = Account::newPassword($user->email, $request->get('newPassword'));
-
+        $passwordHashNew = strtoupper(bin2hex(strrev(hex2bin(strtoupper(hash("sha256",strtoupper(hash("sha256", strtoupper($user->email)).":".strtoupper($request->get('newPassword')))))))));
         //Change Password
-        $user->password = bcrypt($request->get('newPassword'));
+        $user->password = $passwordHashNew;
         $user->save();
 
         return redirect()->back()->with("success","Password changed successfully !");
