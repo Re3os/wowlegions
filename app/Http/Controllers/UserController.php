@@ -40,7 +40,31 @@ class UserController extends Controller
         if($invide[0]->complete) {
             return redirect(route('invite-history'))->with("error","Вы уже получили награду!");
         } else {
-
+            $inviteCount = Invite::where('invite_user', \Auth::user()->name)->count();
+            $utils = new Utils();
+            $reward = $utils->InviteSend($inviteCount);
+            if($reward) {
+                if($reward['reward_lk_money'] !== '') {
+                    User::increment('balance', 500);
+                    Soap::SendMoney($request->get('character'), 'Награда за приглашенного друга.', 'Больше друзей, больше награда.', $reward['reward_money']);
+                    Invite::where('invite_user', \Auth::user()->name)->update(['complete' => '1']);
+                    return redirect(route('invite-history'))->with("success","Вы успешно получили награду!");
+                }
+                if($reward['reward_item'] == '') {
+                    Soap::SendMoney($request->get('character'), 'Награда за приглашенного друга.', 'Больше друзей, больше награда.', $reward['reward_money']);
+                    Invite::where('invite_user', \Auth::user()->name)->update(['complete' => '1']);
+                    return redirect(route('invite-history'))->with("success","Вы успешно получили награду!");
+                }
+                if($reward['reward_item']) {
+                    Soap::AddItemToList($reward['reward_item'], 1);
+                    Soap::SendItem($request->get('character'), $reward['item_name']);
+                    Soap::SendMoney($request->get('character'), 'Награда за приглашенного друга.', 'Больше друзей, больше награда.', $reward['reward_money']);
+                    Invite::where('invite_user', \Auth::user()->name)->update(['complete' => '1']);
+                    return redirect(route('invite-history'))->with("success","Вы успешно получили награду!");
+                }
+            } else {
+                return redirect(route('invite-history'))->with("error","Вы уже получили награду!");
+            }
         }
     }
 

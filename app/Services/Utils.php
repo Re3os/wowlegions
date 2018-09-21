@@ -4,6 +4,53 @@ namespace App\Services;
 
 class Utils {
 
+    public $reward = array(
+            '1' => array(
+			    'reward_money' => '150000',
+                'reward_item' => '',
+                'reward_lk_money' => ''
+		    ),
+            '2' => array(
+			    'reward_money' => '400000',
+			    'reward_item' => ''
+		    ),
+            '5' => array(
+			    'reward_money' => '850000',
+			    'reward_item' => '32859',
+                'item_name' => 'Поводья кобальтового дракона из стаи Крыльев Пустоты',
+                'reward_lk_money' => ''
+		    ),
+            '10' => array(
+			    'reward_money' => '1000000',
+			    'reward_item' => '153252',
+                'item_name' => 'Мятежный бес',
+                'reward_lk_money' => ''
+		    ),
+            '20' => array(
+			    'reward_money' => '1000000000',
+			    'reward_item' => '141205',
+			    'item_name' => 'Сувенирный мурлок',
+                'reward_lk_money' => ''
+		    ),
+            '30' => array(
+			    'reward_money' => '2000000000',
+                'reward_item' => '',
+			    'reward_lk_money' => '500'
+		    ),
+        );
+
+    private function InviteReward($count) {
+        if(isset($this->reward[$count])) {
+            return $this->reward[$count];
+        } else {
+            return NULL;
+        }
+    }
+
+    public function InviteSend($count) {
+        return $this->InviteReward($count);
+    }
+    
     public static function dirsize($directory) {
         if( ! is_dir( $directory ) ) return - 1;
         $size = 0;
