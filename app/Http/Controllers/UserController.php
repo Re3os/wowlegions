@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\{Account, User, CodesShop, PaymentDetails, Characters, Invite};
 
 use App\Services\Soap;
+use App\Services\Utils;
 
 class UserController extends Controller
 {
