@@ -45,6 +45,7 @@ class ShopController extends Controller
         $topic = CodesShop::create([
           'purchased_item' => $slug,
           'item_id' => $item['item_id'],
+          'type' => $item['type'],
           'item_name' => $item['title'],
           'purchase_code'     => $ActivationCode,
           'purchased_for_account'  => \Auth::user()->id,
