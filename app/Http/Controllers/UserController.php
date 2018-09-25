@@ -33,7 +33,6 @@ class UserController extends Controller
 
     public function levelup() {
         $test = Soap::levelUp('Танос');
-        dd($test);
     }
 
     public function inviteAction(Request $request) {
@@ -70,7 +69,7 @@ class UserController extends Controller
     }
 
     public function inviteSelectCharacters(Request $request) {
-        $invide = Invite::where('id', $request->get('id'))->where('token', $request->get('token'))->get();
+        $invide = Invite::where('token', $request->get('token'))->get();
         if(!$invide[0]->complete) {
             $accountID = Account::userGameAccount();
             return view('profiles.invite.selectCharacters', [

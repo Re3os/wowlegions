@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\{Bugtracker, CommentBugtracker};
+use App\{Bugtracker, CommentBugtracker, Arena};
 use App\Services\Server;
 
 class CommunityController extends Controller
@@ -12,6 +12,10 @@ class CommunityController extends Controller
 
     public function CommunityReturn() {
         return view('community.return');
+    }
+
+    public function recruitAFriend() {
+        return view('community.recruitAFriend');
     }
 
     public function CommunityStart() {
@@ -25,9 +29,8 @@ class CommunityController extends Controller
     }
 
     public function leaderboardsTwo() {
-        $status = Server::status();
-        $online = Server::playersOnline();
-        return view('community.pvp.2x2', ['server' => $status, 'online' => $online]);
+        $arena = Arena::where('type', '1')->orderBy('rating', 'desc')->get();
+        return view('community.pvp.2x2', ['arena' => $arena]);
     }
 
     public function leaderboardsTree() {

@@ -59,7 +59,7 @@
 </head>
 
 
-<body class="{{ app()->getLocale() }} Theme--wow">
+<body class="{{ app()->getLocale() }} @if(Route::currentRouteName() != 'patch-notes') Theme--wow @else patch-notes Theme--patch-notes preload @endif">
     		<script type="text/javascript">
 		//<![CDATA[
 	var LOCALIZATION = LOCALIZATION || {};

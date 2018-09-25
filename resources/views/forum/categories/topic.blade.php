@@ -103,7 +103,7 @@
                 <button class="TopicPost-button TopicPost-button--viewPost is-hidden" data-topic-post-button="true" data-topic-viewpost-button="true" data-trigger="view.post.topicpost">
                     <span class="Button-content">@lang('forum.view_post_topicpost')</span>
                 </button>
-<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $thread->body !!}</b></div>
+<div class="TopicPost-bodyContent" data-topic-post-body-content="true">{!! $thread->body !!}</div>
 @guest
 @else<footer class="TopicPost-actions" data-topic-post-body-content="true"><button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button"><span class="Button-content"><svg xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/></svg>Цитирование</span></a></footer>@endguest
             </div>
@@ -171,7 +171,7 @@ data-toggle="tooltip" data-tooltip-content="Нравится: {{ $reply->up }}."
                 <button class="TopicPost-button TopicPost-button--viewPost is-hidden" data-topic-post-button="true" data-topic-viewpost-button="true" data-trigger="view.post.topicpost">
                     <span class="Button-content">@lang('forum.view_post_topicpost')</span>
                 </button>
-<div class="TopicPost-bodyContent" data-topic-post-body-content="true"><b>{!! $reply->body !!}</b></div>
+<div class="TopicPost-bodyContent" data-topic-post-body-content="true">{!! $reply->body !!}</div>
 @guest
 @else<footer class="TopicPost-actions" data-topic-post-body-content="true"><button class="TopicPost-button TopicPost-button--like" data-topic-post-button="true" data-trigger="vote.up.topicpost" type="button"><span class="Button-content"><i class="Icon"></i>Нравится</span></button><a href="#detail" class="TopicPost-button TopicPost-button--quote" data-topic-post-button="true" data-trigger="quote.topicpost" type="button"><span class="Button-content"><svg xmlns="http://www.w3.org/2000/svg"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-quote"/></svg>Цитирование</span></a></footer>@endguest
 </div>

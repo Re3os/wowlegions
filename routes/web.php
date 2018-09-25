@@ -162,6 +162,8 @@ Route::group(['prefix' => App\Http\Middleware\LocaleMiddleware::getLocales()], f
     Route::get('game/pvp/leaderboards/2v2', 'CommunityController@leaderboardsTwo')->name('pvp-2v2');
     Route::get('game/pvp/leaderboards/3v3', 'CommunityController@leaderboardsTree')->name('pvp-3v3');
     Route::get('game/pvp/leaderboards/battlegrounds', 'CommunityController@battlegrounds')->name('pvp-battlegrounds');
+
+    Route::get('game/recruit-a-friend', 'CommunityController@recruitAFriend')->name('recruitAFriend');
 });
 
 ///// ADMIN /////

@@ -36,11 +36,17 @@
     {{ csrf_field() }}
 	<!----><div _ngcontent-c4="" class="options ng-star-inserted">
 <storefront-product-option-variable-balance _ngcontent-c4="" _nghost-c15="" class="ng-star-inserted"><div _ngcontent-c15="" class="product-option product-option-variable-balance">
-	<div _ngcontent-c15="" class="name-price-container">
+	<div _ngcontent-c15="" id="balance-input" class="name-price-container">
 		<!---->
-		<input _ngcontent-c15="" class="form-control form-control-lg" name="balanceAmount" id="variable-amount" type="text" placeholder="Сумма">
+		<input _ngcontent-c15="" class="form-control form-control-lg" name="balanceAmount" id="balance-input-text" type="text" placeholder="Сумма">
 		<!----><h4 _ngcontent-c15="" class="ng-star-inserted"><label _ngcontent-c15="" class="price suffix" for="variable-amount"> руб.</label></h4>
 	</div>
+    <div class="tooltip-wrapper grid-50 mobile-grid-100">
+    <span class="tooltip right" id="purchase-warning-tooltip">
+    <span class="tooltip-arrow"></span>
+    <span class="tooltip-inner alert-icon"></span>
+    </span>
+    </div>
 </div>
 </storefront-product-option-variable-balance>
 
@@ -61,7 +67,7 @@
 		<!----><storefront-product-button _ngcontent-c18="" _nghost-c19="" class="primary ng-star-inserted"><div _ngcontent-c19="" class="product-button">
 	<storefront-link _ngcontent-c19="" _nghost-c21=""><!---->
 
-<button _ngcontent-c21="" class="btn btn-block btn-lg btn-primary ng-star-inserted" id="variable-amount" title="" type="submit">
+<button _ngcontent-c21="" class="btn btn-block btn-lg btn-primary ng-star-inserted" id="payment-submit" title="" type="submit">
 	Пополнить кошелек
 </button>
 
@@ -142,5 +148,33 @@
 		</div>
 	</main>
 </div>
+<script type="text/javascript">
+//<![CDATA[
+var addBalanceSettings = {
+decimalPointChar: ",",
+currencyFractionDigits: 2,
+maxBalanceAllowed: 10000,
+remainingMaxBalanceAllowed: 9959,
+maxBalanceAllowedType: "max",
+minBalanceRequired: 5,
+hasAuthenticator: false,
+authenticatorCap: 5000,
+remainingAuthenticatorLimit: 4959
+};
+var addBalanceMsgs = {
+authenticatorRequired: "Чтобы зачислить в кошелек сумму свыше 5 000,00 необходимо прикрепить к вашей записи Blizzard Authenticator.",
+capped: {
+max: "Такую сумму зачислить нельзя, иначе объем средств в кошельке превысит допустимый максимум (10 000,00)",
+},
+minRequired: {
+minRequired: "Минимальная сумма — 5,00"
+},
+wrongFormat: {
+wrongFormat: "Укажите сумму в корректном формате, например: 15,23"
+}
+};
+//]]>
+</script>
 </storefront-product-page>
+<script type="text/javascript" src="{{ asset_media('/js/balance.min-2aaad4fc44.js') }}"></script>
 @endsection

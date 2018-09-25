@@ -27,6 +27,28 @@ function printCssHome() {
         //dd($route);
         switch($route) {
 
+            case 'patch-notes':
+            $css_data_page = array(
+                array(
+                    'path' => '/forums/static/css/navbar.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/main-9296f9fec4.css'
+                )
+            );
+            break;
+
+            case 'forum.search':
+            $css_data_page = array(
+                array(
+                    'path' => '/forums/static/css/navbar.css'
+                ),
+                array(
+                    'path' => '/forums/static/css/main-9296f9fec4.css'
+                )
+            );
+            break;
+
             case 'forum.topic':
             $css_data_page = array(
                 array(
@@ -72,7 +94,7 @@ function printCssHome() {
                     'path' => '/static/styles/izimodal.css'
                 ),
                 array(
-                    'path' => '/static/styles/wow.css'
+                    'path' => '/static/styles/wow.css?v=5.3.9'
                 ),
                 array(
                     'path' => '/static/styles/blog.css'
@@ -95,7 +117,7 @@ function printCssHome() {
                     'path' => '/static/styles/izimodal.css'
                 ),
                 array(
-                    'path' => '/static/styles/wow.css'
+                    'path' => '/static/styles/wow.css?v=5.3.9'
                 ),
             );
             break;

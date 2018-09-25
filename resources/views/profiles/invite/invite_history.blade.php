@@ -68,7 +68,7 @@
 @if($item->complete)
     <strong>Использовано</strong>
 @else
-<strong><a href="{{ route('invite-select-characters', ['token' => $item->token, 'id' => $item->id]) }}">Получить награду</a> </strong>
+<strong><a href="{{ route('invite-select-characters', ['token' => $item->token]) }}">Получить награду</a> </strong>
 @endif
 </td>
 </tr>

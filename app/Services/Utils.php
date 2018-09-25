@@ -50,7 +50,7 @@ class Utils {
     public function InviteSend($count) {
         return $this->InviteReward($count);
     }
-    
+
     public static function dirsize($directory) {
         if( ! is_dir( $directory ) ) return - 1;
         $size = 0;

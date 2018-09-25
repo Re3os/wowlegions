@@ -32,7 +32,7 @@ class RepliesController extends Controller
 
         $thread->addReply([
             'parent_id' => $thread->id,
-            'body' => $bb->parse(request('detail')),
+            'body' => $bb->bb_parse(request('detail')),
             'user_id' => auth()->id(),
             'channel_id' => $thread->channel_id
         ])->load('creator');

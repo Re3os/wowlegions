@@ -3,9 +3,9 @@
 ## Site installation
 
 <ul>
-  <li>To upload files to the server</li>
-  <li>Open website in browser</li>
-  <li>Follow the instructions in your browser</li>
+<li>To upload files to the server</li>
+<li>To configure the database connection in the file - .env</li>
+<li>To load the database dump of the site</li>
 </ul>
 
 ## Server Requirements

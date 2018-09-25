@@ -7,9 +7,15 @@
  <a href="" class="Breadcrumb-content is-active"> Результаты поиска </a> </span></div>
 @endsection
 
-@section('content')
-<div role="main">
+@section('og')
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ route('forums') }}" />
+<meta property="og:title" content="@yield('title') {{ config('app.name_forum', __('forum.title')) }}" />
+<meta property="og:image" content="{{ asset_media('/forums/static/images/social-thumbs/wow.png') }}" />
+<meta property="og:description" content="@lang('forum.description')" />
+@endsection
 
+@section('content')
 <section class="Search">
     <header class="Search-header">
     <div class="Container Container--content"> <h1 class="Search-heading"> <a class="Game-logo" href="/forums/ru/wow/"></a> Результаты поиска по запросу «{{ request('q') }}» </h1> <div class="Search-controls">
@@ -25,30 +31,30 @@
 
 @foreach($result as $item)
 <div class="Post--searchPage" id="post-{{ $item->id }}">
-    <a href="{{ route('forum.topic', [$item->category->id, $item->id]) }}#post-1">
+    <a href="{{ route('forum.topic', [$item->id]) }}">
     <div class="Post-content Post-content--searchPage">
     <aside class="TopicPost-author">
     <div class="Author">
     <div class="Author" id="" data-topic-post-body-content="true">
-        <a href="{{ route('characters', [$item->characters->name]) }}" class="Author-avatar " >
-            <img src="/images/avatars/wow/{{ $item->characters->class }}-{{ $item->characters->gender }}.jpg" alt="" /></a>
+        <a href="{{ route('profiles', [$item->creator->name]) }}" class="Author-avatar " >
+            <img src="{{ asset('/uploads/avatar/'.$item->creator->avatar) }}" alt="" /></a>
             <div class="Author-details">
     <span class="Author-name">
-        <a class="Author-name--profileLink" href="{{ route('characters', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
+        <a class="Author-name--profileLink" href="{{ route('profiles', [$item->creator->name]) }}">{{ $item->creator->name }}</a>
     </span>
     <span class="Author-posts">
-        <a class="Author-posts" href="/forum/search?a={{ $item->user->name }}" data-toggle="tooltip" data-tooltip-content="Просмотреть историю сообщений"> Сообщений: {{ $item->user->posts_count }} </a>
+        <a class="Author-posts" href="/forum/search?a={{ $item->creator->name }}" data-toggle="tooltip" data-tooltip-content="Просмотреть историю сообщений"> Сообщений: {{ $item->user->posts_count }} </a>
     </span>
 </div>
 </div>
 <div class="Author-ignored is-hidden" data-topic-post-ignored-author="true">
 <span class="Author-name">
-    <a class="Author-name--profileLink" href="{{ route('characters', [$item->characters->name]) }}">{{ $item->characters->name }}</a>
+    <a class="Author-name--profileLink" href="{{ route('profiles', [$item->creator->name]) }}">{{ $item->creator->name }}</a>
 </span>
 <div class="Author-posts Author-posts--ignored">проигнорировано</div></div> </div> </aside>
 <div class="Post-body Post-body--searchPage">
 <div class="Post-body Post-body--topicTitle">{{ $item->title }} </div>
-<span class="Post-body Post-body--forumName"> {{ $item->category->name }} </span>
+<span class="Post-body Post-body--forumName"> {{ $item->channel->name }} </span>
 <span class="Post-timestamp Post-timestamp--searchPage"> {{ $item->created_at->diffForHumans() }}
 <!--span class="TopicPost-rank TopicPost-rank--down" data-topic-post-rank="true">-16</span>
 <span class="TopicPost-rank TopicPost-rank--up" data-topic-post-rank="true">20</span--> </span>
@@ -64,5 +70,4 @@
 @endif
 </div>
 </section>
- </div>
 @endsection
