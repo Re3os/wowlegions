@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 class InviteController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function invite() {
         return view('profiles.invite', [
             'profileUser' => \Auth::user()

@@ -31,8 +31,8 @@ class NewsController extends Controller
         $bb = new ParserText();
         Blog::where('id', $request->input('id'))->update([
           'title' => $request->input('title'),
-          'desc_blog'     => $bb->parse($request->input('short_story')),
-          'full_blog'  => $bb->parse($request->input('full_story'))
+          'desc_blog'     => $bb->bb_parse($request->input('short_story')),
+          'full_blog'  => $bb->bb_parse($request->input('full_story'))
         ]);
         return redirect()->route('admin-news-list');
     }
@@ -56,8 +56,8 @@ class NewsController extends Controller
         $file = $request->file('img')->move(public_path('uploads/images/'), $image_name);
         Blog::create([
             'title' => $request->input('title'),
-            'desc_blog'     => $bb->parse($request->input('short_story')),
-            'full_blog'  => $bb->parse($request->input('full_story')),
+            'desc_blog'     => $bb->bb_parse($request->input('short_story')),
+            'full_blog'  => $bb->bb_parse($request->input('full_story')),
             'posted_by' => Auth::user()->id,
             'comments_key' => '0',
             'images' => $image_name

@@ -16,4 +16,8 @@ class HomeController extends Controller
         $forum = Thread::whereNull('parent_id')->orderBy('updated_at', 'desc')->limit(7)->get();
         return view('home', ['blog' => $news, 'forum' => $forum]);
     }
+
+    public function offline() {
+        return view('maintenance.offline');
+    }
 }

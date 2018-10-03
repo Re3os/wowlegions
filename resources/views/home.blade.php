@@ -31,8 +31,8 @@
                         @foreach($forum as $cnc)
 
                         <tr>
-                            <td><a href="{{ route('forum.topic', [$cnc])}}" class="topic">{{ $cnc->title }}</a> </td>
-                            <td><a href="{{ route('forum', [$cnc->channel->id])}}" class="forum">{{ $cnc->channel->name }}</a></td>
+                            <td><a href="{{ route('forum.topic', [$cnc])}}" class="topic">{{ str_limit($cnc->title,20) }}</a> </td>
+                            <td><a href="{{ route('forum', [$cnc->channel->id])}}" class="forum">{{ str_limit($cnc->channel->name,20) }}</a></td>
                             <td>{{ $cnc->created_at->format('d.M') }} в {{ $cnc->created_at->format('H:i') }}</td>
                         </tr>
                         @endforeach
@@ -63,8 +63,8 @@
                         </tr>
                         @foreach($forum as $cnc)
                         <tr>
-                            <td><a href="{{ route('forum.topic', [$cnc])}}" class="topic">{{ $cnc->title }}</a> </td>
-                            <td><a href="{{ route('forum', [$cnc->channel->id])}}" class="forum">{{ $cnc->channel->name }}</a></td>
+                            <td><a href="{{ route('forum.topic', [$cnc])}}" class="topic">{{ str_limit($cnc->title,20) }}</a> </td>
+                            <td><a href="{{ route('forum', [$cnc->channel->id])}}" class="forum">{{ str_limit($cnc->channel->name,20) }}</a></td>
                             <td>{{ $cnc->created_at->format('d.M') }} в {{ $cnc->created_at->format('H:i') }}</td>
                         </tr>
                         @endforeach

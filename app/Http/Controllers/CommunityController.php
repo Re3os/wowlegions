@@ -34,9 +34,8 @@ class CommunityController extends Controller
     }
 
     public function leaderboardsTree() {
-        $status = Server::status();
-        $online = Server::playersOnline();
-        return view('community.pvp.3x3', ['server' => $status, 'online' => $online]);
+        $arena = Arena::where('type', '1')->orderBy('rating', 'desc')->get();
+        return view('community.pvp.3x3', ['arena' => $arena]);
     }
 
     public function battlegrounds() {

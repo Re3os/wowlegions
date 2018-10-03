@@ -3,14 +3,15 @@
 ## Site installation
 
 <ul>
-<li>To upload files to the server</li>
-<li>To configure the database connection in the file - .env</li>
-<li>To load the database dump of the site</li>
+<li>To upload files to the server
+<li>To load the database dump of the site
+<li>Open your website in a browser and follow the instructions
 </ul>
 
 ## Server Requirements
 <ul>
 <li>PHP >= 7.1.3
+<li>MySQL >= 5.7.23
 <li>OpenSSL PHP Extension
 <li>PDO PHP Extension
 <li>Mbstring PHP Extension

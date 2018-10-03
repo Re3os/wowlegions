@@ -1,0 +1,32 @@
+CREATE TABLE `mmotop` (
+	`id` INT(10) NOT NULL AUTO_INCREMENT,
+	`nick` VARCHAR(255) NOT NULL,
+	`vote` INT(10) NOT NULL DEFAULT '0',
+	`vote_day` INT(2) NOT NULL DEFAULT '0',
+	`money` INT(100) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM;
+
+CREATE TABLE `tops` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`topname` VARCHAR(50) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+	`toplink` VARCHAR(255) NULL DEFAULT NULL COLLATE 'utf8_general_ci',
+    `reward` INT(8) NULL DEFAULT NULL,
+	`topaward` INT(10) NULL DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=18;
+
+CREATE TABLE `usertops` (
+	`topid` INT(11) NOT NULL DEFAULT '0',
+	`user` INT(11) NULL DEFAULT NULL,
+	`votetime` INT(11) NULL DEFAULT NULL,
+	`usertop` VARCHAR(255) NOT NULL DEFAULT '' COLLATE 'utf8_general_ci',
+	PRIMARY KEY (`usertop`)
+)
+COLLATE='utf8_general_ci'
+ENGINE=MyISAM;

@@ -419,7 +419,7 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 
 <!---->
 
-<!----><a _ngcontent-c3="" title="" href="/ru-ru/product/battle-tag-name-change" class="ng-star-inserted">
+<!----><a _ngcontent-c3="" title="" href="/ru-ru/product/tag-name-change" class="ng-star-inserted">
 
 	<!---->
 
@@ -432,12 +432,12 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 		</li><li _ngcontent-c4="" class="links-item ng-star-inserted">
 			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
 
-<!----><a _ngcontent-c3="" href="//EU.battle.net/account/management/claim-code.html" title="" target="_blank" rel="external" class="ng-star-inserted">
+<!----><a _ngcontent-c3="" href="{{ route('claim-code') }}" title="" target="_blank" rel="external" class="ng-star-inserted">
 
 	<!---->
 
 				<!---->
-				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-key-claim fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="key-claim" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256,51.1c113,0,204.9,91.9,204.9,204.9S369,460.9,256,460.9c-113,0-204.9-91.9-204.9-204.9S143,51.1,256,51.1 	 M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248C504.1,119,393,8,256,8L256,8z M354.4,277.6H157.6 	c-11.9,0-21.6-9.7-21.6-21.6c0-11.9,9.7-21.6,21.6-21.6h196.9c11.9,0,21.6,9.7,21.6,21.6S366.4,277.6,354.4,277.6z M256,376L256,376 	c-11.9,0-21.6-9.7-21.6-21.6V157.6c0-11.9,9.7-21.6,21.6-21.6l0,0c11.9,0,21.6,9.7,21.6,21.6v196.9C277.6,366.4,267.9,376,256,376z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-key-claim ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">Использовать код</span>
+				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-key-claim fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="key-claim" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256,51.1c113,0,204.9,91.9,204.9,204.9S369,460.9,256,460.9c-113,0-204.9-91.9-204.9-204.9S143,51.1,256,51.1 	 M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248C504.1,119,393,8,256,8L256,8z M354.4,277.6H157.6 	c-11.9,0-21.6-9.7-21.6-21.6c0-11.9,9.7-21.6,21.6-21.6h196.9c11.9,0,21.6,9.7,21.6,21.6S366.4,277.6,354.4,277.6z M256,376L256,376 	c-11.9,0-21.6-9.7-21.6-21.6V157.6c0-11.9,9.7-21.6,21.6-21.6l0,0c11.9,0,21.6,9.7,21.6,21.6v196.9C277.6,366.4,267.9,376,256,376z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-key-claim ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">@lang('account.claim-code-1')</span>
 
 
 
@@ -512,12 +512,12 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 
 <!---->
 
-<!----><a _ngcontent-c3="" title="" href="/ru-ru/product/balance" class="ng-star-inserted">
+<!----><a _ngcontent-c3="" title="" href="{{ route('add-balance') }}" class="ng-star-inserted">
 
 	<!---->
 
 				<!---->
-				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-add fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-add" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256,51.1c113,0,204.9,91.9,204.9,204.9S369,460.9,256,460.9c-113,0-204.9-91.9-204.9-204.9S143,51.1,256,51.1 	 M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248C504.1,119,393,8,256,8L256,8z M354.4,277.6H157.6 	c-11.9,0-21.6-9.7-21.6-21.6c0-11.9,9.7-21.6,21.6-21.6h196.9c11.9,0,21.6,9.7,21.6,21.6S366.4,277.6,354.4,277.6z M256,376L256,376 	c-11.9,0-21.6-9.7-21.6-21.6V157.6c0-11.9,9.7-21.6,21.6-21.6l0,0c11.9,0,21.6,9.7,21.6,21.6v196.9C277.6,366.4,267.9,376,256,376z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-add ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">Пополнить кошелек Blizzard</span>
+				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-add fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-add" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256,51.1c113,0,204.9,91.9,204.9,204.9S369,460.9,256,460.9c-113,0-204.9-91.9-204.9-204.9S143,51.1,256,51.1 	 M256,8C119,8,8,119,8,256s111,248,248,248s248-111,248-248C504.1,119,393,8,256,8L256,8z M354.4,277.6H157.6 	c-11.9,0-21.6-9.7-21.6-21.6c0-11.9,9.7-21.6,21.6-21.6h196.9c11.9,0,21.6,9.7,21.6,21.6S366.4,277.6,354.4,277.6z M256,376L256,376 	c-11.9,0-21.6-9.7-21.6-21.6V157.6c0-11.9,9.7-21.6,21.6-21.6l0,0c11.9,0,21.6,9.7,21.6,21.6v196.9C277.6,366.4,267.9,376,256,376z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-add ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">@lang('account.add-balance')</span>
 
 
 </a>
@@ -525,27 +525,12 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 		</li><li _ngcontent-c4="" class="links-item ng-star-inserted">
 			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
 
-<!---->
-
-<!----><a _ngcontent-c3="" title="" href="/ru-ru/product/balance" class="ng-star-inserted">
+<!----><a _ngcontent-c3="" href="{{ route('claim-code') }}" title="" target="_blank" rel="external" class="ng-star-inserted">
 
 	<!---->
 
 				<!---->
-				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-gift fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-gift" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M172.6,331.9c40.8-66.7,93.1-110.4,197.9-110.4V299L504,175.8L370.5,52.6v74 	C218.2,126.6,172.6,264.2,172.6,331.9L172.6,331.9z M428,305.3c-20.8,89.2-96.6,155.6-186.8,155.6C135,460.9,48.6,369,48.6,256.1 	c0-113,86.5-204.9,192.7-204.9c32.8,0,63.6,8.8,90.6,24.2V27.4C304,14.9,273.4,8,241.2,8C112.4,8,8,119,8,256s104.4,248,233.2,248 	c126.5,0,229.5-107.2,233.1-240.8L428,305.3z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-gift ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">Подарочный баланс</span>
-
-
-</a>
-</storefront-link>
-		</li><li _ngcontent-c4="" class="links-item ng-star-inserted">
-			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
-
-<!----><a _ngcontent-c3="" href="//EU.battle.net/account/management/claim-code.html" title="" target="_blank" rel="external" class="ng-star-inserted">
-
-	<!---->
-
-				<!---->
-				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-add-pre-paid-card fa-w-20 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-add-pre-paid-card" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M551.4,504H86c-42.9,0-77.8-40.7-77.8-90.7V100.6c-1.8-23.4,4.9-45.7,18.8-63.2C41.9,18.7,63.4,8,86,8h465.3 	C595.9,8,632,48.7,632,98.7v314.5C632,463.3,595.9,504,551.4,504z M86,85.9c-4.2,0-6.5,2.3-7.3,3.4c-1.5,1.9-1.5,3.7-1.4,5.1 	c0.1,1.5,0.2,2.9,0.2,4.4v314.5c0,5.4,3,12.8,8.6,12.8h465.3c6.3,0,11.4-5.8,11.4-12.8V98.7c0-7.1-5.1-12.8-11.4-12.8H86z 	 M54.2,185.1h563V263h-563V185.1z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-add-pre-paid-card ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">Использовать карту предоплаты</span>
+				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-add-pre-paid-card fa-w-20 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-add-pre-paid-card" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M551.4,504H86c-42.9,0-77.8-40.7-77.8-90.7V100.6c-1.8-23.4,4.9-45.7,18.8-63.2C41.9,18.7,63.4,8,86,8h465.3 	C595.9,8,632,48.7,632,98.7v314.5C632,463.3,595.9,504,551.4,504z M86,85.9c-4.2,0-6.5,2.3-7.3,3.4c-1.5,1.9-1.5,3.7-1.4,5.1 	c0.1,1.5,0.2,2.9,0.2,4.4v314.5c0,5.4,3,12.8,8.6,12.8h465.3c6.3,0,11.4-5.8,11.4-12.8V98.7c0-7.1-5.1-12.8-11.4-12.8H86z 	 M54.2,185.1h563V263h-563V185.1z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-add-pre-paid-card ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">@lang('account.claim-code-1')</span>
 
 
 
@@ -559,31 +544,12 @@ storefront-browsing-card-group:first-of-type + storefront-browsing-card-group {
 		</li><li _ngcontent-c4="" class="links-item ng-star-inserted">
 			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
 
-<!----><a _ngcontent-c3="" href="//EU.battle.net/account/management/transaction-history.html" title="" target="_blank" rel="external" class="ng-star-inserted">
+<!----><a _ngcontent-c3="" href="{{ route('transaction-history') }}" title="" target="_blank" rel="external" class="ng-star-inserted">
 
 	<!---->
 
 				<!---->
 				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-history fa-w-20 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-history" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M8,423.3h490.3V504H8V423.3z M8,8h624v80.7H8V8z M8,146.4h624v80.7H8V146.4z M8,284.8h624v80.7H8V284.8z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-history ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">История кошелька</span>
-
-
-
-	<!----><!---->
-		<svg _ngcontent-c3="" class="svg-inline--fa fa-external-link-alt fa-w-18 fa-xs ng-star-inserted" aria-hidden="true" data-prefix="fas" data-icon="external-link-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M576 24v127.984c0 21.461-25.96 31.98-40.971 16.971l-35.707-35.709-243.523 243.523c-9.373 9.373-24.568 9.373-33.941 0l-22.627-22.627c-9.373-9.373-9.373-24.569 0-33.941L442.756 76.676l-35.703-35.705C391.982 25.9 402.656 0 424.024 0H552c13.255 0 24 10.745 24 24zM407.029 270.794l-16 16A23.999 23.999 0 0 0 384 303.765V448H64V128h264a24.003 24.003 0 0 0 16.97-7.029l16-16C376.089 89.851 365.381 64 344 64H48C21.49 64 0 85.49 0 112v352c0 26.51 21.49 48 48 48h352c26.51 0 48-21.49 48-48V287.764c0-21.382-25.852-32.09-40.971-16.97z"></path></svg><!-- <i _ngcontent-c3="" class="fas fa-external-link-alt fa-xs ng-star-inserted"></i> -->
-
-</a>
-
-<!---->
-</storefront-link>
-		</li><li _ngcontent-c4="" class="links-item ng-star-inserted">
-			<storefront-link _ngcontent-c4="" _nghost-c3=""><!---->
-
-<!----><a _ngcontent-c3="" href="//EU.battle.net/support/article/25904" title="" target="_blank" rel="external" class="ng-star-inserted">
-
-	<!---->
-
-				<!---->
-				<!----><svg _ngcontent-c4="" class="svg-inline--fa fa-balance-help fa-w-16 links-item-icon ng-star-inserted" aria-hidden="true" data-prefix="blz" data-icon="balance-help" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256,51.2c112.9,0,204.9,91.9,204.9,204.8S369,460.8,256,460.8S51.2,368.9,51.2,256S143,51.2,256,51.2 M256,8 	C119.1,8,8,119,8,256s111,248,248,248s248-111.1,248-248S393,8,256,8L256,8z M226,296.8v-3.1c0-39.2,10.7-48.2,65.4-54.7 	c28.2-3.4,38.2-11.4,38.2-30.6c0-11.7-3.8-20-11-24.1c-7.9-4.5-25.1-6.5-55-6.5c-61.6,0-68.4,3.8-68.4,37.2v6.9h-45.8V216 	c0-33.4,3.4-45.8,16.2-57.1c13.1-12.1,36.8-15.8,97-15.8c62.6,0,85.7,4.8,100.1,20.3c8.6,9.3,12.1,22.7,12.1,46.5 	c0,26.9-5.5,42-18.2,51.3c-9.3,6.2-29.9,11.7-57.5,15.1c-23.1,3.1-27.5,6.5-27.5,20.6L226,296.8L226,296.8z M273.8,380.2H224v-49.8 	h49.8V380.2z"></path></svg><!-- <i _ngcontent-c4="" class="links-item-icon blz fa-balance-help ng-star-inserted"></i> --> <span _ngcontent-c4="" class="ng-star-inserted">Помощь</span>
 
 
 

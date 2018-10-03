@@ -277,6 +277,7 @@ ChargebackCall.initialize(true);
 <li><a href="{{ route('transaction-history') }}">@lang('account.transaction-history')</a></li>
 <li><a href="{{ route('gift-claim-history') }}">@lang('account.gift-claim-history')</a></li>
 <li><a href="{{ route('invite-history') }}">Список приглашённых</a></li>
+<li><a href="{{ route('vote') }}">Голосования</a></li>
 </ul>
 </div>
 </li>

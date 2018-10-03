@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\{Account, User, CodesShop, PaymentDetails, Characters, Invite};
+use App\{Account, User, CodesShop, PaymentDetails, Characters, Invite, Top, Usertop};
 
 use App\Services\Soap;
 use App\Services\Utils;
@@ -23,6 +23,38 @@ class UserController extends Controller
             'profileUser' => \Auth::user(),
             'userTeg' => $userTeg,
         ]);
+    }
+
+    public function vote() {
+        $info = Usertop::where('user', \Auth::user()->id)->first();
+        $checks = $info['votetime'] + 86400;
+        $data = time();
+        return view('profiles.vote.vote', [
+            'top' => Top::get(),
+            'data' => $data,
+            'check' => $checks,
+            'profileUser' => \Auth::user(),
+        ]);
+    }
+
+    public function voteAction() {
+        $check = Usertop::where('user', \Auth::user()->id)->first();
+        $check = $check['votetime'] + 86400;
+        $data = time();
+        if($check <= $data) {
+            $top = Top::get();
+            $user = \Auth::user();
+            $user->balance += $top[0]['reward'];
+            $user->save();
+            $item = new Usertop();
+            $item->topid = $top[0]['id'];
+            $item->user = \Auth::user()->id;
+            $item->votetime = $data;
+            $item->usertop =  \Auth::user()->id . ":" . $top[0]['id'];
+            $item->save();
+            return redirect($top[0]['toplink']);
+        }
+        return redirect(route('vote'))->with("error","Вы уже получили награду!");
     }
 
     public function createName() {

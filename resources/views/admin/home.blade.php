@@ -30,7 +30,7 @@
 
 <div class="row box-section">
 <div class="col-sm-6 media-list media-list-linked">
-<a class="media-link" href="/dashboard/options">
+<a class="media-link" href="{{ route('options-index') }}">
 <div class="media-left"><img src="/skins/images/tools.png" class="img-lg section_icon"></div>
 <div class="media-body">
     <h6 class="media-heading  text-semibold">Настройка системы</h6>
